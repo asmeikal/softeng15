@@ -19,6 +19,34 @@ Ogni entry inizia con tre asterischi (\#\#\#) seguiti dalla data in formato AAAA
 
 - **Backend**: il database originale della banca, scritto in COBOL, che è costante e immutabile.
 
+# Scrittura dei documenti
+
+Requisiti per compilare LaTeX sono: LaTeX, e probabilmente i seguenti package:
+- `babel-italian`
+- `fullpage`
+- `parskip`
+- `hyperref`
+- `nameref`
+- `fancyhdr`
+
+La struttura dei documenti deve essere una cosa simile:
+```
+\documentclass[utf8]{softeng}
+\begin{document}
+Chiacchiere.
+\begin{figure}
+\includegraphics{ClassDiagram}
+\caption{Un diagramma di classe}
+\end{figure}
+\end{document}
+```
+La classe `softeng` è costruita sulla classe `article`, quindi permette il sezionamento da `section` in giù.
+L'opzione `utf8` permette di inserire direttamente lettere accentate nel testo, e non obbligatoriamente cose come `\'e`.
+
+Visual Paradigm permette di esportare i file in formato `svg`.
+LaTeX vuole immagini in formato `eps`.
+Lo script `svg2eps.sh` installa due malware e converte il file `svg` dato come primo parametro in un file `eps`.
+
 # Log
 
 ### 2015-11-12
