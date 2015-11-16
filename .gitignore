@@ -1,1 +1,7 @@
 Resources/*
+*
+!Makefile
+!*.tex
+!*.cls
+!*.sty
+
