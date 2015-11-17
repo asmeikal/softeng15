@@ -29,9 +29,22 @@
 \RequirePackage{hyperref}
 \RequirePackage{nameref}
 
+\RequirePackage{titling}
 \RequirePackage{fancyhdr}
 
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\leftmark}
+\lhead{\thetitle}
+\rfoot{\thepage}
+\lfoot{\theauthor}
+
+% fancyhdr asked for this
+\setlength{\headheight}{14pt}
+
 \RequirePackage[pdftex]{graphicx}
+
+\author{Artemio Ageev \and Luigi Iandolo \and Michele Laurenti}
 
 \endinput
 
