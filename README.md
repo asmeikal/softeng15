@@ -21,13 +21,14 @@ Ogni entry inizia con tre asterischi (\#\#\#) seguiti dalla data in formato AAAA
 
 # Scrittura dei documenti
 
-Requisiti per compilare LaTeX sono: LaTeX, e probabilmente i seguenti package:
+Requisiti per compilare LaTeX sono: LaTeX (`texlive`), `latexmk`, e probabilmente i seguenti package:
 - `babel-italian`
 - `fullpage`
 - `parskip`
 - `hyperref`
 - `nameref`
 - `fancyhdr`
+- `graphicx`
 
 La struttura dei documenti deve essere una cosa simile:
 ```
@@ -46,8 +47,19 @@ L'opzione `utf8` permette di inserire direttamente lettere accentate nel testo, 
 Visual Paradigm permette di esportare i file in formato `svg`.
 LaTeX vuole immagini in formato `eps`.
 Lo script `svg2eps.sh` installa due malware e converte il file `svg` dato come primo parametro in un file `eps`.
+Ha bisogno di `inkscape`.
+
+Il `Makefile` compila usando `latexmk`.
+
+**Per il futuro:** vorrei provare a scrivere uno scriptino per "finalizzare" i documenti.
+Lo scriptino dovrebbe prendere tutti i file `tex` nella cartella, cambiare `\date{\today}` alla data odierna, e schiaffarli tutti in una cartella `Iterations/N` incrementando `N` a ogni botta.
 
 # Log
+
+### 2015-11-17
+
+Appassionato inizio di stesura della proposta di progetto nel secondo laboratorio di Matematica.
+La sorpresa di Gigi regna indiscussa.
 
 ### 2015-11-12
 
