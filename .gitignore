@@ -4,4 +4,5 @@ Resources/*
 !*.tex
 !*.cls
 !*.sty
+!*.sh
 
