@@ -1,0 +1,76 @@
+\documentclass[utf8]{softeng}
+
+\title{Proposta di progetto Home Banking}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Proposta di progetto} 
+
+Si vuole realizzare un sistema di Home Banking.
+
+Per rafforzare i requisiti non funzionali (come i requisiti di sicurezza) si sceglie di rivolgere il sistema di Home Banking a persone fisiche (retail banking).
+
+Alcune delle funzionalit\`a che il sistema pu\`o offrire sono:
+\begin{enumerate}
+	\item L'utente si deve poter pre-registrare online fornendo i suoi dati anagrafici, e:
+		\begin{enumerate}
+			\item se l'utente ha gi\`a un conto aperto con la banca, pu\`o fornire il suo numero di conto;
+			\item se l'utente non ha gi\`a un conto con la banca, pu\`o scegliere diverse soluzioni con agevolazioni differenti e pre-compilare i moduli necessari all'apertura del conto.
+				% TODO: cambiare "se l'utente ha gi\`a un conto con la banca" in "se l'utente desidera aprire un nuovo conto"
+		\end{enumerate}
+		Un utente pre-registrato pu\`o recarsi presso una filiale della banca e ultimare la registrazione presentando il documento d'identit\`a.
+		La banca gli fornir\`a le informazioni per l'accesso.
+		Ai nuovi clienti viene fornito su richiesta un bancomat.
+		% TODO: rimuovere, non \`e di interesse per l'applicazione, facciamo home banking non ATM
+
+		Un utente non pre-registrato pu\`o effettuare la procedura completa di registrazione presso una filiale, fornendo le stesse informazioni richieste agli utenti che si pre-registrano online.
+	\item Le informazioni per l'accesso comprendono:
+		\begin{enumerate}
+			\item Il numero di conto;
+			\item La password del conto;
+			\item Un dispositivo TOTP \footnote{Time-Based One Time Password - \href{https://tools.ietf.org/html/rfc6238}{RFC 6238}.} per effettuare operazioni sensibili.
+		\end{enumerate}
+	\item Un utente registrato pu\`o effettuare il login al sistema di Home Banking fornendo le informazioni di accesso (requisito TOT), in particolare deve inserire numero di conto e password del conto.
+	\item Un utente che ha effettuato l'accesso al sistema di Home Banking deve poter svolgere le seguenti operazioni senza fornire la One Time Password:
+		\begin{enumerate}
+			\item Visionare saldo contabile, disponibile e liquido.
+			\item Visionare uno storico delle transazioni effettuate.
+			\item Visionare informazioni riguardo le carte di credito collegate al conto (se presenti).
+			\item Effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione (requisito TOT).
+		\end{enumerate}
+	\item Un utente che ha effettuato l'accesso al sistema di Home Banking deve poter effettuare le seguenti operazioni fornendo ogni volta la One Time Password:
+		\begin{enumerate}
+			\item Effettuare transazioni, come:
+				\begin{enumerate}
+					\item bonifici ordinari e bonifici SEPA;
+					\item ricariche carte prepatate e schede telefoniche;
+					\item pagamento bollette, bollettini, tasse, etc;
+				\end{enumerate}
+			\item Configurare operazioni veloci.
+			\item Se ci viene in mente altro ce lo mettiamo.
+		\end{enumerate}
+	\item Ogni operazione deve essere registrata in un log.
+		Devono essere mantenute le seguenti informazioni:
+		\begin{enumerate}
+			\item l'operazione eseguita;
+			\item il conto coinvolto nell'operazione;
+				% TODO rivedere codesta parte: codice univoco della transazione al posto del conto?
+				% analizzare bene come funziona OBP
+			\item l'istante dell'operazione;
+			\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+		\end{enumerate}
+	\item Il sistema deve poter essere configurabile dall'utente per inviare notifiche via SMS e/o via email a seguito di ogni evento stabilito dall'utente.
+		La banca pu\`o associare una tariffa per abilitare le notifiche su specifici insiemi di eventi.
+		Gli eventi notificabili possono includere:
+		\begin{enumerate}
+			\item Accesso al sistema;
+			\item Pagamento o prelievo dal conto;
+			\item Pagamento ricevuto.
+		\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
