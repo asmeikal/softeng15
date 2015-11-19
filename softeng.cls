@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{softeng}[2015/11/16 Classe per il progetto di ingegneria del software]
+\ProvidesClass{softeng}[2015/11/17 Classe per il progetto di ingegneria del software]
 
 \newif\if@utfdocument %\@utfdocumentfalse
 
@@ -41,6 +41,7 @@
 
 % fancyhdr asked for this
 \setlength{\headheight}{14pt}
+\setlength{\headsep}{19pt}
 
 \RequirePackage[pdftex]{graphicx}
 
