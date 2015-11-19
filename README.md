@@ -56,6 +56,13 @@ Lo scriptino dovrebbe prendere tutti i file `tex` nella cartella, cambiare `\dat
 
 # Log
 
+### 2015-11-19
+
+Improvvisa realizzazione del gruppo che quanto scritto durante il precedente incontro sia di fatto il documento dei requisiti, e non quello di visione del sistema.
+Il gruppo inizia quindi la stesura del documento di visione del sistema consultando documento simile del progetto **Curator Assistant**.
+Il gruppo constata che Artemio parla italiano meglio di Luigi e Michele, e trae le dovute conclusioni.
+Urge divisione del lavoro e successivo lavoro individuale per ultimare la stesura entro il 23/11 e presentarla quindi al professor Bottoni.
+
 ### 2015-11-17
 
 Appassionato inizio di stesura della proposta di progetto nel secondo laboratorio di Matematica.

@@ -9,8 +9,21 @@
 
 \section{Proposta di progetto} 
 
-Si vuole realizzare un sistema di Home Banking.
+Si vuole realizzare un sistema di Home Banking rivolto a persone fisiche (retail banking).
+Considerata la necessit\`a crescente di aumentare la trasparenza bancaria e i controlli fiscali automatizzati, il governo ha varato un pacchetto di leggi che impone alle societ\`a di credito italiane di adeguarsi allo standard OBP\footnote{Open Bank Project} gi\`a in vigore in Germania.
+In questo contesto di transizione, la nostra societ\`a si propone di progettare un'applicazione che faccia da front-end per una banca che abbia adottato lo standard OBP.
 
+Lo standard OBP \`e fondamentalmente un metodo standardizzato di accesso ai dati contenuti nel back-end della banca.
+Nel momento in cui si adegua allo standard, ogni banca mantiene inalterate la struttura del suo database e dei sistemi preesistenti atti alla gestione delle operazioni bancarie.
+Il software di OBP agisce quindi da \emph{wrapper} del sistema preesistente, mascherando completamente e rendendo inaccessibili le interfacce del backend, ed esponendo all'esterno unicamente le interfacce definite dallo standard.
+
+% TODO inserire diagramma architetturale di OBP
+
+La nostra applicazione permetter\`a ai clienti della banca di effettuare le normali operazioni bancarie da casa, accedendo al sito della banca tramite web browser.
+
+%--------------------------------------------------------------
+
+% TODO ripulire questa parte e spostare tutto nel file dei requisiti
 Per rafforzare i requisiti non funzionali (come i requisiti di sicurezza) si sceglie di rivolgere il sistema di Home Banking a persone fisiche (retail banking).
 
 Alcune delle funzionalit\`a che il sistema pu\`o offrire sono:
