@@ -1,4 +1,4 @@
-\documentclass[draft]{softeng}
+\documentclass[]{softeng}
 
 \title{Proposta di progetto Home Banking}
 \date{\today}
@@ -7,19 +7,63 @@
 
 \maketitle
 
-\section{Proposta di progetto} 
+\section{Visione del sistema}
 
 Si vuole realizzare un sistema di Home Banking rivolto a persone fisiche (retail banking).
-Considerata la necessit\`a crescente di aumentare la trasparenza bancaria e i controlli fiscali automatizzati, il governo ha varato un pacchetto di leggi che impone alle societ\`a di credito italiane di adeguarsi allo standard OBP\footnote{Open Bank Project} gi\`a in vigore in Germania.
+Considerata la necessit\`a crescente di aumentare la trasparenza bancaria e i controlli fiscali automatizzati, il governo ha varato\footnote{Quanto segue non rispecchia interamente la realt\`a.} un pacchetto di leggi che impone alle societ\`a di credito italiane di adeguarsi allo standard OBP\footnote{Open Bank Project: \url{https://openbankproject.com/}} gi\`a in uso in Germania e nel Regno Unito\footnote{\url{http://opensource.com/business/15/4/open-standard-api-banking}}.
 In questo contesto di transizione, la nostra societ\`a si propone di progettare un'applicazione che faccia da front-end per una banca che abbia adottato lo standard OBP.
 
 Lo standard OBP \`e fondamentalmente un metodo standardizzato di accesso ai dati contenuti nel back-end della banca.
 Nel momento in cui si adegua allo standard, ogni banca mantiene inalterate la struttura del suo database e dei sistemi preesistenti atti alla gestione delle operazioni bancarie.
 Il software di OBP agisce quindi da \emph{wrapper} del sistema preesistente, mascherando completamente e rendendo inaccessibili le interfacce del backend, ed esponendo all'esterno unicamente le interfacce definite dallo standard.
 
+\graphicspath{{Images/}}
+\begin{figure}[tp]
+	\centering
+	\includegraphics[width=\textwidth]{open_bank_project_architecture}
+	\caption{Architettura del software di Open Bank Project. \url{https://github.com/OpenBankProject/OBP-API/wiki/Open-Bank-Project-Architecture}}
+	\label{fig:open_bank_project_architecture}
+\end{figure}
 % TODO inserire diagramma architetturale di OBP
 
-La nostra applicazione permetter\`a ai clienti della banca di effettuare le normali operazioni bancarie da casa, accedendo al sito della banca tramite web browser.
+La nostra applicazione permetter\`a ai clienti di effettuare le normali operazioni bancarie da casa, accedendo al sito della banca tramite web browser.
+
+Il nostro sistema dovr\`a:
+\begin{enumerate}
+	\item Permettere la registrazione online di nuovi clienti.
+		La registrazione deve essere ultimata presso una filiale della banca.
+	\item Utilizzare lo standard TOTP\footnote{CIAO}.
+	\item Permettere all'utente di effettuare le seguenti operzioni:
+		\begin{enumerate}
+			\item visualizzare il saldo (contabile, disponibile e liquido)
+			\item visualizzare lo storico delle transazioni effettuate
+			\item gestire le proprie carte di credito e carte prepagate
+			\item disporre pagamenti di vario tipo (bonifici ordinari, bonifici SEPA, ricariche prepagate, ricariche telefoniche, pagamenti bollettini, etc)
+			\item gestire portafogli fondi, azioni, obbligazioni e titoli statali % TODO CHECK SYNTAX
+		\end{enumerate}
+	\item Permette di effettuare l'audit di sicurezza agli addetti della banca.
+	\item Notificare all'utente (tramite SMS e/o email) determinati eventi.
+\end{enumerate}
+
+Simuleremo la realizzazione del progetto seguendo lo Unified Process, producendo la documentazione richiesta da ogni iterazione e flusso di lavoro.
+L'implementazione del sistema non fa parte di questo progetto.
+
+\section{Documentazione}
+
+La documentazione che produrremo comprender\`a:
+\begin{enumerate}
+	\item Studio di fattibilit\`a e analisi del contesto.
+	\item Specifica dei requisiti e modello di business.
+	\item Documento di analisi dei rischi.
+	\item Bozza di contratto per il cliente (basata sulla specifica dei requisiti prodotta).
+	\item Analisi del sistema % TODO espandere
+	\item Analisi dei costi e pianificazione temporale.
+	\item Piano dei test.
+\end{enumerate}
+L'ordinamento dei documenti non \`e vincolante, ma \`e stato opportunamente scelto per i seguenti motivi:
+\begin{itemize}
+	\item L'analisi dei rischi precede la bozza di contratto perch\'e il sistema che intendiamo sviluppare ha forti requisiti di sicurezza, ed \`e opportuno iniziare l'analisi dei rischi nelle fasi iniziali del processo software.
+\end{itemize}
 
 %--------------------------------------------------------------
 
@@ -44,7 +88,7 @@ Alcune delle funzionalit\`a che il sistema pu\`o offrire sono:
 		\begin{enumerate}
 			\item Il numero di conto;
 			\item La password del conto;
-			\item Un dispositivo TOTP\footnote{Time-Based One Time Password - \href{https://tools.ietf.org/html/rfc6238}{RFC 6238}.} per effettuare operazioni sensibili.
+			\item Un dispositivo TOTP\footnote{Time-Based One Time Password, RFC 6238. \url{https://tools.ietf.org/html/rfc6238}} per effettuare operazioni sensibili.
 		\end{enumerate}
 	\item Un utente registrato pu\`o effettuare il login al sistema di Home Banking fornendo le informazioni di accesso (requisito TOT), in particolare deve inserire numero di conto e password del conto.
 	\item Un utente che ha effettuato l'accesso al sistema di Home Banking deve poter svolgere le seguenti operazioni senza fornire la One Time Password:

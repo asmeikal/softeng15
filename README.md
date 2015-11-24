@@ -56,6 +56,10 @@ Lo scriptino dovrebbe prendere tutti i file `tex` nella cartella, cambiare `\dat
 
 # Log
 
+### 2015-11-24
+
+Proposta di progetto quasi ultimata nel buco lasciato da Korner nel nostro tempo e nei nostri cuori.
+
 ### 2015-11-19
 
 Improvvisa realizzazione del gruppo che quanto scritto durante il precedente incontro sia di fatto il documento dei requisiti, e non quello di visione del sistema.
