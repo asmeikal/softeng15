@@ -56,6 +56,11 @@ Lo scriptino dovrebbe prendere tutti i file `tex` nella cartella, cambiare `\dat
 
 # Log
 
+### 2015-12-03
+
+L'1 dicembre inviamo a Bottoni la proposta, il 2 dicembre chiede chiarimenti riguardo la figura 1, il 3 dicembre scriviamo i chiarimenti e inviamo la nuova proposta.
+Bottoni risponde "bene così".
+
 ### 2015-11-24
 
 Proposta di progetto quasi ultimata nel buco lasciato da Korner nel nostro tempo e nei nostri cuori.

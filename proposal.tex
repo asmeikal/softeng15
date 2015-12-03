@@ -1,5 +1,8 @@
 \documentclass[]{softeng}
 
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{mybib}
+
 \title{Proposta di progetto Home Banking}
 \date{\today}
 
@@ -10,21 +13,31 @@
 \section{Visione del sistema}
 
 Si vuole realizzare un sistema di Home Banking rivolto a persone fisiche (retail banking).
-Considerata la necessit\`a crescente di aumentare la trasparenza bancaria e i controlli fiscali automatizzati, il governo ha varato\footnote{Quanto segue non rispecchia interamente la realt\`a.} un pacchetto di leggi che impone alle societ\`a di credito italiane di adeguarsi allo standard OBP\footnote{Open Bank Project: \url{https://openbankproject.com/}} gi\`a in uso in Germania e nel Regno Unito\footnote{\url{http://opensource.com/business/15/4/open-standard-api-banking}}.
+Considerata la necessit\`a crescente di aumentare la trasparenza bancaria e i controlli fiscali automatizzati, il governo ha varato\footnote{Quanto segue non rispecchia interamente la realt\`a.} un pacchetto di leggi che impone alle societ\`a di credito italiane di adeguarsi allo standard OBP \cite{obp} gi\`a in uso in Germania e nel Regno Unito \cite{obpuk}.
 In questo contesto di transizione, la nostra societ\`a si propone di progettare un'applicazione che faccia da front-end per una banca che abbia adottato lo standard OBP.
+La presenza di un'interfaccia unificata permetter\`a il \emph{deployment} del software presso pi\`u banche con minimo sforzo.
 
-Lo standard OBP \`e fondamentalmente un metodo standardizzato di accesso ai dati contenuti nel back-end della banca.
+OBP \`e fondamentalmente un metodo standardizzato di accesso ai dati contenuti nel back-end della banca.
 Nel momento in cui si adegua allo standard, ogni banca mantiene inalterate la struttura del suo database e dei sistemi preesistenti atti alla gestione delle operazioni bancarie.
-Il software di OBP agisce quindi da \emph{wrapper} del sistema preesistente, mascherando completamente e rendendo inaccessibili le interfacce del backend, ed esponendo all'esterno unicamente le interfacce definite dallo standard.
+Il software di OBP agisce quindi da \emph{wrapper} del sistema preesistente, mascherando completamente e rendendo inaccessibili le interfacce del back-end, ed esponendo all'esterno unicamente le interfacce definite dallo standard.
+Poich\'e l'introduzione del software OBP render\`a obsoleto eventuale software di Home Banking preesistente.
 
 \graphicspath{{Images/}}
 \begin{figure}[tp]
 	\centering
 	\includegraphics[width=\textwidth]{open_bank_project_architecture}
-	\caption{Architettura del software di Open Bank Project. \url{https://github.com/OpenBankProject/OBP-API/wiki/Open-Bank-Project-Architecture}}
+	\caption{Architettura del software di Open Bank Project\cite{obparch}.}
 	\label{fig:open_bank_project_architecture}
 \end{figure}
-% TODO inserire diagramma architetturale di OBP
+
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=\textwidth]{struttura_progetto}
+	\caption{Proposta architetturale ad alto livello della struttura del progetto.}
+	\label{fig:project_structure}
+\end{figure}
+
+In figura \ref{fig:project_structure} \`e rappresentata informalmente la distribuzione di responsabilit\`a all'interno di una generica banca che adotti la nostra soluzione software.
 
 La nostra applicazione permetter\`a ai clienti di effettuare le normali operazioni bancarie da casa, accedendo al sito della banca tramite web browser.
 
@@ -32,7 +45,7 @@ Il nostro sistema dovr\`a:
 \begin{enumerate}
 	\item Permettere la registrazione online di nuovi clienti.
 		La registrazione deve essere ultimata presso una filiale della banca.
-	\item Utilizzare lo standard TOTP\footnote{CIAO}.
+	\item Utilizzare lo standard TOTP \cite{totprfc}.
 	\item Permettere all'utente di effettuare le seguenti operzioni:
 		\begin{enumerate}
 			\item visualizzare il saldo (contabile, disponibile e liquido)
@@ -46,7 +59,7 @@ Il nostro sistema dovr\`a:
 \end{enumerate}
 
 Simuleremo la realizzazione del progetto seguendo lo Unified Process, producendo la documentazione richiesta da ogni iterazione e flusso di lavoro.
-L'implementazione del sistema non fa parte di questo progetto.
+L'implementazione del sistema non \`e coperta dal progetto.
 
 \section{Documentazione}
 
@@ -56,14 +69,15 @@ La documentazione che produrremo comprender\`a:
 	\item Specifica dei requisiti e modello di business.
 	\item Documento di analisi dei rischi.
 	\item Bozza di contratto per il cliente (basata sulla specifica dei requisiti prodotta).
-	\item Analisi del sistema % TODO espandere
+	\item Analisi e progetto del sistema secondo le modalit\`a richieste (schede CRC, analisi nomi/verbi, classi di analisi e classi di progetto, casi d'uso).
 	\item Analisi dei costi e pianificazione temporale.
 	\item Piano dei test.
 \end{enumerate}
-L'ordinamento dei documenti non \`e vincolante, ma \`e stato opportunamente scelto per i seguenti motivi:
-\begin{itemize}
-	\item L'analisi dei rischi precede la bozza di contratto perch\'e il sistema che intendiamo sviluppare ha forti requisiti di sicurezza, ed \`e opportuno iniziare l'analisi dei rischi nelle fasi iniziali del processo software.
-\end{itemize}
+L'ordinamento dei documenti non \`e vincolante, ma \`e stato opportunamente scelto.
+In particolare l'analisi dei rischi verr\`a fatta prima di redigere la bozza di contratto, poich\'e il sistema che intendiamo sviluppare ha forti requisiti di sicurezza, ed \`e opportuno conoscere i rischi gi\`a nelle fasi iniziali del processo software.
+
+\renewcommand{\refname}{Riferimenti}
+\printbibliography
 
 \end{document}
 
