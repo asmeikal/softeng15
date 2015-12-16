@@ -1,8 +1,12 @@
 Resources/*
 *
+*.*
 !Makefile
 !*.tex
 !*.cls
 !*.sty
 !*.sh
+!Images/
+!Images/*.svg
+
 
