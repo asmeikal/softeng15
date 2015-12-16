@@ -14,7 +14,7 @@ all: $(TARGETS) $(IMAGES)
 
 # Regola per compilare i singoli file .tex
 $(TARGETS): $(TARGETS:.pdf=.tex)
-	latexmk -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make $(CURR_DIR)/$(@F:.pdf=.tex)
+	latexmk -bibtex -pdf -pdflatex="pdflatex -interaction=nonstopmode" -use-make $(CURR_DIR)/$(@F:.pdf=.tex)
 
 # Regola per convertire svg in eps
 $(IMAGES): $(IMAGES:.eps=.svg)
