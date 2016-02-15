@@ -84,8 +84,8 @@ Il prossimo incontro è per martedì 23 alle 16 e qualcosa, per condividere quel
 
 Link utili:
 
-- [vpgallery][Esempi diagrammi visual paradigm].
-- [documentazione_progetto][Documentazione da presentare].
+- [vpgallery](Esempi diagrammi visual paradigm).
+- [documentazione_progetto](Documentazione da presentare).
 
 ### 2015-12-03
 
