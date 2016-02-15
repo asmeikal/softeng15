@@ -56,6 +56,37 @@ Lo scriptino dovrebbe prendere tutti i file `tex` nella cartella, cambiare `\dat
 
 # Log
 
+### 2016-02-15
+
+Abbiamo individuato i documenti che nasceranno dall'inception e che probabilmente ci porteremo dietro durante il progetto:
+
+- Piano di progetto
+- Rischi
+- Requisiti
+
+Gli altri documenti della fase di Inception non verranno aggiornati al termine della prima fase.
+
+I documenti da produrre durante l'inception sono:
+
+1. Analisi del contesto e studio di fattibilità. L'idea è quella di documentarci approfonditamente sul dominio applicativo, concentrandoci su quanto scritto nella proposta di progetto (audit di sicurezza, portafogli fondi, azioni, etc.). Servirà da riferimento nelle fasi future, è bene che sia un documento completo.
+2. Modello di business, con diagrammi di business. Va scritto partendo dall'analisi del contesto.
+3. Requisiti e Rischi:
+   - glossario dei requisiti chiave.
+   - i rischi maggiori sembrano essere sicurezza del sistema e correttezza del software. Individuare anche rischi minori.
+4. Piano di progetto: analisi dei costi e pianificazione temporale.
+
+L'ordine dei documenti indica le dipendenze che pensiamo ci siano.
+
+Proponiamo di iniziare dall'Analisi del contesto, seguendo quanto scritto nella proposta di progetto.
+In particolare, dobbiamo chiarire i concetti nel punto 3 della sezione 1 (visione del sistema).
+
+Il prossimo incontro è per martedì 23 alle 16 e qualcosa, per condividere quello che abbiamo scoperto sull'Analisi del contesto.
+
+Link utili:
+
+- [vpgallery][Esempi diagrammi visual paradigm].
+- [documentazione_progetto][Documentazione da presentare].
+
 ### 2015-12-03
 
 L'1 dicembre inviamo a Bottoni la proposta, il 2 dicembre chiede chiarimenti riguardo la figura 1, il 3 dicembre scriviamo i chiarimenti e inviamo la nuova proposta.
@@ -114,4 +145,5 @@ Sono comunque poco importanti perché il centro del progetto deve essere il sito
 [open_bank_project]: https://openbankproject.com/
 [ibm_business_modeling_practices]: http://www.ibm.com/developerworks/rational/library/content/RationalEdge/aug04/5634.html
 [ibm_business_modeling_uml]: http://www.ibm.com/developerworks/rational/library/360.html
-
+[vp_gallery]:    http://www.visual-paradigm.com/VPGallery/index.html
+[documentazione_progetto]: http://wwwusers.di.uniroma1.it/~ingsoft1/Lezioni2008-2009/versioniPDF/DocumentazioneProgetto.pdf
