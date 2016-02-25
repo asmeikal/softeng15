@@ -3,6 +3,7 @@ Resources/*
 *.*
 !Makefile
 !*.tex
+!*.bib
 !*.cls
 !*.sty
 !*.sh

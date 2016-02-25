@@ -32,6 +32,8 @@
 \RequirePackage{titling}
 \RequirePackage{fancyhdr}
 
+\author{Artemio Ageev \and Luigi Iandolo \and Michele Laurenti}
+
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\leftmark}
@@ -44,8 +46,6 @@
 \setlength{\headsep}{19pt}
 
 \RequirePackage[pdftex]{graphicx}
-
-\author{Artemio Ageev \and Luigi Iandolo \and Michele Laurenti}
 
 \endinput
 
