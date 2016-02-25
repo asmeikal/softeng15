@@ -3,9 +3,8 @@
 \usepackage[backend=bibtex]{biblatex}
 \bibliography{softeng}
 
-\author{Artemio Ageev \and Luigi Iandolo \and Michele Laurenti}
-
 \title{Proposta di progetto Home Banking}
+\author{Artemio Ageev \and Luigi Iandolo \and Michele Laurenti}
 \date{\today}
 
 \begin{document}
@@ -25,19 +24,19 @@ Il software di OBP agisce quindi da \emph{wrapper} del sistema preesistente, mas
 %Poich\'e l'introduzione del software OBP render\`a obsoleto eventuale software di Home Banking preesistente.
 
 \graphicspath{{Images/}}
-\begin{figure}[tp]
+\begin{figure*}[tp]
 	\centering
 	\includegraphics[width=\textwidth]{open_bank_project_architecture}
 	\caption{Architettura del software di Open Bank Project\cite{obparch}.}
 	\label{fig:open_bank_project_architecture}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[hbt]
+\begin{figure*}[hbt]
 	\centering
 	\includegraphics[width=\textwidth]{architettura_sistema}
 	\caption{Proposta architetturale ad alto livello della struttura del progetto.}
 	\label{fig:project_structure}
-\end{figure}
+\end{figure*}
 
 In figura \ref{fig:project_structure} \`e rappresentata informalmente la distribuzione di responsabilit\`a all'interno di una generica banca che adotti la nostra soluzione software.
 
@@ -75,7 +74,7 @@ La documentazione che produrremo comprender\`a:
 	\item Analisi dei costi e pianificazione temporale.
 	\item Piano dei test.
 \end{enumerate}
-L'ordinamento dei documenti non \`e vincolante, ma \`e stato opportunamente scelto.
+L'ordinamento dei documenti non \`e vincolante, ma \`e stato comunque scelto coscientemente.
 In particolare l'analisi dei rischi verr\`a fatta prima di redigere la bozza di contratto, poich\'e il sistema che intendiamo sviluppare ha forti requisiti di sicurezza, ed \`e opportuno conoscere i rischi gi\`a nelle fasi iniziali del processo software.
 
 \renewcommand{\refname}{Riferimenti}

@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{softeng}[2015/11/17 Classe per il progetto di ingegneria del software]
+\ProvidesClass{softeng}[2016/2/25 Classe per il progetto di ingegneria del software]
 
 \newif\if@utfdocument %\@utfdocumentfalse
 
@@ -15,7 +15,7 @@
 \ProcessOptions\relax
 % done processing options, do what you want
 
-\LoadClass[11pt,a4paper]{article}
+\LoadClass[11pt,a4paper,twocolumn]{article}
 
 % optional inclusion of utf8 input encoding package
 \if@utfdocument
@@ -46,6 +46,10 @@
 \setlength{\headsep}{19pt}
 
 \RequirePackage[pdftex]{graphicx}
+
+\RequirePackage{titling}
+
+\setlength{\droptitle}{-8em}
 
 \endinput
 

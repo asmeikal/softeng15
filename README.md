@@ -1,4 +1,4 @@
-
+﻿
 Questo file non è un readme.
 
 # Struttura del file
@@ -55,6 +55,16 @@ Il `Makefile` compila usando `latexmk`.
 Lo scriptino dovrebbe prendere tutti i file `tex` nella cartella, cambiare `\date{\today}` alla data odierna, e schiaffarli tutti in una cartella `Iterations/N` incrementando `N` a ogni botta.
 
 # Log
+
+### 2016-02-25
+
+Iniziata stesura del documento di analisi del contesto.
+
+- Riguardo il **portafoglio fondi** Gigi propone di non consentire l'acquisto di nuovi titoli, argomento complesso e che pertiene pi&ugrave; al trading, ma solo di visionare i titoli che si posseggono, di conoscerne l'andamento (ottenuto da dati che assumiamo la banca abbia), ed eventualmente di venderli.
+- Artemio propone di permettere agli utenti di effettuare **bidding** dei conti e delle carte, ossia di richiedere alla banca di aprire un conto o di ottenere una carta a certe condizioni, che la banca pu&ograve; valutare ed eventualmente accettare.
+- &Egrave; bene che il sistema sia personalizzabile: gli addetti della banca devono poter inserire nuove offerte di conti o carte, magari indirizzandole a utenti che rispecchiano certe caratteristiche.
+- L'audit di sicurezza riguarda la possibilit&agrave; dell'utente di controllare gli ultimi accessi e le ultime operazioni.
+- La Banca d'Italia deve avere un accesso preferenziale ai dati della banca e degli utenti.
 
 ### 2016-02-15
 
