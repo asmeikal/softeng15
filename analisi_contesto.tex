@@ -1,17 +1,50 @@
-\documentclass[]{softeng}
+\documentclass[10pt]{softeng} % Document font size and equations flushed left
 
-\usepackage[backend=bibtex]{biblatex}
-\bibliography{softeng}
+\usepackage[italian]{babel} % Specify a different language here - english by default
 
-\pretitle{\begin{center}\Large Home Banking \\ \Huge}
-\title{Analisi del contesto e studio di fattibilit\`a}
-\posttitle{\\ \large Inception -- I iterazione\end{center}}
-\author{Artemio Ageev \and Luigi Iandolo \and Michele Laurenti}
-\date{\today}
+%----------------------------------------------------------------------------------------
+%	COLUMNS
+%----------------------------------------------------------------------------------------
+
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+
+%----------------------------------------------------------------------------------------
+%	COLORS
+%----------------------------------------------------------------------------------------
+
+\definecolor{color1}{RGB}{0,0,60} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,0} % Color of the boxes behind the abstract and headings
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%----------------------------------------------------------------------------------------
+
+\usepackage{hyperref} % Required for hyperlinks
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\ProjectInfo{Progetto di Ingegneria del Software: Home Banking}
+\Phase{Inception - I iterazione} % Additional notes (e.g. copyright, DOI, review/research article)
+
+\DocumentTitle{Analisi del contesto e studio di fattibilit\`a} % Article title
+
+\Authors{Artemio Ageev, Luigi Iandolo, Michele Laurenti} % Authors
+
+%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-\maketitle
+\flushbottom % Makes all text pages the same height
+
+\maketitle % Print the title and abstract box
+
+\tableofcontents % Print the contents section
+
+\thispagestyle{empty} % Removes page numbering from the first page
 
 % intenzione progetto, collocazione
 
@@ -72,7 +105,11 @@ La Banca d'Italia si occupa di esercitare ``l'attivit\`a di vigilanza sulle banc
 
 Riteniamo sia fattibile, con le limitazioni indicate, realizzare un sistema di Home Banking all'avanguardia, manutenibile, espandibile e generale.
 
-\renewcommand{\refname}{Riferimenti}
-\printbibliography
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+\phantomsection
+\bibliographystyle{plain}
+\bibliography{softeng}
 
 \end{document}
