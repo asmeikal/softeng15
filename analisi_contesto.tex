@@ -1,6 +1,12 @@
+%----------------------------------------------------------------------------------------
+% Analisi del contesto
+%----------------------------------------------------------------------------------------
+
 \documentclass[10pt]{softeng} % Document font size and equations flushed left
 
 \usepackage[italian]{babel} % Specify a different language here - english by default
+\usepackage{biblatex}
+\addbibresource{softeng.bib}
 
 %----------------------------------------------------------------------------------------
 %	COLUMNS
@@ -108,8 +114,30 @@ Riteniamo sia fattibile, con le limitazioni indicate, realizzare un sistema di H
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
-\phantomsection
-\bibliographystyle{plain}
-\bibliography{softeng}
+
+\begin{figure*}[hbp]
+	\begin{minipage}{\textwidth}
+		\phantomsection
+		\printbibliography
+	\end{minipage}
+\end{figure*}
+
+%----------------------------------------------------------------------------------------
+%	FIGURES
+%----------------------------------------------------------------------------------------
+
+\begin{figure*}[hbt]
+	\centering
+	\includegraphics[width=\textheight, angle=90]{Images/Authentication.eps}
+	\caption{Business case: procedura di autenticazione.}
+	\label{fig:business_case_authentication}
+\end{figure*}
+
+\begin{figure*}[hbt]
+	\centering
+	\includegraphics[width=\textheight, angle=90]{Images/Home_Banking_registration.eps}
+	\caption{Business case: procedura di autenticazione.}
+	\label{fig:business_case_authentication}
+\end{figure*}
 
 \end{document}
