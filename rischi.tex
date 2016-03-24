@@ -4,58 +4,19 @@
 
 \documentclass[10pt]{softeng} % Document font size and equations flushed left
 
-\usepackage{xtab}
-\usepackage[italian]{babel} % Specify a different language here - english by default
-\usepackage{biblatex}
-\addbibresource{softeng.bib}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.5}
-\usepgfplotslibrary{fillbetween}
-\newcommand{\code}[1]{\texttt{#1}}
-
-%----------------------------------------------------------------------------------------
-%	COLUMNS
-%----------------------------------------------------------------------------------------
-
-\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
-\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
-
-%----------------------------------------------------------------------------------------
-%	COLORS
-%----------------------------------------------------------------------------------------
-
-\definecolor{color1}{RGB}{0,0,60} % Color of the article title and sections
-\definecolor{color2}{RGB}{0,20,0} % Color of the boxes behind the abstract and headings
-
-%----------------------------------------------------------------------------------------
-%	HYPERLINKS
-%----------------------------------------------------------------------------------------
-
-\usepackage{hyperref} % Required for hyperlinks
-\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
-
 %----------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
 %----------------------------------------------------------------------------------------
 
-\ProjectInfo{Progetto di Ingegneria del Software: Home Banking}
 \Phase{Inception - I iterazione} % Additional notes (e.g. copyright, DOI, review/research article)
 
 \DocumentTitle{Valutazione dei rischi} % Article title
-
-\Authors{Artem Ageev, Luigi Iandolo, Michele Laurenti} % Authors
 
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 
-\flushbottom % Makes all text pages the same height
-
-\maketitle % Print the title and abstract box
-
-\tableofcontents % Print the contents section
-
-\thispagestyle{empty} % Removes page numbering from the first page
+\startofdocument{}
 
 \section{Rapporto fra rischi e progetto}
 
@@ -416,29 +377,6 @@ Durante lo sviluppo terremo traccia dell'evoluzione dei rischi, monitorando in p
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
-%\begin{figure*}[hbp]
-%	\begin{minipage}{\textwidth}
-%		\phantomsection
-%		\printbibliography
-%	\end{minipage}
-%\end{figure*}
-
-%----------------------------------------------------------------------------------------
-%	FIGURES
-%----------------------------------------------------------------------------------------
-
-%\begin{figure*}[hbt]
-%	\centering
-%	\includegraphics[width=\textheight, angle=90]{Images/Authentication.eps}
-%	\caption{Business case: procedura di autenticazione.}
-%	\label{fig:business_case_authentication}
-%\end{figure*}
-%
-%\begin{figure*}[hbt]
-%	\centering
-%	\includegraphics[width=\textheight, angle=90]{Images/Home_Banking_registration.eps}
-%	\caption{Business case: procedura di autenticazione.}
-%	\label{fig:business_case_authentication}
-%\end{figure*}
+%\printcustombib{}
 
 \end{document}

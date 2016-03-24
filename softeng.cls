@@ -197,3 +197,61 @@ justification=raggedright]{caption}
 \addcontentsline{toc}{section}{\refname}%
 \oldbibliography{#1}%
 \setlength\itemsep{0pt}}%
+
+%----------------------------------------------------------------------------------------
+%	COLORS
+%----------------------------------------------------------------------------------------
+
+\definecolor{color1}{RGB}{0,0,60} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,0} % Color of the boxes behind the abstract and headings
+
+%----------------------------------------------------------------------------------------
+%	COLUMNS
+%----------------------------------------------------------------------------------------
+
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+
+%----------------------------------------------------------------------------------------
+%	HYPERLINKS
+%----------------------------------------------------------------------------------------
+
+\RequirePackage{hyperref} % Required for hyperlinks
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
+
+%----------------------------------------------------------------------------------------
+%	PROJECT STUFF
+%----------------------------------------------------------------------------------------
+
+\RequirePackage[italian]{babel} % Specify a different language here - english by default
+\RequirePackage{biblatex}
+\addbibresource{softeng.bib}
+
+\RequirePackage{xtab}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.5}
+\usepgfplotslibrary{fillbetween}
+
+\ProjectInfo{Progetto di Ingegneria del Software: Home Banking}
+\Authors{Artem Ageev, Luigi Iandolo, Michele Laurenti} % Authors
+
+\newcommand{\startofdocument}{%
+\flushbottom % Makes all text pages the same height
+%
+\maketitle % Print the title and abstract box
+%
+\tableofcontents % Print the contents section
+%
+\thispagestyle{empty} % Removes page numbering from the first page
+}
+
+\newcommand{\printcustombib}{%
+\begin{figure}[!hb]
+%	\begin{minipage}{\textwidth}
+		\phantomsection
+		\printbibliography
+%	\end{minipage}
+\end{figure}
+}
+
+\newcommand{\code}[1]{\texttt{#1}}

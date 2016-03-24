@@ -4,62 +4,19 @@
 
 \documentclass[10pt]{softeng} % Document font size and equations flushed left
 
-\usepackage[italian]{babel} % Specify a different language here - english by default
-\usepackage{biblatex}
-\addbibresource{softeng.bib}
-
-%----------------------------------------------------------------------------------------
-%	COLUMNS
-%----------------------------------------------------------------------------------------
-
-\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
-\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
-
-%----------------------------------------------------------------------------------------
-%	COLORS
-%----------------------------------------------------------------------------------------
-
-\definecolor{color1}{RGB}{0,0,180} % Color of the article title and sections
-\definecolor{color2}{RGB}{0,20,0} % Color of the boxes behind the abstract and headings
-
-%----------------------------------------------------------------------------------------
-%	HYPERLINKS
-%----------------------------------------------------------------------------------------
-
-\usepackage{hyperref} % Required for hyperlinks
-\hypersetup{hidelinks,%
-	colorlinks,%
-	breaklinks=true,%
-	urlcolor=color2,%
-	citecolor=color1,%
-	linkcolor=color1,%
-	bookmarksopen=false,%
-	pdftitle={Title},%
-	pdfauthor={Author}%
-}
-
 %----------------------------------------------------------------------------------------
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\ProjectInfo{Progetto di Ingegneria del software: Home Banking}
 \Phase{Inception - I iterazione}
 
 \DocumentTitle{Requisiti di progetto} % Document title
-
-\Authors{Artemio Ageev, Luigi Iandolo, Michele Laurenti} % Authors
 
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 
-\flushbottom % Makes all text pages the same height
-
-\maketitle % Print the title and abstract box
-
-\tableofcontents % Print the contents section
-
-\thispagestyle{empty} % Removes page numbering from the first page
+\startofdocument{}
 
 \input{glossario}
 
@@ -163,11 +120,7 @@ Alcune delle funzionalit\`a che il sistema pu\`o offrire sono:
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
-\begin{figure*}[hbp]
-	\begin{minipage}{\textwidth}
-		\phantomsection
-		\printbibliography
-	\end{minipage}
-\end{figure*}
+\nocite{banca_italia}
+\printcustombib{}
 
 \end{document}
