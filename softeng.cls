@@ -254,4 +254,13 @@ justification=raggedright]{caption}
 \end{figure*}
 }
 
+\newcommand{\printcustombibsmall}{%
+\begin{figure}[!hb]
+%	\begin{minipage}{\textwidth}
+		\phantomsection
+		\printbibliography
+%	\end{minipage}
+\end{figure}
+}
+
 \newcommand{\code}[1]{\texttt{#1}}
