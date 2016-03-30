@@ -114,261 +114,212 @@ Seguendo un approccio \emph{RMMM} individuiamo dei piani di \emph{\cellcolor{col
 
 \subsection{\code{RIS\_1} - Ritardo nella \emph{delivery} del progetto}
 
-\begin{xtabular}{l|l|l}
-\toprule
-\multicolumn{3}{c}{\cellcolor{color2!10}\color{color1}\bf Ritardo nella \emph{delivery} del progetto} \\
-\midrule
-ID & Probabilit\`a & Impatto \\
-$\code{RIS\_DELAY\_MP\_HD\_1}$ & 50\% & alto \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Descrizione} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+\begin{ptable}{3}
+\ptitlerow{\bf Ritardo nella \emph{delivery} del progetto}
+\pcells{ID & Probabilit\`a & Impatto}
+\pcells{$\code{RIS\_DELAY\_MP\_HD\_1}$ & 50\% & alto}
+\pline
+\ptitlerow{Descrizione}
+\prow{
 Il progetto si colloca in un ambiente con \emph{internet time}, e in particolare in una situazione verosimilmente \emph{first comer takes all}: presentare un prodotto in un mercato ancora vuoto porter\`a a guadagni molto pi\`u elevati rispetto al presentarlo in un mercato non vuoto.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Mitigation} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Mitigation}
+\prow{
 Stabilire piano di progetto accurato e insieme di requisiti gestibile per consegnare un prodotto competitivo in tempi brevi.
 Utilizzare approccio iterativo nell'implementazione per produrre iterazioni successive di software via via pi\`u complete ma tutte singolarmente vendibili.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Monitoring} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Monitoring}
+\prow{
 Controllare periodicamente stato sviluppo di aziende concorrenti, se presenti.
 Monitorare costantemente fattibilit\`a del progetto, e individuare \emph{bottleneck} di sviluppo in anticipo, ove possibile.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Management} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Management}
+\prow{
 Rilasciare prodotto dell'ultima iterazione di sviluppo, se presente.
-} \\
-\bottomrule
-\end{xtabular}
+}
+\end{ptable}
 
 \subsection{\code{RIS\_2} - Funzionalit\`a non sufficienti per clienti}
 
-\begin{xtabular}{l|l|l}
-\toprule
-\multicolumn{3}{c}{\cellcolor{color2!10}\color{color1}\bf Funzionalit\`a non sufficienti per clienti} \\
-\midrule
-ID & Probabilit\`a & Impatto \\
-$\code{RIS\_REQINS\_MP\_ED\_2}$ & 50\% & massimo \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Descrizione} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+\begin{ptable}{3}
+\ptitlerow{\bf Funzionalit\`a non sufficienti per clienti}
+\pcells{ID & Probabilit\`a & Impatto}
+\pcells{$\code{RIS\_REQINS\_MP\_ED\_2}$ & 50\% & massimo}
+\pline
+\ptitlerow{Descrizione}
+\prow{
 Il progetto ha come target un insieme eterogeneo di enti bancari, con necessit\`a eterogenee dal punto di vista dell'Home Banking.
 Se le funzionalit\`a del software prodotto non soddisferanno le necessit\`a di un numero sufficiente di enti bancari il software non avr\`a mercato, con ovvie e pesanti perdite economiche.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Mitigation} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Mitigation}
+\prow{
 Lavorare costantemente sui requisiti, mantenendoli flessibili.
 Interagire attivamente con possibili clienti per mantenere visione realistica dei requisiti effettivi.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Monitoring} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Monitoring}
+\prow{
 Colloqui periodici con personale di enti bancari per assicurare non divergenza fra requisiti raccolti e necessit\`a dei clienti.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Management} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Management}
+\prow{
 Reiterare fasi di sviluppo per implementare nuovi requisiti.
-} \\
-\bottomrule
-\end{xtabular}
+}
+\end{ptable}
 
 \subsection{\code{RIS\_3} - Problematiche con strumenti software}
 
-\begin{xtabular}{l|l|l}
-\toprule
-\multicolumn{3}{c}{\cellcolor{color2!10}\color{color1}\bf Problematiche con strumenti software} \\
-\midrule
-ID & Probabilit\`a & Impatto \\
-$\code{RIS\_PRSOFT\_LP\_LD\_3}$ & 30\% & basso \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Descrizione} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+\begin{ptable}{3}
+\ptitlerow{\bf Problematiche con strumenti software}
+\pcells{ID & Probabilit\`a & Impatto}
+\pcells{$\code{RIS\_PRSOFT\_LP\_LD\_3}$ & 30\% & basso}
+\pline
+\ptitlerow{Descrizione}
+\prow{
 Il software prodotto dovr\`a utilizzare diversi componenti di terze parti per accelerare lo sviluppo e aumentare le garanzie di sicurezza.
 Problematiche di questi strumenti software potrebbero inficiare lo sviluppo del progetto.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Mitigation} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Mitigation}
+\prow{
 Utilizzare strumenti software di comprovata affidabilit\`a.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Monitoring} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Monitoring}
+\prow{
 Mantenere contatti regolari con produttori del software utilizzato.
 Seguire fonti di informazione specializzate dell'ambiente.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Management} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Management}
+\prow{
 Attendere soluzione problematiche software, o reimplementare progetto con strumenti software alternativi.
-} \\
-\bottomrule
-\end{xtabular}
+}
+\end{ptable}
 
 \subsection{\code{RIS\_4} - Complessit\`a progetto sottovalutata}
 
-\begin{xtabular}{l|l|l}
-\toprule
-\multicolumn{3}{c}{\cellcolor{color2!10}\color{color1}\bf Complessit\`a progetto sottovalutata} \\
-\midrule
-ID & Probabilit\`a & Impatto \\
-$\code{RIS\_COMPLX\_LP\_HD\_4}$ & 20\% & alto \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Descrizione} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+\begin{ptable}{3}
+\ptitlerow{\bf Complessit\`a progetto sottovalutata}
+\pcells{ID & Probabilit\`a & Impatto}
+\pcells{$\code{RIS\_COMPLX\_LP\_HD\_4}$ & 20\% & alto}
+\pline
+\ptitlerow{Descrizione}
+\prow{
 Sottostimare la complessit\`a del software da realizzare pu\`o essere causa di rallentamenti nello sviluppo, errori nell'analisi dei requisiti o di un prodotto finale non performante.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Mitigation} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Mitigation}
+\prow{
 Aumentare ragionevolmente stime in caso di incertezza.
 Prestare particolare attenzione alle fasi iniziali di analisi.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Monitoring} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Monitoring}
+\prow{
 Realizzare prototipi gi\`a durante l'analisi per avere una misura reale della fattibilit\`a del sistema.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Management} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Management}
+\prow{
 Ridimensionare le sottostime, rieseguire lavoro necessario.
-} \\
-\bottomrule
-\end{xtabular}
+}
+\end{ptable}
 
 \subsection{\code{RIS\_5} - Normative legali violate}
 
-\begin{xtabular}{l|l|l}
-\toprule
-\multicolumn{3}{c}{\cellcolor{color2!10}\color{color1}\bf Normative legali violate} \\
-\midrule
-ID & Probabilit\`a & Impatto \\
-$\code{RIS\_LEGAL\_MP\_HD\_5}$ & 40\% & massimo \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Descrizione} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+\begin{ptable}{3}
+\ptitlerow{\bf Normative legali violate}
+\pcells{ID & Probabilit\`a & Impatto}
+\pcells{$\code{RIS\_LEGAL\_MP\_HD\_5}$ & 40\% & massimo}
+\pline
+\ptitlerow{Descrizione}
+\prow{
 Il software di Home Banking prodotto deve rispettare le normative vigenti, tanto dal lato utenti della banca quanto dal lato ente bancario.
 Violare le normative avrebbe conseguenze penali per gli sviluppatori del software.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Mitigation} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Mitigation}
+\prow{
 Mantenere contatti con esperti del settore per conoscere quali normative vadano rispettate.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Monitoring} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Monitoring}
+\prow{
 Mantenere contatti con esperti del settore per verificare legalit\`a del software prodotto.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Management} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Management}
+\prow{
 Implementare soluzioni per rimuovere le violazioni delle normative.
-} \\
-\bottomrule
-\end{xtabular}
+}
+\end{ptable}
 
 \subsection{\code{RIS\_6} - Violazione sicurezza durante sviluppo}
 
-\begin{xtabular}{l|l|l}
-\toprule
-\multicolumn{3}{c}{\cellcolor{color2!10}\color{color1}\bf Violazione sicurezza durante sviluppo} \\
-\midrule
-ID & Probabilit\`a & Impatto \\
-$\code{RIS\_DEVSEC\_LP\_HD\_6}$ & 20\% & alto \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Descrizione} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+\begin{ptable}{3}
+\ptitlerow{\bf Violazione sicurezza durante sviluppo}
+\pcells{ID & Probabilit\`a & Impatto}
+\pcells{$\code{RIS\_DEVSEC\_LP\_HD\_6}$ & 20\% & alto}
+\pline
+\ptitlerow{Descrizione}
+\prow{
 I computer e i server su cui il software verr\`a sviluppato potrebbero essere bersaglio di attacchi informatici volti a ottenere informazioni di sicurezza e/o a inserire vulnerabilit\`a nel software.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Mitigation} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Mitigation}
+\prow{
 Investire risorse per individuare e prevenire falle di sicurezza nei computer e nel Version Control System utilizzati in fase di sviluppo.
 Effettuare regolarmente back-up del codice sorgente su supporti \emph{off the grid}.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Monitoring} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Monitoring}
+\prow{
 A sviluppo iniziato investire risorse per tenere sotto controllo accessi ai computer e al Version Control System, e l'integrit\`a dei file ivi presenti.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Management} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Management}
+\prow{
 In caso di software infettato effettuare un \emph{roll-back} tramite il Version Control System utilizzato all'ultima versione non compromessa, effettuare controlli su software rilasciato e rimuovere software infetto dalla circolazione.
 
 In caso di \emph{leakage} di informazioni riservate sostituibili (chiavi private, certificati, etc) effettuare la sostituzione ove possibile.
-} \\
-\bottomrule
-\end{xtabular}
+}
+\end{ptable}
 
 \subsection{\code{RIS\_7} - Software presenta falle di sicurezza}
 
-\begin{xtabular}{l|l|l}
-\toprule
-\multicolumn{3}{c}{\cellcolor{color2!10}\color{color1}\bf Software presenta falle di sicurezza} \\
-\midrule
-ID & Probabilit\`a & Impatto \\
-$\code{RIS\_SECUR\_MP\_ED\_7}$ & 50\% & massimo \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Descrizione} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+\begin{ptable}{3}
+\ptitlerow{\bf Software presenta falle di sicurezza}
+\pcells{ID & Probabilit\`a & Impatto}
+\pcells{$\code{RIS\_SECUR\_MP\_ED\_7}$ & 50\% & massimo}
+\pline
+\ptitlerow{Descrizione}
+\prow{
 Sviluppare software sicuro \emph{ex-novo} \`e notoriamente difficile e facilmente soggetto ad errori.
 Particolare attenzione deve essere dedicata affinch\'e il software prodotto non contenga falle di sicurezza.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Mitigation} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Mitigation}
+\prow{
 Adottare pratiche di sviluppo difensivo.
 Riutilizzare moduli e componenti software di comprovata affidabilit\`a e gi\`a soggetti a test esaustivi per massimizzare la stratificazione e disaccoppiare la struttura del software.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Monitoring} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Monitoring}
+\prow{
 Investire risorse per cercare vulnerabilit\`a nel software durante lo sviluppo.
-} \\
-\midrule
-\multicolumn{3}{c}{\cellcolor{color2!10}Management} \\
-\midrule
-\multicolumn{3}{p{\columnwidth}}{
+}
+\pline
+\ptitlerow{Management}
+\prow{
 Risolvere la vulnerabilit\`a, aggiornare software gi\`a \emph{deployed}.
-} \\
-\bottomrule
-\end{xtabular}
+}
+\end{ptable}
 
 \section{Evoluzione dei rischi}
 

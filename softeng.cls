@@ -264,3 +264,21 @@ justification=raggedright]{caption}
 }
 
 \newcommand{\code}[1]{\texttt{#1}}
+
+\newenvironment{ptable}[1]{
+\newcommand{\pcells}[1]{##1 \\}
+\newcommand{\pline}{\midrule}
+\newcommand{\prow}[1]{
+\multicolumn{#1}{p{\columnwidth}}{##1} \\
+}
+\newcommand{\ptitlerow}[1]{
+\multicolumn{#1}{c}{\cellcolor{color2!10}##1} \\
+\pline
+}
+\begin{xtabular}{*{#1}{l}}
+\toprule
+}
+{
+\bottomrule
+\end{xtabular}
+}
