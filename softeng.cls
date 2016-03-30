@@ -46,6 +46,7 @@
 \RequirePackage{graphicx}
 \RequirePackage[table]{xcolor}
 \RequirePackage{booktabs}
+\RequirePackage{pgfgantt}
 
 %----------------------------------------------------------------------
 %	MARGINS	
