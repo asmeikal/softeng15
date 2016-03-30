@@ -30,19 +30,33 @@ Requisiti per compilare LaTeX sono: LaTeX (`texlive`), `latexmk`, e probabilment
 - `fancyhdr`
 - `graphicx`
 
-La struttura dei documenti deve essere una cosa simile:
+La struttura dei documenti &egrave; la seguente:
 ```
-\documentclass[utf8]{softeng}
+\documentclass[10pt]{softeng}
+
+\Phase{<fase> - <iterazione>}
+\DocumentTitle{<titolo documento>}
+
 \begin{document}
-Chiacchiere.
-\begin{figure}
-\includegraphics{ClassDiagram}
-\caption{Un diagramma di classe}
-\end{figure}
+
+\startofdocument
+
+<testo>
+
 \end{document}
 ```
 La classe `softeng` è costruita sulla classe `article`, quindi permette il sezionamento da `section` in giù.
-L'opzione `utf8` permette di inserire direttamente lettere accentate nel testo, e non obbligatoriamente cose come `\'e`.
+
+Per creare tabelle carine e colorate c'&egrave; un environment apposito:
+```
+\begin{ptable}{<n-colonne>}
+\ptitlerow{\bf <titolo tabella>}
+\pcells{<cella1> & <cella2> & ... & <cellan>}
+\pline
+\ptitlerow{<titolo riga lunga>}
+\prow{<riga lunga>}
+\end{ptable}
+```
 
 Visual Paradigm permette di esportare i file in formato `svg`.
 LaTeX vuole immagini in formato `eps`.
@@ -55,6 +69,35 @@ Il `Makefile` compila usando `latexmk`.
 Lo scriptino dovrebbe prendere tutti i file `tex` nella cartella, cambiare `\date{\today}` alla data odierna, e schiaffarli tutti in una cartella `Iterations/N` incrementando `N` a ogni botta.
 
 # Log
+
+### 2016-03-30
+
+Ristrutturazione documenti Inception.
+Produrremo:
+
+1. Analisi del contesto e studio di fattibilit&agrave;
+   - Analisi del contesto (con questioni legali)
+   - Fattibilit&agrave;
+2. Documento dei requisiti
+   - Definizione dei requisiti (requisiti utente)
+   - Specifica dei requisiti (requisiti sistema - funzionali, non funzionali, di dominio)
+   - Glossario
+   - Tracciabilit&agrave; requisiti
+   - Convalida dei requisiti
+3. Piano di progetto
+   - *Milestone* fasi e iterazioni
+   - Analisi dei rischi
+   - Stime costi
+   - Gruppi di lavoro
+   - Diagramma di GANTT
+
+### 2016-03-24
+
+Gigi produce glossario, Michele rischi.
+
+### 2016-03-22
+
+Distribuzione compiti: Gigi ai requisiti, Michele ai rischi, Artemio all'allungamento del brodo sull'analisi del contesto.
 
 ### 2016-02-25
 
