@@ -1,7 +1,9 @@
 \section{Attivit\`a}
 
 Di seguito elenchiamo le attivit\`a individuate in ciascuna fase di sviluppo.
-L'interdipendenza fra le attivit\`a di ciascuna fase e il loro progresso sono rappresentati con tabelle di dipendenze e diagrammi di Gantt.
+L'interdipendenza fra le attivit\`a di ciascuna fase e il loro progresso sono rappresentati con in forma tabulare, con reti di attivit\`a e con diagrammi di Gantt.
+
+% TODO aggiungere cose su interdipendenza fra fasi e parallelizzazione
 
 \subsection{Attivit\`a della fase di Inception}
 
@@ -31,6 +33,34 @@ Le attivit\`a individuate come componenti della fase di Inception sono le seguen
 		\end{itemize}
 \end{description}
 Una rappresentazione delle dipendenze fra le attivit\`a \`e fornita dalla tabella in figura \ref{fig:attivita_inception_tabella}, assieme a una misura approssimativa del tempo richiesto da ciascuna attivit\`a.
+Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fig:attivita_inception_grafo}.
+
+\begin{figure*}[!h]
+\centering
+\begin{tabular}{*{4}{l}}
+\toprule
+\cellcolor{color2!10} ID & \cellcolor{color2!10} Nome & \cellcolor{color2!10} Durata (sett.) & \cellcolor{color2!10} Dipendenze \\
+\midrule
+\code{I.AC.1} & Analisi contesto & 3 & --- \\
+\code{I.AC.2} & Sviluppo business-cases & 1 & \code{I.AC.1} \\
+\code{I.AC.3} & Studio di fattibilit\`a & 3 & \code{I.AC.1} \\
+\midrule
+\code{I.R.1} & Definizione requisiti & 2 & \code{I.AC.2}  \\
+\code{I.R.2} & Specifica requisiti & 3 & \code{I.R.1} \\
+\code{I.R.3} & Creazione glossario & 2 & \code{I.R.1}, \code{I.R.2} \\
+\code{I.R.4} & Definizione use-case principali & 1 & \code{I.R.1}, \code{I.R.2} \\
+\midrule
+\code{I.PP.1} & Definizione milestone fasi di progetto & 1 & --- \\
+\code{I.PP.2} & Analisi dei rischi & 2 & \code{I.AC.1} \\
+\code{I.PP.3} & Analisi dei costi & 2 & \code{I.AC.1}, \code{I.R.2}, \code{I.R.4} \\
+\midrule
+\code{I.AC} & Stesura documento analisi del contesto & 2 & \code{I.AC.1}, \code{I.AC.2}, \code{I.AC.3} \\
+\code{I.R} & Stesura documento dei requisiti & 2 & \code{I.R.1}, \code{I.R.2}, \code{I.R.3}, \code{I.R.4} \\
+\code{I.PP} & Stesura documento di piano di progetto & 2 & \code{I.PP.1}, \code{I.PP.2} \\
+\bottomrule
+\end{tabular}
+\caption{\label{fig:attivita_inception_tabella}Rappresentazione tabellare delle attivit\`a della fase di Inception.}
+\end{figure*}
 
 \begin{figure*}[!htb]
 	\centering
@@ -44,12 +74,14 @@ Una rappresentazione delle dipendenze fra le attivit\`a \`e fornita dalla tabell
 				(iac1) edge (iac3)
 				(iac2) edge (iac)
 				(iac3) edge (iac);
-		
+				
 		\node[draw=black] (ir1) [below left of=iac2, node distance=3cm] {\code{I.R.1}};
 		\node[draw=black] (ir2) [below of=ir1] {\code{I.R.2}};
 		\node[draw=black] (ir3) [below left of=ir2] {\code{I.R.3}};
 		\node[draw=black] (ir4) [below right of=ir2] {\code{I.R.4}};
 		\node[draw=black] (ir) [below right of=ir3] {\code{I.R}};
+		
+		\path (iac2) edge [dashed] (ir1);
 		
 		\path (ir1) edge (ir2)
 				(ir1) edge [bend right] (ir3)
@@ -59,40 +91,19 @@ Una rappresentazione delle dipendenze fra le attivit\`a \`e fornita dalla tabell
 				(ir3) edge (ir)
 				(ir4) edge (ir);
 
-		\node[draw=black] (ipp1) [below of=iac] {\code{I.PP.1}};
-		\node[draw=black] (ipp2) [right of=ipp1] {\code{I.PP.2}};
-		\node[draw=black] (ipp3) [right of=ipp2] {\code{I.PP.3}};
+		\node[draw=black] (ipp3) [below right of=iac3] {\code{I.PP.3}};
+		\node[draw=black] (ipp2) [right of=ipp3] {\code{I.PP.2}};
+		\node[draw=black] (ipp1) [right of=ipp2] {\code{I.PP.1}};
 		\node[draw=black] (ipp) [below of=ipp2] {\code{I.PP}};
+		
+		\path (iac1) edge [dashed, bend left] (ipp2);
+		\path (iac1) edge [dashed, bend right] (ipp3)
+				(ir1) edge [dashed, bend right] (ipp3)
+				(ir2) edge [dashed, bend right] (ipp3);
 		
 		\path (ipp1) edge (ipp)
 				(ipp2) edge (ipp)
 				(ipp3) edge (ipp);
 	\end{tikzpicture}
-\end{figure*}
-
-\begin{figure*}[!h]
-\centering
-\begin{tabular}{*{4}{l}}
-\toprule
-\cellcolor{color2!10} ID & \cellcolor{color2!10} Nome & \cellcolor{color2!10} Durata (sett.) & \cellcolor{color2!10} Dipendenze \\
-\midrule
-\code{I.AC.1} & Analisi contesto & 3 & --- \\
-\code{I.AC.2} & Sviluppo business-cases & 1 & \code{I.AC.1} \\
-\code{I.AC.3} & Studio di fattibilit\`a & 3 & \code{I.AC.1} \\
-\midrule
-\code{I.R.1} & Definizione requisiti & 2 & ---  \\
-\code{I.R.2} & Specifica requisiti & 3 & \code{I.R.1} \\
-\code{I.R.3} & Creazione glossario & 2 & \code{I.R.1}, \code{I.R.2} \\
-\code{I.R.4} & Definizione use-case principali & 1 & \code{I.R.1}, \code{I.R.2} \\
-\midrule
-\code{I.PP.1} & Definizione milestone fasi di progetto & 1 & --- \\
-\code{I.PP.2} & Analisi dei rischi & 2 & --- \\
-\code{I.PP.3} & Analisi dei costi & 2 & --- \\
-\midrule
-\code{I.AC} & Stesura documento analisi del contesto & 2 & \code{I.AC.1}, \code{I.AC.2}, \code{I.AC.3} \\
-\code{I.R} & Stesura documento dei requisiti & 2 & \code{I.R.1}, \code{I.R.2}, \code{I.R.3}, \code{I.R.4} \\
-\code{I.PP} & Stesura documento di piano di progetto & 2 & \code{I.PP.1}, \code{I.PP.2} \\
-\bottomrule
-\end{tabular}
-\caption{\label{fig:attivita_inception_tabella}Rappresentazione tabellare delle attivit\`a della fase di Inception.}
+	\caption{\label{fig:attivita_inception_grafo} Grafo delle dipendenze fra le attivit\`a della fase di Inception.}
 \end{figure*}
