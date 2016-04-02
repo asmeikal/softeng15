@@ -1,15 +1,83 @@
-\section{Diagramma di Gantt}
+\subsection{Diagramma di Gantt}
 
-\begin{figure*}[hbt]
-\begin{ganttchart}{1}{12}
-\gantttitle{2011}{12} \\
-\gantttitlelist{1,...,12}{1} \\
-\ganttgroup{Group 1}{1}{7} \\
-\ganttbar{Task 1}{1}{2} \\
-\ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-\ganttmilestone{Milestone}{7} \ganttnewline
-\ganttbar{Final Task}{8}{12}
-\ganttlink{elem2}{elem3}
-\ganttlink{elem3}{elem4}
-\end{ganttchart}
+Rappresentiamo la temporizzazione delle attivit\`a e teniamo traccia del loro stato di esecuzione con una serie di diagrammi di Gantt.
+
+\begin{figure*}[tbh]
+	\centering
+     \begin{ganttchart}[
+			title/.style={fill={color1!10}},
+			title label font=\color{color2},
+			title left shift=.1,
+			title right shift=-.1,
+			title top shift=.05,
+			hgrid,
+			bar label font = \scriptsize,
+			group label font = \scriptsize,
+			milestone label font = \scriptsize,
+			x unit=1cm,
+%			milestone height = 0.2,
+			today=2016-04,
+			today label = {},
+			today rule/.style = {draw={color1!60}},
+			progress label text = {\pgfmathprintnumber[precision=0, verbatim]{#1}\%},
+			inline,
+			milestone inline label node/.append style={left=1mm},
+			time slot format={isodate-yearmonth},
+			compress calendar,
+		]{2016-02}{2016-08}
+           \gantttitlecalendar{year, month} \\
+%           \ganttbar{Sviluppo proposta}{2015-11-01}{2015-12-01} \\
+           \ganttbar{Inception}{2016-02}{2016-04} \\
+           \ganttmilestone{Conclusione inception}{2016-04} \\
+           \ganttbar{Elaboration}{2016-05}{2016-06} \\
+           \ganttmilestone{Conclusione elaboration}{2016-06} \\
+           \ganttbar{Construction}{2016-07}{2016-08} \\
+           \ganttmilestone{Conclusione construction}{2016-08}
+      \end{ganttchart}
 \end{figure*}
+
+\begin{figure*}
+\centering
+\begin{ganttchart}[
+			title/.style={fill={color1!10}},
+			title label font=\color{color2},
+			title left shift=.1,
+			title right shift=-.1,
+			title top shift=.05,
+			hgrid,
+			vgrid,
+			bar label font = \scriptsize,
+			group label font = \scriptsize,
+			milestone label font = \scriptsize,
+			x unit=2.2mm,
+			milestone height = 0.2,
+			today=2016-04-04,
+			today label = {},
+			today rule/.style = {draw={color1!60}},
+			progress label text = {\pgfmathprintnumber[precision=0, verbatim]{#1}\%},
+			inline,
+			milestone inline label node/.append style={left=1mm},
+			time slot format={isodate},
+		]{2016-02-22}{2016-04-30}
+	\gantttitlecalendar{year, month} \\
+	\ganttgroup[progress=today]{Analisi del contesto}{2016-02-22}{2016-04-10} \\
+	\ganttbar[progress=100]{Raccolta informazioni contesto}{2016-02-22}{2016-03-16} \\
+	\ganttbar[progress=100]{Studio business cases}{2016-03-01}{2016-03-16} \\
+	\ganttbar[progress=70]{Studio di fattibilit\`a}{2016-03-2}{2016-03-20} \\
+	\ganttbar[progress=50]{Stesura documento analisi contesto}{2016-03-14}{2016-04-10} \\
+	\ganttgroup[progress=today]{Raccolta requisiti}{2016-03-09}{2016-04-22} \\
+	\ganttbar[progress=80]{Definizione requisiti}{2016-03-09}{2016-04-18} \\
+	\ganttbar[progress=20]{Specifica requisiti}{2016-03-28}{2016-04-18} \\
+	\ganttbar[progress=60]{Creazione glossario}{2016-03-16}{2016-04-18} \\
+	\ganttbar[progress=50]{Definizione use-case principali}{2016-03-20}{2016-04-18} \\
+	\ganttbar[progress=50]{Stesura documento requisiti}{2016-03-16}{2016-04-22} \\
+	\ganttgroup[progress=today]{Pianificazione progetto}{2016-03-25}{2016-04-26} \\
+	\ganttbar[progress=40]{Definizione milestone}{2016-03-25}{2016-04-10} \\
+	\ganttbar[progress=70]{Analisi dei rischi}{2016-03-25}{2016-04-10} \\
+	\ganttbar[progress=40]{Stesura piano di progetto}{2016-03-25}{2016-04-25} \\
+	\ganttmilestone[progress=today]{Prima revisione capo progetto}{2016-04-05} \\
+	\ganttmilestone[progress=today]{Termine inception}{2016-04-30}
+\end{ganttchart}
+\caption{Diagramma di Gantt della fase di Inception.}
+\end{figure*}
+

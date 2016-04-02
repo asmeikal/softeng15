@@ -1,0 +1,59 @@
+\section{Attivit\`a}
+
+Di seguito elenchiamo le attivit\`a individuate in ciascuna fase di sviluppo.
+L'interdipendenza fra le attivit\`a di ciascuna fase e il loro progresso sono rappresentati con tabelle di dipendenze e diagrammi di Gantt.
+
+\subsection{Attivit\`a della fase di Inception}
+
+Le attivit\`a individuate come componenti della fase di Inception sono le seguenti:
+\begin{description}
+	\item[Analisi del contesto]
+		Raccolta di informazioni riguardanti il dominio dell'applicazione in sviluppo, in particolare informazioni sui servizi offerti ai privati dagli istituti bancari.
+	\item[Studio di fattibilit\`a]
+		Determinare in quali condizioni il progetto che si vuole sviluppare \`e realizzabile, in particolare determinare in quali condizioni il software avr\`a mercato e produrr\`a utile per gli sviluppatori.
+	\item[Definizione dei requisiti]
+		Identificazione dei requisiti utente.
+	\item[Specifica dei requisiti]
+		Identificazione dei requisiti di sistema.
+	\item[Identificazione e specifica business-cases]
+		Identificazione dei business-cases del dominio dell'applicazione.
+	\item[Identificazione degli use-case principali]
+		Identificazione delle famiglie di use-cases presenti nel sistema.
+	\item[Individuazione dei rischi]
+		Identificazione dei rischi presenti durante il processo software, e contestuale realizzazione di piani di monitoraggio, mitigazione e mantenimento.
+	\item[Stesura dei documenti]
+		Produzione di documenti attestanti i progressi fatti nella fase di Inception.
+		In particolare:
+		\begin{itemize}
+			\item Stesura documento di analisi del contesto
+			\item Stesura documento dei requisiti
+			\item Stesura documento di piano di progetto
+		\end{itemize}
+\end{description}
+Una rappresentazione delle dipendenze fra le attivit\`a \`e fornita dalla tabella in figura \ref{fig:attivita_inception_tabella}, assieme a una misura approssimativa del tempo richiesto da ciascuna attivit\`a.
+
+\begin{figure*}[!h]
+\centering
+\begin{tabular}{*{4}{l}}
+\toprule
+\cellcolor{color2!10} ID & \cellcolor{color2!10} Nome & \cellcolor{color2!10} Durata (sett.) & \cellcolor{color2!10} Dipendenze \\
+\midrule
+\code{I.AC.1} & Analisi contesto & 3 & --- \\
+\code{I.AC.2} & Sviluppo business-cases & 1 & \code{I.AC.1} \\
+\code{I.AC.3} & Studio di fattibilit\`a & 3 & \code{I.AC.1} \\
+\midrule
+\code{I.R.1} & Definizione requisiti & 2 & ---  \\
+\code{I.R.2} & Specifica requisiti & 3 & \code{I.R.1} \\
+\code{I.R.3} & Creazione glossario & 2 & \code{I.R.1}, \code{I.R.2} \\
+\code{I.R.4} & Definizione use-case principali & 1 & \code{I.R.1}, \code{I.R.2} \\
+\midrule
+\code{I.PP.1} & Definizione milestone fasi di progetto & 1 & --- \\
+\code{I.PP.2} & Analisi dei rischi & 2 & --- \\
+\midrule
+\code{I.AC} & Stesura documento analisi del contesto & 2 & \code{I.AC.1}, \code{I.AC.2}, \code{I.AC.3} \\
+\code{I.R} & Stesura documento dei requisiti & 2 & \code{I.R.1}, \code{I.R.2}, \code{I.R.3}, \code{I.R.4} \\
+\code{I.PP} & Stesura documento di piano di progetto & 2 & \code{I.PP.1}, \code{I.PP.2} \\
+\bottomrule
+\end{tabular}
+\caption{\label{fig:attivita_inception_tabella}Rappresentazione tabellare delle attivit\`a della fase di Inception.}
+\end{figure*}
