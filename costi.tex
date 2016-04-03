@@ -1,5 +1,58 @@
 \section{Analisi dei costi}
 
-Blabla.
-
 % TODO scrivere analisi dei costi
+
+La stima dei costi di realizzazione del progetto viene effettuata con la tecnica degli \emph{Use Case Points}.
+
+Gli Use Case Points del progetto sono dati dalla somma di due addendi:
+\begin{description}
+	\item[Unadjusted Use Case Weight]
+		Misura il numero e la complessit\`a degli Use Case del sistema.
+	\item[Unadjusted Actor Weight]
+		Misura il numero e la complessit\`a degli attori del sistema.
+\end{description}
+Il valore ottenuto dalla somma di \code{UUCW} e \code{UAW} viene moltiplicato per due fattori:
+\begin{description}
+	\item[Technical Complexity Factor]
+		Misura la complessit\`a tecnica del sistema.
+	\item[Environmental Complexity Factor]
+		Misura la complessit\`a dell'ambiente in cui il sistema si inserir\`a.
+\end{description}
+
+\subsection{Unadjusted Use Case Weight}
+
+Il \code{UUCW} assegna un punteggio a ciascun use case del sistema secondo la complessit\`a dello use case.
+
+Il \code{UUCW} sar\`a determinato a individuazione degli use case ultimata.
+
+\subsection{Unadjusted Actor Weight}
+
+Il \code{UAW} sar\`a determinato a individuazione degli use case ultimata.
+
+\subsection{Technical Complexity Factor}
+
+\begin{tabularx}{\columnwidth}{c X c c}
+\toprule
+\cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
+\midrule
+\code{T1} & Sistema distribuito & $2.0$ & --- \\
+\code{T2} & Obiettivi di performance/tempo di risposta & $1.0$ & --- \\
+\code{T3} & Efficienza lato utente & $1.0$ & --- \\
+\code{T4} & Complessit\`a processi interni & $1.0$ & --- \\
+\code{T5} & Riusabilit\`a del codice & $1.0$ & --- \\
+\code{T6} & Facilit\`a d'installazione & $0.5$ & --- \\
+\code{T7} & Facilit\`a d'utilizzo & $0.5$ & --- \\
+\code{T8} & Portabilit\`a inter-piattaforma & $2.0$ & --- \\
+\code{T9} & Manutenzione del sistema & $1.0$ & --- \\
+\code{T10} & Parallelismo/concorrenza & $1.0$ & --- \\
+\code{T11} & Sicurezza & $1.0$ & --- \\
+\code{T12} & Accesso terze parti & $1.0$ & --- \\
+\code{T13} & Addestramento utente & $1.0$ & --- \\
+\bottomrule
+\end{tabularx}
+
+\subsection{Environmental Complexity Factor}
+
+\subsection{Use Case Points e previsione di costo}
+
+Gli Use Case Points saranno determinati a individuazione degli use case ultimata.
