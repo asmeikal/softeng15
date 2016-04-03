@@ -229,6 +229,7 @@ justification=raggedright]{caption}
 \addbibresource{softeng.bib}
 
 \RequirePackage{xtab}
+\RequirePackage{tabularx}
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.5}
 \usepgfplotslibrary{fillbetween}
