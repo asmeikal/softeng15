@@ -23,6 +23,8 @@ Le attivit\`a individuate come componenti della fase di Inception sono le seguen
 		Identificazione delle famiglie di use-cases presenti nel sistema.
 	\item[Individuazione dei rischi]
 		Identificazione dei rischi presenti durante il processo software, e contestuale realizzazione di piani di monitoraggio, mitigazione e mantenimento.
+	\item[Analisi dei costi]
+		Fasi iniziali dell'analisi dei costi: scelta della tecnica di stima e prime misurazioni.
 	\item[Stesura dei documenti]
 		Produzione di documenti attestanti i progressi fatti nella fase di Inception.
 		In particolare:
@@ -69,7 +71,7 @@ Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fi
 		\node[draw=black] (iac1) {\code{I.AC.1}};
 		\node[draw=black] (iac2) [below left of=iac1] {\code{I.AC.2}};
 		\node[draw=black] (iac3) [below right of=iac1] {\code{I.AC.3}};
-		\node[draw=black] (iac) [below right of=iac2] {\code{I.AC}};
+		\node[draw=black, thick] (iac) [below right of=iac2] {\code{I.AC}};
 
 		\path (iac1) edge (iac2)
 				(iac1) edge (iac3)
@@ -80,7 +82,7 @@ Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fi
 		\node[draw=black] (ir2) [below of=ir1] {\code{I.R.2}};
 		\node[draw=black] (ir3) [below left of=ir2] {\code{I.R.3}};
 		\node[draw=black] (ir4) [below right of=ir2] {\code{I.R.4}};
-		\node[draw=black] (ir) [below right of=ir3] {\code{I.R}};
+		\node[draw=black, thick] (ir) [below right of=ir3] {\code{I.R}};
 		
 		\path (iac2) edge [dashed] (ir1);
 		
@@ -95,7 +97,7 @@ Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fi
 		\node[draw=black] (ipp3) [below right of=iac3] {\code{I.PP.3}};
 		\node[draw=black] (ipp2) [right of=ipp3] {\code{I.PP.2}};
 		\node[draw=black] (ipp1) [right of=ipp2] {\code{I.PP.1}};
-		\node[draw=black] (ipp) [below of=ipp2] {\code{I.PP}};
+		\node[draw=black, thick] (ipp) [below of=ipp2] {\code{I.PP}};
 		
 		\path (iac1) edge [dashed, bend left] (ipp2);
 		\path (iac1) edge [dashed, bend right] (ipp3)
