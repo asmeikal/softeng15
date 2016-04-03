@@ -64,6 +64,7 @@ Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fi
 
 \begin{figure*}[!htb]
 	\centering
+	\caption{Grafo delle dipendenze fra le attivit\`a della fase di Inception.}
 	\begin{tikzpicture}[->, node distance=2cm]
 		\node[draw=black] (iac1) {\code{I.AC.1}};
 		\node[draw=black] (iac2) [below left of=iac1] {\code{I.AC.2}};
@@ -105,5 +106,5 @@ Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fi
 				(ipp2) edge (ipp)
 				(ipp3) edge (ipp);
 	\end{tikzpicture}
-	\caption{\label{fig:attivita_inception_grafo} Grafo delle dipendenze fra le attivit\`a della fase di Inception.}
+	\label{fig:attivita_inception_grafo}
 \end{figure*}
