@@ -9,5 +9,6 @@ Resources/*
 !*.sh
 !Images/
 !Images/*.svg
+!Images/*.eps
 
 
