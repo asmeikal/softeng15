@@ -87,6 +87,9 @@ justification=raggedright]{caption}
 \renewcommand{\headrulewidth}{0pt}% % No header rule
 \renewcommand{\footrulewidth}{0pt}% % No footer rule
 
+\chead{\bf DRAFT}
+\cfoot{\bf DRAFT}
+
 %----------------------------------------------------------------------
 %	SECTION/SUBSECTION/PARAGRAPH SET-UP
 %----------------------------------------------------------------------
