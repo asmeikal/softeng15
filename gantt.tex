@@ -2,39 +2,39 @@
 
 Rappresentiamo la temporizzazione delle attivit\`a e teniamo traccia del loro stato di esecuzione con una serie di diagrammi di Gantt.
 
-\begin{figure*}[tbh]
-	\centering
-     \begin{ganttchart}[
-			title/.style={fill={color1!10}},
-			title label font=\color{color2},
-			title left shift=.1,
-			title right shift=-.1,
-			title top shift=.05,
-			hgrid,
-			bar label font = \scriptsize,
-			group label font = \scriptsize,
-			milestone label font = \scriptsize,
-			x unit=1cm,
-%			milestone height = 0.2,
-			today=2016-04,
-			today label = {},
-			today rule/.style = {draw={color1!60}},
-			progress label text = {\pgfmathprintnumber[precision=0, verbatim]{#1}\%},
-			inline,
-			milestone inline label node/.append style={left=1mm},
-			time slot format={isodate-yearmonth},
-			compress calendar,
-		]{2016-02}{2016-08}
-           \gantttitlecalendar{year, month} \\
-%           \ganttbar{Sviluppo proposta}{2015-11-01}{2015-12-01} \\
-           \ganttbar{Inception}{2016-02}{2016-04} \\
-           \ganttmilestone{Conclusione inception}{2016-04} \\
-           \ganttbar{Elaboration}{2016-05}{2016-06} \\
-           \ganttmilestone{Conclusione elaboration}{2016-06} \\
-           \ganttbar{Construction}{2016-07}{2016-08} \\
-           \ganttmilestone{Conclusione construction}{2016-08}
-      \end{ganttchart}
-\end{figure*}
+%\begin{figure*}[tbh]
+%	\centering
+%     \begin{ganttchart}[
+%			title/.style={fill={color1!10}},
+%			title label font=\color{color2},
+%			title left shift=.1,
+%			title right shift=-.1,
+%			title top shift=.05,
+%			hgrid,
+%			bar label font = \scriptsize,
+%			group label font = \scriptsize,
+%			milestone label font = \scriptsize,
+%			x unit=1cm,
+%%			milestone height = 0.2,
+%			today=2016-04,
+%			today label = {},
+%			today rule/.style = {draw={color1!60}},
+%			progress label text = {\pgfmathprintnumber[precision=0, verbatim]{#1}\%},
+%			inline,
+%			milestone inline label node/.append style={left=1mm},
+%			time slot format={isodate-yearmonth},
+%			compress calendar,
+%		]{2016-02}{2016-08}
+%           \gantttitlecalendar{year, month} \\
+%%           \ganttbar{Sviluppo proposta}{2015-11-01}{2015-12-01} \\
+%           \ganttbar{Inception}{2016-02}{2016-04} \\
+%           \ganttmilestone{Conclusione inception}{2016-04} \\
+%           \ganttbar{Elaboration}{2016-05}{2016-06} \\
+%           \ganttmilestone{Conclusione elaboration}{2016-06} \\
+%           \ganttbar{Construction}{2016-07}{2016-08} \\
+%           \ganttmilestone{Conclusione construction}{2016-08}
+%      \end{ganttchart}
+%\end{figure*}
 
 \begin{figure*}
 \centering
