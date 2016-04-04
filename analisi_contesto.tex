@@ -144,26 +144,15 @@ Inoltre la consideriamo un ottima occasione per guadagnare un posto in questo me
 
 \section{Fattibilit\`a}
 
-Per motivi di sicurezza, legislativi, burocratici e tecnologici non \`e possibile effettuare ogni operazione via internet.
-Un sistema di Home Banking effettuer\`a quindi un sottoinsieme proprio di queste operazioni.
-%TODO queste operazioni quali?
+%Per motivi di sicurezza, legislativi, burocratici e tecnologici non \`e possibile effettuare ogni operazione via internet.
+%Un sistema di Home Banking effettuer\`a quindi un sottoinsieme proprio di queste operazioni.
 
-%TODO togliere, le banche target non sono per forza di taglia piccola
-Le banche target del nostro prodotto sono banche di taglia piccola, che a seguito dell'entrata in vigore dello standard OBP si troveranno sprovviste di sistema informatico.
-Il nostro prodotto permette loro di effettuare la transizione senza subire \emph{downtime}.
 
-Definiamo il nostro software ``Small Bank Friendly'' in quanto:
-\begin{itemize}
-    \item Il software non viene sviluppato ``from scratch'' individualmente per ogni cliente, ci\`o riduce notevolmente il costo unitario.
-    \item Il proggetto parte con l'idea di separare ed isolare le componenti rendendo il sistema adatto al deployment su cloud, evitando l'acquisto di hardware aggiuntivo.
-    \item Il supporto per la banca \`e fornito dalla nostra societ\`a.
-    \item Il supporto per gli utenti \`e fornito dalla nostra societ\`a (o partner di essa)
-\end {itemize}
 
 Questa impostazione permete al prodotto di essere competitivo dal punto di vista del prezzo, i costi di servizio di supporto vengono distribuiti fra pi\`u clienti. 
 
-%TODO togliere la parola "scontata"
-Dato che l'insieme delle funzionalit\`a core \`e relativamente piccolo e restringibile a piacere, si d\`a per scontata la fattibilit\`a.
+%TODO riscrivere bene questa frase che \`e un incubo con sto core e scontata
+%Dato che l'insieme delle funzionalit\`a core \`e relativamente piccolo e restringibile a piacere, si d\`a per scontata la fattibilit\`a.
 
 Perch\'e lo sforzo di sviluppo sia ripagato \`e per\`o necessario che l'insieme di operazioni offerte dal sistema sia sufficientemente ampio da:
 \begin{enumerate}
@@ -181,6 +170,35 @@ Inoltre un software di Home Banking modulare e facilmente personalizzabile pu\`o
 
 Abbiamo individuato i seguenti requisiti minimi, che riteniamo essere sufficienti a soddisfare le necessit\`a di buona parte delle banche.
 
+Il sistema deve permettere agli utenti di:
+\begin{itemize}
+    \item Visionare il saldo contabile e il suo andamento nel tempo.
+    \item Visionare il saldo liquido.
+    \item Visionare il saldo disponibile.
+    \item Visionare lo storico delle transazioni.
+    \item Visionare le informazioni riguardati alle carte di debito/credito associate al conto corrente.
+    \item Effettuare operazioni di pagamento veloci(ricariche telefoniche,ecc).
+    \item Effettuare bonifici ordinari e bonifici SEPA.
+    \item Funzionalit\`a di base per \emph{online trading}.
+\end{itemize}
+
+Il personale bancario deve poter:
+\begin{itemize}
+    \item Accedere alle informazioni di un account.
+    \item Visionare le transazioni.
+    \item Visionare i log di sicurezza.
+    \item Modificare informazioni di un account.
+
+\end{itemize}
+
+%Come previsto dalla legislazione gli enti governativi devono poter:
+%\begin{itemize}
+%    \item Visionare le transazioni.
+%   \item Visionare i log di sicurezza.
+%   \item Accedere a tutte le informazioni rilevanti in lettura.
+%\end{enumerate}
+%boh ma ce li metto i caramba o no?
+
 %TODO espandere e copiare da documento requisiti
 
 \subsection{Fattibilit\`a economica}
@@ -192,6 +210,23 @@ La nostra societ\`a vuole sfruttare l'occasione del cambio di legislazione per c
 Naturalmente le altre societ\`a di sviluppo software staranno a loro volta attuando progetti simili.
 L'unico modo di garantire che il software sia redditizio \`e battere i concorrenti sul tempo.
 Si tratta di un ambiente \emph{First Comer Takes All}, dove il primo a mettere sul mercato un sistema che soddisfa i requisiti principali avr\`a il guadagno massimo.
+
+Il nostro sistema \`e rivolto verso tutte le tipologlie delle banche.
+Un settore di mercato particolarmente promettente sono le banche piccole e le banche online, in quanto non hanno tante risorse a disposizione per il \emph{bootstrapping} di un sistema simile.
+%madonna che parolona, vuol dire farselo da se in casa, se e troppo leviamola
+
+
+Definiamo il nostro software ``Small Bank Friendly'' in quanto:
+\begin{itemize}
+    \item Il software non viene sviluppato ``from scratch'' individualmente per ogni cliente, ci\`o riduce notevolmente il costo unitario.
+    \item Il supporto per la banca \`e fornito dalla nostra societ\`a.
+    \item Il supporto per gli utenti \`e fornito dalla nostra societ\`a (o partner di essa)
+\end {itemize}
+%il cloud l'ho levato
+
+Possiamo trarre questa conclusione: ci sono sicuramente gli acquirenti che necessiteranno di un sistema software simile, e il guadagno \`e praticamente garantito se il rilascio avviene prima dei prodotti concorrenti.
+
+
 
 %TODO inserire info su why il progetto pu\`o avere un guadagno
 
