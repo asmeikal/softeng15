@@ -1,0 +1,128 @@
+Si vuole realizzare un sistema di Home Banking (da ora HBS) per la gestione di fondi privati a breve , medio e lungo termine via Web.Il sistema è rivolto a Banche che decidono di implementare il protocollo/software Open Bank Project . Si presuppone che la banca già abbia uno stabile ed efficiente sistema di database di proprietà con opportuni software accessori , e in generale non si vuole analizzare la parte relativa al back-end della banca.  
+
+Per rispettare e meglio implementare alcuni fondamentali requisiti non funzionali (sicurezza , tempi di reazione del sistema , ecc.), durante la stesura del [[[ documento]]] di fattibilità si è deciso di rimanere nell'ambito del \emph{retail banking} , ossia di progettare un sistema i cui unici utenti siano persone fisiche e non imprese o altri istituti finanziari .
+
+Ogni individuo iscritto ad una banca possiede almeno un conto su cui depositare i propri risparmi : può essere \emph{di deposito} o \emph{corrente} a seconda che siano permesse le sole operazioni di prelievo e deposito o che in aggiunta a queste sia possibile  effettuare bonifici , pagamento di assegni , prelievi bancomat e simili .
+
+\section{UTENTI}
+
+Gli utenti di questo sistema si dividono principalmente in due categorie : utenti registrati, o correntisti,  e dipendenti della banca. 
+
+1) Un individuo può ottenere un \emph{account HBS} in due passi :   
+	1.a)se è già correntista della banca, gli basta fornire ad un dipendente della banca il proprio numero di conto;
+	1.b)se non è correntista , deve compilare i moduli necessari all'apertura di un conto corrente (on-line o presso una filiale);
+	2)in ogni caso , l'individuo deve recarsi in una filiale per consegnare copia di documento d'identità e ricevere le 					\emph{credenziali d'accesso}(v. sezione SICUREZZA) del proprio account.
+
+Ad ogni account HBS è associato , oltre al conto corrente , un portafoglio azionario per conservare tutti i titoli bancari di cui il correntista sia in possesso. Un portafoglio azionario ha un valore , calcolato in funzione dei valori di ogni azione contenuta al suo interno: modifiche di questo valore influiscono sul conto corrente associato al portafoglio , e il correntista non solo deve poter visionare tale valore e il suo andamento nel tempo , ma deve anche poter gestire il contenuto del portafoglio stesso.
+
+
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{	
+E' possibile per un correntista o un individuo non registrato \emph{fare bidding} , ossia proporre alla banca , sotto determinate condizioni ,l'apertura di un conto corrente o il rilascio di una carta di credito con determinate agevolazioni;
+	In base a delle regole definite dai dirigenti questa proposta pu\`o essere:
+- approvata automaticamente dal sistema;
+- inoltrata a un dipendente della banca per l'approvazione;
+- rifiutata automaticamente;
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
+	
+?e se un correntista vuole aprire un altro conto?
+
+%TODO usare termini positivi (non "minimale")
+\subsection{ ATTENZIONE }:Le funzionalità che verranno descritte per gli \emph{account di servizio} e per gli \emph{account HBS} sono un  nucleo minimale, o \emph{kernel} , ritenuto "necessario" per assolvere ai compiti essenziali di un qualsiasi sistema di home banking.Il pool di progettisti e sviluppatori si impegna a implementare questo kernel nel modo più riutilizzabile e scalabile possibile , in modo da lasciare alla banca che adotti questo sistema la possibilità di operare come meglio crede con queste funzionalità , ad esempio creandone altre a partire da quelle qui elencate .
+
+
+
+
+Un correntista deve poter:
+	\begin{enumerate} 
+	\item visionare \emph{saldo contabile annuale}, relativo all'anno in corso con eventuali grafici Valore/Tempo dell'andamento del valore rispetto agli anni precedenti;
+	\item visionare \emph{saldo contabile mensile}, relativo al mese corrente con eventuali grafici Valore/Tempo dell'andamento del valore rispetto ai mesi precedenti;
+	\item visionare \emph{saldo liquido} relativo al giorno corrente , nel caso in cui voglia compiere operazioni bancarie che coinvolgano calcolo di \emph{interesse};
+	\item visionare \emph{saldo disponibile} , relativo al giorno corrente;
+	\item visionare uno storico delle transazioni effettuate, avendo a disposizione per ogni transizione la \emph{data contabile} , l'\emph{importo versato} ed una \emph{causale};
+	
+	\item poter annullare una transazione ancora non completata confermata;
+	\item visionare informazioni delle carte di credito eventualmente collegate al conto;
+	\item effettuare operazioni "veloci" , ossia inserire pochi dati in una maschera preconfigurata e confermare l'operazione mediante meccanismo TOTP(v. sezione SICUREZZA):
+			-ricariche telefoniche ;
+			-bonifici ordinari e  bonifici SEPA mediante compilazione di opportuni moduli on-line;
+			-pagamento delle bollette ;
+	\item visionare l'andamento in borsa dei titoli azionari del suo portafoglio;
+	\item vendere uno o più titoli azionari del proprio portafoglio;
+	\item investire il proprio patrimonio nei titoli di credito statali (NON azionari) a medio e lungo termine che ritiene più opportuni , avendo a disposizione un \emph{benchmark} per valutarne l'andamento in borsa e il profilo di rischio;
+	\end{enumerate}	
+2)I dipendenti della banca si dividono in \emph{impiegati} e \emph{dirigenti}. A ogni dipendente , sia esso impiegato o dirigente, viene assegnato un \emph{account HBS di servizio} , con cui egli può assolvere alle sue mansioni specifiche; i vari account di servizio differiscono per permessi di accesso e funzionalità disponibili.
+Ad ogni \emph{account di servizio} sono assegnati :
+	\begin{enumerate}
+	
+	\item i dati anagrafici del relativo dipendente;
+	\item una password "speciale" (decidere politica di sicurezza).
+	\end{enumerate}	
+Gli \emph{impiegati} , mediante il loro account di servizio , devono poter: 
+	\begin{enumerate}
+	
+	\item confermare/respingere atti che richiedono esplicita approvazione , ad esempio i bid per conti o carte inviati dagli utenti; 
+	\item effettuare EVENTUALI operazioni minori di contabilità che una banca potrebbe permettere via internet
+ 	\end{enumerate}
+
+I \emph{dirigenti} devono poter :
+	\begin{enumerate}
+	
+	\item accedere e modificare i disclaimer pubblicitari del sito di home banking;
+	\item impostare e modificare opportuni pacchetti di azioni o di fondi d'investimento e in generale offerte che si vogliono propinare agli utenti;
+	\item selezionare , mediante opportuna combinazione di \emph{queries} , categorie o fasce di utenti in base a diversi parametri socio-economici , ed ottenere precise statistiche al riguardo.
+	\item confermare atti di importanza "superiore"( a.e. alti investimenti in titoli azionari , transazioni di danaro molto elevate da un conto corrente ad un altro , ecc.) , in seguito all'approvazione iniziale di un impiegato.
+	\end{enumerate}
+
+
+
+
+%TODO cambiare in "bonifici programmati"
+\section{TRANSAZIONE}
+Una transazione economica è il passaggio sicuro e irreversibile da un conto ad un altro di una certa quantità di denaro. La somma viene accreditata al \emph{conto destinatario} e detratta al \emph{conto mittente} , indipendentemente dalle banche di appartenenza , sfruttando "indirizzi bancari" come il codice IBAN.Il nostro sistema vuole dare la possibilità alla banca che lo implementi di adottare una politica di "conferma della transazione ": in uno scenario di e-commerce , una transazione tra un certo \emph{mittente} e un certo \emph{destinatario} viene confermata se il primo conferma di aver ricevuto in modo corretto il bene acquistato dal secondo , annullata se , viceversa, il primo è in grado di dimostrare la non corretta o avvenuta ricezione del bene acquistato. Per permettere questa funzionalità , si suddividerà la procedura di pagamento on-line in più step , ognuna delle quali avrà determinate peculiarità.
+
+\section{ TITOLI DI CREDITO}
+I titoli di credito sono , generalmente , strumenti finanziari mediante i quali i correntisti investono il proprio danaro: possono essere fondi comuni di investimento o azioni. Ogni titolo di credito deve avere un \emph{benchmark}, calcolato dalla banca e visibile all'utente , che ne specifichi la \emph{volatilità} sul mercato .Per motivi di sicurezza ed efficienza del sistema , si decide di non permettere l'acquisto diretto di titoli di credito su mercato nazionale e internazionale , ma di lasciare ad un account utente la possibilità di acquisire pacchetti preconfezionati dalla banca stessa.Tuttavia ogni correntista può , attraverso il proprio account , avere delle dettagliate informazioni sull'andamento in borsa dei titoli che conserva nel suo portafoglio  e gli è lasciata la possibilità di vendere tali titoli nel caso lo ritenga opportuno.
+
+
+%TODO pubblicità contestuale on-demand di bidding
+PUBBLICITA?????????
+
+
+\section{SICUREZZA}
+ 
+Le credenziali d'accesso sono per un account sono :
+	-dati anagrafici del correntista;
+	-numero conto corrente;
+	-password scelta dal correntista.
+	
+	
+Una volta che ha effettuato l'accesso,  l'utente deve poter svolgere le seguenti operazioni senza fornire la One Time Password:
+		\begin{enumerate}
+			\item Visionare saldo contabile, disponibile e liquido.
+			\item Visionare uno storico delle transazioni effettuate.
+			\item Visionare informazioni riguardo le carte di credito collegate al conto (se presenti).
+			\item Effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione (requisito TOT).
+		\end{enumerate}
+		
+		
+Invece è necessario fornire la One Time Password per :
+		\begin{enumerate}
+			\item Effettuare transazioni, come:
+				\begin{enumerate}
+					\item bonifici ordinari e bonifici SEPA;
+					\item ricariche carte prepatate e schede telefoniche;
+					\item pagamento bollette, bollettini, tasse, etc;
+				\end{enumerate}
+			\item Configurare operazioni veloci.
+			\item Se ci viene in mente altro ce lo mettiamo.
+		\end{enumerate}
+
+Ogni operazione effettuata da un utente sul sistema deve essere registrata in un log. In particolare , ogni log deve contenere almeno:
+		\begin{enumerate}
+			\item l'operazione eseguita;
+			\item il conto coinvolto nell'operazione;
+				% TODO rivedere codesta parte: codice univoco della transazione al posto del conto?
+				% analizzare bene come funziona OBP
+			\item l'istante dell'operazione;
+			\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+		\end{enumerate}
