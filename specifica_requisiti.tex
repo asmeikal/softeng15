@@ -1,0 +1,42 @@
+
+\section{Specifica dei requisiti}
+
+\subsection{Requisiti di sicurezza del sistema}
+ 
+Le credenziali d'accesso sono per un account sono:
+\begin{itemize}
+	\item dati anagrafici del correntista;
+	\item numero conto corrente;
+	\item password scelta dal correntista.
+\end{itemize}
+	
+Una volta che ha effettuato l'accesso,  l'utente deve poter svolgere le seguenti operazioni senza fornire la One Time Password:
+\begin{itemize}
+	\item Visionare saldo contabile, disponibile e liquido.
+	\item Visionare uno storico delle transazioni effettuate.
+	\item Visionare informazioni riguardo le carte di credito collegate al conto (se presenti).
+	\item Effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione.
+\end{itemize}
+
+Invece è necessario fornire la One Time Password per:
+\begin{itemize}
+	\item effettuare transazioni, come:
+	\begin{itemize}
+		\item bonifici ordinari e bonifici SEPA;
+		\item ricariche carte prepatate e schede telefoniche;
+		\item pagamento bollette, bollettini, tasse, etc;
+	\end{itemize}
+	\item configurare operazioni veloci;
+	\item ogni altra operazione sensibile.
+\end{itemize}
+
+Ogni operazione effettuata da un utente sul sistema deve essere registrata in un log.
+In particolare, ogni log deve contenere almeno:
+\begin{itemize}
+	\item l'operazione eseguita;
+	\item il conto coinvolto nell'operazione;
+		%TODO rivedere codesta parte: codice univoco della transazione al posto del conto?
+		% analizzare bene come funziona OBP
+	\item l'istante dell'operazione;
+	\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+\end{itemize}
