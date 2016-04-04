@@ -38,7 +38,7 @@ Un correntista deve poter:
 	\item visionare uno storico delle transazioni effettuate, avendo a disposizione per ogni transizione la \emph{data contabile}, l'\emph{importo versato} ed una \emph{causale};
 	\item poter annullare una transazione ancora non completata confermata;
 	\item visionare informazioni delle carte di credito eventualmente collegate al conto;
-	\item effettuare operazioni ``veloci'', ossia inserire pochi dati in una maschera preconfigurata e confermare l'operazione mediante meccanismo TOTP(v. sezione SICUREZZA):
+	\item effettuare operazioni ``veloci'', ossia inserire pochi dati in una maschera preconfigurata e confermare l'operazione mediante meccanismo TOTP:
 	\begin{itemize}
 			\item ricariche telefoniche;
 %			\item bonifici ordinari e bonifici SEPA mediante compilazione di opportuni moduli on-line;
@@ -60,15 +60,15 @@ Ad ogni \emph{account di servizio} sono assegnati:
 Gli \emph{impiegati}, mediante il loro account di servizio, devono poter: 
 \begin{itemize}
 	\item confermare/respingere atti che richiedono esplicita approvazione, ad esempio i bid per conti o carte inviati dagli utenti; 
-	\item effettuare EVENTUALI operazioni minori di contabilità che una banca potrebbe permettere via internet
+	\item effettuare eventuali operazioni minori di contabilità che una banca potrebbe permettere via internet
 \end{itemize}
 
-I \emph{dirigenti} devono poter :
+I \emph{dirigenti} devono poter:
 \begin{itemize}
 	\item accedere e modificare i disclaimer pubblicitari del sito di home banking;
 	\item impostare e modificare opportuni pacchetti di azioni o di fondi d'investimento e in generale offerte che si vogliono propinare agli utenti;
 	\item selezionare, mediante opportuna combinazione di \emph{queries}, categorie o fasce di utenti in base a diversi parametri socio-economici, ed ottenere precise statistiche al riguardo.
-	\item confermare atti di importanza "superiore"( a.e. alti investimenti in titoli azionari, transazioni di danaro molto elevate da un conto corrente ad un altro, ecc.), in seguito all'approvazione iniziale di un impiegato.
+	\item confermare atti di importanza ``superiore'' (a.e. alti investimenti in titoli azionari, transazioni di danaro molto elevate da un conto corrente ad un altro, ecc.), in seguito all'approvazione iniziale di un impiegato.
 \end{itemize}
 
 \subsection{Transazioni}
@@ -84,16 +84,27 @@ La somma viene accreditata al \emph{conto destinatario} e detratta al \emph{cont
 \subsection{Titoli di credito}
 
 I titoli di credito sono, generalmente, strumenti finanziari mediante i quali i correntisti investono il proprio danaro: possono essere fondi comuni di investimento o azioni.
-Ogni titolo di credito deve avere un \emph{benchmark}, calcolato dalla banca e visibile all'utente, che ne specifichi la \emph{volatilità} sul mercato .Per motivi di sicurezza ed efficienza del sistema, si decide di non permettere l'acquisto diretto di titoli di credito su mercato nazionale e internazionale, ma di lasciare ad un account utente la possibilità di acquisire pacchetti preconfezionati dalla banca stessa.Tuttavia ogni correntista può, attraverso il proprio account, avere delle dettagliate informazioni sull'andamento in borsa dei titoli che conserva nel suo portafoglio  e gli è lasciata la possibilità di vendere tali titoli nel caso lo ritenga opportuno.
+Ogni titolo di credito deve avere un \emph{benchmark}, calcolato dalla banca e visibile all'utente, che ne specifichi la \emph{volatilità} sul mercato.
+Per motivi di sicurezza ed efficienza del sistema, si decide di non permettere l'acquisto diretto di titoli di credito su mercato nazionale e internazionale, ma di lasciare ad un account utente la possibilità di acquisire pacchetti preconfezionati dalla banca stessa.
+Tuttavia ogni correntista può, attraverso il proprio account, avere delle dettagliate informazioni sull'andamento in borsa dei titoli che conserva nel suo portafoglio  e gli è lasciata la possibilità di vendere tali titoli nel caso lo ritenga opportuno.
 
 \subsection{Bidding}
 
-\`E possibile per un correntista o un individuo non registrato \emph{fare bidding}, ossia proporre alla banca, sotto determinate condizioni, l'apertura di un conto corrente o il rilascio di una carta di credito con determinate agevolazioni.
+\`E possibile per un correntista o un individuo non registrato \emph{fare bidding}, ossia richiedere alla banca l'apertura di un conto corrente o il rilascio di una carta di credito con determinate condizioni.
 In base a delle regole definite dai dirigenti questa proposta pu\`o essere:
 \begin{itemize}
 	\item approvata automaticamente dal sistema;
 	\item inoltrata a un dipendente della banca per l'approvazione;
 	\item rifiutata automaticamente.
+\end{itemize}
+
+Un possibile sistema di regole per l'approvazione dei bidding \`e l'individuazione di \emph{aree di risposta} basate sui parametri personalizzabili, come costo mensile di una carta di credito, tetto di spesa massima mensile, capacit\`a di prelievo allo sportello, etc.
+Un esempio di come identificare queste aree di risposta \`e dato in figura \ref{fig:bidding}:
+\begin{itemize}
+	\item la zona compresa fra le linee tratteggiate verdi indica le condizioni (in questo caso una coppia di valori ``spesa massima mensile'' e ``costo mensile'' per una carta di credito) approvate automaticamente;
+	\item la zona compresa fra le linee tratteggiate arancioni indica le condizioni soggette a verifica del dirigente della filiale prima dell'accettazione o del rifiuto;
+	\item la zona compresa fra le linee tratteggiate rosse indica le condizioni rifiutate automaticamente.
+		Le motivazioni di un rifiuto automatico possono essere differenti: un tetto di spesa mensile troppo alto a fronte di un costo mensile troppo basso potrebbe essere economicamente svantaggioso per la banca, mentre un tetto di spesa basso associato a un costo mensile alto potrebbe portare la banca a violare le normative vigenti a tutela dei suoi clienti.
 \end{itemize}
 
 \begin{figure}
@@ -126,7 +137,22 @@ In base a delle regole definite dai dirigenti questa proposta pu\`o essere:
 	\end{tikzpicture}
 	}
 	\caption{Un esempio di bidding: confronto fra spesa massima mensile di una carta di credito e costo di mantenimento della stessa.}
+	\label{fig:bidding}
 \end{figure}
+
+Il sistema di bidding pu\`o portare diversi vantaggi alla banca che lo adotti:
+\begin{itemize}
+	\item fidelizzazione dell'utenza: un simile meccanismo permette alla banca di venire incontro alle esigenze di clienti di lunga data o con alta giacenza media mensile, che risultano essere ``buoni'' secondo le metriche della dirigenza, fornendo una possibilit\`a di interazione maggiore all'utente;
+	\item contrasto della concorrenza: un cliente della banca potrebbe ricevere un'offerta conveniente da un istituto concorrente, ma scoprire autonomamente che un'offerta simile \`e disponibile anche presso la sua banca attuale;
+	\item riduzione delle spese: automatizzando parte della ricerca dei contratti si riduce il carico di lavoro che i dipendenti della banca devono subire.
+\end{itemize}
+
+Un sistema di bidding presenta dei rischi, fra cui:
+\begin{itemize}
+	\item il sistema per stabilire i parametri di accettazione automatica potrebbe essere poco intuitivo e non fornire le metriche giuste, e il dirigente che se ne occupa viene portato a scelte che vanno contro gli interessi del suo istituto;
+	\item il sistema di bidding potrebbe essere troppo complesso per l'utenza della banca e non venir utilizzato.
+\end{itemize}
+Tutti questi rischi devono essere gestiti correttamente durante lo sviluppo del sistema.
 
 %TODO pubblicità contestuale on-demand di bidding?
 
