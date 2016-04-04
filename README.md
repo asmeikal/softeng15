@@ -67,8 +67,19 @@ Ha bisogno di `inkscape`.
 
 Il `Makefile` compila usando `latexmk`.
 
-**Per il futuro:** vorrei provare a scrivere uno scriptino per "finalizzare" i documenti.
-Lo scriptino dovrebbe prendere tutti i file `tex` nella cartella, cambiare `\date{\today}` alla data odierna, e schiaffarli tutti in una cartella `Iterations/N` incrementando `N` a ogni botta.
+## Stile di scrittura
+
+Alcune note sullo stile di scrittura per far felice LaTeX e git.
+
+- &Egrave; indifferente come si inseriscono gli accenti.
+Per le lettere maiuscole si possono usare trick come `\'E`.
+- Per semplificare il lavoro a git &egrave; preferibile inserire una frase per riga, ossia andare a capo dopo ogni punto.
+In questo modo modifiche a una frase sono facilmente identificabili dai diff.
+- I segni di punteggiatura sono seguiti da uno spazio, e attaccati alla lettera precedente.
+- Per mettere testo fra virgolette usare una combinazione di *backtick* e apostrofi:
+```
+Ad ``esempio'' così.
+```
 
 # Log
 
