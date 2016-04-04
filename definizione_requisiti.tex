@@ -41,7 +41,7 @@ Un correntista deve poter:
 	\item effettuare operazioni ``veloci'', ossia inserire pochi dati in una maschera preconfigurata e confermare l'operazione mediante meccanismo TOTP(v. sezione SICUREZZA):
 	\begin{itemize}
 			\item ricariche telefoniche;
-			\item bonifici ordinari e bonifici SEPA mediante compilazione di opportuni moduli on-line;
+%			\item bonifici ordinari e bonifici SEPA mediante compilazione di opportuni moduli on-line;
 			\item pagamento delle bollette;
 	\end{itemize}
 	\item visionare l'andamento in borsa dei titoli azionari del suo portafoglio;
@@ -95,6 +95,38 @@ In base a delle regole definite dai dirigenti questa proposta pu\`o essere:
 	\item inoltrata a un dipendente della banca per l'approvazione;
 	\item rifiutata automaticamente.
 \end{itemize}
+
+\begin{figure}
+	\resizebox{\columnwidth}{!}{
+	\begin{tikzpicture}
+		\begin{axis}[
+			ymin=1,
+			scale only axis,
+			width=\columnwidth,
+			ticks=none,
+			domain=0:10,
+			xlabel={Spesa massima mensile},
+			ylabel={Costo mensile},
+			axis lines=left,
+			samples=200
+        ]
+		    \path[name path=axis] (axis cs:0,0) -- (axis cs:1,0);
+		    \addplot[green] {x};
+		    \addplot[green, dashed] {x-1};
+		    \addplot[green, dashed] {x+1};
+		    \addplot[orange, dashed] {x-2};
+		    \addplot[orange, dashed] {x+2};
+		    \addplot[red, dashed] {x-3};
+		    \addplot[red, dashed] {x+3};
+%   			\node [] at (axis cs:0.2,0) {basso};
+%   			\node [] at (axis cs:0.6,0.3) {medio};
+%   			\node [] at (axis cs:1.0,0.6) {alto};
+%   			\node [] at (axis cs:1.4,1.2) {massimo};			
+		\end{axis}
+	\end{tikzpicture}
+	}
+	\caption{Un esempio di bidding: confronto fra spesa massima mensile di una carta di credito e costo di mantenimento della stessa.}
+\end{figure}
 
 %TODO pubblicità contestuale on-demand di bidding?
 
