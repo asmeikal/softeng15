@@ -42,6 +42,7 @@
 %----------------------------------------------------------------------
 
 \RequirePackage[utf8]{inputenc}
+\RequirePackage[italian]{babel}
 \RequirePackage{amsmath,amsfonts,amssymb}
 \RequirePackage{graphicx}
 \RequirePackage[table]{xcolor}
