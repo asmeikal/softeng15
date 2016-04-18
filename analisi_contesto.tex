@@ -59,11 +59,13 @@ Chiamiamo ``utente titolare di un conto corrente'' un utente registrato presso l
 
 Il bonifico \`e un trasferimento di denaro da un conto corrente a un altro.
 Un utente titolare di un conto corrente pu\`o effettuare bonifici dal suo conto corrente.
-Distinguiamo due tipi di bonifici:
+Distinguiamo quattro tipi di bonifici:
 \begin{itemize}
 	\item Bonifico Italia se il conto corrente destinatario \`e aperto presso una banca italiana.
 	Per effettuare un Bonifico Italia \`e necessario conoscere nome, cognome, indirizzo e codice IBAN del destinatario.
 	\item Bonifico SEPA se il conto corrente destinatario \`e aperto presso una banca europea. Per effettuare un Bonifico SEPA \`e necessario conoscere anche il codice BIC/SWIFT della banca del destinatario \cite{bonifico_unicredit}.
+    \item Bonifico intrabancario - bonifico verso un conto nella stessa banca. L'operazione necessita conoscere solo i dati del conto di destinazione. In genere questa operazione \`e gratuita o prevede un tasso ridotto.
+    \item Pagamento bollettini MAV. Il MAV \`e un servizio di pagamento che usa un codice di 17 cifre per identificare univocamente la bolletta. Il cliente fornisce il codice MAV al sistema che a sua volta \`e in grado di risalire ai dati del pagamento.
 \end{itemize}
 Poich\'e la maggioranza dei pagamenti che una persona deve effettuare (tasse, bollette, ricariche, etc.) avvengono tramite bonifico, utenti di un sistema di Home Banking ritengono utile la possibilit\`a di effettuare pagamenti di un certo tipo tramite ``maschere specializzate'', che facilitino la compilazione dei dati e aiutino l'utente a evitare errori.
 
@@ -178,8 +180,15 @@ Il sistema deve permettere agli utenti di:
     \item Visionare lo storico delle transazioni.
     \item Visionare le informazioni riguardati alle carte di debito/credito associate al conto corrente.
     \item Effettuare operazioni di pagamento veloci(ricariche telefoniche,ecc).
-    \item Effettuare bonifici ordinari e bonifici SEPA.
-    \item Funzionalit\`a di base per \emph{online trading}.
+    \item Effettuare bonifici ordinari, bonifici SEPA e bonifici intrabancari.
+    \item Pagare bollettini con MAV.
+    \item Funzionalit\`a di base per \emph{online trading}:
+        \begin{itemize}
+            \item Comprare pacchetti di titoli precompilati dai manager della banca.
+            \item Visualizzare le informazioni come pacchetti attualmente posseduti dal cliente e
+                la loro scadenza.
+            \item \emph{Forfeit} di un pacchetto, ovvero la vendita del paccheto prima della sua scadenza.
+        \end{itemize}
 \end{itemize}
 
 Il personale bancario deve poter:
@@ -188,7 +197,10 @@ Il personale bancario deve poter:
     \item Visionare le transazioni.
     \item Visionare i log di sicurezza.
     \item Modificare informazioni di un account.
-
+    \item Compilare i pacchetti di titoli per il sistema Home Trading.
+    \item Modificare i parametri del sistema Bidding.
+    \item Visualizzare le richeste sottoposte al sistema di Bidding.
+    \item Approvare / Rifiutare richieste Bidding.
 \end{itemize}
 
 %Come previsto dalla legislazione gli enti governativi devono poter:
