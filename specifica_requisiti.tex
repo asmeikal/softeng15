@@ -53,4 +53,39 @@ In particolare, ogni log deve contenere almeno:
 
 \subsection{Requisiti di dominio}
 
-\emph{Da determinare}
+La legislazione attuale richiede che gli organi di controllo finanziario come la Banca d'Italia e le forze dell'ordine possano accedere in lettura a tutte le informazioni salvate dal sistema di Online Banking.
+
+Ogni sistema informatico nell'ambito bancario deve permettere l'accesso da remoto alla sua rete interna tramite il meccanismo di \emph{VPN}.
+%TODO glossario vpn - virtual private network.
+Fornire alle autorit\`a di controllo le credenziali e/o interfacce per accedere ai sistemi di \emph{data storage}.
+
+In particolare le forze dell'ordine devono poter:
+\begin{itemize}
+    \item Dato un utente visualizzare le seguenti informazioni:
+        \begin{itemize}
+            \item Tutte le transazioni effettuati dall'utente.
+            \item Tutte le transazioni che hanno l'utente come destinatario.
+            \item Dati anagrafici dell'utente.
+            \item Informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
+        \end{itemize}
+    \item In caso le informazioni siano ridondanti il sistema pu\`o fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
+\end{itemize}
+        %TODO da qualche parte bisogna dire che un haxxor in genere non puo modificare tutti i log in maniera coerente, perche pensa a rubare i dindi invece di giocare ad uplink
+
+L'organo di controllo finanziario deve poter:
+\begin{itemize}
+    \item Dato un utente visualizzare le seguenti informazioni:
+        \begin{itemize}
+            \item Tutte le transazioni effettuati dall'utente.
+            \item Tutte le transazioni che hanno l'utente come destinatario.
+            \item Lo storico di Online Trading dell'utente.
+        \end{itemize}
+    \item Visualizzare le informazioni dei pacchetti di Online Trading.
+    \item Visualizzre lo storico del sistema di Online Trading.
+    \item Visualizzare lo storico del sistema di Bidding.
+    %non so se ci va visualizzare mutui e tassi
+\end{itemize}
+
+
+
+
