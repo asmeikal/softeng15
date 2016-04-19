@@ -1,0 +1,46 @@
+
+\documentclass[a4paper,11pt]{texmemo}
+\usepackage[italian]{babel}
+
+\newcommand{\code}[1]{\texttt{#1}}
+
+\memonumber{1}
+\memosubject{Note su incontro con capoprogetto}
+\memodate{12/04/2016}
+
+\begin{document}
+
+\maketitle
+
+Di seguito sono riportate le considerazioni emerse durante l'incontro del 12 Aprile.
+
+Rivedere e definire con maggiore precisione milestone e attivit\`a del progetto.
+In particolare:
+\begin{itemize}
+	\item (\code{REV\_01\_01}) milestone della fase di Construction: l'avvenuta verifica del funzionamento nell'ambiente di sviluppo del software prodotto;
+	\item (\code{REV\_01\_02}) attivit\`a della fase di Transition: installazione presso i clienti.
+		Ha una conseguenza sui fattori di complessit\`a tecnica nell'analisi dei costi: aumentare il valore assegnato alla facilit\`a di installazione.
+\end{itemize}
+
+Nell'analisi dei rischi:
+\begin{itemize}
+	\item (\code{REV\_01\_03}) rivedere il \emph{management} dei rischi \code{RIS\_03} e \code{RIS\_04};
+	\item (\code{REV\_01\_04}) identificare i \emph{trigger} di ciascun rischio.
+\end{itemize}
+
+Nell'analisi del contesto tenere conto di:
+\begin{itemize}
+	\item (\code{REV\_01\_05}) bonifici all'interno della stessa banca;
+	\item (\code{REV\_01\_06}) pagamento tramite MAV\cite{mav_wiki} e RAV.
+\end{itemize}
+
+Nella definizione dei requisiti:
+\begin{itemize}
+	\item (\code{REV\_01\_07}) nella sezione sul \emph{bidding} valutare la possibilit\`a di automatizzare la gestione di prestiti e mutui;
+	\item (\code{REV\_01\_08}) valutare se inserire la compravendita di pacchetti di titoli preconfezionati dalla banca.
+\end{itemize}
+
+\renewcommand{\refname}{Riferimenti}
+\printbibliography
+
+\end{document}

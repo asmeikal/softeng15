@@ -3,7 +3,9 @@
 Di seguito elenchiamo le attivit\`a individuate in ciascuna fase di sviluppo.
 L'interdipendenza fra le attivit\`a di ciascuna fase e il loro progresso sono rappresentati con in forma tabulare, con reti di attivit\`a e con diagrammi di Gantt.
 
-% TODO aggiungere cose su interdipendenza fra fasi e parallelizzazione
+La dipendenza fra le varie attivit\`a non implica la sequenzialit\`a fra queste: per accelerare i tempi di sviluppo del software attivit\`a interdipendenti sono portate avanti contemporaneamente.
+In caso di modifiche ai documenti prodotti da una certa attivit\`a vengono svolte ulteriori iterazioni delle altre attivit\`a.
+In altre parole all'interno delle singole iterazioni viene adottata una pratica di sviluppo \emph{agile}.
 
 \subsection{Attivit\`a della fase di Inception}
 
@@ -37,6 +39,10 @@ Le attivit\`a individuate come componenti della fase di Inception sono le seguen
 Una rappresentazione delle dipendenze fra le attivit\`a \`e fornita dalla tabella in figura \ref{fig:attivita_inception_tabella}, assieme a una misura approssimativa del tempo richiesto da ciascuna attivit\`a.
 Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fig:attivita_inception_grafo}.
 
+I codici identificativi assegnati e il raggruppamento nel grafo sottolineano la partizione delle attivit\`a in tre sotto-gruppi, uno per documento prodotto.
+Gli archi tratteggiati nella rete delle attivit\`a rappresentano dipendenze fra documenti differenti.
+Il lavoro ai documenti \`e stato pianificato seguendo queste dipendenze.
+
 \begin{figure*}[!h]
 \centering
 \begin{tabular}{*{4}{l}}
@@ -44,10 +50,10 @@ Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fi
 \cellcolor{color2!10} ID & \cellcolor{color2!10} Nome & \cellcolor{color2!10} Durata (sett.) & \cellcolor{color2!10} Dipendenze \\
 \midrule
 \code{I.AC.1} & Analisi contesto & 3 & --- \\
-\code{I.AC.2} & Sviluppo business-cases & 1 & \code{I.AC.1} \\
-\code{I.AC.3} & Studio di fattibilit\`a & 3 & \code{I.AC.1} \\
+\code{I.AC.2} & Sviluppo business-cases & 2 & \code{I.AC.1} \\
+\code{I.AC.3} & Studio di fattibilit\`a & 4 & \code{I.AC.1} \\
 \midrule
-\code{I.R.1} & Definizione requisiti & 2 & \code{I.AC.2}  \\
+\code{I.R.1} & Definizione requisiti & 5 & \code{I.AC.2}  \\
 \code{I.R.2} & Specifica requisiti & 3 & \code{I.R.1} \\
 \code{I.R.3} & Creazione glossario & 2 & \code{I.R.1}, \code{I.R.2} \\
 \code{I.R.4} & Definizione use-case principali & 1 & \code{I.R.1}, \code{I.R.2} \\
@@ -56,7 +62,7 @@ Il grafo delle dipendenze fra le varie attivit\`a \`e mostrato in figura \ref{fi
 \code{I.PP.2} & Analisi dei rischi & 2 & \code{I.AC.1} \\
 \code{I.PP.3} & Analisi dei costi & 2 & \code{I.AC.1}, \code{I.R.2}, \code{I.R.4} \\
 \midrule
-\code{I.AC} & Stesura documento analisi del contesto & 2 & \code{I.AC.1}, \code{I.AC.2}, \code{I.AC.3} \\
+\code{I.AC} & Stesura documento analisi del contesto & 3 & \code{I.AC.1}, \code{I.AC.2}, \code{I.AC.3} \\
 \code{I.R} & Stesura documento dei requisiti & 2 & \code{I.R.1}, \code{I.R.2}, \code{I.R.3}, \code{I.R.4} \\
 \code{I.PP} & Stesura documento di piano di progetto & 2 & \code{I.PP.1}, \code{I.PP.2} \\
 \bottomrule

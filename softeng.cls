@@ -42,6 +42,7 @@
 %----------------------------------------------------------------------
 
 \RequirePackage[utf8]{inputenc}
+\RequirePackage[italian]{babel}
 \RequirePackage{amsmath,amsfonts,amssymb}
 \RequirePackage{graphicx}
 \RequirePackage[table]{xcolor}
@@ -86,6 +87,9 @@ justification=raggedright]{caption}
 \rfoot{}%
 \renewcommand{\headrulewidth}{0pt}% % No header rule
 \renewcommand{\footrulewidth}{0pt}% % No footer rule
+
+\chead{\bf DRAFT}
+\cfoot{\bf DRAFT}
 
 %----------------------------------------------------------------------
 %	SECTION/SUBSECTION/PARAGRAPH SET-UP

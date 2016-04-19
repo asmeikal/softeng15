@@ -1,7 +1,5 @@
 \section{Analisi dei costi}
 
-% TODO scrivere analisi dei costi
-
 La stima dei costi di realizzazione del progetto viene effettuata con la tecnica degli \emph{Use Case Points}.
 
 Gli Use Case Points del progetto sono dati dalla somma di due addendi:
@@ -16,7 +14,7 @@ Il valore ottenuto dalla somma di \code{UUCW} e \code{UAW} viene moltiplicato pe
 	\item[Technical Complexity Factor]
 		Misura la complessit\`a tecnica del sistema.
 	\item[Environmental Complexity Factor]
-		Misura la complessit\`a dell'ambiente in cui il sistema si inserir\`a.
+		Misura la complessit\`a dell'ambiente in cui il sistema viene sviluppato.
 \end{description}
 
 \subsection{Unadjusted Use Case Weight}
@@ -31,6 +29,14 @@ Il \code{UAW} sar\`a determinato a individuazione degli use case ultimata.
 
 \subsection{Technical Complexity Factor}
 
+Il \code{TCF} \`e un fattore moltiplicativo che tiene conto della complessit\`a tecnica del sistema in sviluppo.
+Ciascun fattore tecnico ha un peso compreso fra $0.5$ e $2.0$.
+A ciascun fattore tecnico viene assegnato un valore fra $0$ (fattore ininfluente) e $5$ (fattore essenziale)
+Il \code{TCF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore tecnico.
+
+I valori assegnati sono indicati nella tabella seguente.
+
+\begin{center}
 \begin{tabularx}{\columnwidth}{c X c c}
 \toprule
 \cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
@@ -47,14 +53,37 @@ Il \code{UAW} sar\`a determinato a individuazione degli use case ultimata.
 \code{T10} & Parallelismo/concorrenza & $1.0$ & --- \\
 \code{T11} & Sicurezza & $1.0$ & 5 \\
 \code{T12} & Accesso terze parti & $1.0$ & 5 \\
-\code{T13} & Addestramento utente & $1.0$ & 0 \\
+\code{T13} & Addestramento utente & $1.0$ & 1 \\
 \midrule
 \multicolumn{3}{r}{Totale \code{TCF}} & --- \\
 \bottomrule
 \end{tabularx}
+\end{center}
+
+La scelta dei valori \`e stata basata sulle seguenti considerazioni:
+\begin{itemize}
+	\item \code{T6}: la facilit\`a d'installazione \`e un fattore mediamente rilevante.
+		Il software \`e destinato a enti bancari, e l'installazione sar\`a curata da membri della nostra societ\`a.
+	\item \code{T7}: la facilit\`a d'utilizzo \`e una componente molto importante del sistema.
+		Il sistema in sviluppo riguarda questioni finanziarie della vita del singolo, per le quali la facilit\`a d'uso non \`e importante quanto altre questioni, principalmente la sicurezza del sistema e dei risparmi degli utenti: a titolo d'esempio, se operazioni sensibili come inviare un bonifico richiedono pi\`u step da completare con attenzione \`e ragionevole pensare che sia pi\`u difficile effettuare un bonifico per errore.
+		La facilit\`a d'uso \`e pi\`u rilevante per i dipendenti della banca.
+	\item \code{T11}: la sicurezza \`e uno degli aspetti fondamentali del progetto.
+	\item \code{T12}: l'accesso a parti terze \`e uno degli aspetti fondamentali del progetto.
+	\item \code{T13}: l'addestramento utente \`e praticamente irrilevante.
+		Gli utenti finali del sistema di Home Banking (clienti della banca) non possono essere addestrati.
+		I dipendenti della banca possono essere addestrati, ma la necessit\`a di addestramento dovrebbe essere mitigata dalla facilit\`a d'uso del software (fattore \code{T7}).
+\end{itemize}
 
 \subsection{Environmental Complexity Factor}
 
+Il \code{ECF} \`e un fattore moltiplicativo che tiene conto della complessit\`a dell'ambiente in cui il software viene sviluppato.
+Ciascun fattore ambientale ha un peso compreso fra $0.5$ e $2.0$.
+A ciascun fattore ambientale viene assegnato un valore fra $0$ (fattore ininfluente) e $5$ (fattore essenziale)
+Il \code{ECF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore ambientale.
+
+I valori assegnati sono indicati nella tabella seguente.
+
+\begin{center}
 \begin{tabularx}{\columnwidth}{c X r r}
 \toprule
 \cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
@@ -71,6 +100,7 @@ Il \code{UAW} sar\`a determinato a individuazione degli use case ultimata.
 \multicolumn{3}{r}{Totale \code{ECF}} & --- \\
 \bottomrule
 \end{tabularx}
+\end{center}
 
 \subsection{Use Case Points e previsione di costo}
 
