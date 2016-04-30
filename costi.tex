@@ -78,8 +78,8 @@ L'assegnamento dei valori \`e basato sulle seguenti considerazioni:
 	\item \code{T8}: ???
 	\item \code{T9}: la manutenzione del sistema \`e una delle parti fondamentali della fase di transition, ed \`e quindi un fattore essenziale nello sviluppo dello stesso.
 	\item \code{T10}: ???
-	\item \code{T11}: la sicurezza \`e uno degli aspetti fondamentali del progetto.
-	\item \code{T12}: l'accesso a parti terze \`e uno degli aspetti fondamentali del progetto.
+	\item \code{T11}: la sicurezza \`e uno degli aspetti fondamentali del progetto in quanto requisito non funzionale.
+	\item \code{T12}: l'accesso a parti terze \`e uno degli aspetti fondamentali del progetto in quanto requisito di dominio.
 	\item \code{T13}: l'addestramento utente \`e praticamente irrilevante.
 		Gli utenti finali del sistema di Home Banking (clienti della banca) non possono essere addestrati.
 		I dipendenti della banca possono essere addestrati, ma la necessit\`a di addestramento dovrebbe essere mitigata dalla facilit\`a d'uso del software (fattore \code{T7}).
@@ -99,11 +99,11 @@ I valori assegnati sono indicati nella tabella seguente.
 \toprule
 \cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
 \midrule
-\code{E1} & Familiarit\`a con processo software adottato & $1.5$ & 3 \\
-\code{E2} & Esperienza nel dominio dell'applicazione & $0.5$ & 3 \\
+\code{E1} & Familiarit\`a con processo software adottato & $1.5$ & 4 \\
+\code{E2} & Esperienza nel dominio dell'applicazione & $0.5$ & 4 \\
 \code{E3} & Esperienza del team con orientazione a oggetti & $1.0$ & 5 \\
 \code{E4} & Capacit\`a primo analista & $0.5$ & 4 \\
-\code{E5} & Motivazione del team & $1.0$ & 3 \\
+\code{E5} & Motivazione del team & $1.0$ & 4 \\
 \code{E6} & Stabilit\`a dei requisiti & $2.0$ & 4 \\
 \code{E7} & Staff part-time & $-1.0$ & 0 \\
 \code{E8} & Linguaggio di programmazione ostico & $-1.0$ & 3 \\
@@ -113,18 +113,9 @@ I valori assegnati sono indicati nella tabella seguente.
 \end{tabularx}
 \end{center}
 
-%TODO scrivere motivazioni per valori assegnati
-L'assegnamento dei valori \`e basato sulle seguenti considerazioni:
-\begin{itemize}
-	\item \code{E1} ???
-	\item \code{E2} ???
-	\item \code{E3} ???
-	\item \code{E4} ???
-	\item \code{E5} ???
-	\item \code{E6} ???
-	\item \code{E7} ???
-	\item \code{E8} ???
-\end{itemize}
+L'assegnamento dei valori \`e basato sul fatto che il software in sviluppo \`e \emph{sensibile}, in quanto concerne transazioni economiche di privati e presenta quindi problematiche importanti legate a sicurezza, aspetti legali, e privacy degli utenti.
+Il progetto richiede quindi un team competente ed esperto tanto nel dominio quanto in aspetti legati al processo adottato e in generale alle pratiche di sviluppo \emph{object oriented}.
+Per queste stesse considerazioni, e per i tempi di sviluppo condizionati dall'evoluzione dello scenario legale (relativo al dominio bancario) italiano, la stabilit\`a dei requisiti \`e un fattore molto rilevante.
 
 \subsection{Use Case Points e previsione di costo}
 
