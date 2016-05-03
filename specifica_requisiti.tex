@@ -9,46 +9,53 @@ Di seguito \`e illustrata la specifica dettagliata dei requisiti.
 
 \subsection{Requisiti non funzionali}
 
-\emph{Da determinare}
+%TODO aggiungere requisiti di disponibilità e affidabilità
+
+Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata.
+Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
+Ogni log deve contenere quantomeno le seguenti informazioni:
+\begin{itemize}
+	\item un'identificativo del tipo di operazione eseguita;
+	\item il conto coinvolto nell'operazione;
+	\item l'istante dell'operazione;
+	\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+\end{itemize}
 
 \subsubsection{Requisiti di sicurezza del sistema}
  
-Le credenziali d'accesso sono per un account sono:
-\begin{itemize}
-	\item dati anagrafici del correntista;
-	\item numero conto corrente;
-	\item password scelta dal correntista.
-\end{itemize}
-	
-Una volta che ha effettuato l'accesso,  l'utente deve poter svolgere le seguenti operazioni senza fornire la One Time Password:
-\begin{itemize}
-	\item Visionare saldo contabile, disponibile e liquido.
-	\item Visionare uno storico delle transazioni effettuate.
-	\item Visionare informazioni riguardo le carte di credito collegate al conto (se presenti).
-	\item Effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione.
-\end{itemize}
+Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza. 
 
-Invece è necessario fornire la One Time Password per:
 \begin{itemize}
-	\item effettuare transazioni, come:
+	\item L'accesso al sistema di Home Banking da parte di un utente avviene a seguito di autenticazione dello stesso.
+		Le credenziali di accesso devono essere trasmesse dal browser dell'utente al sistema di Home Banking utilizzando una connessione sicura.
+	\item Le credenziali d'accesso sono per un account sono:
+		\begin{itemize}
+			\item dati anagrafici del correntista;
+			\item numero conto corrente;
+			\item password fornita al correntista al momento della registrazione.
+		\end{itemize}
+	\item Le operazioni effettuabili dall'utente (requisiti funzionali) sono partizionate in operazioni che richiedono autenticazione tramite One Time Password e operazioni che \emph{non} richiedono ulteriore autenticazione.
+	Ogni operazione \`e eseguibile solo dopo che l'utente ha effettuato l'accesso al sistema di Home Banking.
+
+	Le seguenti operazioni non richiedono ulteriore autenticazione:
 	\begin{itemize}
-		\item bonifici ordinari e bonifici SEPA;
-		\item ricariche carte prepatate e schede telefoniche;
-		\item pagamento bollette, bollettini, tasse, etc;
+		\item Visionare saldo contabile, disponibile e liquido.
+		\item Visionare uno storico delle transazioni effettuate.
+		\item Visionare informazioni riguardo le carte di credito collegate al conto (se presenti).
+		\item Effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione.
 	\end{itemize}
-	\item configurare operazioni veloci;
-	\item ogni altra operazione sensibile.
-\end{itemize}
-
-Ogni operazione effettuata da un utente sul sistema deve essere registrata in un log.
-In particolare, ogni log deve contenere almeno:
-\begin{itemize}
-	\item l'operazione eseguita;
-	\item il conto coinvolto nell'operazione;
-		%TODO rivedere codesta parte: codice univoco della transazione al posto del conto?
-		% analizzare bene come funziona OBP
-	\item l'istante dell'operazione;
-	\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+	
+	Ogni altra operazione richiede autenticazione tramite One Time Password.
+	In particolare \`e richiesta autenticazione tramite One Time Password per:
+	\begin{itemize}
+		\item effettuare transazioni, come:
+		\begin{itemize}
+			\item bonifici ordinari, bonifici SEPA;
+			\item ricariche carte prepatate e schede telefoniche;
+			\item pagamento bollette, bollettini, tasse, etc;
+		\end{itemize}
+		\item configurare operazioni veloci.
+	\end{itemize}
 \end{itemize}
 
 \subsection{Requisiti di dominio}
