@@ -9,21 +9,34 @@ Di seguito \`e illustrata la specifica dettagliata dei requisiti.
 
 \subsection{Requisiti non funzionali}
 
-%TODO aggiungere requisiti di disponibilità e affidabilità
-
-Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata.
-Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
-Ogni log deve contenere quantomeno le seguenti informazioni:
 \begin{itemize}
-	\item un'identificativo del tipo di operazione eseguita;
-	\item il conto coinvolto nell'operazione;
-	\item l'istante dell'operazione;
-	\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+	\item Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata.
+	Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
+	Ogni log deve contenere quantomeno le seguenti informazioni:
+	\begin{itemize}
+		\item un'identificativo del tipo di operazione eseguita;
+		\item il conto coinvolto nell'operazione;
+		\item l'istante dell'operazione;
+		\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+	\end{itemize}
+
+	\item Il sistema di Home Banking ha dei requisiti impliciti di disponibilit\`a, ovvero il sistema deve avere una percentuale minima garantita di \emph{uptime}, o tempo in cui il sistema \`e disponibile e utilizzabile dagli utenti.
+	La percentuale \emph{uptime} non comprende eventuale tempo di \emph{downtime} previsto periodicamente per motivi di manutenzione, ottimizzazione delle prestazioni, aggiornamento, etc.
+	Le percentuali di \emph{uptime} garantito e di \emph{downtime} richiesto devono essere definite in funzione della quantit\`a di operazioni gestita dal sistema, ossia in funzione del numero di utenti attivi presso un particolare istituto bancario e della mole di transazioni effettuate quotidianamente, e in funzione delle caratteristiche delle macchine su cui il software viene installato presso un particolare istituto bancario.
+	La percentuale di \emph{uptime} garantito e di \emph{downtime} richiesto deve quindi essere stabilita e personalizzata al momento della vendita del software ad un istituto bancario.
+
+	\item Il sistema di Home Banking ha dei requisiti impliciti di usabilit\`a, ovvero:
+	\begin{itemize}
+		\item deve essere utilizzabile senza particolare addestramento dai clienti della banca;
+		\item deve essere utilizzabile dopo addestramento minimo dai dipendenti della banca.
+	\end{itemize}
+	Le operazioni disponibili per i clienti della banca (requisiti funzionali) devono essere facilmente utilizzabili e comprensibili.
+	Ogni maschera per l'inserimento di informazioni deve essere corredata da opportuni testi brevi illustranti il tipo di informazioni richieste.
 \end{itemize}
 
 \subsubsection{Requisiti di sicurezza del sistema}
- 
-Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza. 
+
+Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 
 \begin{itemize}
 	\item L'accesso al sistema di Home Banking da parte di un utente avviene a seguito di autenticazione dello stesso.
@@ -34,7 +47,7 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 			\item numero conto corrente;
 			\item password fornita al correntista al momento della registrazione.
 		\end{itemize}
-	\item Le operazioni effettuabili dall'utente (requisiti funzionali) sono partizionate in operazioni che richiedono autenticazione tramite One Time Password e operazioni che \emph{non} richiedono ulteriore autenticazione.
+	\item Le operazioni effettuabili dall'utente (requisiti funzionali) sono partizionate in operazioni che richiedono un'ulteriore autenticazione tramite One Time Password e operazioni che \emph{non} richiedono ulteriore autenticazione.
 	Ogni operazione \`e eseguibile solo dopo che l'utente ha effettuato l'accesso al sistema di Home Banking.
 
 	Le seguenti operazioni non richiedono ulteriore autenticazione:
