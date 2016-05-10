@@ -92,8 +92,14 @@ Tuttavia ogni correntista può, attraverso il proprio account, avere delle detta
 
 \subsection{Bidding}
 
-\`E possibile per un correntista o un individuo non registrato \emph{fare bidding}, ossia richiedere alla banca l'apertura di un conto corrente o il rilascio di una carta di credito con determinate condizioni.
-In base a delle regole definite dai dirigenti questa proposta pu\`o essere:
+\`E possibile per un correntista o un individuo non registrato \emph{fare bidding}, ossia richiedere alla banca:
+\begin{itemize}
+	\item L'apertura di un conto corrente soggetto a condizioni specifiche.
+	\item Il rilascio di una carta di credito soggetta a condizioni specifiche.
+	\item La concessione di un mutuo/prestito a tasso e condizioni specifiche.
+\end{itemize}
+
+In base a delle regole definite dai dirigenti la proposta pu\`o essere:
 \begin{itemize}
 	\item approvata automaticamente dal sistema;
 	\item inoltrata a un dipendente della banca per l'approvazione;
@@ -158,3 +164,20 @@ Tutti questi rischi devono essere gestiti correttamente durante lo sviluppo del 
 
 %TODO pubblicità contestuale on-demand di bidding?
 
+\subsection{Home Trading}
+
+HBS deve implementare una gestione (seppur parziale) dei portafogli fondi dei clienti della banca.
+
+La soluzione individuata, chiamata \emph{Home Trading}, ha le seguenti caratteristiche:
+\begin{itemize}
+	\item La banca che sfrutta il sistema di \emph{Home Trading} confeziona \emph{pacchetti di investimento} contenenti un certo numero di titoli azionari.
+	I pacchetti di investimento vengono proposti ai clienti della banca tramite HBS.
+	\item I clienti possono visualizzare informazioni sull'andamento passato dei titoli azionari contenuti in un pacchetto di investimento, assieme a una valutazione del rischio effettuata dal dipendente responsabile del confezionamento del pacchetto.
+	I clienti possono acquistare un pacchetto di investimento per un periodo di tempo predeterminato.
+	\item A ogni pacchetto di investimento \`e associata una soglia minima (inferiore al prezzo di acquisto) di \emph{valore garantito} del pacchetto.
+	Qualora un cliente di HBS voglia vendere un pacchetto di investimento prima del tempo predeterminato, ricever\`a dalla banca il valore garantito del pacchetto, indipendentemente dall'andamento delle azioni contenute nel pacchetto.
+	\item Al termine del periodo di possesso del pacchetto i clienti di HBS ricevono dalla banca una somma commisurata alle perdite o ai guadagni delle azioni contenute nel pacchetto.
+	Il valore del pacchetto non pu\`o scendere sotto il \emph{valore garantito} stabilito dalla banca, ossia in caso di perdita delle azioni contenute nel pacchetto la perdita del cliente che ha effettuato l'invesitmento \`e sempre minore o uguale alla differenza fra prezzo originale del pacchetto e valore garantito del pacchetto.
+\end{itemize}
+
+Il sistema di \emph{Home Trading} proposto permette di gestire i portafogli fondi dei clienti della banca, senza incorrere nell'elevata complessit\`a caratterizzante sistemi di \emph{trading} professionali.
