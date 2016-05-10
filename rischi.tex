@@ -314,6 +314,38 @@ Risolvere la vulnerabilit\`a, aggiornare software gi\`a \emph{deployed}.
 }
 \end{ptable}
 
+\subsection{\code{RIS\_8} - Problematiche sistema di bidding}
+
+\begin{ptable}{3}
+\ptitlerow{\bf Problematiche sistema di bidding}
+\pcells{ID & Probabilit\`a & Impatto}
+\pcells{$\code{RIS\_BIDPR\_MP\_MD\_8}$ & 40\% & medio}
+\pline
+\ptitlerow{Descrizione}
+\prow{
+La funzionalit\`a di bidding presente nei requisiti \`e una funzionalit\`a nuova e non presente in altri contesti.
+Nella fase di definizione dei requisiti \`e emerso il rischio di una complessit\`a troppo elevata del sistema per gli utenti di HBS (sia per i clienti che per i manager della banca).
+Un sistema di bidding troppo complesso per i clienti della banca potrebbe non venire utilizzato, e trasformarsi quindi in una funzionalit\`a inutile.
+Un sistema di bidding troppo complesso per i manager della banca potrebbe portare i manager a impostare non correttamente i parametri di accettazione automatica dei \emph{bid} e risultare in perdite per l'istituto bancario.
+}
+\pline
+\ptitlerow{Mitigation}
+\prow{
+Effettuare diverse e ripetute fasi di testing del sistema durante lo sviluppo del sistema con manager di enti bancari interessati a adottare HBS e con persone di varia provenienza sociale e con livello di alfabetizzazione digitale diversificato.
+}
+\pline
+\ptitlerow{Monitoring}
+\prow{
+Registrare opinioni e pareri dei soggetti delle fasi di testing, registrare facilit\`a di traduzione dell'intenzione in azione con il sistema di bidding sviluppato.
+Avviare fase di \emph{management} qualora la maggioranza dei soggetti delle fasi di testing abbia problemi a utilizzare il sistema di bidding.
+}
+\pline
+\ptitlerow{Management}
+\prow{
+Reiterare analisi e sviluppo del sistema di bidding utilizzando i dati raccolti nelle fasi di testing per effettuare un \emph{refactoring} delle sezioni problematiche del software.
+}
+\end{ptable}
+
 \section{Evoluzione dei rischi}
 
 Durante lo sviluppo terremo traccia dell'evoluzione dei rischi, monitorando in particolare come cambia la probabilit\`a di un rischio e il suo impatto sul progetto.
