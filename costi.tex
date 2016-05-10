@@ -35,9 +35,10 @@ Ciascun fattore tecnico ha un peso compreso fra $0.5$ e $2.0$.
 A ciascun fattore tecnico viene assegnato un valore fra $0$ (fattore ininfluente) e $5$ (fattore essenziale)
 Il \code{TCF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore tecnico.
 
-I valori assegnati sono indicati nella tabella \ref{tab:tcf}.
+I valori assegnati sono indicati nella tabella seguente.
+%I valori assegnati sono indicati nella tabella \ref{tab:tcf}.
 
-\begin{table}[b]
+\begin{center}
 \begin{tabularx}{\columnwidth}{c X c c}
 \toprule
 \cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
@@ -59,10 +60,9 @@ I valori assegnati sono indicati nella tabella \ref{tab:tcf}.
 \multicolumn{3}{r}{Totale \code{TCF}} & 50 \\
 \bottomrule
 \end{tabularx}
-\caption{\label{tab:tcf} Fattori di complessit\`a tecnica.}
-\end{table}
+%\caption{\label{tab:tcf} Fattori di complessit\`a tecnica.}
+\end{center}
 
-%TODO scrivere motivazioni per valori assegnati
 L'assegnamento dei valori \`e basato sulle seguenti considerazioni:
 \begin{itemize}
 	\item \code{T1}: il sistema sar\`a verosimilmente composto da pi\`u componenti distribuite, identificate dalle loro responsabilit\`a.
@@ -94,9 +94,10 @@ Ciascun fattore ambientale ha un peso compreso fra $0.5$ e $2.0$.
 A ciascun fattore ambientale viene assegnato un valore fra $0$ (fattore ininfluente) e $5$ (fattore essenziale)
 Il \code{ECF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore ambientale.
 
-I valori assegnati sono indicati nella tabella \ref{tab:ecf}.
+I valori assegnati sono indicati nella tabella seguente.
+%I valori assegnati sono indicati nella tabella \ref{tab:ecf}.
 
-\begin{table}[b]
+\begin{center}
 \begin{tabularx}{\columnwidth}{c X r r}
 \toprule
 \cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
@@ -113,8 +114,8 @@ I valori assegnati sono indicati nella tabella \ref{tab:ecf}.
 \multicolumn{3}{r}{Totale \code{ECF}} & 28 \\
 \bottomrule
 \end{tabularx}
-\caption{\label{tab:ecf} Fattori di complessit\`a ambientale.}
-\end{table}
+%\caption{\label{tab:ecf} Fattori di complessit\`a ambientale.}
+\end{center}
 
 L'assegnamento dei valori \`e basato sul fatto che il software in sviluppo \`e \emph{sensibile}, in quanto concerne transazioni economiche di privati e presenta quindi problematiche importanti legate a sicurezza, aspetti legali, e privacy degli utenti.
 Il progetto richiede quindi un team competente ed esperto tanto nel dominio quanto in aspetti legati al processo adottato e in generale alle pratiche di sviluppo \emph{object oriented}.
