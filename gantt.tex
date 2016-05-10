@@ -3,6 +3,8 @@
 Rappresentiamo la temporizzazione delle attivit\`a attraverso le fasi del progetto e teniamo traccia del loro stato di esecuzione con una serie di diagrammi di Gantt.
 Il tempo di esecuzione richiesto da ciascuna attivit\`a non rispecchia perfettamente i tempi previsti: alcune attivit\`a, come ad esempio la creazione degli use case o del glossario, sono state protratte nel tempo per procedere di pari passo con attivit\`a da cui dipendono.
 
+Il diagramma di Gantt relativo alla fase di inception \`e rappresentato in figura \ref{fig:gantt_inception}.
+
 %\begin{figure*}[tbh]
 %	\centering
 %     \begin{ganttchart}[
@@ -39,6 +41,7 @@ Il tempo di esecuzione richiesto da ciascuna attivit\`a non rispecchia perfettam
 
 \begin{figure*}
 \centering
+\hspace*{-0.8cm}
 \begin{ganttchart}[
 			title/.style={fill={color1!10}},
 			title label font=\color{color2},
@@ -52,7 +55,7 @@ Il tempo di esecuzione richiesto da ciascuna attivit\`a non rispecchia perfettam
 			milestone label font = \scriptsize,
 			x unit=2.2mm,
 			milestone height = 0.2,
-			today=2016-05-04,
+%			today=2016-05-04,
 			today label = {},
 			today rule/.style = {draw={color1!60}},
 			progress label text = {\pgfmathprintnumber[precision=0, verbatim]{#1}\%},
@@ -68,18 +71,18 @@ Il tempo di esecuzione richiesto da ciascuna attivit\`a non rispecchia perfettam
 	\ganttbar[progress=100]{Stesura documento analisi contesto}{2016-03-14}{2016-04-10} \\
 	\ganttgroup[progress=today]{Raccolta requisiti}{2016-03-09}{2016-05-04} \\
 	\ganttbar[progress=100]{Definizione requisiti}{2016-03-09}{2016-04-18} \\
-	\ganttbar[progress=60]{Specifica requisiti}{2016-03-28}{2016-04-27} \\
-	\ganttbar[progress=80]{Creazione glossario}{2016-03-16}{2016-04-18} \\
+	\ganttbar[progress=100]{Specifica requisiti}{2016-03-28}{2016-04-27} \\
+	\ganttbar[progress=100]{Creazione glossario}{2016-03-16}{2016-04-18} \\
 	\ganttbar[progress=100]{Definizione use-case principali}{2016-03-20}{2016-04-18} \\
-	\ganttbar[progress=90]{Stesura documento requisiti}{2016-03-16}{2016-05-04} \\
+	\ganttbar[progress=100]{Stesura documento requisiti}{2016-03-16}{2016-05-04} \\
 	\ganttgroup[progress=today]{Pianificazione progetto}{2016-03-25}{2016-04-28} \\
 	\ganttbar[progress=100]{Definizione milestone}{2016-03-25}{2016-04-10} \\
 	\ganttbar[progress=100]{Analisi dei rischi}{2016-03-25}{2016-04-10} \\
 	\ganttbar[progress=100]{Analisi dei costi}{2016-03-29}{2016-04-16} \\
 	\ganttbar[progress=100]{Stesura piano di progetto}{2016-03-25}{2016-04-28} \\
-	\ganttmilestone[progress=100]{Prima revisione capo progetto}{2016-04-12} \\
-	\ganttmilestone[progress=today]{Termine inception}{2016-05-14}
+	\ganttmilestone[progress=100]{Prima revisione capo progetto}{2016-04-12}
+	\ganttmilestone[progress=today]{Seconda revisione capo progetto}{2016-05-10}
 \end{ganttchart}
-\caption{Diagramma di Gantt della fase di Inception.}
+\caption{\label{fig:gantt_inception}Diagramma di Gantt della fase di Inception.}
 \end{figure*}
 
