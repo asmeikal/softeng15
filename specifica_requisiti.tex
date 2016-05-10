@@ -5,33 +5,34 @@ Di seguito \`e illustrata la specifica dettagliata dei requisiti.
 
 \subsection{Requisiti funzionali}
 
-I requisiti funzionali individuati per il sistema HBS, ossia l'insieme di requisiti che il sistema deve realizzare , sono:
-\begin{enumerate}
-\item fornire un account HBS ad ogni utente correntista che ne faccia esplicita richiesta e permettergli l'iscrizione mediante apposite procedure;
-\item permettere ad un utente registrato l'amministrazione completa e corretta del proprio conto corrente ; per questa ragione sono essenziali le funzionalità che:
-\begin{enumerate}
-\item permettono all'utente di verificare in tempo reale il suo saldo attuale , il suo saldo contabile e il suo saldo liquido ;
-\item permettono all'utente di verificare in tempo reale l'andamento dei titoli azionari che possiede e , nel caso , venderli;
-\item permettono all'utente di effettuare operazioni veloci come ricariche telefoniche , bonifici ordinari e pagamento delle bollette;
-\end{enumerate}
+I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 
-\item permettere che l'utente possa sfogliare lo storico delle transazioni eseguite, complete delle informazioni riguardanti la data , il destinatario , l'importo previsto e una causale descrittiva delle motivazioni ;
+\begin{enumerate}
+	\item fornire un account HBS ad ogni utente correntista che ne faccia esplicita richiesta e permettergli l'iscrizione mediante apposite procedure;
+	\item permettere ad un utente registrato l'amministrazione completa e corretta del proprio conto corrente ; per questa ragione sono essenziali le funzionalità che:
+	\begin{enumerate}
+		\item permettono all'utente di verificare in tempo reale il suo saldo attuale , il suo saldo contabile e il suo saldo liquido ;
+		\item permettono all'utente di verificare in tempo reale l'andamento dei titoli azionari che possiede e , nel caso , venderli;
+		\item permettono all'utente di effettuare operazioni veloci come ricariche telefoniche , bonifici ordinari e pagamento delle bollette;
+	\end{enumerate}
+
+	\item permettere che l'utente possa sfogliare lo storico delle transazioni eseguite, complete delle informazioni riguardanti la data , il destinatario , l'importo previsto e una causale descrittiva delle motivazioni ;
 \item permettere che l'utente , in tempo reale , abbia un resoconto delle transazioni che sono in corso da e verso il suo conto;
 
-\item permettere ai dipendenti di una banca , rispettivamente impiegati e manager , di accedere al sistema mediante specifico e personale account ;
+	\item permettere ai dipendenti di una banca , rispettivamente impiegati e manager , di accedere al sistema mediante specifico e personale account ;
 
-\item permettere ai manager di accettare/rifiutare le proposte di bidding per le carte di credito e prestiti fatte dagli utenti;
-\item permettere ai manager di inserire tutte le informazioni riguardanti le modalità del bidding offerto dalla banca : soglie minime e massime di offerta, scadenze, eventuali costi, ecc.
-\item permettere ai manager di gestire in modo efficiente gli spazi pubblicitari offerti dalle pagine web del sistema, potendone arbitrariamente modificare i contenuti e indirizzando determinate pubblicità ad determinati insiemi di utenti aventi delle caratteristiche desiderate;
+	\item permettere ai manager di accettare/rifiutare le proposte di bidding per le carte di credito e prestiti fatte dagli utenti;
+	\item permettere ai manager di inserire tutte le informazioni riguardanti le modalità del bidding offerto dalla banca : soglie minime e massime di offerta, scadenze, eventuali costi, ecc.
+	\item permettere ai manager di gestire in modo efficiente gli spazi pubblicitari offerti dalle pagine web del sistema, potendone arbitrariamente modificare i contenuti e indirizzando determinate pubblicità ad determinati insiemi di utenti aventi delle caratteristiche desiderate;
 
-\item permettere all'autorità di controllo di accedere ad ogni conto corrente e di recuperare ogni informazione necessaria;
-\item permettere all'autorità di controllo di bloccare transazioni in atto e di poter accedere allo storico delle transazioni effettuate;
+	\item permettere all'autorità di controllo di accedere ad ogni conto corrente e di recuperare ogni informazione necessaria;
+	\item permettere all'autorità di controllo di bloccare transazioni in atto e di poter accedere allo storico delle transazioni effettuate;
 
 \end{enumerate}
 
 \subsection{Requisiti non funzionali}
 
-\begin{itemize}
+\begin{enumerate}
 	\item Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata.
 %TODO muovere fra i requisiti funzionali
 %	Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
@@ -52,40 +53,40 @@ I requisiti funzionali individuati per il sistema HBS, ossia l'insieme di requis
 	La percentuale di \emph{uptime} garantito e di \emph{downtime} richiesto deve quindi essere stabilita e personalizzata al momento della vendita del software ad un istituto bancario.
 
 	\item Il sistema di Home Banking ha dei requisiti impliciti di usabilit\`a, ovvero:
-	\begin{itemize}
+	\begin{enumerate}
 		\item deve essere utilizzabile senza particolare addestramento dai clienti della banca;
 		\item deve essere utilizzabile dopo addestramento minimo dai dipendenti della banca.
-	\end{itemize}
+	\end{enumerate}
 	Le operazioni disponibili per i clienti della banca (requisiti funzionali) devono essere facilmente utilizzabili e comprensibili.
 	Ogni maschera per l'inserimento di informazioni deve essere corredata da opportuni testi brevi illustranti il tipo di informazioni richieste.
-\end{itemize}
+\end{enumerate}
 
 \subsubsection{Requisiti di sicurezza del sistema}
 
 Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 
-\begin{itemize}
+\begin{enumerate}
 	\item L'accesso al sistema di Home Banking da parte di un utente avviene a seguito di autenticazione dello stesso.
 		Le credenziali di accesso devono essere trasmesse dal browser dell'utente al sistema di Home Banking utilizzando una connessione sicura.
 	\item Le credenziali d'accesso per un account sono:
-		\begin{itemize}
+		\begin{enumerate}
 			\item numero conto corrente;
 			\item password fornita al correntista al momento della registrazione.
-		\end{itemize}
+		\end{enumerate}
 	\item Le operazioni effettuabili dall'utente (requisiti funzionali) sono partizionate in operazioni che richiedono un'ulteriore autenticazione tramite One Time Password e operazioni che \emph{non} richiedono ulteriore autenticazione.
 	Ogni operazione \`e eseguibile solo dopo che l'utente ha effettuato l'accesso al sistema di Home Banking.
 
 	Le seguenti operazioni non richiedono ulteriore autenticazione:
-	\begin{itemize}
+	\begin{enumerate}
 		\item Visionare saldo contabile, disponibile e liquido.
 		\item Visionare uno storico delle transazioni effettuate.
 		\item Visionare informazioni riguardo le carte di credito collegate al conto (se presenti).
 		\item Effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione.
-	\end{itemize}
+	\end{enumerate}
 	
 	Ogni altra operazione richiede autenticazione tramite One Time Password.
 	In particolare \`e richiesta autenticazione tramite One Time Password per:
-	\begin{itemize}
+	\begin{enumerate}
 		\item effettuare transazioni, come:
 		\begin{itemize}
 			\item bonifici ordinari, bonifici SEPA;
@@ -93,52 +94,55 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 			\item pagamento bollette, bollettini, tasse, etc;
 		\end{itemize}
 		\item configurare operazioni veloci.
-	\end{itemize}
-\end{itemize}
+	\end{enumerate}
+\end{enumerate}
 
 \subsection{Requisiti di dominio}
 
 La legislazione attuale richiede che gli organi di controllo finanziario come la Banca d'Italia e le forze dell'ordine possano accedere in lettura a tutte le informazioni salvate dal sistema di Online Banking.
 
-Ogni sistema informatico nell'ambito bancario deve permettere l'accesso da remoto alla sua rete interna tramite il meccanismo di \emph{VPN}.
-Fornire alle autorit\`a di controllo le credenziali e/o interfacce per accedere ai sistemi di \emph{data storage}.
+\begin{enumerate}
+\item Ogni sistema informatico nell'ambito bancario, e in particolare il software HBS in sviluppo, deve permettere l'accesso da remoto alla sua rete interna tramite il meccanismo di \emph{VPN}.
+	HBS deve quindi fornire alle autorit\`a di controllo le credenziali e/o interfacce per accedere ai sistemi di \emph{data storage}.
 
-In particolare le forze dell'ordine devono poter:
-\begin{itemize}
-    \item Dato un utente visualizzare le seguenti informazioni:
-        \begin{itemize}
-            \item Tutte le transazioni effettuati dall'utente.
-            \item Tutte le transazioni che hanno l'utente come destinatario.
-            \item Dati anagrafici dell'utente.
-            \item Informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
-        \end{itemize}
-    \item In caso le informazioni siano ridondanti il sistema pu\`o fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
-\end{itemize}
-        %TODO da qualche parte bisogna dire che un haxxor in genere non puo modificare tutti i log in maniera coerente, perche pensa a rubare i dindi invece di giocare ad uplink
+	\item Le forze dell'ordine devono poter:
+	\begin{enumerate}
+    	\item Dato un utente visualizzare le seguenti informazioni:
+        	\begin{enumerate}
+            	\item Tutte le transazioni effettuati dall'utente.
+            	\item Tutte le transazioni che hanno l'utente come destinatario.
+	            \item Dati anagrafici dell'utente.
+    	        \item Informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
+	        \end{enumerate}
+	    \item In caso le informazioni siano ridondanti il sistema pu\`o fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
+	\end{enumerate}
+%TODO da qualche parte bisogna dire che un haxxor in genere non puo modificare tutti i log in maniera coerente, perche pensa a rubare i dindi invece di giocare ad uplink
 
-L'organo di controllo finanziario deve poter:
-\begin{itemize}
-    \item Dato un utente visualizzare le seguenti informazioni:
-        \begin{itemize}
-            \item Tutte le transazioni effettuati dall'utente.
-            \item Tutte le transazioni che hanno l'utente come destinatario.
-            \item Lo storico di Online Trading dell'utente.
-        \end{itemize}
-\end{itemize}
-La normativa legale richiede che un sistema in grado di offrire funzionalit\`a di trading fornisca all'organo di controllo finanziario l'accesso allo storico delle operazioni, in particolare l'organo di controllo deve poter:
-\begin{itemize}
-    \item Visualizzare le informazioni dei pacchetti di Online Trading.
-    \item Visualizzre lo storico del sistema di Online Trading.
-    %non so se ci va visualizzare mutui e tassi
-\end{itemize}
+	\item L'organo di controllo finanziario deve poter:
+	\begin{enumerate}
+    	\item Dato un utente visualizzare le seguenti informazioni:
+        	\begin{enumerate}
+	            \item Tutte le transazioni effettuati dall'utente.
+    	        \item Tutte le transazioni che hanno l'utente come destinatario.
+	            \item Lo storico di Online Trading dell'utente.
+    	    \end{enumerate}
+	\end{enumerate}
+	La normativa legale richiede che un sistema in grado di offrire funzionalit\`a di trading fornisca all'organo di controllo finanziario l'accesso allo storico delle operazioni, in particolare l'organo di controllo deve poter:
+	\begin{enumerate}
+    	\item Visualizzare le informazioni dei pacchetti di Online Trading.
+    	\item Visualizzre lo storico del sistema di Online Trading.
+    	%TODO non so se ci va visualizzare mutui e tassi
+	\end{enumerate}
 
-Inoltre dato che il sistema di Bidding deve rispettare le normative legali, per esempio le leggi sull'usura bancaria, l'ente responsabile del controllo finanziario deve poter:
-\begin{itemize}
-    \item Accedere allo storico del sistema Bidding.
-    \item Visualizzare i parametri entro i quali le proposte vengono accettate automaticamente.
-    \item Visualizzare informazioni delle proposte accettate dal management.
-    \item Visualizzare proposte negate dal management.
-\end{itemize}
+	\item Poich\'e il sistema di Bidding deve rispettare le normative legali, per esempio le leggi sull'usura bancaria, l'ente responsabile del controllo finanziario deve poter:
+	\begin{enumerate}
+    	\item Accedere allo storico del sistema Bidding.
+    	\item Visualizzare i parametri entro i quali le proposte vengono accettate automaticamente.
+    	\item Visualizzare informazioni delle proposte accettate dal management.
+    	\item Visualizzare proposte negate dal management.
+	\end{enumerate}
+
+\end{enumerate}
 
 %TODO conti sono observable, la gg.ff. puo definire trigger. .. . \ldots .. \ldots \ldots eas\ldots \ldots .. \ldots \ldots ..
 
