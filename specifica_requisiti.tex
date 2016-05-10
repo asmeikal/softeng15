@@ -53,4 +53,50 @@ In particolare, ogni log deve contenere almeno:
 
 \subsection{Requisiti di dominio}
 
-\emph{Da determinare}
+La legislazione attuale richiede che gli organi di controllo finanziario come la Banca d'Italia e le forze dell'ordine possano accedere in lettura a tutte le informazioni salvate dal sistema di Online Banking.
+
+Ogni sistema informatico nell'ambito bancario deve permettere l'accesso da remoto alla sua rete interna tramite il meccanismo di \emph{VPN}.
+Fornire alle autorit\`a di controllo le credenziali e/o interfacce per accedere ai sistemi di \emph{data storage}.
+
+In particolare le forze dell'ordine devono poter:
+\begin{itemize}
+    \item Dato un utente visualizzare le seguenti informazioni:
+        \begin{itemize}
+            \item Tutte le transazioni effettuati dall'utente.
+            \item Tutte le transazioni che hanno l'utente come destinatario.
+            \item Dati anagrafici dell'utente.
+            \item Informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
+        \end{itemize}
+    \item In caso le informazioni siano ridondanti il sistema pu\`o fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
+\end{itemize}
+        %TODO da qualche parte bisogna dire che un haxxor in genere non puo modificare tutti i log in maniera coerente, perche pensa a rubare i dindi invece di giocare ad uplink
+
+L'organo di controllo finanziario deve poter:
+\begin{itemize}
+    \item Dato un utente visualizzare le seguenti informazioni:
+        \begin{itemize}
+            \item Tutte le transazioni effettuati dall'utente.
+            \item Tutte le transazioni che hanno l'utente come destinatario.
+            \item Lo storico di Online Trading dell'utente.
+        \end{itemize}
+\end{itemize}
+La normativa legale richiede che un sistema in grado di offrire funzionalit\`a di trading fornisca all'organo di controllo finanziario l'accesso allo storico delle operazioni, in particolare l'organo di controllo deve poter:
+\begin{itemize}
+    \item Visualizzare le informazioni dei pacchetti di Online Trading.
+    \item Visualizzre lo storico del sistema di Online Trading.
+    %non so se ci va visualizzare mutui e tassi
+\end{itemize}
+
+Inoltre dato che il sistema di Bidding deve rispettare le normative legali, per esempio le leggi sull'usura bancaria, l'ente responsabile del controllo finanziario deve poter:
+\begin{itemize}
+    \item Accedere allo storico del sistema Bidding.
+    \item Visualizzare i parametri entro i quali le proposte vengono accettate automaticamente.
+    \item Visualizzare informazioni delle proposte accettate dal management.
+    \item Visualizzare proposte negate dal management.
+\end{itemize}
+
+%TODO conti sono observable, la gg.ff. puo definire trigger. .. . \ldots .. \ldots \ldots eas\ldots \ldots .. \ldots \ldots ..
+
+
+
+
