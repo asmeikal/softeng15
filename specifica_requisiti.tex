@@ -11,14 +11,15 @@ Di seguito \`e illustrata la specifica dettagliata dei requisiti.
 
 \begin{itemize}
 	\item Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata.
-	Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
-	Ogni log deve contenere quantomeno le seguenti informazioni:
-	\begin{itemize}
-		\item un'identificativo del tipo di operazione eseguita;
-		\item il conto coinvolto nell'operazione;
-		\item l'istante dell'operazione;
-		\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
-	\end{itemize}
+%TODO muovere fra i requisiti funzionali
+%	Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
+%	Ogni log deve contenere quantomeno le seguenti informazioni:
+%	\begin{itemize}
+%		\item un'identificativo del tipo di operazione eseguita;
+%		\item il conto coinvolto nell'operazione;
+%		\item l'istante dell'operazione;
+%		\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+%	\end{itemize}
 
 	\item Il sistema di Home Banking ha dei requisiti impliciti di disponibilit\`a, ovvero il sistema deve avere una percentuale minima garantita di \emph{uptime}, o tempo in cui il sistema \`e disponibile e utilizzabile dagli utenti.
 	La percentuale \emph{uptime} non comprende eventuale tempo di \emph{downtime} previsto periodicamente per motivi di manutenzione, ottimizzazione delle prestazioni, aggiornamento, etc.
@@ -43,7 +44,6 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 		Le credenziali di accesso devono essere trasmesse dal browser dell'utente al sistema di Home Banking utilizzando una connessione sicura.
 	\item Le credenziali d'accesso sono per un account sono:
 		\begin{itemize}
-			\item dati anagrafici del correntista;
 			\item numero conto corrente;
 			\item password fornita al correntista al momento della registrazione.
 		\end{itemize}
