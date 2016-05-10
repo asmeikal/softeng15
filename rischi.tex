@@ -89,6 +89,7 @@ In contesti in cui \`e necessario essere concisi \`e possibile identificare i ri
 Ad esempio, il rischio ``ritardo nella consegna del progetto'', con probabilit\`a alta e impatto basso, potrebbe essere identificato dalla stringa \code{RIS\_DELAY\_HP\_LD\_1}, o per brevit\`a come \code{RIS\_1}.
 
 Seguendo un approccio \emph{RMMM} individuiamo dei piani di \emph{\cellcolor{color2!10}Mitigation} (per ridurre la probabilit\`a dell'evento), \emph{\cellcolor{color2!10}Monitoring} (per controllare il verificarsi dell'evento) e \emph{\cellcolor{color2!10}Management} (per ridurre le perdite a evento avvenuto).
+Il piano di \emph{Monitoring} di un rischio rappresenta un \emph{trigger} per la gestione (\emph{Management}) del rischio stesso.
 
 \section{Rischi individuati durante l'Inception}
 
@@ -162,23 +163,25 @@ Reiterare fasi di sviluppo per implementare nuovi requisiti.
 \ptitlerow{Descrizione}
 \prow{
 Il software prodotto dovr\`a utilizzare diversi componenti di terze parti per accelerare lo sviluppo e aumentare le garanzie di sicurezza.
-Problematiche di questi strumenti software potrebbero inficiare lo sviluppo del progetto.
+Problematiche di questi strumenti software (ad es. bug, falle di sicurezza) potrebbero inficiare lo sviluppo del progetto.
 }
 \pline
 \ptitlerow{Mitigation}
 \prow{
 Utilizzare strumenti software di comprovata affidabilit\`a.
+In caso di software proprietario, stabilire accordi commerciali che tutelino dalla presenza di problemi software e che garantiscano un tempo di recupero massimo da problematiche software.
 }
 \pline
 \ptitlerow{Monitoring}
 \prow{
-Mantenere contatti regolari con produttori del software utilizzato.
-Seguire fonti di informazione specializzate dell'ambiente.
+Mantenere contatti regolari con produttori del software utilizzato e seguire fonti di informazione specializzate dell'ambiente, controllando presenza di problematiche con gli strumenti software.
 }
 \pline
 \ptitlerow{Management}
 \prow{
-Attendere soluzione problematiche software, o reimplementare progetto con strumenti software alternativi.
+In caso di problematiche con software proprietario, attenderne soluzione e applicare aggiornamenti non appena disponibili.
+In caso di problematiche con software open-source, contribuire alla risoluzione del problema qualora gli sviluppatori abbiano la competenza necessaria e sia possibile dedicare risorse al compito.
+In presenza di software alternativo che possa rimpiazzare il software problematico, qualora sia possibile effettuare \emph{refactoring} a un costo di tempo o monetario contenuto, sostituire il software problematico con l'alternativa disponibile.
 }
 \end{ptable}
 
@@ -202,12 +205,15 @@ Prestare particolare attenzione alle fasi iniziali di analisi.
 \pline
 \ptitlerow{Monitoring}
 \prow{
-Realizzare prototipi gi\`a durante l'analisi per avere una misura reale della fattibilit\`a del sistema.
+Realizzare prototipi a partire dalla fase di analisi per avere una misura reale della fattibilit\`a e complessit\`a del sistema.
+Controllare complessit\`a dei prototipi e il rapporto di questa con la complessit\`a del sistema.
 }
 \pline
 \ptitlerow{Management}
 \prow{
-Ridimensionare le sottostime, rieseguire lavoro necessario.
+Individuare la fonte dell'aumento di complessit\`a e se possibile modificare requisiti, architettura o design del sistema per ridurre la complessit\`a.
+Rieseguire le stime.
+Ripetere le iterazioni necessarie a implementare le modifiche o tornare a una fase precedente qualora non fosse evitabile.
 }
 \end{ptable}
 

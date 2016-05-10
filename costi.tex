@@ -2,20 +2,21 @@
 
 La stima dei costi di realizzazione del progetto viene effettuata con la tecnica degli \emph{Use Case Points}.
 
-Gli Use Case Points del progetto sono dati dalla somma di due addendi:
-\begin{description}
-	\item[Unadjusted Use Case Weight]
-		Misura il numero e la complessit\`a degli Use Case del sistema.
-	\item[Unadjusted Actor Weight]
-		Misura il numero e la complessit\`a degli attori del sistema.
-\end{description}
-Il valore ottenuto dalla somma di \code{UUCW} e \code{UAW} viene moltiplicato per due fattori:
-\begin{description}
-	\item[Technical Complexity Factor]
-		Misura la complessit\`a tecnica del sistema.
-	\item[Environmental Complexity Factor]
-		Misura la complessit\`a dell'ambiente in cui il sistema viene sviluppato.
-\end{description}
+Gli Use Case Points del progetto sono dati dalla somma di due addendi.
+
+\paragraph{Unadjusted Use Case Weight}
+	Misura il numero e la complessit\`a degli Use Case del sistema.
+
+\paragraph{Unadjusted Actor Weight}
+	Misura il numero e la complessit\`a degli attori del sistema.
+
+Il valore ottenuto dalla somma di \code{UUCW} e \code{UAW} viene moltiplicato per due fattori.
+
+\paragraph{Technical Complexity Factor}
+	Misura la complessit\`a tecnica del sistema.
+
+\paragraph{Environmental Complexity Factor}
+	Misura la complessit\`a dell'ambiente in cui il sistema viene sviluppato.
 
 \subsection{Unadjusted Use Case Weight}
 
@@ -34,41 +35,53 @@ Ciascun fattore tecnico ha un peso compreso fra $0.5$ e $2.0$.
 A ciascun fattore tecnico viene assegnato un valore fra $0$ (fattore ininfluente) e $5$ (fattore essenziale)
 Il \code{TCF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore tecnico.
 
-I valori assegnati sono indicati nella tabella seguente.
+I valori assegnati sono indicati nella tabella \ref{tab:tcf}.
 
-\begin{center}
+\begin{table}[b]
 \begin{tabularx}{\columnwidth}{c X c c}
 \toprule
 \cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
 \midrule
-\code{T1} & Sistema distribuito & $2.0$ & --- \\
-\code{T2} & Obiettivi di performance/tempo di risposta & $1.0$ & --- \\
-\code{T3} & Efficienza lato utente & $1.0$ & --- \\
-\code{T4} & Complessit\`a processi interni & $1.0$ & --- \\
-\code{T5} & Riusabilit\`a del codice & $1.0$ & --- \\
-\code{T6} & Facilit\`a d'installazione & $0.5$ & 3 \\
+\code{T1} & Sistema distribuito & $2.0$ & 4 \\
+\code{T2} & Obiettivi di performance/tempo di risposta & $1.0$ & 2 \\
+\code{T3} & Efficienza lato utente & $1.0$ & 2 \\
+\code{T4} & Complessit\`a processi interni & $1.0$ & 4 \\
+\code{T5} & Riusabilit\`a del codice & $1.0$ & 3 \\
+\code{T6} & Facilit\`a d'installazione & $0.5$ & 5 \\
 \code{T7} & Facilit\`a d'utilizzo & $0.5$ & 4 \\
-\code{T8} & Portabilit\`a inter-piattaforma & $2.0$ & --- \\
-\code{T9} & Manutenzione del sistema & $1.0$ & --- \\
-\code{T10} & Parallelismo/concorrenza & $1.0$ & --- \\
+\code{T8} & Portabilit\`a inter-piattaforma & $2.0$ & 5 \\
+\code{T9} & Manutenzione del sistema & $1.0$ & 5 \\
+\code{T10} & Parallelismo/concorrenza & $1.0$ & 5 \\
 \code{T11} & Sicurezza & $1.0$ & 5 \\
 \code{T12} & Accesso terze parti & $1.0$ & 5 \\
 \code{T13} & Addestramento utente & $1.0$ & 1 \\
 \midrule
-\multicolumn{3}{r}{Totale \code{TCF}} & --- \\
+\multicolumn{3}{r}{Totale \code{TCF}} & 50 \\
 \bottomrule
 \end{tabularx}
-\end{center}
+\caption{\label{tab:tcf} Fattori di complessit\`a tecnica.}
+\end{table}
 
-La scelta dei valori \`e stata basata sulle seguenti considerazioni:
+%TODO scrivere motivazioni per valori assegnati
+L'assegnamento dei valori \`e basato sulle seguenti considerazioni:
 \begin{itemize}
-	\item \code{T6}: la facilit\`a d'installazione \`e un fattore mediamente rilevante.
-		Il software \`e destinato a enti bancari, e l'installazione sar\`a curata da membri della nostra societ\`a.
+	\item \code{T1}: il sistema sar\`a verosimilmente composto da pi\`u componenti distribuite, identificate dalle loro responsabilit\`a.
+	\item \code{T2}: il sistema non ha particolari necessit\`a in termini di performance, le operazioni svolte non hanno particolare complessit\`a.
+		Il tempo di risposta del sistema devono rientrare nei tempi di risposta di un generico sito web, dell'ordine dei pochi secondi, ed \`e quindi un fattore mediamente rilevante.
+	\item \code{T3}: l'efficienza lato utente del sistema \`e un fattore poco rilevante rispetto a altri fattori come la sicurezza del sistema (\code{T11}).
+	\item \code{T4}: i processi interni del sistema \`e presumibile siano molto complessi.
+	\item \code{T5}: la riusabilit\`a del codice prodotto \`e un fattore rilevante del progetto.
+		\`E indirettamente correlato alla manutebilit\`a del sistema, e direttamente correlato alla possibilit\`a di implementare \emph{plugin} per il sistema.
+	\item \code{T6}: la facilit\`a d'installazione \`e un fattore essenziale.
+		Il software \`e destinato a enti bancari, e l'installazione sar\`a curata da membri della nostra societ\`a come parte preponderante della fase di Transition.
 	\item \code{T7}: la facilit\`a d'utilizzo \`e una componente molto importante del sistema.
 		Il sistema in sviluppo riguarda questioni finanziarie della vita del singolo, per le quali la facilit\`a d'uso non \`e importante quanto altre questioni, principalmente la sicurezza del sistema e dei risparmi degli utenti: a titolo d'esempio, se operazioni sensibili come inviare un bonifico richiedono pi\`u step da completare con attenzione \`e ragionevole pensare che sia pi\`u difficile effettuare un bonifico per errore.
 		La facilit\`a d'uso \`e pi\`u rilevante per i dipendenti della banca.
-	\item \code{T11}: la sicurezza \`e uno degli aspetti fondamentali del progetto.
-	\item \code{T12}: l'accesso a parti terze \`e uno degli aspetti fondamentali del progetto.
+	\item \code{T8}: la portabilit\`a del software sviluppato fra pi\`u piattaforme \`e un fattore essenziale del progetto, poich\'e non si possono avere informazioni precise in anticipo sulle macchine utilizzate da chi acquister\`a il nostro software.
+	\item \code{T9}: la manutenzione del sistema \`e una delle parti fondamentali della fase di transition, ed \`e quindi un fattore essenziale nello sviluppo dello stesso.
+	\item \code{T10}: le operazioni che dovr\`a svolgere il sistema di home banking in sviluppo avranno sicuramente degli aspetti di gestione della concorrenza, ad esempio nella gestione delle operazioni di un utente.
+	\item \code{T11}: la sicurezza \`e uno degli aspetti fondamentali del progetto in quanto requisito non funzionale.
+	\item \code{T12}: l'accesso a parti terze \`e uno degli aspetti fondamentali del progetto in quanto requisito di dominio.
 	\item \code{T13}: l'addestramento utente \`e praticamente irrilevante.
 		Gli utenti finali del sistema di Home Banking (clienti della banca) non possono essere addestrati.
 		I dipendenti della banca possono essere addestrati, ma la necessit\`a di addestramento dovrebbe essere mitigata dalla facilit\`a d'uso del software (fattore \code{T7}).
@@ -81,26 +94,31 @@ Ciascun fattore ambientale ha un peso compreso fra $0.5$ e $2.0$.
 A ciascun fattore ambientale viene assegnato un valore fra $0$ (fattore ininfluente) e $5$ (fattore essenziale)
 Il \code{ECF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore ambientale.
 
-I valori assegnati sono indicati nella tabella seguente.
+I valori assegnati sono indicati nella tabella \ref{tab:ecf}.
 
-\begin{center}
+\begin{table}[b]
 \begin{tabularx}{\columnwidth}{c X r r}
 \toprule
 \cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
 \midrule
-\code{E1} & Familiarit\`a con processo software adottato & $1.5$ & --- \\
-\code{E2} & Esperienza nel dominio dell'applicazione & $0.5$ & --- \\
-\code{E3} & Esperienza del team con orientazione a oggetti & $1.0$ & --- \\
-\code{E4} & Capacit\`a primo analista & $0.5$ & --- \\
-\code{E5} & Motivazione del team & $1.0$ & --- \\
-\code{E6} & Stabilit\`a dei requisiti & $2.0$ & --- \\
-\code{E7} & Staff part-time & $-1.0$ & --- \\
-\code{E8} & Linguaggio di programmazione ostico & $-1.0$ & --- \\
+\code{E1} & Familiarit\`a con processo software adottato & $1.5$ & 4 \\
+\code{E2} & Esperienza nel dominio dell'applicazione & $0.5$ & 4 \\
+\code{E3} & Esperienza del team con orientazione a oggetti & $1.0$ & 5 \\
+\code{E4} & Capacit\`a primo analista & $0.5$ & 4 \\
+\code{E5} & Motivazione del team & $1.0$ & 4 \\
+\code{E6} & Stabilit\`a dei requisiti & $2.0$ & 4 \\
+\code{E7} & Staff part-time & $-1.0$ & 0 \\
+\code{E8} & Linguaggio di programmazione ostico & $-1.0$ & 3 \\
 \midrule
-\multicolumn{3}{r}{Totale \code{ECF}} & --- \\
+\multicolumn{3}{r}{Totale \code{ECF}} & 28 \\
 \bottomrule
 \end{tabularx}
-\end{center}
+\caption{\label{tab:ecf} Fattori di complessit\`a ambientale.}
+\end{table}
+
+L'assegnamento dei valori \`e basato sul fatto che il software in sviluppo \`e \emph{sensibile}, in quanto concerne transazioni economiche di privati e presenta quindi problematiche importanti legate a sicurezza, aspetti legali, e privacy degli utenti.
+Il progetto richiede quindi un team competente ed esperto tanto nel dominio quanto in aspetti legati al processo adottato e in generale alle pratiche di sviluppo \emph{object oriented}.
+Per queste stesse considerazioni, e per i tempi di sviluppo condizionati dall'evoluzione dello scenario legale (relativo al dominio bancario) italiano, la stabilit\`a dei requisiti \`e un fattore molto rilevante.
 
 \subsection{Use Case Points e previsione di costo}
 

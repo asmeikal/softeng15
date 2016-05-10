@@ -275,7 +275,7 @@ justification=raggedright]{caption}
 \newcommand{\pcells}[1]{##1 \\}
 \newcommand{\pline}{\midrule}
 \newcommand{\prow}[1]{
-\multicolumn{#1}{p{\columnwidth}}{##1} \\
+\multicolumn{#1}{p{\columnwidth-\columnsep}}{##1} \\
 }
 \newcommand{\ptitlerow}[1]{
 \multicolumn{#1}{c}{\cellcolor{color2!10}##1} \\
