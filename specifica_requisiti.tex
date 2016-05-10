@@ -8,41 +8,71 @@ Di seguito \`e illustrata la specifica dettagliata dei requisiti.
 I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 
 \begin{enumerate}
-	\item fornire un account HBS ad ogni utente correntista che ne faccia esplicita richiesta e permettergli l'iscrizione mediante apposite procedure;
-	\item permettere ad un utente registrato l'amministrazione completa e corretta del proprio conto corrente ; per questa ragione sono essenziali le funzionalità che:
+	\item Ogni utente correntista che ne faccia esplicita richiesta deve avere un account personale e deve potersi iscrivere  mediante apposite procedure (business case in figura \ref{fig:business_case_registration}).
+	\item Un utente registrato deve poter effettuare l'amministrazione corretta del proprio conto corrente (business case in figura \ref{fig:business_case_generic_operation}), per questa ragione è richiesto che:
 	\begin{enumerate}
-		\item permettono all'utente di verificare in tempo reale il suo saldo attuale , il suo saldo contabile e il suo saldo liquido ;
-		\item permettono all'utente di verificare in tempo reale l'andamento dei titoli azionari che possiede e , nel caso , venderli;
-		\item permettono all'utente di effettuare operazioni veloci come ricariche telefoniche , bonifici ordinari e pagamento delle bollette;
+		\item l'utente possa verificare in tempo reale:
+			\begin{enumerate}
+				\item il suo saldo attuale;
+				\item il suo saldo contabile;
+				\item il suo saldo liquido;
+			\end{enumerate} 
+		\item l'utente deve poter verificare in tempo reale l'andamento dei titoli azionari che possiede e, nel caso, venderli;
+		\item l'utente deve poter effettuare operazioni programmate di revisione dei conti o di pagamento;
+		\item l'utente deve poter effettuare \emph{operazioni veloci}, ossia inserire pochi dati in una maschera preconfigurata, come :
+			\begin{enumerate}
+				\item ricariche telefoniche;
+				\item bonifici ordinari;
+				\item bonifici SEPA;
+				\item pagamento delle bollette.
+			\end{enumerate} 
 	\end{enumerate}
-
-	\item permettere che l'utente possa sfogliare lo storico delle transazioni eseguite, complete delle informazioni riguardanti la data , il destinatario , l'importo previsto e una causale descrittiva delle motivazioni ;
-\item permettere che l'utente , in tempo reale , abbia un resoconto delle transazioni che sono in corso da e verso il suo conto;
-
-	\item permettere ai dipendenti di una banca , rispettivamente impiegati e manager , di accedere al sistema mediante specifico e personale account ;
-
-	\item permettere ai manager di accettare/rifiutare le proposte di bidding per le carte di credito e prestiti fatte dagli utenti;
-	\item permettere ai manager di inserire tutte le informazioni riguardanti le modalità del bidding offerto dalla banca : soglie minime e massime di offerta, scadenze, eventuali costi, ecc.
-	\item permettere ai manager di gestire in modo efficiente gli spazi pubblicitari offerti dalle pagine web del sistema, potendone arbitrariamente modificare i contenuti e indirizzando determinate pubblicità ad determinati insiemi di utenti aventi delle caratteristiche desiderate;
-
-	\item permettere all'autorità di controllo di accedere ad ogni conto corrente e di recuperare ogni informazione necessaria;
-	\item permettere all'autorità di controllo di bloccare transazioni in atto e di poter accedere allo storico delle transazioni effettuate;
-
+	\item L'utente deve poter consultare lo storico delle transazioni eseguite, complete delle informazioni riguardanti la data, il destinatario, l'importo previsto e una causale descrittiva delle motivazioni.
+	\item L'utente deve poter ottenere, in tempo reale, un resoconto delle transazioni che sono in corso da e verso il suo conto.
+	\item I dipendenti di una banca, impiegati e manager, devono poter accedere al sistema mediante specifico e personale account.
+	\item I dipendenti di una banca devono poter creare i form per la gestione delle operazioni veloci.
+	\item I manager devono poter accettare o rifiutare le proposte di bidding per conti correnti, carte di credito e prestiti fatte dagli utenti che rientrano nell'insieme di proposte soggette a approvazione dei manager della banca.
+	\item I manager devono poter gestire il bidding eventualmente offerto della banca, specificando in modo opportuno per conti correnti, carte di credito e prestiti i parametri che individuano i bid accettati automaticamente, soggetti a ulteriore approvazione, rifiutati automaticamente.
+	I parametri di decisione comprendono i parametri di conti correnti, carte di credito e prestiti, e parametri riguardanti i clienti della banca:
+		\begin{enumerate}
+			\item giacenza media mensile e annuale sui conti correnti dell'utente;
+			\item affidibilit\`a dell'utente (in funzione, ad esempio, della frequenza con cui i suoi conti correnti sono andati in rosso);
+			\item da quanto tempo il correntista \`e cliente presso la banca;
+			\item eventuali altri parametri.
+		\end{enumerate}
+	\item I manager devono poter creare \emph{pacchetti di investimento}.
+		Un pacchetto di investimento contiene titoli azionari prelevati da un \emph{pool} di azioni acquistate dalla banca.
+		Il pacchetto di investimento deve contenere le seguenti informazioni:
+		\begin{enumerate}
+			\item andamento passato dei titoli contenuti nel pacchetto;
+			\item valutazione di rischio prodotta dal manager che ha creato il pacchetto;
+			\item costo del pacchetto;
+			\item valore garantito di vendita del pacchetto;
+			\item percentuale di guadagno della banca alla vendita del pacchetto.
+		\end{enumerate}
+		I pacchetti di investimento vengono acquistati dai clienti della banca e formano un \emph{portafoglio di investimento}.
+	\item I manager devono poter gestire in modo efficiente gli spazi pubblicitari offerti dalle pagine web del sistema, potendone arbitrariamente modificare i contenuti e indirizzando determinate pubblicità ad determinati insiemi di utenti aventi delle caratteristiche desiderate.
+	\item Il sistema HBS deve inviare ad ogni utente una notifica tramite SMS o e-mail (a scelta dell'utente) a seguito di ogni operazione tra le seguenti:
+		\begin{enumerate}
+			\item ogni volta che si conclude una transazione da o verso il proprio conto corrente;
+			\item ad ogni login e logout dall'account HBS;
+			\item ad ogni \emph{operazione veloce} di pagamento.
+		\end{enumerate}
+	Ogni notifica \`e abilitabile o disabilitabile singolarmente secondo le preferenze dell'utente.
+	\item Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
+	Ogni log deve contenere quantomeno le seguenti informazioni:
+	\begin{itemize}
+		\item un'identificativo del tipo di operazione eseguita;
+		\item il conto coinvolto nell'operazione;
+		\item l'istante dell'operazione;
+		\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
+	\end{itemize}
 \end{enumerate}
 
 \subsection{Requisiti non funzionali}
 
 \begin{enumerate}
 	\item Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata.
-%TODO muovere fra i requisiti funzionali
-%	Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
-%	Ogni log deve contenere quantomeno le seguenti informazioni:
-%	\begin{itemize}
-%		\item un'identificativo del tipo di operazione eseguita;
-%		\item il conto coinvolto nell'operazione;
-%		\item l'istante dell'operazione;
-%		\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
-%	\end{itemize}
 
 	\item Il sistema di Home Banking ha dei requisiti impliciti di disponibilit\`a, ovvero il sistema deve avere una percentuale minima garantita di \emph{uptime}, o tempo in cui il sistema \`e disponibile e utilizzabile dagli utenti.
 
@@ -78,10 +108,10 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 
 	Le seguenti operazioni non richiedono ulteriore autenticazione:
 	\begin{enumerate}
-		\item Visionare saldo contabile, disponibile e liquido.
-		\item Visionare uno storico delle transazioni effettuate.
-		\item Visionare informazioni riguardo le carte di credito collegate al conto (se presenti).
-		\item Effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione.
+		\item visionare saldo contabile, disponibile e liquido;
+		\item visionare uno storico delle transazioni effettuate;
+		\item visionare informazioni riguardo le carte di credito collegate al conto (se presenti);
+		\item effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione.
 	\end{enumerate}
 	
 	Ogni altra operazione richiede autenticazione tramite One Time Password.
@@ -92,6 +122,7 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 			\item bonifici ordinari, bonifici SEPA;
 			\item ricariche carte prepatate e schede telefoniche;
 			\item pagamento bollette, bollettini, tasse, etc;
+			\item modificare le preferenze dell'utente, come frequenza delle notifiche, etc.
 		\end{itemize}
 		\item configurare operazioni veloci.
 	\end{enumerate}
@@ -109,10 +140,10 @@ La legislazione attuale richiede che gli organi di controllo finanziario come la
 	\begin{enumerate}
     	\item Dato un utente visualizzare le seguenti informazioni:
         	\begin{enumerate}
-            	\item Tutte le transazioni effettuati dall'utente.
-            	\item Tutte le transazioni che hanno l'utente come destinatario.
-	            \item Dati anagrafici dell'utente.
-    	        \item Informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
+            	\item tutte le transazioni effettuati dall'utente;
+            	\item tutte le transazioni che hanno l'utente come destinatario;
+	            \item dati anagrafici dell'utente;
+    	        \item informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
 	        \end{enumerate}
 	    \item In caso le informazioni siano ridondanti il sistema pu\`o fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
 	\end{enumerate}
@@ -122,24 +153,24 @@ La legislazione attuale richiede che gli organi di controllo finanziario come la
 	\begin{enumerate}
     	\item Dato un utente visualizzare le seguenti informazioni:
         	\begin{enumerate}
-	            \item Tutte le transazioni effettuati dall'utente.
-    	        \item Tutte le transazioni che hanno l'utente come destinatario.
-	            \item Lo storico di Online Trading dell'utente.
+	            \item tutte le transazioni effettuati dall'utente;
+    	        \item tutte le transazioni che hanno l'utente come destinatario;
+	            \item lo storico di Online Trading dell'utente.
     	    \end{enumerate}
 	\end{enumerate}
 	La normativa legale richiede che un sistema in grado di offrire funzionalit\`a di trading fornisca all'organo di controllo finanziario l'accesso allo storico delle operazioni, in particolare l'organo di controllo deve poter:
 	\begin{enumerate}
-    	\item Visualizzare le informazioni dei pacchetti di Online Trading.
-    	\item Visualizzre lo storico del sistema di Online Trading.
+    	\item visualizzare le informazioni dei pacchetti di Online Trading;
+    	\item visualizzre lo storico del sistema di Online Trading.
     	%TODO non so se ci va visualizzare mutui e tassi
 	\end{enumerate}
 
 	\item Poich\'e il sistema di Bidding deve rispettare le normative legali, per esempio le leggi sull'usura bancaria, l'ente responsabile del controllo finanziario deve poter:
 	\begin{enumerate}
-    	\item Accedere allo storico del sistema Bidding.
-    	\item Visualizzare i parametri entro i quali le proposte vengono accettate automaticamente.
-    	\item Visualizzare informazioni delle proposte accettate dal management.
-    	\item Visualizzare proposte negate dal management.
+    	\item accedere allo storico del sistema Bidding;
+    	\item visualizzare i parametri entro i quali le proposte vengono accettate automaticamente;
+    	\item visualizzare informazioni delle proposte accettate dal management;
+    	\item visualizzare proposte negate dal management.
 	\end{enumerate}
 
 \end{enumerate}
