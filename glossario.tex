@@ -1,6 +1,11 @@
 \section{Glossario}
 %(versione 1 : sono omesse definizioni banali e/o implicite)
 
+\paragraph{Accoppiamento}
+\`e il grado di dipendenza di una componente del sistema software dalle altre componenti.
+L'accoppiamento \`e un fenomeno negativo in contrapposizione con la coesione.
+Alto accoppiamento rende difficile la manutenzione e la modifica del codice.
+
 \paragraph{Audit di sicurezza} 
 	operazioni di controllo del sistema effettuate periodicamente per controllare che non ci siano sate violazioni della politica di sicurezza adottata
 \paragraph{Banca D'Italia}
@@ -25,6 +30,9 @@ Opposto di Uptime.
 	è un istituto d'intermediazione finanziaria mediante il quale è possibile partecipare, investita una determinata quota di danaro, alla gestione e alla spartizione di dividendi prodotti da un determinato \emph{bene mobiliare} nel tempo. La \emph{banca depositaria} ne custodisce materialmente i titoli e ne tiene in cassa le disponibilità liquide. Le banche hanno inoltre un ruolo di controllo sulla legittimità delle attività del fondo sulla base di quanto prescritto dalle norme della Banca d'Italia e dal regolamento del fondo stesso
 \paragraph{Istituto di credito}
 	organismo che svolge simultaneamente l’attività di raccolta di risorse finanziarie e di concessione del credito per proprio contoa terzi 
+\paragraph{Microservizio}
+unit\`a software indipendente progettata per svolgere un singolo compito specifico. Insieme pi\`u microservizi formano un sistema modulare a basso accoppiamento. In un sistema orientato a microservizi un modulo \`e facilmente rimpiazzabile senza compromettere la funzionalit\`a del sistema.
+
 \paragraph{Open Bank Project (OBP)}
 	è una API open source che permette a banche ed istituti di credito di creare un interfaccia utente di ampia portata e fruibilità. Essendo un sistema molto versatile e largamente riadattabile, si presta molto a definire un vero e proprio \emph{standard di interfaccia}, ossia a definire un canone per la creazione di interfacce rivolte e all'utenza bancaria generica e agli organismi deputati al controllo bancario. \cite{obp}
 \paragraph{Portafoglio valori/titoli azionari}
@@ -45,8 +53,18 @@ Conosciuto anche come SSL.
     termine inglese che denota il tempo in cui il sistema informatico \`e attivo e funziona correttamente.
     Opposto di Downtime.
 
+
 \paragraph{VPN - Virtual Private Network}
-    \`e una tecnologia per estendere una rete informatica privata, sfruttando come strato sottostante una rete publica.
-Definisce una serie di protocolli di comunicazione e crittografia che permettono la comunicazione sicura ed affidabile.
-Una VPN permette di avere gli stessi vantaggi di una linea privata, ma a un costo significativamente inferiore.
+        \`e una tecnologia per estendere una rete informatica privata, sfruttando come strato sottostante una rete publica.
+    Definisce una serie di protocolli di comunicazione e crittografia che permettono la comunicazione sicura ed affidabile.
+    Una VPN permette di avere gli stessi vantaggi di una linea privata, ma a un costo significativamente inferiore.
+\subsection{Virtualizzazione}
+\paragraph{Virtualizzazione dell'hardware}
+\`e una tecnologia dove il sistema operativo non viene eseguito direttamente su una macchina fisica, ma viene creata una macchina virtuale che emula il comportamento della macchina fisica. In genere il sistema operativo e i processi che girano sulla macchina virtuale non sono influenzati dai processi esterni alla macchina virtuale, ma possono comunicare.
+Usando questo approccio le componenti hardware vengono emulate in software, introducendo overhead.
+Questo approccio offre molti vantaggi come flessibilit\`a e indipendenza dalla piattaforma.
+\paragraph{Virtualizzazione al livello del sistema operativo}
+\`e una tecnologia dove il kernel del sistema operativo viene eseguito sulla macchina fisica. Il software di virtualizzazione \`e una parte del kernel. I processi vengono eseguiti all'interno dei container, che sono isolati fra loro, e non possono interferire con i processi negli altri container. I container tuttavia possono essere configurati per permettere la comunicazione.
+Ogni processo viene esegito direttamente sulla CPU fisica della macchina, e l'hardware non viene emulato.
+In genere la virtualizzazione al livello del sistema operativo ha performance migliori rispetto alla virtualizzazione hardware.
 
