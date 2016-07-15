@@ -48,6 +48,7 @@
 \RequirePackage[table]{xcolor}
 \RequirePackage{booktabs}
 \RequirePackage{pgfgantt}
+\RequirePackage[toc]{multitoc}
 
 %----------------------------------------------------------------------
 %	MARGINS	
@@ -178,7 +179,6 @@ justification=raggedright]{caption}
 % ---------------------------------------------------------------------
 
 \renewcommand{\@maketitle}{%
-\twocolumn[{%
 \thispagestyle{empty}%
 \vskip-36pt%
 {\raggedleft\small\sffamily\bfseries\@ProjectInfo\\\@Phase\par}%
@@ -187,7 +187,6 @@ justification=raggedright]{caption}
 \vskip10pt%
 {\raggedright\color{color1}\sffamily\fontsize{12}{16}\selectfont  \@Authors\par}%
 \vskip25pt%
-}]%
 }
 
 %----------------------------------------------------------------------
@@ -227,6 +226,8 @@ justification=raggedright]{caption}
 %----------------------------------------------------------------------------------------
 %	PROJECT STUFF
 %----------------------------------------------------------------------------------------
+
+\renewcommand{\baselinestretch}{1.2}
 
 \RequirePackage[italian]{babel} % Specify a different language here - english by default
 \RequirePackage{biblatex}
