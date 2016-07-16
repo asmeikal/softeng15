@@ -37,56 +37,6 @@ In contesti in cui \`e necessario essere concisi \`e possibile identificare i re
 
 \subsection{Specifica dei requisiti funzionali}
 
-\subsubsection{\code{REQ\_1} - Iscrizione nuovo correntista}
-
-\begin{ptable}{3}
-	\ptitlerow{\bf Iscrizione nuovo correntista}
-	\pcells{ID & Tipologia & Priorit\`a}
-	\pcells{$\code{REQ\_ISCR\_H\_F\_1}$ & Funzionale & Alta}
-	\pline
-	\ptitlerow{Descrizione requisito}
-	\prow{
-		Il sistema deve permettere l'iscrizione a correntisti (p.~\pageref{correntista}) che non possiedano già un account HBS tramite un form compilabile e inviabile via web-browser.
-	}
-	\pline
-	\ptitlerow{Origine requisito}
-	\prow{
-		Requisiti utente \ref{itm:iscrizione_utente}.
-	}
-	\pline
-	\ptitlerow{Input}
-	\prow{
-		Numero di conto corrente e codice fiscale del correntista.
-	}
-	\pline
-	\ptitlerow{Output}
-	\prow{
-		Indicatore di avvenuta presa in carico della richiesta di iscrizione da parte del sistema di HBS.
-	}
-	\pline
-	\ptitlerow{Descrizione azione}
-	\prow{
-		La richiesta di iscrizione viene presa in carico dal sistema e inserita nel database di HBS.
-	}
-	\pline
-	\ptitlerow{Pre-condizioni}
-	\prow{
-		Il numero di conto corrente corrisponde a un conto corrente registrato presso l'istituto in questione.
-		Il codice fiscale corrisponde alla persona fisica o giuridica cui il conto corrente è intestato.
-		Non esiste un utente HBS associato al codice fiscale del correntista.
-	}
-	\pline
-	\ptitlerow{Post-condizioni}
-	\prow{
-		Viene creato un utente HBS associato al codice fiscale del correntista.
-		Il nuovo utente non è abilitato all'accesso a HBS (v. requisito approvazione).
-		Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
-	}
-	\pline
-	\ptitlerow{Side-effects}
-	\prow{
-		La richiesta di iscrizione viene inserita nel database di HBS.
-	}
-\end{ptable}
+\include{requirements/system_requirements_table}
 
 %TODO registrazione conto corrente a utente già iscritto HBS

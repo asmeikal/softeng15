@@ -10,5 +10,9 @@ Resources/*
 !Images/
 !Images/*.svg
 !Images/*.eps
+!requirements
+!requirements/*.py
+!requirements/yaml
+!requirements/yaml/*.yaml
 
 
