@@ -17,36 +17,6 @@ fields = [
     'side'
 ]
 
-field_names = {
-        'title' : 'Titolo',
-        'id'   : 'ID',
-        'type' : 'Tipologia',
-        'priority' : 'Priorit\`a',
-        'description' : 'Descrizione requisito',
-        'origin' : 'Origine requisito',
-        'input' : 'Input',
-        'output' : 'Output',
-        'action' : 'Descrizione azione',
-        'pre' : 'Pre-condizioni',
-        'post' : 'Post-condizioni',
-        'side' : 'Side-effects'
-}
-
-# TODO make this better
-def build_output(k, v):
-    res = """\pline
-\ptitlerow{{{k}}}
-\prow{{
-    {v}
-}}
-"""
-    return res.format(k = field_names[k], v = v)
-
-def build_id(data, index):
-    info = ['REQ']
-    info += [str(index)]
-    return "$\\code{{{0}}}$".format("\\_".join(info))
-
 class Requirement(object):
     def __init__(self, fname, index):
         with open(fname, 'r') as f:
@@ -54,16 +24,23 @@ class Requirement(object):
             self.data = {}
             for k, v in data.iteritems():
                 self.data[str(k)] = str(v)
-        self.data['id'] = build_id(self.data, index)
-        assert set(self.data.keys()) == set(fields)
         self.index = index
+        self.build_id()
+        assert set(self.data.keys()) == set(fields)
+
+    def build_id(self):
+        info = ['REQ']
+        info += [self.data['title'].replace(' ','').upper()[0:6]]
+        info += [self.data['type']]
+        info += [self.data['priority']]
+        info += [str(index)]
+        self.data['id'] = "\\code{{{}}}".format("\\_".join(info))
 
     def output(self):
         res = ''
-        res += '''\\begin{ptable}{1}\n'''
-        for k in fields:
-            res += build_output(k, self.data[k])
-        res += '''\\end{ptable}\n'''
+        with open('requirement.tex', 'r') as template:
+            t = template.read()
+            res = t.format(**self.data)
         return res
 
 if __name__ == '__main__':
