@@ -1,0 +1,92 @@
+
+\section{Specifica dei requisiti di sistema}
+
+Di seguito \`e esposta la specifica dei requisiti di sistema.
+
+Ciascun requisito \`e specificato su una scheda seguendo l'esempio illustrato da \cite[p. 97]{sommerville}.
+In particolare ciascuna scheda conterr\`a i seguenti campi:
+\begin{itemize}
+	\item ID del requisito
+	\item Tipo del requisito
+	\item Titolo del requisito
+	\item Descrizione del requisito
+	\item Origine del requisito
+	\item Priorit\`a del requisito
+\end{itemize}
+I requisiti funzionali conterranno inoltre i seguenti campi:
+\begin{itemize}
+	\item Input del requisito funzionale
+	\item Origine dell'input
+	\item Output del requisito funzionale
+	\item Destinazione dell'output
+	\item Descrizione dell'azione
+	\item Pre-condizioni
+	\item Post-condizioni
+	\item Side-effects
+\end{itemize}
+
+Identifichiamo i requisiti del sistema con la codifica ottenuta concatenando i seguenti elementi, usando un \emph{underscore} come separatore:
+\begin{itemize}
+	\item il prefisso comune \code{REQ}
+	\item una sequenza di 4-6 lettere (identificativo mnemonico)
+	\item un identificativo di priorit\`a (in ordine decrescente \code{H}, \code{M}, \code{L})
+	\item un identificativo della tipologia (\code{F} per requisiti funzionali, \code{N} per requisiti non funzionali, \code{D} per requisiti di dominio)
+	\item un intero strettamente positivo (unico per ogni requisito).
+\end{itemize}
+In contesti in cui \`e necessario essere concisi \`e possibile identificare i requisiti utilizzando unicamente il prefisso \code{REQ} e l'intero assegnato al requisito.
+
+\subsection{Specifica dei requisiti funzionali}
+
+\subsubsection{\code{REQ\_1} - Iscrizione nuovo correntista}
+
+\begin{ptable}{3}
+	\ptitlerow{\bf Iscrizione nuovo correntista}
+	\pcells{ID & Tipologia & Priorit\`a}
+	\pcells{$\code{REQ\_ISCR\_H\_F\_1}$ & Funzionale & Alta}
+	\pline
+	\ptitlerow{Descrizione requisito}
+	\prow{
+		Il sistema deve permettere l'iscrizione a correntisti (p.~\pageref{correntista}) che non possiedano già un account HBS tramite un form compilabile e inviabile via web-browser.
+	}
+	\pline
+	\ptitlerow{Origine requisito}
+	\prow{
+		Requisiti utente \ref{itm:iscrizione_utente}.
+	}
+	\pline
+	\ptitlerow{Input}
+	\prow{
+		Numero di conto corrente e codice fiscale del correntista.
+	}
+	\pline
+	\ptitlerow{Output}
+	\prow{
+		Indicatore di avvenuta presa in carico della richiesta di iscrizione da parte del sistema di HBS.
+	}
+	\pline
+	\ptitlerow{Descrizione azione}
+	\prow{
+		La richiesta di iscrizione viene presa in carico dal sistema e inserita nel database di HBS.
+	}
+	\pline
+	\ptitlerow{Pre-condizioni}
+	\prow{
+		Il numero di conto corrente corrisponde a un conto corrente registrato presso l'istituto in questione.
+		Il codice fiscale corrisponde alla persona fisica o giuridica cui il conto corrente è intestato.
+		Non esiste un utente HBS associato al codice fiscale del correntista.
+	}
+	\pline
+	\ptitlerow{Post-condizioni}
+	\prow{
+		Viene creato un utente HBS associato al codice fiscale del correntista.
+		Il nuovo utente non è abilitato all'accesso a HBS (v. requisito approvazione).
+		Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
+	}
+	\pline
+	\ptitlerow{Side-effects}
+	\prow{
+		La richiesta di iscrizione viene inserita nel database di HBS.
+	}
+\end{ptable}
+
+%TODO registrazione conto corrente a utente già iscritto HBS
