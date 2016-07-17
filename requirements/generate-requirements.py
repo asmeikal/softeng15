@@ -2,6 +2,10 @@ import yaml
 from os import listdir
 from os.path import isfile, join
 
+template = 'generated/templates/requirement.tex'
+sources  = 'generated/yaml/'
+output   = 'generated/system_requirements_table.tex'
+
 fields = [
     'title',
     'id',
@@ -38,18 +42,17 @@ class Requirement(object):
 
     def output(self):
         res = ''
-        with open('requirement.tex', 'r') as template:
-            t = template.read()
+        with open(template, 'r') as ft:
+            t = ft.read()
             res = t.format(**self.data)
         return res
 
 if __name__ == '__main__':
-    path = 'yaml/'
-    files = [f for f in listdir(path) if isfile(join(path, f))]
+    files = [f for f in listdir(sources) if isfile(join(sources, f))]
     index = 0
-    with open('system_requirements_table.tex', 'w') as out:
+    with open(output, 'w') as out:
         for f in files:
             index += 1
-            r = Requirement(path + f, index)
+            r = Requirement(sources + f, index)
             out.write(r.output())
 
