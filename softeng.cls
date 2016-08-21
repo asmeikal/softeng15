@@ -113,13 +113,13 @@ justification=raggedright]{caption}
   {\color{color1}\sffamily\bfseries}
   {\thesubsection}
   {0.5em}
-  {#1}
+  {\arabic{section}.\arabic{subsection} #1}
   []
 \titleformat{\subsubsection}
   {\sffamily\small\bfseries}
   {\thesubsubsection}
   {0.5em}
-  {#1}
+  {\arabic{section}.\arabic{subsection}.\arabic{subsubsection} #1}
   []    
 \titleformat{\paragraph}[runin]
   {\sffamily\small\bfseries}

@@ -1,5 +1,6 @@
 
 title: 'Nome requisito'
+mnemo: 'EXAMPLE'
 type: ['Funzionale'|'Non Funzionale'|'Dominio']
 priority: ['Alta'|'Media'|'Bassa']
 

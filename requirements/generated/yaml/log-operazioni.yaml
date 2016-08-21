@@ -1,5 +1,6 @@
 
 title: 'Logging operazioni'
+mnemo: 'LOGOP'
 type: 'Non Funzionale'
 priority: 'Alta'
 
@@ -7,7 +8,7 @@ description:
     'Il sistema deve effettuare il logging di ogni operazione effettuata da un utente (cliente della banca
     o dipendente dell''istituto bancario).'
 origin:
-    'Requisiti non funzionali (req.\ \ref{itm:utente:non-funzionali:logging}).'
+    'Requisiti non funzionali (sez.\ \ref{sec:utente:non-funzionali}, req.\ \ref{itm:utente:non-funzionali:logging}).'
 input:
     'Informazioni su un''operazione.'
 output:

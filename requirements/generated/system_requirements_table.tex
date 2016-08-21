@@ -1,16 +1,19 @@
 \subsection{Specifica dei Requisiti Funzionali}
 
-\subsubsection{\code{REQ\_DISPOS\_F\_A\_1} - Disposizioni di pagamento}
+\subsubsection{\code{REQ\_F\_1} - Disposizioni di Pagamento}
+\label{sec:sistema:funzionali:DISPAG}
+\def\idDISPAG{REQ\_DISPAG\_F\_A\_1}
+\def\shortidDISPAG{REQ\_F\_1}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
 \prow{
-		Disposizioni di pagamento
+		Disposizioni di Pagamento
 }
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-		$\code{REQ\_DISPOS\_F\_A\_1}$ & Funzionale & Alta
+	$\code{REQ\_DISPAG\_F\_A\_1}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -20,7 +23,7 @@
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni}).
+		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni}).
 }
 \pline
 \ptitlerow{Input}
@@ -37,34 +40,37 @@
 \prow{
 		L'operazione specificata viene inoltrata da HBS al back-end della banca. HBS attende dal back-end informazioni riguardo il successo o meno dell'operazione.
 }
-\pline
-\ptitlerow{Pre-condizioni}
-\prow{
-		L'utente ha accesso al conto corrente indicato. Il saldo contabile sul conto corrente indicato \`e maggiore o uguale alla somma di denaro da trasferire pi\`u eventuali spese di commissione.
-}
-\pline
-\ptitlerow{Post-condizioni}
-\prow{
-		Se il back-end della banca ha preso in carico l'operazione con successo, la gestione della stessa \`e stata passata al back-end. Altrimenti nessuna.
-}
-\pline
-\ptitlerow{Side-effects}
-\prow{
-		Il tentativo di operazione viene registrato nel log di HBS, insieme ad informazioni riguardo lo stato di presa in carico da parte del back-end della banca.
-}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		L'utente ha accesso al conto corrente indicato. Il saldo contabile sul conto corrente indicato \`e maggiore o uguale alla somma di denaro da trasferire pi\`u eventuali spese di commissione.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Se il back-end della banca ha preso in carico l'operazione con successo, la gestione della stessa \`e stata passata al back-end. Altrimenti nessuna.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Il tentativo di operazione viene registrato nel log di HBS, insieme ad informazioni riguardo lo stato di presa in carico da parte del back-end della banca.
+%}
 \end{ptable}
 
-\subsubsection{\code{REQ\_ISCRIZ\_F\_A\_2} - Iscrizione nuovo correntista}
+\subsubsection{\code{REQ\_F\_2} - Iscrizione Nuovo Correntista}
+\label{sec:sistema:funzionali:ISCRCORR}
+\def\idISCRCORR{REQ\_ISCRCORR\_F\_A\_2}
+\def\shortidISCRCORR{REQ\_F\_2}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
 \prow{
-		Iscrizione nuovo correntista
+		Iscrizione Nuovo Correntista
 }
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-		$\code{REQ\_ISCRIZ\_F\_A\_2}$ & Funzionale & Alta
+	$\code{REQ\_ISCRCORR\_F\_A\_2}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -74,7 +80,7 @@
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti utente (\ref{itm:utente:funzionali:iscrizione}).
+		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:iscrizione}).
 }
 \pline
 \ptitlerow{Input}
@@ -91,34 +97,151 @@
 \prow{
 		La richiesta di iscrizione viene presa in carico dal sistema e inserita nel database di HBS.
 }
-\pline
-\ptitlerow{Pre-condizioni}
-\prow{
-		Il numero di conto corrente corrisponde a un conto corrente registrato presso l'istituto in questione. Il codice fiscale corrisponde alla persona fisica o giuridica cui il conto corrente \`e intestato. Non esiste un utente HBS associato al codice fiscale del correntista.
-}
-\pline
-\ptitlerow{Post-condizioni}
-\prow{
-		Viene creato un utente HBS associato al codice fiscale del correntista. Il nuovo utente non \`e abilitato all'accesso a HBS (v.\ requisiti \ref{itm:utente:funzionali:approvazione}). Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
-}
-\pline
-\ptitlerow{Side-effects}
-\prow{
-		La richiesta di iscrizione viene inserita nel database di HBS.
-}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Il numero di conto corrente corrisponde a un conto corrente registrato presso l'istituto in questione. Il codice fiscale corrisponde alla persona fisica o giuridica cui il conto corrente \`e intestato. Non esiste un utente HBS associato al codice fiscale del correntista.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Viene creato un utente HBS associato al codice fiscale del correntista. Il nuovo utente non \`e abilitato all'accesso a HBS (v.\ requisiti \ref{itm:utente:funzionali:approvazione}). Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		La richiesta di iscrizione viene inserita nel database di HBS.
+%}
 \end{ptable}
 
-\subsubsection{\code{REQ\_VERIFI\_F\_A\_3} - Verifica saldo}
+\subsubsection{\code{REQ\_F\_3} - Creazione Operazioni Veloci}
+\label{sec:sistema:funzionali:CROPVEL}
+\def\idCROPVEL{REQ\_CROPVEL\_F\_M\_3}
+\def\shortidCROPVEL{REQ\_F\_3}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
 \prow{
-		Verifica saldo
+		Creazione Operazioni Veloci
 }
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-		$\code{REQ\_VERIFI\_F\_A\_3}$ & Funzionale & Alta
+	$\code{REQ\_CROPVEL\_F\_M\_3}$ & Funzionale & Media
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		I dipendenti della banca devono poter definire operazioni veloci utilizzabili dai clienti della stessa. Un'operazione veloce permette di effettuare operazioni ordinarie quali bonifici (p.~\pageref{glossario:bonifico}) o bonifici SEPA (p.~\pageref{glossario:bonifico-sepa}) inserendo un numero ridotto di argomenti rispetto a quelli normalmente necessari. Vedi anche requisito funzionale \ref{itm:utente:funzionali:gestione-conto:operazioni-veloci}.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti funzionali (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:dipendenti:operazioni-veloci}).
+}
+\pline
+\ptitlerow{Input}
+\prow{
+		Nome dell'operazione veloce, parametri dell'operazione veloce, operazione tradizionale corrispondente, mapping dei parametri dell'operazione veloce nei parametri dell'operazione tradizionale.
+}
+\pline
+\ptitlerow{Output}
+\prow{
+		Informazioni riguardo il successo dell'inserimento dell'operazione veloce nel database di HBS.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Le informazioni fornite vengono inserite nel database di HBS contenente le informazioni sulle operazioni veloci configurate dalla banca.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_4} - Disposizione Operazioni Veloci}
+\label{sec:sistema:funzionali:DISOPVEL}
+\def\idDISOPVEL{REQ\_DISOPVEL\_F\_M\_4}
+\def\shortidDISOPVEL{REQ\_F\_4}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Disposizione Operazioni Veloci
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_DISOPVEL\_F\_M\_4}$ & Funzionale & Media
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un utente registrato deve poter effettuare le operazioni veloci configurate dai dipendenti della banca.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti funzionali (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni-veloci} e \ref{itm:utente:funzionali:dipendenti:operazioni-veloci}). Dipende da requisito sistema \shortidCROPVEL, sez.\ \ref{sec:sistema:funzionali:CROPVEL}.
+}
+\pline
+\ptitlerow{Input}
+\prow{
+		Numero di conto corrente, tipologia di operazione veloce, argomenti dell'operazione veloce.
+}
+\pline
+\ptitlerow{Output}
+\prow{
+		Indicatore di successo dell'operazione veloce.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Il sistema traduce gli argomenti dell'operazione veloce negli argomenti necessari ad effettuare l'operazione tradizionale corrispondente, dopodich\'e effettua l'operazione tradizionale.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_5} - Verifica Saldo}
+\label{sec:sistema:funzionali:VERSAL}
+\def\idVERSAL{REQ\_VERSAL\_F\_A\_5}
+\def\shortidVERSAL{REQ\_F\_5}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Verifica Saldo
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_VERSAL\_F\_A\_5}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -128,7 +251,7 @@
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-saldo}).
+		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-saldo}).
 }
 \pline
 \ptitlerow{Input}
@@ -145,34 +268,37 @@
 \prow{
 		Calcola il saldo contabile, il saldo attuale e il saldo liquido del conto corrente indicato.
 }
-\pline
-\ptitlerow{Pre-condizioni}
-\prow{
-		L'utente ha accesso al conto corrente indicato.
-}
-\pline
-\ptitlerow{Post-condizioni}
-\prow{
-		Nessuna.
-}
-\pline
-\ptitlerow{Side-effects}
-\prow{
-		Nessuno.
-}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		L'utente ha accesso al conto corrente indicato.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Nessuna.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Nessuno.
+%}
 \end{ptable}
 
-\subsubsection{\code{REQ\_VERIFI\_F\_M\_4} - Verifica andamento titoli azionari}
+\subsubsection{\code{REQ\_F\_6} - Verifica Andamento Titoli Azionari}
+\label{sec:sistema:funzionali:VERTIT}
+\def\idVERTIT{REQ\_VERTIT\_F\_M\_6}
+\def\shortidVERTIT{REQ\_F\_6}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
 \prow{
-		Verifica andamento titoli azionari
+		Verifica Andamento Titoli Azionari
 }
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-		$\code{REQ\_VERIFI\_F\_M\_4}$ & Funzionale & Media
+	$\code{REQ\_VERTIT\_F\_M\_6}$ & Funzionale & Media
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -182,7 +308,7 @@
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-andamento}).
+		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-andamento}).
 }
 \pline
 \ptitlerow{Input}
@@ -199,26 +325,88 @@
 \prow{
 		Il sistema di HBS raccoglie gli identificativi dei titoli azionari di cui il correntista dispone e recupera l'andamento delle azioni dal back-end della banca.
 }
-\pline
-\ptitlerow{Pre-condizioni}
-\prow{
-		L'utente ha accesso al conto corrente indicato.
-}
-\pline
-\ptitlerow{Post-condizioni}
-\prow{
-		Nessuna.
-}
-\pline
-\ptitlerow{Side-effects}
-\prow{
-		Nessuno.
-}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		L'utente ha accesso al conto corrente indicato.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Nessuna.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Nessuno.
+%}
 \end{ptable}
+
+\clearpage
 
 \subsection{Specifica dei Requisiti Non Funzionali}
 
-\subsubsection{\code{REQ\_LOGGIN\_N\_A\_5} - Logging operazioni}
+\subsubsection{\code{REQ\_N\_1} - Sicurezza Autenticazione Utenti}
+\label{sec:sistema:non-funzionali:SECAUTH}
+\def\idSECAUTH{REQ\_SECAUTH\_N\_A\_1}
+\def\shortidSECAUTH{REQ\_N\_1}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Sicurezza Autenticazione Utenti
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_SECAUTH\_N\_A\_1}$ & Non Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		L'autenticazione degli utenti del sistema di Home Banking (clienti della banca e dipendenti della banca) deve avvenire a seguito dell'invio delle credenziali di login attraverso una connessione sicura.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti non funzionali (sez. \ref{sec:utente:non-funzionali:sicurezza}, req.\ \ref{itm:utente:non-funzionali:sicurezza:accesso}).
+}
+%\pline
+%\ptitlerow{Input}
+%\prow{
+%		Input del requisito.
+%}
+%\pline
+%\ptitlerow{Output}
+%\prow{
+%		Output del requisito.
+%}
+%\pline
+%\ptitlerow{Descrizione azione}
+%\prow{
+%		Descrizione dell'algoritmo.
+%}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_N\_2} - Logging operazioni}
+\label{sec:sistema:non-funzionali:LOGOP}
+\def\idLOGOP{REQ\_LOGOP\_N\_A\_2}
+\def\shortidLOGOP{REQ\_N\_2}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
@@ -228,7 +416,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-		$\code{REQ\_LOGGIN\_N\_A\_5}$ & Non Funzionale & Alta
+	$\code{REQ\_LOGOP\_N\_A\_2}$ & Non Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -238,38 +426,40 @@
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti non funzionali (req.\ \ref{itm:utente:non-funzionali:logging}).
+		Requisiti non funzionali (sez.\ \ref{sec:utente:non-funzionali}, req.\ \ref{itm:utente:non-funzionali:logging}).
 }
-\pline
-\ptitlerow{Input}
-\prow{
-		Informazioni su un'operazione.
-}
-\pline
-\ptitlerow{Output}
-\prow{
-		Nessuno.
-}
-\pline
-\ptitlerow{Descrizione azione}
-\prow{
-		Il sistema registra in un apposito database le seguenti informazioni: \begin{itemize} \item identificativo univoco dell'operazione; \item tipologia dell'operazione; \item numero di conto corrente coinvolto nell'operazione; \item eventuale input dell'operazione; \item istante dell'operazione; \item identificativo dell'utente che ha effettuato l'operazione; \item informazioni riguardanti il dispositivo da cui l'operazione \`e stata effettuata, come: \begin{itemize} \item indirizzo IP del dispositivo; \item browser del dispositivo; \item sistema operativo del dispositivo. \end{itemize} \end{itemize}
-}
-\pline
-\ptitlerow{Pre-condizioni}
-\prow{
-		Nessuna.
-}
-\pline
-\ptitlerow{Post-condizioni}
-\prow{
-		Nessuna.
-}
-\pline
-\ptitlerow{Side-effects}
-\prow{
-		Le informazioni indicate sono state inserite nel database di logging di HBS.
-}
+%\pline
+%\ptitlerow{Input}
+%\prow{
+%		Informazioni su un'operazione.
+%}
+%\pline
+%\ptitlerow{Output}
+%\prow{
+%		Nessuno.
+%}
+%\pline
+%\ptitlerow{Descrizione azione}
+%\prow{
+%		Il sistema registra in un apposito database le seguenti informazioni: \begin{itemize} \item identificativo univoco dell'operazione; \item tipologia dell'operazione; \item numero di conto corrente coinvolto nell'operazione; \item eventuale input dell'operazione; \item istante dell'operazione; \item identificativo dell'utente che ha effettuato l'operazione; \item informazioni riguardanti il dispositivo da cui l'operazione \`e stata effettuata, come: \begin{itemize} \item indirizzo IP del dispositivo; \item browser del dispositivo; \item sistema operativo del dispositivo. \end{itemize} \end{itemize}
+%}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Nessuna.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Nessuna.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Le informazioni indicate sono state inserite nel database di logging di HBS.
+%}
 \end{ptable}
+
+\clearpage
 
 \subsection{Specifica dei Requisiti di Dominio}

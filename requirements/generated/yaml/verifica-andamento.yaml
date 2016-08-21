@@ -1,5 +1,6 @@
 
-title: 'Verifica andamento titoli azionari'
+title: 'Verifica Andamento Titoli Azionari'
+mnemo: 'VERTIT'
 type: 'Funzionale'
 priority: 'Media'
 
@@ -7,7 +8,7 @@ description:
     'Un utente registrato al sistema di Home Banking e che abbia effettuato l''accesso deve
     poter visualizzare in tempo reale l''andamento dei propri titoli azionari.'
 origin:
-    'Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-andamento}).'
+    'Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-andamento}).'
 input:
     'Numero del conto corrente.'
 output:

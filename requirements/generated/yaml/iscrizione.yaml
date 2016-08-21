@@ -1,12 +1,13 @@
 
-title: 'Iscrizione nuovo correntista'
+title: 'Iscrizione Nuovo Correntista'
+mnemo: 'ISCRCORR'
 type: 'Funzionale'
 priority: 'Alta'
 
 description:
     'Il sistema deve permettere l''iscrizione a correntisti (p.~\pageref{glossario:correntista}) che non possiedano gi\`a un account HBS tramite un form compilabile e inviabile via web-browser.'
 origin:
-    'Requisiti utente (\ref{itm:utente:funzionali:iscrizione}).'
+    'Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:iscrizione}).'
 input:
     'Numero di conto corrente e codice fiscale del correntista.'
 output:

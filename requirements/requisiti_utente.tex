@@ -1,9 +1,10 @@
 
-\section{Definizione dei requisiti utente}
+\section{Definizione dei Requisiti Utente}
 
 Di seguito \`e illustrata la descrizione dettagliata dei requisiti utente.
 
-\subsection{Requisiti funzionali}
+\subsection{Requisiti Funzionali}
+\label{sec:utente:funzionali}
 
 I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 
@@ -64,7 +65,8 @@ I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 	\item Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata.
 \end{enumerate}
 
-\subsection{Requisiti non funzionali}
+\subsection{Requisiti Non Funzionali}
+\label{sec:utente:non-funzionali}
 
 \begin{enumerate}
 	\item \label{itm:utente:non-funzionali:logging} Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
@@ -93,12 +95,13 @@ I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 	Ogni maschera per l'inserimento di informazioni deve essere corredata da opportuni testi brevi illustranti il tipo di informazioni richieste.
 \end{enumerate}
 
-\subsubsection{Requisiti di sicurezza del sistema}
+\subsubsection{Requisiti di Sicurezza del Sistema}
+\label{sec:utente:non-funzionali:sicurezza}
 
 Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 
 \begin{enumerate}
-	\item L'accesso al sistema di Home Banking da parte di un utente avviene a seguito di autenticazione dello stesso.
+	\item \label{itm:utente:non-funzionali:sicurezza:accesso} L'accesso al sistema di Home Banking da parte di un utente avviene a seguito di autenticazione dello stesso.
 		Le credenziali di accesso devono essere trasmesse dal browser dell'utente al sistema di Home Banking utilizzando una connessione sicura.
 	\item Le credenziali d'accesso per un account sono:
 		\begin{enumerate}
@@ -130,7 +133,8 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 	\end{enumerate}
 \end{enumerate}
 
-\subsection{Requisiti di dominio}
+\subsection{Requisiti di Dominio}
+\label{sec:utente:dominio}
 
 La legislazione attuale richiede che gli organi di controllo finanziario come la Banca d'Italia e le forze dell'ordine possano accedere in lettura a tutte le informazioni salvate dal sistema di Online Banking.
 
@@ -138,28 +142,22 @@ La legislazione attuale richiede che gli organi di controllo finanziario come la
 \item Ogni sistema informatico nell'ambito bancario, e in particolare il software HBS in sviluppo, deve permettere l'accesso da remoto alla sua rete interna tramite il meccanismo di \emph{VPN}.
 	HBS deve quindi fornire alle autorit\`a di controllo le credenziali e/o interfacce per accedere ai sistemi di \emph{data storage}.
 
-	\item Le forze dell'ordine devono poter:
-	\begin{enumerate}
-    	\item Dato un utente visualizzare le seguenti informazioni:
+	\item Le forze dell'ordine, dato un utente, devono poter visualizzare le seguenti informazioni:
         	\begin{enumerate}
             	\item tutte le transazioni effettuati dall'utente;
             	\item tutte le transazioni che hanno l'utente come destinatario;
 	            \item dati anagrafici dell'utente;
     	        \item informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
 	        \end{enumerate}
-	    \item In caso le informazioni siano ridondanti il sistema pu\`o fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
-	\end{enumerate}
+	    In caso le informazioni siano ridondanti il sistema deve fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
 %TODO da qualche parte bisogna dire che un haxxor in genere non puo modificare tutti i log in maniera coerente, perche pensa a rubare i dindi invece di giocare ad uplink
 
-	\item L'organo di controllo finanziario deve poter:
-	\begin{enumerate}
-    	\item Dato un utente visualizzare le seguenti informazioni:
+	\item L'organo di controllo finanziario, dato un utente, deve poter visualizzare le seguenti informazioni:
         	\begin{enumerate}
-	            \item tutte le transazioni effettuati dall'utente;
+	            \item tutte le transazioni effettuate dall'utente;
     	        \item tutte le transazioni che hanno l'utente come destinatario;
 	            \item lo storico di Online Trading dell'utente.
     	    \end{enumerate}
-	\end{enumerate}
 	La normativa legale richiede che un sistema in grado di offrire funzionalit\`a di trading fornisca all'organo di controllo finanziario l'accesso allo storico delle operazioni, in particolare l'organo di controllo deve poter:
 	\begin{enumerate}
     	\item visualizzare le informazioni dei pacchetti di Online Trading;

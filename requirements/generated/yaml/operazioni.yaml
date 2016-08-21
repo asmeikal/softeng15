@@ -1,12 +1,13 @@
 
-title: 'Disposizioni di pagamento'
+title: 'Disposizioni di Pagamento'
+mnemo: 'DISPAG'
 type: 'Funzionale'
 priority: 'Alta'
 
 description:
     'Un utente registrato al sistema di Home Banking deve poter effettuare generiche disposizioni di pagamento. In particolare l''utente deve poter effettuare bonifici (p.~\pageref{glossario:bonifico}) e bonifici SEPA (p.~\pageref{glossario:bonifico-sepa}).'
 origin:
-    'Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni}).'
+    'Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni}).'
 input:
     'Numero di conto corrente, tipologia dell''operazione, somma di denaro da trasferire,
     conto corrente di destinazione nel formato opportuno.'

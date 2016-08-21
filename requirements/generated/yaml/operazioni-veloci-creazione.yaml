@@ -1,0 +1,31 @@
+
+title: 'Creazione Operazioni Veloci'
+mnemo: 'CROPVEL'
+type: 'Funzionale'
+priority: 'Media'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'I dipendenti della banca devono poter definire operazioni veloci utilizzabili dai clienti della stessa.
+    Un''operazione veloce permette di effettuare operazioni ordinarie quali bonifici
+    (p.~\pageref{glossario:bonifico}) o bonifici SEPA (p.~\pageref{glossario:bonifico-sepa})
+    inserendo un numero ridotto di argomenti rispetto a quelli normalmente necessari.
+    Vedi anche requisito funzionale \ref{itm:utente:funzionali:gestione-conto:operazioni-veloci}.'
+origin:
+    'Requisiti funzionali (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:dipendenti:operazioni-veloci}).'
+input:
+    'Nome dell''operazione veloce, parametri dell''operazione veloce, operazione tradizionale
+    corrispondente, mapping dei parametri dell''operazione veloce nei parametri dell''operazione
+    tradizionale.'
+output:
+    'Informazioni riguardo il successo dell''inserimento dell''operazione veloce nel database di HBS.'
+action:
+    'Le informazioni fornite vengono inserite nel database di HBS contenente le informazioni sulle
+    operazioni veloci configurate dalla banca.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+

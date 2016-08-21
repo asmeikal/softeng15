@@ -1,4 +1,5 @@
-title: 'Verifica saldo'
+title: 'Verifica Saldo'
+mnemo: 'VERSAL'
 type: 'Funzionale'
 priority: 'Alta'
 
@@ -6,7 +7,7 @@ description: 'Un utente registrato al sistema di Home Banking e che abbia effett
     visualizzare in tempo reale il saldo contabile (p.~\pageref{glossario:saldo-contabile}), il saldo attuale
     (p.~\pageref{glossario:saldo-attuale}) e il saldo liquido (p.~\pageref{glossario:saldo-liquido}) dei suoi conti correnti.'
 
-origin: 'Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-saldo}).'
+origin: 'Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-saldo}).'
 input: 'Identificativo dell''utente e numero di conto corrente.'
 action: 'Calcola il saldo contabile, il saldo attuale e il saldo liquido del conto corrente indicato.'
 output: 'Saldo contabile, saldo attuale e saldo liquido del conto corrente.'

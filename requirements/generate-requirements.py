@@ -2,17 +2,19 @@ import yaml
 from os import listdir
 from os.path import isfile, join
 
-template = 'generated/templates/requirement.tex'
+template_path = 'generated/templates/'
 sources  = 'generated/yaml/'
 output   = 'generated/system_requirements_table.tex'
 
 func_header = "\\subsection{Specifica dei Requisiti Funzionali}\n\n"
-n_func_header = "\\subsection{Specifica dei Requisiti Non Funzionali}\n\n"
-domain_header = "\\subsection{Specifica dei Requisiti di Dominio}"
+n_func_header = "\\clearpage\n\n\\subsection{Specifica dei Requisiti Non Funzionali}\n\n"
+domain_header = "\\clearpage\n\n\\subsection{Specifica dei Requisiti di Dominio}"
 
 fields = [
     'title',
+    'mnemo',
     'id',
+    'shortid',
     'type',
     'priority',
     'description',
@@ -37,16 +39,31 @@ class Requirement(object):
         assert set(self.data.keys()) == set(fields)
         self.type = self.data['type']
 
+    def set_index(self, index):
+        self.index = index;
+        self.build_id()
+
     def build_id(self):
         info = ['REQ']
-        info += [self.data['title'].replace(' ','').upper()[0:6]]
+        short_info = ['REQ']
+        info += [self.data['mnemo']]
         info += [self.data['type'].upper()[0]]
+        short_info += [self.data['type'].upper()[0]]
         info += [self.data['priority'].upper()[0]]
-        info += [str(index)]
-        self.data['id'] = "\\code{{{}}}".format("\\_".join(info))
+        info += [str(self.index)]
+        short_info += [str(self.index)]
+        self.data['id'] = "{}".format("\\_".join(info))
+        self.data['shortid'] = "{}".format("\\_".join(short_info))
 
     def output(self):
         res = ''
+        template = template_path
+        if self.type == 'Funzionale':
+            template += 'requirement_func.tex'
+        elif self.type == 'Non Funzionale':
+            template += 'requirement_n_func.tex'
+        elif self.type == 'Dominio':
+            template += 'requirement_domain.tex'
         with open(template, 'r') as ft:
             t = ft.read()
             res = t.format(**self.data)
@@ -54,20 +71,28 @@ class Requirement(object):
 
 if __name__ == '__main__':
     files = [f for f in listdir(sources) if isfile(join(sources, f))]
-    index = 0
+    index_func = 1
+    index_n_func = 1
+    index_domain = 1
     with open(output, 'w') as out:
         res_func = ""
         res_n_func = ""
         res_domain = ""
         for f in files:
             if f == "example.yaml": continue
-            index += 1
-            r = Requirement(sources + f, index)
+            if f[0] == '.': continue
+            r = Requirement(sources + f, 0)
             if r.type == 'Funzionale':
+                r.set_index(index_func)
+                index_func += 1
                 res_func += r.output()
             elif r.type == 'Non Funzionale':
+                r.set_index(index_n_func)
+                index_n_func += 1
                 res_n_func += r.output()
             elif r.type == 'Dominio':
+                r.set_index(index_domain)
+                index_domain += 1
                 res_domain += r.output()
         out.write(func_header)
         out.write(res_func)

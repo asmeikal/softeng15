@@ -1,0 +1,26 @@
+
+title: 'Sicurezza Autenticazione Utenti'
+mnemo: 'SECAUTH'
+type: 'Non Funzionale'
+priority: 'Alta'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'L''autenticazione degli utenti del sistema di Home Banking (clienti della banca e dipendenti
+    della banca) deve avvenire a seguito dell''invio delle credenziali di login attraverso una connessione
+    sicura.'
+origin:
+    'Requisiti non funzionali (sez. \ref{sec:utente:non-funzionali:sicurezza}, req.\ \ref{itm:utente:non-funzionali:sicurezza:accesso}).'
+input:
+    'Input del requisito.'
+output:
+    'Output del requisito.'
+action:
+    'Descrizione dell''algoritmo.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+
