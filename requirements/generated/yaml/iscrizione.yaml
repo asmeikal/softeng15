@@ -4,9 +4,9 @@ type: 'Funzionale'
 priority: 'Alta'
 
 description:
-    'Il sistema deve permettere l''iscrizione a correntisti (p.~\pageref{correntista}) che non possiedano gi\`a un account HBS tramite un form compilabile e inviabile via web-browser.'
+    'Il sistema deve permettere l''iscrizione a correntisti (p.~\pageref{glossario:correntista}) che non possiedano gi\`a un account HBS tramite un form compilabile e inviabile via web-browser.'
 origin:
-    'Requisiti utente (\ref{itm:iscrizione_utente}).'
+    'Requisiti utente (\ref{itm:utente:funzionali:iscrizione}).'
 input:
     'Numero di conto corrente e codice fiscale del correntista.'
 output:
@@ -19,7 +19,7 @@ pre:
     Non esiste un utente HBS associato al codice fiscale del correntista.'
 post:
     'Viene creato un utente HBS associato al codice fiscale del correntista.
-    Il nuovo utente non \`e abilitato all''accesso a HBS (v. requisito approvazione).
+    Il nuovo utente non \`e abilitato all''accesso a HBS (v.\ requisiti \ref{itm:utente:funzionali:approvazione}).
     Il conto corrente associato al numero di conto corrente inserito viene abilitato all''uso di HBS.'
 side:
     'La richiesta di iscrizione viene inserita nel database di HBS.'

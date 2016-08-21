@@ -1,0 +1,29 @@
+
+title: 'Disposizioni di pagamento'
+type: 'Funzionale'
+priority: 'Alta'
+
+description:
+    'Un utente registrato al sistema di Home Banking deve poter effettuare generiche disposizioni di pagamento. In particolare l''utente deve poter effettuare bonifici (p.~\pageref{glossario:bonifico}) e bonifici SEPA (p.~\pageref{glossario:bonifico-sepa}).'
+origin:
+    'Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni}).'
+input:
+    'Numero di conto corrente, tipologia dell''operazione, somma di denaro da trasferire,
+    conto corrente di destinazione nel formato opportuno.'
+output:
+    'Indicatore di successo dell''operazione.'
+action:
+    'L''operazione specificata viene inoltrata da HBS al back-end della banca.
+    HBS attende dal back-end informazioni riguardo il successo o meno dell''operazione.'
+pre:
+    'L''utente ha accesso al conto corrente indicato.
+    Il saldo contabile sul conto corrente indicato \`e maggiore o uguale alla somma di denaro da trasferire
+    pi\`u eventuali spese di commissione.'
+post:
+    'Se il back-end della banca ha preso in carico l''operazione con successo, la gestione della stessa
+    \`e stata passata al back-end.
+    Altrimenti nessuna.'
+side:
+    'Il tentativo di operazione viene registrato nel log di HBS, insieme ad informazioni riguardo
+    lo stato di presa in carico da parte del back-end della banca.'
+

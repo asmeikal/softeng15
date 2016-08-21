@@ -3,13 +3,14 @@ type: 'Funzionale'
 priority: 'Alta'
 
 description: 'Un utente registrato al sistema di Home Banking e che abbia effettuato l''accesso deve poter
-  visualizzare in tempo reale il saldo contabile (p.~\pageref{saldo_contabile}), il saldo attuale
-  (p.~\pageref{saldo_attuale}) e il saldo liquido (p.~\pageref{saldo_liquido}) dei suoi conti correnti.'
+    visualizzare in tempo reale il saldo contabile (p.~\pageref{glossario:saldo-contabile}), il saldo attuale
+    (p.~\pageref{glossario:saldo-attuale}) e il saldo liquido (p.~\pageref{glossario:saldo-liquido}) dei suoi conti correnti.'
 
-origin: 'Requisiti utente (\ref{itm:amministrazione_conto}).'
+origin: 'Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-saldo}).'
 input: 'Identificativo dell''utente e numero di conto corrente.'
 action: 'Calcola il saldo contabile, il saldo attuale e il saldo liquido del conto corrente indicato.'
 output: 'Saldo contabile, saldo attuale e saldo liquido del conto corrente.'
 pre: 'L''utente ha accesso al conto corrente indicato.'
 post: 'Nessuna.'
 side: 'Nessuno.'
+

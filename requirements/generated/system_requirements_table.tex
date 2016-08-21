@@ -1,4 +1,60 @@
-\subsubsection{\code{REQ\_ISCRIZ\_F\_H\_1} - Iscrizione nuovo correntista}
+\subsection{Specifica dei Requisiti Funzionali}
+
+\subsubsection{\code{REQ\_DISPOS\_F\_A\_1} - Disposizioni di pagamento}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Disposizioni di pagamento
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+		$\code{REQ\_DISPOS\_F\_A\_1}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un utente registrato al sistema di Home Banking deve poter effettuare generiche disposizioni di pagamento. In particolare l'utente deve poter effettuare bonifici (p.~\pageref{glossario:bonifico}) e bonifici SEPA (p.~\pageref{glossario:bonifico-sepa}).
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni}).
+}
+\pline
+\ptitlerow{Input}
+\prow{
+		Numero di conto corrente, tipologia dell'operazione, somma di denaro da trasferire, conto corrente di destinazione nel formato opportuno.
+}
+\pline
+\ptitlerow{Output}
+\prow{
+		Indicatore di successo dell'operazione.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		L'operazione specificata viene inoltrata da HBS al back-end della banca. HBS attende dal back-end informazioni riguardo il successo o meno dell'operazione.
+}
+\pline
+\ptitlerow{Pre-condizioni}
+\prow{
+		L'utente ha accesso al conto corrente indicato. Il saldo contabile sul conto corrente indicato \`e maggiore o uguale alla somma di denaro da trasferire pi\`u eventuali spese di commissione.
+}
+\pline
+\ptitlerow{Post-condizioni}
+\prow{
+		Se il back-end della banca ha preso in carico l'operazione con successo, la gestione della stessa \`e stata passata al back-end. Altrimenti nessuna.
+}
+\pline
+\ptitlerow{Side-effects}
+\prow{
+		Il tentativo di operazione viene registrato nel log di HBS, insieme ad informazioni riguardo lo stato di presa in carico da parte del back-end della banca.
+}
+\end{ptable}
+
+\subsubsection{\code{REQ\_ISCRIZ\_F\_A\_2} - Iscrizione nuovo correntista}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
@@ -8,17 +64,17 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-		$\code{REQ\_ISCRIZ\_F\_H\_1}$ & F & H
+		$\code{REQ\_ISCRIZ\_F\_A\_2}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
 \prow{
-		Il sistema deve permettere l'iscrizione a correntisti (p.~\pageref{correntista}) che non possiedano gi\`a un account HBS tramite un form compilabile e inviabile via web-browser.
+		Il sistema deve permettere l'iscrizione a correntisti (p.~\pageref{glossario:correntista}) che non possiedano gi\`a un account HBS tramite un form compilabile e inviabile via web-browser.
 }
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti utente (\ref{itm:iscrizione_utente}).
+		Requisiti utente (\ref{itm:utente:funzionali:iscrizione}).
 }
 \pline
 \ptitlerow{Input}
@@ -43,12 +99,177 @@
 \pline
 \ptitlerow{Post-condizioni}
 \prow{
-		Viene creato un utente HBS associato al codice fiscale del correntista. Il nuovo utente non \`e abilitato all'accesso a HBS (v. requisito approvazione). Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
+		Viene creato un utente HBS associato al codice fiscale del correntista. Il nuovo utente non \`e abilitato all'accesso a HBS (v.\ requisiti \ref{itm:utente:funzionali:approvazione}). Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
 }
 \pline
 \ptitlerow{Side-effects}
 \prow{
-		Viene creato un utente HBS associato al codice fiscale del correntista. Il nuovo utente non \`e abilitato all'accesso a HBS (v. requisito approvazione). Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
+		La richiesta di iscrizione viene inserita nel database di HBS.
 }
 \end{ptable}
 
+\subsubsection{\code{REQ\_VERIFI\_F\_A\_3} - Verifica saldo}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Verifica saldo
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+		$\code{REQ\_VERIFI\_F\_A\_3}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un utente registrato al sistema di Home Banking e che abbia effettuato l'accesso deve poter visualizzare in tempo reale il saldo contabile (p.~\pageref{glossario:saldo-contabile}), il saldo attuale (p.~\pageref{glossario:saldo-attuale}) e il saldo liquido (p.~\pageref{glossario:saldo-liquido}) dei suoi conti correnti.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-saldo}).
+}
+\pline
+\ptitlerow{Input}
+\prow{
+		Identificativo dell'utente e numero di conto corrente.
+}
+\pline
+\ptitlerow{Output}
+\prow{
+		Saldo contabile, saldo attuale e saldo liquido del conto corrente.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Calcola il saldo contabile, il saldo attuale e il saldo liquido del conto corrente indicato.
+}
+\pline
+\ptitlerow{Pre-condizioni}
+\prow{
+		L'utente ha accesso al conto corrente indicato.
+}
+\pline
+\ptitlerow{Post-condizioni}
+\prow{
+		Nessuna.
+}
+\pline
+\ptitlerow{Side-effects}
+\prow{
+		Nessuno.
+}
+\end{ptable}
+
+\subsubsection{\code{REQ\_VERIFI\_F\_M\_4} - Verifica andamento titoli azionari}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Verifica andamento titoli azionari
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+		$\code{REQ\_VERIFI\_F\_M\_4}$ & Funzionale & Media
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un utente registrato al sistema di Home Banking e che abbia effettuato l'accesso deve poter visualizzare in tempo reale l'andamento dei propri titoli azionari.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-andamento}).
+}
+\pline
+\ptitlerow{Input}
+\prow{
+		Numero del conto corrente.
+}
+\pline
+\ptitlerow{Output}
+\prow{
+		Andamento storico delle azioni.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Il sistema di HBS raccoglie gli identificativi dei titoli azionari di cui il correntista dispone e recupera l'andamento delle azioni dal back-end della banca.
+}
+\pline
+\ptitlerow{Pre-condizioni}
+\prow{
+		L'utente ha accesso al conto corrente indicato.
+}
+\pline
+\ptitlerow{Post-condizioni}
+\prow{
+		Nessuna.
+}
+\pline
+\ptitlerow{Side-effects}
+\prow{
+		Nessuno.
+}
+\end{ptable}
+
+\subsection{Specifica dei Requisiti Non Funzionali}
+
+\subsubsection{\code{REQ\_LOGGIN\_N\_A\_5} - Logging operazioni}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Logging operazioni
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+		$\code{REQ\_LOGGIN\_N\_A\_5}$ & Non Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Il sistema deve effettuare il logging di ogni operazione effettuata da un utente (cliente della banca o dipendente dell'istituto bancario).
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti non funzionali (req.\ \ref{itm:utente:non-funzionali:logging}).
+}
+\pline
+\ptitlerow{Input}
+\prow{
+		Informazioni su un'operazione.
+}
+\pline
+\ptitlerow{Output}
+\prow{
+		Nessuno.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Il sistema registra in un apposito database le seguenti informazioni: \begin{itemize} \item identificativo univoco dell'operazione; \item tipologia dell'operazione; \item numero di conto corrente coinvolto nell'operazione; \item eventuale input dell'operazione; \item istante dell'operazione; \item identificativo dell'utente che ha effettuato l'operazione; \item informazioni riguardanti il dispositivo da cui l'operazione \`e stata effettuata, come: \begin{itemize} \item indirizzo IP del dispositivo; \item browser del dispositivo; \item sistema operativo del dispositivo. \end{itemize} \end{itemize}
+}
+\pline
+\ptitlerow{Pre-condizioni}
+\prow{
+		Nessuna.
+}
+\pline
+\ptitlerow{Post-condizioni}
+\prow{
+		Nessuna.
+}
+\pline
+\ptitlerow{Side-effects}
+\prow{
+		Le informazioni indicate sono state inserite nel database di logging di HBS.
+}
+\end{ptable}
+
+\subsection{Specifica dei Requisiti di Dominio}
