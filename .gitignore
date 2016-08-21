@@ -13,6 +13,7 @@ Resources/*
 
 !requirements
 !requirements/*.py
+!requirements/README.md
 !requirements/generated
 !requirements/generated/yaml
 !requirements/generated/templates
