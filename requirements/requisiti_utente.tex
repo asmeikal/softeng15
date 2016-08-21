@@ -8,18 +8,19 @@ Di seguito \`e illustrata la descrizione dettagliata dei requisiti utente.
 I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 
 \begin{enumerate}
-	\item \label{itm:iscrizione_utente} Ogni utente correntista che ne faccia esplicita richiesta deve avere un account personale e deve potersi iscrivere  mediante apposite procedure (business case in figura \ref{fig:business_case_registration}).
-	\item Un utente registrato deve poter effettuare l'amministrazione corretta del proprio conto corrente (business case in figura \ref{fig:business_case_generic_operation}), per questa ragione è richiesto che:
+	\item \label{itm:utente:funzionali:iscrizione} Ogni utente correntista che ne faccia esplicita richiesta deve avere un account personale e deve potersi iscrivere  mediante apposite procedure (business case in figura \ref{fig:business_case_registration}).
+	\item \label{itm:utente:funzionali:gestione-conto} Un utente registrato deve poter effettuare l'amministrazione corretta del proprio conto corrente (business case in figura \ref{fig:business_case_generic_operation}), per questa ragione è richiesto che:
 	\begin{enumerate}
-		\item l'utente possa verificare in tempo reale:
+		\item \label{itm:utente:funzionali:gestione-conto:verifica-saldo} l'utente possa verificare in tempo reale:
 			\begin{enumerate}
 				\item il suo saldo attuale;
 				\item il suo saldo contabile;
 				\item il suo saldo liquido;
 			\end{enumerate} 
-		\item l'utente deve poter verificare in tempo reale l'andamento dei titoli azionari che possiede e, nel caso, venderli;
-		\item l'utente deve poter effettuare operazioni programmate di revisione dei conti o di pagamento;
-		\item l'utente deve poter effettuare \emph{operazioni veloci}, ossia inserire pochi dati in una maschera preconfigurata, come :
+		\item \label{itm:utente:funzionali:gestione-conto:verifica-andamento} l'utente deve poter verificare in tempo reale l'andamento dei titoli azionari che possiede e, eventualmente, venderli;
+		\item \label{itm:utente:funzionali:gestione-conto:revisione} l'utente deve poter effettuare operazioni programmate di revisione dei conti o di pagamento;
+		\item \label{itm:utente:funzionali:gestione-conto:operazioni} l'utente deve poter effettuare disposizioni generiche di pagamento;
+		\item \label{itm:utente:funzionali:gestione-conto:operazioni-veloci} l'utente deve poter effettuare \emph{operazioni veloci}, ossia effettuare disposizioni inserendo pochi dati in una maschera preconfigurata, come:
 			\begin{enumerate}
 				\item ricariche telefoniche;
 				\item bonifici ordinari;
@@ -27,13 +28,14 @@ I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 				\item pagamento delle bollette.
 			\end{enumerate} 
 	\end{enumerate}
-	\item L'utente deve poter consultare lo storico delle transazioni eseguite, complete delle informazioni riguardanti la data, il destinatario, l'importo previsto e una causale descrittiva delle motivazioni.
-	\item L'utente deve poter ottenere, in tempo reale, un resoconto delle transazioni che sono in corso da e verso il suo conto.
-	\item I dipendenti di una banca, impiegati e manager, devono poter accedere al sistema mediante specifico e personale account.
-	\item I dipendenti di una banca devono poter creare i form per la gestione delle operazioni veloci.
-	\item I manager devono poter accettare o rifiutare le proposte di bidding per conti correnti, carte di credito e prestiti fatte dagli utenti che rientrano nell'insieme di proposte soggette a approvazione dei manager della banca.
-	\item I manager devono poter gestire il bidding eventualmente offerto della banca, specificando in modo opportuno per conti correnti, carte di credito e prestiti i parametri che individuano i bid accettati automaticamente, soggetti a ulteriore approvazione, rifiutati automaticamente.
-	I parametri di decisione comprendono i parametri di conti correnti, carte di credito e prestiti, e parametri riguardanti i clienti della banca:
+	\item \label{itm:utente:funzionali:storico} L'utente deve poter consultare lo storico delle transazioni eseguite, complete delle informazioni riguardanti la data, il destinatario, l'importo previsto e una causale descrittiva delle motivazioni;
+	\item \label{itm:utente:funzionali:resoconto} L'utente deve poter ottenere, in tempo reale, un resoconto delle transazioni che sono in corso da e verso il suo conto;
+	\item \label{itm:utente:funzionali:dipendenti:accesso} I dipendenti di una banca, impiegati e manager, devono poter accedere al sistema mediante specifico e personale account;
+	\item \label{itm:utente:funzionali:dipendenti:operazioni-veloci} I dipendenti di una banca devono poter creare i form per la gestione delle operazioni veloci;
+	\item \label{itm:utente:funzionali:management:bidding:approvazione} I manager devono poter accettare o rifiutare le proposte di bidding per conti correnti, carte di credito e prestiti fatte dagli utenti che rientrano nell'insieme di proposte soggette a approvazione dei manager della banca.
+	\item \label{itm:utente:funzionali:management:bidding:creazione} I manager devono poter gestire il bidding eventualmente offerto della banca, specificando in modo opportuno per conti correnti, carte di credito e prestiti i parametri che individuano i bid accettati automaticamente, soggetti a ulteriore approvazione, rifiutati automaticamente.
+	I parametri di decisione comprendono i parametri di conti correnti, carte di credito e prestiti, e parametri riguardanti i clienti della banca.
+	Alcuni possibili parametri sono:
 		\begin{enumerate}
 			\item giacenza media mensile e annuale sui conti correnti dell'utente;
 			\item affidibilit\`a dell'utente (in funzione, ad esempio, della frequenza con cui i suoi conti correnti sono andati in rosso);
@@ -65,7 +67,7 @@ I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 \subsection{Requisiti non funzionali}
 
 \begin{enumerate}
-	\item Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
+	\item \label{itm:utente:non-funzionali:logging} Ogni operazione effettuata da un utente (cliente della banca o dipendente della banca) sul sistema deve essere registrata in un log.
 	Ogni log deve contenere quantomeno le seguenti informazioni:
 	\begin{itemize}
 		\item un'identificativo del tipo di operazione eseguita;
