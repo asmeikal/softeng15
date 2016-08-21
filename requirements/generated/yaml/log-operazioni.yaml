@@ -1,0 +1,38 @@
+
+title: 'Logging operazioni'
+mnemo: 'LOGOP'
+type: 'Non Funzionale'
+priority: 'Alta'
+
+description:
+    'Il sistema deve effettuare il logging di ogni operazione effettuata da un utente (cliente della banca
+    o dipendente dell''istituto bancario).'
+origin:
+    'Requisiti non funzionali (sez.\ \ref{sec:utente:non-funzionali}, req.\ \ref{itm:utente:non-funzionali:logging}).'
+input:
+    'Informazioni su un''operazione.'
+output:
+    'Nessuno.'
+action:
+    'Il sistema registra in un apposito database le seguenti informazioni:
+    \begin{itemize}
+        \item identificativo univoco dell''operazione;
+        \item tipologia dell''operazione;
+        \item numero di conto corrente coinvolto nell''operazione;
+        \item eventuale input dell''operazione;
+        \item istante dell''operazione;
+        \item identificativo dell''utente che ha effettuato l''operazione;
+        \item informazioni riguardanti il dispositivo da cui l''operazione \`e stata effettuata, come:
+        \begin{itemize}
+            \item indirizzo IP del dispositivo;
+            \item browser del dispositivo;
+            \item sistema operativo del dispositivo.
+        \end{itemize}
+    \end{itemize}'
+pre:
+    'Nessuna.'
+post:
+    'Nessuna.'
+side:
+    'Le informazioni indicate sono state inserite nel database di logging di HBS.'
+

@@ -1,0 +1,27 @@
+
+title: 'Disposizione Operazioni Veloci'
+mnemo: 'DISOPVEL'
+type: 'Funzionale'
+priority: 'Media'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'Un utente registrato deve poter effettuare le operazioni veloci configurate dai dipendenti della banca.'
+origin:
+    'Requisiti funzionali (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni-veloci} e
+    \ref{itm:utente:funzionali:dipendenti:operazioni-veloci}). Dipende da requisito sistema \shortidCROPVEL,
+    sez.\ \ref{sec:sistema:funzionali:CROPVEL}.'
+input:
+    'Numero di conto corrente, tipologia di operazione veloce, argomenti dell''operazione veloce.'
+output:
+    'Indicatore di successo dell''operazione veloce.'
+action:
+    'Il sistema traduce gli argomenti dell''operazione veloce negli argomenti necessari ad effettuare
+    l''operazione tradizionale corrispondente, dopodich\''e effettua l''operazione tradizionale.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+

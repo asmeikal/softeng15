@@ -1,0 +1,24 @@
+
+title: 'Nome requisito'
+mnemo: 'EXAMPLE'
+type: ['Funzionale'|'Non Funzionale'|'Dominio']
+priority: ['Alta'|'Media'|'Bassa']
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'Descrizione del requisito.'
+origin:
+    'Riferimento con \ref{itm:...} al requisito utente di origine.'
+input:
+    'Input del requisito.'
+output:
+    'Output del requisito.'
+action:
+    'Descrizione dell''algoritmo.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+

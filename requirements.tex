@@ -18,13 +18,15 @@
 
 \startofdocument{}
 
-\input{introduzione_requisiti}
+\input{requirements/introduzione_requisiti}
 
-\input{glossario}
+\input{requirements/glossario}
 
-\input{requisiti_utente}
+\input{requirements/requisiti_utente}
 
-\section{Business cases}
+\input{requirements/requisiti_sistema}
+
+\section{Business Cases}
 
 Di seguito sono i business case individuati a partire dalla definizione dei requisiti e dall'analisi del contesto:
 \begin{itemize}
@@ -36,20 +38,32 @@ Di seguito sono i business case individuati a partire dalla definizione dei requ
 Nei business case utilizziamo la freccia tratteggiata (\emph{message flow}) fra gateway di \emph{pool} differenti per rappresentare sinteticamente il propagarsi dell'effetto di una decisione dalla coda alla testa della freccia.
 Ad esempio, nella figura \ref{fig:business_case_authentication}, la validit\`a delle credenziali viene stabilita dal software di Home Banking, e la conclusione di questa decisione si ``riflette'' nel browser del cliente, che riceve una pagina di errore o una schermata di successo a seconda del risultato.
 
-\section{Registro modifiche}
+\appendix
+
+\section{Registro Modifiche}
 
 \subsection{Inception}
 
-\subsubsection{I iterazione}
+\subsubsection{I Iterazione}
 
 Prima stesura documento.
 
-\subsubsection{II iterazione}
+\subsubsection{II Iterazione}
 
 Effettuata specifica dei requisiti per fase di Inception.
 Aggiunta definizione requisito funzionale di \emph{Home Trading}.
 Aggiunto diagramma alto livello degli use cases del sistema.
 Aggiunta possibilit\`a di effettuare bidding per mutui e prestiti.
+
+\subsubsection{III Iterazione}
+
+Correzione di errori.
+
+\subsection{Elaboration}
+
+\subsubsection{I Iterazione}
+
+Aggiunta specifica dei requisiti di sistema.
 
 %Un utente registrato pu\`o ottenere una lista delle tipologie di servizi offerti dalla banca che pu\`o sottoscrivere.
 %

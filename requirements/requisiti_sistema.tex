@@ -1,0 +1,40 @@
+
+\section{Specifica dei Requisiti di Sistema}
+
+Di seguito \`e esposta la specifica dei requisiti di sistema.
+
+Ciascun requisito \`e specificato su una scheda seguendo l'esempio illustrato da \cite[p. 97]{sommerville}.
+In particolare ciascuna scheda conterr\`a i seguenti campi:
+\begin{itemize}
+	\item ID del requisito;
+	\item tipo del requisito;
+	\item titolo del requisito;
+	\item descrizione del requisito;
+	\item origine del requisito;
+	\item priorit\`a del requisito.
+\end{itemize}
+I requisiti funzionali conterranno inoltre i seguenti campi:
+\begin{itemize}
+	\item input del requisito funzionale;
+%	\item origine dell'input;
+	\item output del requisito funzionale;
+%	\item destinazione dell'output;
+	\item descrizione dell'azione.
+%	\item pre-condizioni;
+%	\item post-condizioni;
+%	\item side-effects.
+\end{itemize}
+
+Identifichiamo i requisiti del sistema con la codifica ottenuta concatenando i seguenti elementi, usando un \emph{underscore} come separatore:
+\begin{itemize}
+	\item il prefisso comune \code{REQ};
+	\item una sequenza di 4-10 lettere (identificativo mnemonico);
+	\item un identificativo di priorit\`a (in ordine decrescente \code{A}, \code{M}, \code{B});
+	\item un identificativo della tipologia (\code{F} per requisiti funzionali, \code{N} per requisiti non funzionali, \code{D} per requisiti di dominio);
+	\item un intero strettamente positivo (unico per ogni requisito, per ogni tipologia).
+\end{itemize}
+In contesti in cui \`e necessario essere concisi \`e possibile identificare i requisiti utilizzando unicamente il prefisso \code{REQ}, la tipologia del requisito e l'intero assegnato al requisito.
+
+\include{requirements/generated/system_requirements_table}
+
+%TODO registrazione conto corrente a utente già iscritto HBS
