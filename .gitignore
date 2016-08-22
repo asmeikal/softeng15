@@ -21,3 +21,5 @@ Resources/*
 !requirements/generated/templates
 !requirements/generated/yaml/*.yaml
 
+!use-case-model
+
