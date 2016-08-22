@@ -13,6 +13,7 @@ Per creare un requisito:
 2. copiare il file `example.yaml` in un nuovo file `[nome-requisito].yaml`;
 3. modificare il file `[nome-requisito.yaml]`;
 4. dalla directory corrente (`requirements` rispetto alla root del progetto) eseguire il comando:
+   
    ```
    python generate-templates.py
    ```
@@ -25,4 +26,15 @@ Per inserire un apostrofo in una stringa YAML vanno inseriti due apostrofi conse
 ```
 nome_campo: 'iscrizione del''utente'
 ```
+
+### Note
+
+Il nome mnemonico che viene dato a un requisito genera due macro:
+
+```
+\idMNEMO
+\shortidMNEMO
+```
+
+Le due macro permettono di stampare rispettivamente l'id completo e l'id breve del requisito.
 
