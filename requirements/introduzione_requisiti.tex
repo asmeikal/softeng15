@@ -116,7 +116,15 @@ Un esempio di come identificare queste aree di risposta \`e dato in figura \ref{
 
 \begin{figure}
 	\resizebox{\columnwidth}{!}{
-	\begin{tikzpicture}
+	\begin{tikzpicture}[
+		dot/.style = {
+			draw,
+			fill = white,
+			circle,
+			inner sep = 0pt,
+			minimum size = 4pt
+		}
+	]
 		\begin{axis}[
 			ymin=1,
 			scale only axis,
@@ -126,7 +134,7 @@ Un esempio di come identificare queste aree di risposta \`e dato in figura \ref{
 			xlabel={Spesa massima mensile},
 			ylabel={Costo mensile},
 			axis lines=left,
-			samples=200
+			samples=200,
         ]
 		    \path[name path=axis] (axis cs:0,0) -- (axis cs:1,0);
 		    \addplot[green] {x};
@@ -136,10 +144,9 @@ Un esempio di come identificare queste aree di risposta \`e dato in figura \ref{
 		    \addplot[orange, dashed] {x+2};
 		    \addplot[red, dashed] {x-3};
 		    \addplot[red, dashed] {x+3};
-%   			\node [] at (axis cs:0.2,0) {basso};
-%   			\node [] at (axis cs:0.6,0.3) {medio};
-%   			\node [] at (axis cs:1.0,0.6) {alto};
-%   			\node [] at (axis cs:1.4,1.2) {massimo};			
+   			\node [dot, label = {above:bid accettato automaticamente}] at (axis cs:5.1,5.6) {};
+   			\node [dot, label = {above:bid soggetto ad approvazione}] at (axis cs:8.3,6.6) {};
+   			\node [dot, label = {above:bid rifiutato automaticamente}] at (axis cs:7.8,4.4) {};
 		\end{axis}
 	\end{tikzpicture}
 	}

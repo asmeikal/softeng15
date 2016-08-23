@@ -26,17 +26,7 @@
 
 \input{requirements/requisiti_sistema}
 
-\section{Business Cases}
-
-Di seguito sono i business case individuati a partire dalla definizione dei requisiti e dall'analisi del contesto:
-\begin{itemize}
-	\item Procedura di registrazione di un utente (figura \ref{fig:business_case_registration}).
-	\item Procedura di autenticazione di un utente registrato (figura \ref{fig:business_case_authentication}).
-	\item Procedura generica per effettuare un'operazione all'interno del sistema di Home Banking (figura \ref{fig:business_case_generic_operation}).
-	\item Procedura generica di controllo da parte di un'entit\`a preposta (figura \ref{fig:business_case_control_activity}).
-\end{itemize}
-Nei business case utilizziamo la freccia tratteggiata (\emph{message flow}) fra gateway di \emph{pool} differenti per rappresentare sinteticamente il propagarsi dell'effetto di una decisione dalla coda alla testa della freccia.
-Ad esempio, nella figura \ref{fig:business_case_authentication}, la validit\`a delle credenziali viene stabilita dal software di Home Banking, e la conclusione di questa decisione si ``riflette'' nel browser del cliente, che riceve una pagina di errore o una schermata di successo a seconda del risultato.
+\input{requirements/business}
 
 \appendix
 
@@ -65,142 +55,11 @@ Correzione di errori.
 
 Aggiunta specifica dei requisiti di sistema.
 
-%Un utente registrato pu\`o ottenere una lista delle tipologie di servizi offerti dalla banca che pu\`o sottoscrivere.
-%
-%Un utente pu\`o aprire diversi tipi di conto corrente, 
-%
-%Un utente titolare di un conto.
-%
-%Audit di sicurezza:
-%storico delle connessioni e delle operazioni riguardanti il conto corrente.
-%
-%Il sistema di home banking \`e personalizzabile dagli impiegati della banca.
-%I dipendenti della banca possono creare:
-%- conti di deposito
-%- carte di credito/debito
-%Personalizzando vari parametri.
-%I dirigenti possono permettere l'apertura di certi conti/carte solo a clienti che abbiano i requisiti specificati:
-%- giacenza media
-%- capitale depositato che aumenta
-%- boh
-%
-%Possibilit\`a di bidding in cui un utente fa una proposta alla banca per ottenere un conto o una carta con certe particolari condizioni/agevolazioni.
-%In base a delle regole definite dai dirigenti questa proposta pu\`o essere:
-%- approvata automaticamente dal sistema
-%- inoltrata a un manager per l'approvazione
-%- rifiutata automaticamente
-%Controllare se la cosa \`e legale o se ce ne freghiamo.
-%
-%
-%
-%%--------------------------------------------------------------
-%
-%% TODO ripulire questa parte e spostare tutto nel file dei requisiti
-%Per rafforzare i requisiti non funzionali (come i requisiti di sicurezza) si sceglie di rivolgere il sistema di Home Banking a persone fisiche (retail banking).
-%
-%Alcune delle funzionalit\`a che il sistema pu\`o offrire sono:
-%\begin{enumerate}
-%	\item L'utente si deve poter pre-registrare online fornendo i suoi dati anagrafici, e:
-%		\begin{enumerate}
-%			\item se l'utente ha gi\`a un conto aperto con la banca, pu\`o fornire il suo numero di conto;
-%			\item se l'utente non ha gi\`a un conto con la banca, pu\`o scegliere diverse soluzioni con agevolazioni differenti e pre-compilare i moduli necessari all'apertura del conto.
-%				% TODO: cambiare "se l'utente ha gi\`a un conto con la banca" in "se l'utente desidera aprire un nuovo conto"
-%		\end{enumerate}
-%		Un utente pre-registrato pu\`o recarsi presso una filiale della banca e ultimare la registrazione presentando il documento d'identit\`a.
-%		La banca gli fornir\`a le informazioni per l'accesso.
-%		Ai nuovi clienti viene fornito su richiesta un bancomat.
-%		% TODO: rimuovere, non \`e di interesse per l'applicazione, facciamo home banking non ATM
-%
-%		Un utente non pre-registrato pu\`o effettuare la procedura completa di registrazione presso una filiale, fornendo le stesse informazioni richieste agli utenti che si pre-registrano online.
-%	\item Le informazioni per l'accesso comprendono:
-%		\begin{enumerate}
-%			\item Il numero di conto;
-%			\item La password del conto;
-%			\item Un dispositivo TOTP\footnote{Time-Based One Time Password, RFC 6238. \url{https://tools.ietf.org/html/rfc6238}} per effettuare operazioni sensibili.
-%		\end{enumerate}
-%	\item Un utente registrato pu\`o effettuare il login al sistema di Home Banking fornendo le informazioni di accesso (requisito TOT), in particolare deve inserire numero di conto e password del conto.
-%	\item Un utente che ha effettuato l'accesso al sistema di Home Banking deve poter svolgere le seguenti operazioni senza fornire la One Time Password:
-%		\begin{enumerate}
-%			\item Visionare saldo contabile, disponibile e liquido.
-%			\item Visionare uno storico delle transazioni effettuate.
-%			\item Visionare informazioni riguardo le carte di credito collegate al conto (se presenti).
-%			\item Effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione (requisito TOT).
-%		\end{enumerate}
-%	\item Un utente che ha effettuato l'accesso al sistema di Home Banking deve poter effettuare le seguenti operazioni fornendo ogni volta la One Time Password:
-%		\begin{enumerate}
-%			\item Effettuare transazioni, come:
-%				\begin{enumerate}
-%					\item bonifici ordinari e bonifici SEPA;
-%					\item ricariche carte prepatate e schede telefoniche;
-%					\item pagamento bollette, bollettini, tasse, etc;
-%				\end{enumerate}
-%			\item Configurare operazioni veloci.
-%			\item Se ci viene in mente altro ce lo mettiamo.
-%		\end{enumerate}
-%	\item Ogni operazione deve essere registrata in un log.
-%		Devono essere mantenute le seguenti informazioni:
-%		\begin{enumerate}
-%			\item l'operazione eseguita;
-%			\item il conto coinvolto nell'operazione;
-%				% TODO rivedere codesta parte: codice univoco della transazione al posto del conto?
-%				% analizzare bene come funziona OBP
-%			\item l'istante dell'operazione;
-%			\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
-%		\end{enumerate}
-%	\item Il sistema deve poter essere configurabile dall'utente per inviare notifiche via SMS e/o via email a seguito di ogni evento stabilito dall'utente.
-%		La banca pu\`o associare una tariffa per abilitare le notifiche su specifici insiemi di eventi.
-%		Gli eventi notificabili possono includere:
-%		\begin{enumerate}
-%			\item Accesso al sistema;
-%			\item Pagamento o prelievo dal conto;
-%			\item Pagamento ricevuto.
-%		\end{enumerate}
-%\end{enumerate}
-
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------
 
 %\nocite{banca_italia}
-\printcustombibsmall{}
-
-%----------------------------------------------------------------------------------------
-%	FIGURES
-%----------------------------------------------------------------------------------------
-
-\begin{figure*}[hbt]
-	\centering
-	\includegraphics[width=\textwidth]{Images/Home_Banking_inception_use_cases.eps}
-	\caption{Attori del sistema di Home Banking e relativi use cases.}
-	\label{fig:inception_use_cases}
-\end{figure*}
-
-\begin{figure*}[hbt]
-	\centering
-	\includegraphics[width=\textheight, angle=90]{Images/Authentication.eps}
-	\caption{Business case: procedura di autenticazione.}
-	\label{fig:business_case_authentication}
-\end{figure*}
-
-\begin{figure*}[hbt]
-	\centering
-	\includegraphics[width=\textheight, angle=90]{Images/Home_Banking_registration.eps}
-	\caption{Business case: procedura di registrazione.}
-	\label{fig:business_case_registration}
-\end{figure*}
-
-\begin{figure*}[hbt]
-	\centering
-	\includegraphics[width=\textheight, angle=90]{Images/Home_Banking_control_activity.eps}
-	\caption{Business case: attivit\`a di controllo effettuata da enti responsabili.}
-	\label{fig:business_case_control_activity}
-\end{figure*}
-
-\begin{figure*}[hbt]
-	\centering
-	\includegraphics[width=\textheight, angle=90]{Images/Home_Banking_generic_action.eps}
-	\caption{Business case: generica procedura di Home Banking effettuata da un utente del sistema.}
-	\label{fig:business_case_generic_operation}
-\end{figure*}
+\printcustombib{}
 
 \end{document}
