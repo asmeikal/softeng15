@@ -253,21 +253,21 @@ justification=raggedright]{caption}
 }
 
 \newcommand{\printcustombib}{%
-\begin{figure*}[!hb]
-%	\begin{minipage}{\textwidth}
-		\phantomsection
-		\printbibliography
-%	\end{minipage}
-\end{figure*}
+%\begin{figure*}[!hb]%
+%\begin{minipage}{\textwidth}%
+	\phantomsection%
+	\printbibliography%
+%\end{minipage}%
+%\end{figure*}%
 }
 
 \newcommand{\printcustombibsmall}{%
-\begin{figure}[!hb]
-%	\begin{minipage}{\textwidth}
-		\phantomsection
-		\printbibliography
-%	\end{minipage}
-\end{figure}
+%\begin{figure}[!hb]%
+%\begin{minipage}{\textwidth}%
+	\phantomsection%
+	\printbibliography%
+%\end{minipage}%
+%\end{figure}%
 }
 
 \newcommand{\code}[1]{\texttt{#1}}
@@ -275,6 +275,10 @@ justification=raggedright]{caption}
 \newenvironment{ptable}[1]{
 \newcommand{\pcells}[1]{##1 \\}
 \newcommand{\pline}{\midrule}
+\newcommand{\ptitle}[1]{\cellcolor{color2!10}##1 &}
+\newcommand{\pcell}[2]{
+\multicolumn{##1}{p{\columnwidth*2/3}}{##2} \\
+}
 \newcommand{\prow}[1]{
 \multicolumn{#1}{p{\columnwidth-\columnsep}}{##1} \\
 }
@@ -290,4 +294,8 @@ justification=raggedright]{caption}
 \end{xtabular}
 }
 
-\usepackage{xr}
+% reference different files
+\RequirePackage{xr}
+
+% figures at end of document
+\RequirePackage[nomarkers,figuresonly]{endfloat}

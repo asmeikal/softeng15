@@ -31,6 +31,7 @@ Requisiti per compilare LaTeX sono: LaTeX (`texlive`), `latexmk`, e probabilment
 - `graphicx`
 - `xcolor`
 - `pgfgantt`
+- `endfloat`
 
 La struttura dei documenti &egrave; la seguente:
 ```
