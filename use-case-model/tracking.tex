@@ -1,10 +1,30 @@
 \section{Corrispondenza casi d'uso / requisiti}
 
-Nella matrice seguente \`e illustrata la corrispondenza fra casi d'uso e requisiti funzionali del sistema.
-Un segno nella casella in riga $i$, colonna $j$, indica che il caso d'uso in riga $i$ realizza il requisito funzionale in colonna $j$.
+\newcommand{\vertical}[1]{\rotatebox[origin=c]{90}{#1}}
+\newcommand{\V}{\checkmark}
 
-Magia: posso riferirmi al requisito \ref{req:itm:utente:funzionali:iscrizione}.
+Nella tabella \ref{table:tracking-requisiti} \`e illustrata la corrispondenza fra casi d'uso e requisiti funzionali del sistema.
+Una spunta (\V) nella casella in riga $i$, colonna $j$, indica che il caso d'uso in riga $i$ realizza il requisito funzionale in colonna $j$.
 
-\begin{tabular}{cc}
-	Prova & ciao \\
+%Magia: posso riferirmi al requisito \ref{req:itm:utente:funzionali:iscrizione}.
+%Posso anche stampare l'id di un requisito, ad esempio \idLOGOP (o \shortidLOGOP in breve).
+
+\begin{table}[h]
+\resizebox{1\textwidth}{!}{\begin{minipage}{\textwidth}
+\begin{center}
+\begin{tabular}{r*{8}{|c}}
+	& \vertical{\idSECAUTH}
+	& \vertical{\idISCRCORR}
+	& \vertical{\idLOGOP}
+	& \vertical{\idCROPVEL}
+	& \vertical{\idDISOPVEL}
+	& \vertical{\idDISPAG}
+	& \vertical{\idVERTIT}
+	& \vertical{\idVERSAL} \\ \hline
+	Prova &  & \checkmark & & \checkmark & & & & \\
 \end{tabular}
+\end{center}
+\caption[Corrispondenza requisiti]{Corrispondenza fra requisiti e casi d'uso.}
+\label{table:tracking-requisiti}
+\end{minipage} }
+\end{table}
