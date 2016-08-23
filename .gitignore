@@ -22,4 +22,10 @@ Resources/*
 !requirements/generated/yaml/*.yaml
 
 !use-case-model
+!use-case-model/*.py
+!use-case-model/README.md
+!use-case-model/generated
+!use-case-model/generated/yaml
+!use-case-model/generated/templates
+!use-case-model/generated/yaml/*.yaml
 
