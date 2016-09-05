@@ -13,21 +13,21 @@ I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 	\item \label{itm:utente:funzionali:gestione-conto} Un utente registrato deve poter effettuare l'amministrazione corretta del proprio conto corrente (business case in figura \ref{fig:business_case_generic_operation}), per questa ragione è richiesto che:
 	\begin{enumerate}
 		\item \label{itm:utente:funzionali:gestione-conto:verifica-saldo} l'utente possa verificare in tempo reale:
-			\begin{enumerate}
+			\begin{itemize}
 				\item il suo saldo attuale;
 				\item il suo saldo contabile;
 				\item il suo saldo liquido;
-			\end{enumerate} 
+			\end{itemize} 
 		\item \label{itm:utente:funzionali:gestione-conto:verifica-andamento} l'utente deve poter verificare in tempo reale l'andamento dei titoli azionari che possiede e, eventualmente, venderli;
 		\item \label{itm:utente:funzionali:gestione-conto:revisione} l'utente deve poter effettuare operazioni programmate di revisione dei conti o di pagamento;
 		\item \label{itm:utente:funzionali:gestione-conto:operazioni} l'utente deve poter effettuare disposizioni generiche di pagamento;
 		\item \label{itm:utente:funzionali:gestione-conto:operazioni-veloci} l'utente deve poter effettuare \emph{operazioni veloci}, ossia effettuare disposizioni inserendo pochi dati in una maschera preconfigurata, come:
-			\begin{enumerate}
+			\begin{itemize}
 				\item ricariche telefoniche;
 				\item bonifici ordinari;
 				\item bonifici SEPA;
 				\item pagamento delle bollette.
-			\end{enumerate} 
+			\end{itemize} 
 	\end{enumerate}
 	\item \label{itm:utente:funzionali:storico} L'utente deve poter consultare lo storico delle transazioni eseguite, complete delle informazioni riguardanti la data, il destinatario, l'importo previsto e una causale descrittiva delle motivazioni;
 	\item \label{itm:utente:funzionali:resoconto} L'utente deve poter ottenere, in tempo reale, un resoconto delle transazioni che sono in corso da e verso il suo conto;
@@ -37,32 +37,32 @@ I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 	\item \label{itm:utente:funzionali:management:bidding:creazione} I manager devono poter gestire il bidding eventualmente offerto della banca, specificando in modo opportuno per conti correnti, carte di credito e prestiti i parametri che individuano i bid accettati automaticamente, soggetti a ulteriore approvazione, rifiutati automaticamente.
 	I parametri di decisione comprendono i parametri di conti correnti, carte di credito e prestiti, e parametri riguardanti i clienti della banca.
 	Alcuni possibili parametri sono:
-		\begin{enumerate}
+		\begin{itemize}
 			\item giacenza media mensile e annuale sui conti correnti dell'utente;
 			\item affidibilit\`a dell'utente (in funzione, ad esempio, della frequenza con cui i suoi conti correnti sono andati in rosso);
 			\item da quanto tempo il correntista \`e cliente presso la banca;
 			\item eventuali altri parametri.
-		\end{enumerate}
-	\item I manager devono poter creare \emph{pacchetti di investimento}.
+		\end{itemize}
+	\item \label{itm:utente:funzionali:management:pacchetti-investimento:creazione} I manager devono poter creare \emph{pacchetti di investimento}.
 		Un pacchetto di investimento contiene titoli azionari prelevati da un \emph{pool} di azioni acquistate dalla banca.
 		Il pacchetto di investimento deve contenere le seguenti informazioni:
-		\begin{enumerate}
+		\begin{itemize}
 			\item andamento passato dei titoli contenuti nel pacchetto;
 			\item valutazione di rischio prodotta dal manager che ha creato il pacchetto;
 			\item costo del pacchetto;
 			\item valore garantito di vendita del pacchetto;
 			\item percentuale di guadagno della banca alla vendita del pacchetto.
-		\end{enumerate}
+		\end{itemize}
 		I pacchetti di investimento vengono acquistati dai clienti della banca e formano un \emph{portafoglio di investimento}.
-	\item I manager devono poter gestire in modo efficiente gli spazi pubblicitari offerti dalle pagine web del sistema, potendone arbitrariamente modificare i contenuti e indirizzando determinate pubblicità ad determinati insiemi di utenti aventi delle caratteristiche desiderate.
-	\item Il sistema HBS deve inviare ad ogni utente una notifica tramite SMS o e-mail (a scelta dell'utente) a seguito di ogni operazione tra le seguenti:
-		\begin{enumerate}
+	\item \label{itm:utente:funzionali:management:pubblicita} I manager devono poter gestire in modo efficiente gli spazi pubblicitari offerti dalle pagine web del sistema, potendone arbitrariamente modificare i contenuti e indirizzando determinate pubblicità ad determinati insiemi di utenti aventi delle caratteristiche desiderate.
+	\item \label{itm:utente:funzionali:notifiche} Il sistema HBS deve inviare ad ogni utente una notifica tramite SMS o e-mail (a scelta dell'utente) a seguito di ogni operazione tra le seguenti:
+		\begin{itemize}
 			\item ogni volta che si conclude una transazione da o verso il proprio conto corrente;
 			\item ad ogni login e logout dall'account HBS;
 			\item ad ogni \emph{operazione veloce} di pagamento.
-		\end{enumerate}
+		\end{itemize}
 	Ogni notifica \`e abilitabile o disabilitabile singolarmente secondo le preferenze dell'utente.
-	\item Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata.
+	\item \label{itm:utente:funzionali:storico-dettagliato} Il sistema di Home Banking deve fornire ai suoi utenti (clienti della banca, dipendenti della banca, agenti di terze parti) la possibilit\`a di visualizzare uno storico dettagliato di ogni operazione (requisito funzionale) effettuata seguendo un opportuno sistema di privilegi.
 \end{enumerate}
 
 \subsection{Requisiti Non Funzionali}
@@ -78,7 +78,7 @@ I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 		\item informazioni riguardanti il terminale da cui \`e stata effettuata l'operazione.
 	\end{itemize}
 
-	\item Il sistema di Home Banking ha dei requisiti impliciti di disponibilit\`a, ovvero il sistema deve avere una percentuale minima garantita di \emph{uptime}, o tempo in cui il sistema \`e disponibile e utilizzabile dagli utenti.
+	\item \label{itm:utente:non-funzionali:uptime} Il sistema di Home Banking ha dei requisiti impliciti di disponibilit\`a, ovvero il sistema deve avere una percentuale minima garantita di \emph{uptime}, o tempo in cui il sistema \`e disponibile e utilizzabile dagli utenti.
 
 	La percentuale di \emph{uptime} non comprende eventuale tempo di \emph{downtime} previsto periodicamente per motivi di manutenzione, ottimizzazione delle prestazioni, aggiornamento, etc.
 
@@ -86,10 +86,10 @@ I requisiti funzionali individuati per il sistema HBS sono i seguenti:
 
 	La percentuale di \emph{uptime} garantito e di \emph{downtime} richiesto deve quindi essere stabilita e personalizzata al momento della vendita del software ad un istituto bancario.
 
-	\item Il sistema di Home Banking ha dei requisiti impliciti di usabilit\`a, ovvero:
+	\item \label{itm:utente:non-funzionali:usabilita} Il sistema di Home Banking ha dei requisiti impliciti di usabilit\`a, ovvero:
 	\begin{enumerate}
-		\item deve essere utilizzabile senza particolare addestramento dai clienti della banca;
-		\item deve essere utilizzabile dopo addestramento minimo dai dipendenti della banca.
+		\item \label{itm:utente:non-funzionali:usabilita:clienti} deve essere utilizzabile senza particolare addestramento dai clienti della banca;
+		\item \label{itm:utente:non-funzionali:usabilita:management} deve essere utilizzabile dopo addestramento minimo dai dipendenti della banca.
 	\end{enumerate}
 	Le operazioni disponibili per i clienti della banca (requisiti funzionali) devono essere facilmente utilizzabili e comprensibili.
 	Ogni maschera per l'inserimento di informazioni deve essere corredata da opportuni testi brevi illustranti il tipo di informazioni richieste.
@@ -103,25 +103,25 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 \begin{enumerate}
 	\item \label{itm:utente:non-funzionali:sicurezza:accesso} L'accesso al sistema di Home Banking da parte di un utente avviene a seguito di autenticazione dello stesso.
 		Le credenziali di accesso devono essere trasmesse dal browser dell'utente al sistema di Home Banking utilizzando una connessione sicura.
-	\item Le credenziali d'accesso per un account sono:
-		\begin{enumerate}
+	\item \label{itm:utente:non-funzionali:sicurezza:credenziali} Le credenziali d'accesso per un account sono:
+		\begin{itemize}
 			\item numero conto corrente;
 			\item password fornita al correntista al momento della registrazione.
-		\end{enumerate}
-	\item Le operazioni effettuabili dall'utente (requisiti funzionali) sono partizionate in operazioni che richiedono un'ulteriore autenticazione tramite One Time Password e operazioni che \emph{non} richiedono ulteriore autenticazione.
+		\end{itemize}
+	\item \label{itm:utente:non-funzionali:sicurezza:operazioni} Le operazioni effettuabili dall'utente (requisiti funzionali) sono partizionate in operazioni che richiedono un'ulteriore autenticazione tramite One Time Password e operazioni che \emph{non} richiedono ulteriore autenticazione.
 	Ogni operazione \`e eseguibile solo dopo che l'utente ha effettuato l'accesso al sistema di Home Banking.
 
 	Le seguenti operazioni non richiedono ulteriore autenticazione:
-	\begin{enumerate}
+	\begin{itemize}
 		\item visionare saldo contabile, disponibile e liquido;
 		\item visionare uno storico delle transazioni effettuate;
 		\item visionare informazioni riguardo le carte di credito collegate al conto (se presenti);
 		\item effettuare ``operazioni veloci'' impostate attraverso un sistema di configurazione.
-	\end{enumerate}
+	\end{itemize}
 	
 	Ogni altra operazione richiede autenticazione tramite One Time Password.
 	In particolare \`e richiesta autenticazione tramite One Time Password per:
-	\begin{enumerate}
+	\begin{itemize}
 		\item effettuare transazioni, come:
 		\begin{itemize}
 			\item bonifici ordinari, bonifici SEPA;
@@ -130,7 +130,7 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 			\item modificare le preferenze dell'utente, come frequenza delle notifiche, etc.
 		\end{itemize}
 		\item configurare operazioni veloci.
-	\end{enumerate}
+	\end{itemize}
 \end{enumerate}
 
 \subsection{Requisiti di Dominio}
@@ -139,20 +139,20 @@ Il sistema di Home Banking presenta forti requisiti non funzionali di sicurezza.
 La legislazione attuale richiede che gli organi di controllo finanziario come la Banca d'Italia e le forze dell'ordine possano accedere in lettura a tutte le informazioni salvate dal sistema di Online Banking.
 
 \begin{enumerate}
-\item Ogni sistema informatico nell'ambito bancario, e in particolare il software HBS in sviluppo, deve permettere l'accesso da remoto alla sua rete interna tramite il meccanismo di \emph{VPN}.
+	\item \label{itm:utente:dominio:vpn} Ogni sistema informatico nell'ambito bancario, e in particolare il software HBS in sviluppo, deve permettere l'accesso da remoto alla sua rete interna tramite il meccanismo di \emph{VPN}.
 	HBS deve quindi fornire alle autorit\`a di controllo le credenziali e/o interfacce per accedere ai sistemi di \emph{data storage}.
 
-	\item Le forze dell'ordine, dato un utente, devono poter visualizzare le seguenti informazioni:
-        	\begin{enumerate}
-            	\item tutte le transazioni effettuati dall'utente;
-            	\item tutte le transazioni che hanno l'utente come destinatario;
-	            \item dati anagrafici dell'utente;
-    	        \item informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
-	        \end{enumerate}
-	    In caso le informazioni siano ridondanti il sistema deve fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
+	\item \label{itm:utente:dominio:forze-ordine} Le forze dell'ordine, dato un utente, devono poter visualizzare le seguenti informazioni:
+        \begin{enumerate}
+           	\item tutte le transazioni effettuati dall'utente;
+            \item tutte le transazioni che hanno l'utente come destinatario;
+	        \item dati anagrafici dell'utente;
+    	    \item informazioni riguardo al terminale informatico dal quale l'\emph{account} dell'utente \`e stato acceduto in precedenza.
+		\end{enumerate}
+		In caso le informazioni siano ridondanti il sistema deve fornire alle ff. oo. un modo per confrontare le informazioni e fare il controllo di coerenza.
 %TODO da qualche parte bisogna dire che un haxxor in genere non puo modificare tutti i log in maniera coerente, perche pensa a rubare i dindi invece di giocare ad uplink
 
-	\item L'organo di controllo finanziario, dato un utente, deve poter visualizzare le seguenti informazioni:
+	\item \label{itm:utente:dominio:controllo-finanziario} L'organo di controllo finanziario, dato un utente, deve poter visualizzare le seguenti informazioni:
         	\begin{enumerate}
 	            \item tutte le transazioni effettuate dall'utente;
     	        \item tutte le transazioni che hanno l'utente come destinatario;
@@ -165,7 +165,7 @@ La legislazione attuale richiede che gli organi di controllo finanziario come la
     	%TODO non so se ci va visualizzare mutui e tassi
 	\end{enumerate}
 
-	\item Poich\'e il sistema di Bidding deve rispettare le normative legali, per esempio le leggi sull'usura bancaria, l'ente responsabile del controllo finanziario deve poter:
+	\item \label{itm:utente:dominio:controllo-finanziario:bidding} Poich\'e il sistema di Bidding deve rispettare le normative legali, per esempio le leggi sull'usura bancaria, l'ente responsabile del controllo finanziario deve poter:
 	\begin{enumerate}
     	\item accedere allo storico del sistema Bidding;
     	\item visualizzare i parametri entro i quali le proposte vengono accettate automaticamente;

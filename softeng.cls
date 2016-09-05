@@ -113,13 +113,13 @@ justification=raggedright]{caption}
   {\color{color1}\sffamily\bfseries}
   {\thesubsection}
   {0.5em}
-  {\arabic{section}.\arabic{subsection} #1}
+  {#1}
   []
 \titleformat{\subsubsection}
   {\sffamily\small\bfseries}
   {\thesubsubsection}
   {0.5em}
-  {\arabic{section}.\arabic{subsection}.\arabic{subsubsection} #1}
+  {#1}
   []    
 \titleformat{\paragraph}[runin]
   {\sffamily\small\bfseries}
@@ -286,16 +286,18 @@ justification=raggedright]{caption}
 \multicolumn{#1}{c}{\cellcolor{color2!10}##1} \\
 \pline
 }
-\begin{xtabular}{*{#1}{l}}
+\begin{tabular}{*{#1}{l}}
 \toprule
 }
 {
 \bottomrule
-\end{xtabular}
+\end{tabular}
 }
 
 % reference different files
 \RequirePackage{xr}
+
+\RequirePackage{csquotes}
 
 % figures at end of document
 \RequirePackage[nomarkers,figuresonly]{endfloat}

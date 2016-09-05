@@ -222,7 +222,62 @@
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_5} - Verifica Saldo}
+\subsubsection{\code{REQ\_F\_5} - Approvazione Bidding}
+\label{sec:sistema:funzionali:APPBID}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Approvazione Bidding
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_APPBID\_F\_M\_5}$ & Funzionale & Media
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		I manager della banca devono poter approvare o rifiutare i bid che non soddisfino n\'e i requisiti di rifiuto automatico n\'e i requisiti di approvazione automatica.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti funzionali (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:management:bidding:approvazione}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Un bid.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Un valore indicante l'approvazione o il rifiuto del bid.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Il sistema presenta al manager il bid selezionato, assieme a informazioni riguardo la storia finanziaria presso l'istituto dell'utente autore del bid. Il manager approva o rifiuta il bid.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_6} - Verifica Saldo}
 \label{sec:sistema:funzionali:VERSAL}
 
 \begin{ptable}{3}
@@ -233,7 +288,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_VERSAL\_F\_A\_5}$ & Funzionale & Alta
+	$\code{REQ\_VERSAL\_F\_A\_6}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -277,7 +332,7 @@
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_6} - Verifica Andamento Titoli Azionari}
+\subsubsection{\code{REQ\_F\_7} - Verifica Andamento Titoli Azionari}
 \label{sec:sistema:funzionali:VERTIT}
 
 \begin{ptable}{3}
@@ -288,7 +343,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_VERTIT\_F\_M\_6}$ & Funzionale & Media
+	$\code{REQ\_VERTIT\_F\_M\_7}$ & Funzionale & Media
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -329,6 +384,116 @@
 %\ptitlerow{Side-effects}
 %\prow{
 %		Nessuno.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_8} - Accesso Account Dipendenti}
+\label{sec:sistema:funzionali:DIPACC}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Accesso Account Dipendenti
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_DIPACC\_F\_A\_8}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		I dipendenti della banca (manager e impiegati) possono accedere alle pagine di amministrazione del sistema di Home Banking.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti funzionali (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:dipendenti:accesso}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Input del requisito.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Output del requisito.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Descrizione dell'algoritmo.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_9} - Verifica Storico}
+\label{sec:sistema:funzionali:VERSTOR}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Verifica Storico
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_VERSTOR\_F\_A\_9}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un utente deve poter verificare lo storico delle transazioni eseguite dal suo conto in un determinato periodo, complete di informazioni su: \begin{itemize} \item data dell'operazione; \item destinatario dell'operazione; \item causale dell'operazione; \item importo dell'operazione. \end{itemize}
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:storico}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Numero del conto corrente, periodo di riferimento.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Elenco delle operazioni effettuate nel periodo di riferimento fornito.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Il sistema recupera dal back-end della banca le informazioni richieste dall'utente.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
 %}
 \end{ptable}
 

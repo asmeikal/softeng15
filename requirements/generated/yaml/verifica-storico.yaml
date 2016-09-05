@@ -1,0 +1,30 @@
+
+title: 'Verifica Storico'
+mnemo: 'VERSTOR'
+type: 'Funzionale'
+priority: 'Alta'
+
+description:
+    'Un utente deve poter verificare lo storico delle transazioni eseguite dal suo conto
+    in un determinato periodo, complete di informazioni su:
+        \begin{itemize}
+            \item data dell''operazione;
+            \item destinatario dell''operazione;
+            \item causale dell''operazione;
+            \item importo dell''operazione.
+        \end{itemize}'
+origin:
+    'Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:storico}).'
+input:
+    'Numero del conto corrente, periodo di riferimento.'
+output:
+    'Elenco delle operazioni effettuate nel periodo di riferimento fornito.'
+action:
+    'Il sistema recupera dal back-end della banca le informazioni richieste dall''utente.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+

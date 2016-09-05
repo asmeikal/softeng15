@@ -1,0 +1,25 @@
+
+title: 'Accesso Account Dipendenti'
+mnemo: 'DIPACC'
+type: 'Funzionale'
+priority: 'Alta'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'I dipendenti della banca (manager e impiegati) possono accedere alle pagine di amministrazione
+    del sistema di Home Banking.'
+origin:
+    'Requisiti funzionali (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:dipendenti:accesso}).'
+input:
+    'Input del requisito.'
+output:
+    'Output del requisito.'
+action:
+    'Descrizione dell''algoritmo.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+

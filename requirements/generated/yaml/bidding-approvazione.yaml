@@ -1,0 +1,27 @@
+
+title: 'Approvazione Bidding'
+mnemo: 'APPBID'
+type: 'Funzionale'
+priority: 'Media'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'I manager della banca devono poter approvare o rifiutare i bid che non soddisfino
+    n\''e i requisiti di rifiuto automatico n\''e i requisiti di approvazione automatica.'
+origin:
+    'Requisiti funzionali (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:management:bidding:approvazione}).'
+input:
+    'Un bid.'
+output:
+    'Un valore indicante l''approvazione o il rifiuto del bid.'
+action:
+    'Il sistema presenta al manager il bid selezionato, assieme a informazioni riguardo
+    la storia finanziaria presso l''istituto dell''utente autore del bid. Il manager
+    approva o rifiuta il bid.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+
