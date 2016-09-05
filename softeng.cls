@@ -298,4 +298,4 @@ justification=raggedright]{caption}
 \RequirePackage{xr}
 
 % figures at end of document
-\RequirePackage[nomarkers,figuresonly]{endfloat}
+%\RequirePackage[nomarkers,figuresonly]{endfloat}
