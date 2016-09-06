@@ -2,7 +2,7 @@
 title: 'Approvazione Bidding'
 mnemo: 'APPBID'
 type: 'Funzionale'
-priority: 'Media'
+priority: 'Alta'
 
 # un apostrofo singolo (') viene inserito con due apostrofi: ('')
 description:

@@ -1,0 +1,30 @@
+
+
+title: 'Bidding Utente'
+mnemo: 'USRBID'
+type: 'Funzionale'
+priority: 'Alta'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'Un utente di HBS deve poter effettuare bidding per conti correnti, carte di credito e prestiti, in caso siano state configurate delle regole di bidding da parte dei manager della banca.'
+origin:
+    'Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:bidding:utente}).'
+input:
+    'Una proposta di bidding per un conto corrente, una carta di credito o un prestito.'
+output:
+    'Descrizione del successo del bid, ossia indicatore di approvazione, presa in carico dal management, o rifiuto della proposta.'
+action:
+    'Per ogni regola di bidding relativa all''oggetto in questione (conto corrente, carta di credito o prestito), il.sistema controlla che questa non rifiuti il bid ricevuto dall''utente.
+    Se almeno una regola rifiuta il bid, questo viene rifiutato.
+    Se tutte le regole approvano il bid, questo viene approvato.
+    Se nessuna regola rifiuta il bid e non tutte le regole approvano il bid,
+    questo viene memorizzato nel sistema di Home Banking come ``bid in attesa
+    di approvazione da parte del management''''.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+

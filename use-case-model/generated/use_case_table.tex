@@ -43,13 +43,75 @@
 }
 \end{ptable}
 
-\subsection{\code{UC\_2} - Creazione Bidding }
+\subsection{\code{UC\_2} - Bidding Utente }
+\label{sec:use-case:USRBID}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Bidding Utente (\code{UC\_USRBID\_2})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		Un utente di HBS pu\`o effettuare bid per conti correnti, carte di credito o prestiti.
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		Utente di HBS
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		Requisiti funzionali (requisito utente~\ref{req:itm:utente:funzionali:bidding:utente}, sez.~\ref{req:sec:utente:funzionali}, e requisito di sistema \idUSRBID).
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		Almeno una regola di bidding per l'oggetto richiesto (conto corrente, carta di credito o prestito) \`e stata definita..
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		\begin{enumerate} \item L'utente specifica i parametri del proprio bid;
+\item l'utente invia il bid al sistema di HBS;
+\item l'utente riceve un responso dal sistema di HBS riguardo l'approvazione, il rifiuto o la presa in carico del bid da parte del sistema stesso. \end{enumerate}
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		Se la proposta di bid \`e stata rifiutata, nessuno. Se la proposta di bid \`e stata accettata, il bid \`e stato memorizzato nel sistema come bid approvato automaticamente, e inviato a un dipendente della banca per la realizzazione. Se la proposta di bid \`e stata presa in carico per il controllo da parte di un manager della banca, la proposta di bid \`e stata inserita nel sistema come proposta non ancora approvata, ed \`e stata inviata al manager della banca.
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		In qualsiasi punto del workflow l'utente pu\`o interrompere l'inserimento della proposta di bid.
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		Nessuno.
+}
+\end{ptable}
+
+\subsection{\code{UC\_3} - Creazione Bidding }
 \label{sec:use-case:CREABID}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Creazione Bidding (\code{UC\_CREABID\_2})
+	Creazione Bidding (\code{UC\_CREABID\_3})
 }
 \pline
 \ptitle{Descrizione use case}

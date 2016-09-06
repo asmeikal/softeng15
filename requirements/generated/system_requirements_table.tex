@@ -288,7 +288,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_APPBID\_F\_M\_6}$ & Funzionale & Media
+	$\code{REQ\_APPBID\_F\_A\_6}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -442,7 +442,62 @@
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_9} - Accesso Account Dipendenti}
+\subsubsection{\code{REQ\_F\_9} - Bidding Utente}
+\label{sec:sistema:funzionali:USRBID}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Bidding Utente
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_USRBID\_F\_A\_9}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un utente di HBS deve poter effettuare bidding per conti correnti, carte di credito e prestiti, in caso siano state configurate delle regole di bidding da parte dei manager della banca.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:bidding:utente}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Una proposta di bidding per un conto corrente, una carta di credito o un prestito.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Descrizione del successo del bid, ossia indicatore di approvazione, presa in carico dal management, o rifiuto della proposta.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Per ogni regola di bidding relativa all'oggetto in questione (conto corrente, carta di credito o prestito), il.sistema controlla che questa non rifiuti il bid ricevuto dall'utente. Se almeno una regola rifiuta il bid, questo viene rifiutato. Se tutte le regole approvano il bid, questo viene approvato. Se nessuna regola rifiuta il bid e non tutte le regole approvano il bid, questo viene memorizzato nel sistema di Home Banking come ``bid in attesa di approvazione da parte del management''.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_10} - Accesso Account Dipendenti}
 \label{sec:sistema:funzionali:DIPACC}
 
 \begin{ptable}{3}
@@ -453,7 +508,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_DIPACC\_F\_A\_9}$ & Funzionale & Alta
+	$\code{REQ\_DIPACC\_F\_A\_10}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -497,7 +552,7 @@
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_10} - Verifica Storico}
+\subsubsection{\code{REQ\_F\_11} - Verifica Storico}
 \label{sec:sistema:funzionali:VERSTOR}
 
 \begin{ptable}{3}
@@ -508,7 +563,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_VERSTOR\_F\_A\_10}$ & Funzionale & Alta
+	$\code{REQ\_VERSTOR\_F\_A\_11}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}

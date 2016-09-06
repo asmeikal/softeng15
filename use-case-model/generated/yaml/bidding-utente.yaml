@@ -1,0 +1,35 @@
+title: 'Bidding Utente'
+mnemo: 'USRBID'
+
+actors:
+    'Utente di HBS'
+origin:
+    'Requisiti funzionali (requisito utente~\ref{req:itm:utente:funzionali:bidding:utente}, sez.~\ref{req:sec:utente:funzionali}, e requisito di sistema \idUSRBID).'
+description:
+    'Un utente di HBS pu\`o effettuare bid per conti correnti, carte di credito o prestiti.'
+pre:
+    'Almeno una regola di bidding per l''oggetto richiesto (conto corrente, carta di credito o prestito) \`e stata definita..'
+flow:
+    '\begin{enumerate}
+        \item L''utente specifica i parametri del proprio bid;
+
+        \item l''utente invia il bid al sistema di HBS;
+
+        \item l''utente riceve un responso dal sistema di HBS riguardo l''approvazione, il rifiuto o la presa in carico del bid da parte del sistema stesso.
+    \end{enumerate}'
+post:
+    'Nessuna.'
+side:
+    'Se la proposta di bid \`e stata rifiutata, nessuno.
+    Se la proposta di bid \`e stata accettata, il bid \`e stato memorizzato nel sistema come bid approvato automaticamente, e inviato a un dipendente della banca per la realizzazione.
+    Se la proposta di bid \`e stata presa in carico per il controllo da parte di un manager della banca, la proposta di bid \`e stata inserita nel sistema come proposta non ancora approvata, ed \`e stata inviata al manager della banca.'
+
+# the following are optional
+alt-flow:
+    'In qualsiasi punto del workflow l''utente pu\`o interrompere
+    l''inserimento della proposta di bid.'
+alt-post:
+    'Nessuna.'
+alt-side:
+    'Nessuno.'
+

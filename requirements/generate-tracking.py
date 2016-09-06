@@ -18,6 +18,7 @@ user_req = [
 	"dipendenti:operazioni-veloci",
 	"management:bidding:approvazione",
 	"management:bidding:creazione",
+	"bidding:utente",
 	"management:pacchetti-investimento:creazione",
 	"management:pubblicita",
 	"notifiche",
@@ -35,6 +36,7 @@ system_req = {
     "DIPACC" : [ "dipendenti:accesso" ],
     "APPBID" : [ "management:bidding:approvazione" ],
     "CREABID" : [ "management:bidding:creazione" ],
+    "USRBID" : ["bidding:utente" ],
 }
 
 system_reqs = system_req.keys()
