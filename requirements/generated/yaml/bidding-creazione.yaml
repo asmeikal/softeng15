@@ -1,0 +1,27 @@
+
+title: 'Creazione Bidding'
+mnemo: 'CREABID'
+type: 'Funzionale'
+priority: 'Alta'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'Un manager della banca deve poter creare una regola di bidding,
+    impostando i parametri di scelta in maniera opportuna per accettare
+    o rifiutare automaticamente un bid, e per inviarlo al manager per
+    approvazione altrimenti.'
+origin:
+    'Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:management:bidding:creazione}).'
+input:
+    'Una regola di bidding.'
+output:
+    'Descrizione del successo dell''azione.'
+action:
+    'La regola di bidding proposta viene aggiunta al sistema di HBS.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+

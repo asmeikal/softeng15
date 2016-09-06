@@ -9,11 +9,11 @@ user_req = [
 	"gestione-conto",
 	"gestione-conto:verifica-saldo",
 	"gestione-conto:verifica-andamento",
-	"gestione-conto:revisione",
+	# "gestione-conto:revisione",
 	"gestione-conto:operazioni",
 	"gestione-conto:operazioni-veloci",
 	"storico",
-	"resoconto",
+	# "resoconto",
 	"dipendenti:accesso",
 	"dipendenti:operazioni-veloci",
 	"management:bidding:approvazione",
@@ -34,6 +34,7 @@ system_req = {
     "VERSTOR" : [ "storico" ],
     "DIPACC" : [ "dipendenti:accesso" ],
     "APPBID" : [ "management:bidding:approvazione" ],
+    "CREABID" : [ "management:bidding:creazione" ],
 }
 
 system_reqs = system_req.keys()

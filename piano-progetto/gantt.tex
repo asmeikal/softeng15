@@ -100,34 +100,28 @@ Il diagramma di Gantt relativo alla fase di inception \`e rappresentato in figur
 		bar label font = \scriptsize,
 		group label font = \scriptsize,
 		milestone label font = \scriptsize,
-		x unit=2.2mm,
+		x unit=5mm,
 		milestone height = 0.2,
-		today=2016-07-07,
+		today=2016-09-06,
 		today label = {},
 		today rule/.style = {draw={color1!60}},
 		progress label text = {\pgfmathprintnumber[precision=0, verbatim]{#1}\%},
 		inline,
 		milestone inline label node/.append style={left=1mm},
 		time slot format={isodate},
-		]{2016-07-01}{2016-09-01}
+		]{2016-09-01}{2016-09-20}
 		\gantttitlecalendar{year, month} \\
-		\ganttgroup[progress=today]{Specifica requisiti}{2016-07-03}{2016-07-28} \\
-		\ganttbar[progress=today]{Definizione architettura del sistema}{2016-07-03}{2016-07-20} \\
-		\ganttbar[progress=today]{Specifica requisiti sistema}{2016-07-07}{2016-07-28} \\
-		\ganttbar[progress=today]{Stesura documento requisiti}{2016-07-07}{2016-07-31} \\
-%		\ganttgroup[progress=today]{Modello use case}{2016-03-09}{2016-05-04} \\
-%		\ganttbar[progress=today]{Definizione requisiti}{2016-03-09}{2016-04-18} \\
-%		\ganttbar[progress=today]{Specifica requisiti}{2016-03-28}{2016-04-27} \\
-%		\ganttbar[progress=today]{Creazione glossario}{2016-03-16}{2016-04-18} \\
-%		\ganttbar[progress=today]{Definizione use-case principali}{2016-03-20}{2016-04-18} \\
-%		\ganttbar[progress=today]{Stesura documento requisiti}{2016-03-16}{2016-05-04} \\
-%		\ganttgroup[progress=today]{Pianificazione progetto}{2016-03-25}{2016-04-28} \\
-%		\ganttbar[progress=today]{Definizione milestone}{2016-03-25}{2016-04-10} \\
-%		\ganttbar[progress=today]{Analisi dei rischi}{2016-03-25}{2016-04-10} \\
-%		\ganttbar[progress=today]{Analisi dei costi}{2016-03-29}{2016-04-16} \\
-%		\ganttbar[progress=today]{Stesura piano di progetto}{2016-03-25}{2016-04-28} \\
-		\ganttmilestone[progress=today]{Terza revisione capo progetto}{2016-07-15}
+		\ganttgroup[progress=75]{Specifica requisiti}{2016-09-01}{2016-09-10} \\
+		\ganttbar[progress=75]{Specifica requisiti sistema}{2016-09-01}{2016-09-10} \\
+		\ganttbar[progress=75]{Stesura documento requisiti}{2016-09-02}{2016-09-10} \\
+		\ganttgroup[progress=30]{Definizione use case model}{2016-09-02}{2016-09-11} \\
+		\ganttbar[progress=70]{Realizzazione diagrammi use case}{2016-09-03}{2016-09-11} \\
+		\ganttbar[progress=35]{Specifica use case}{2016-09-03}{2016-09-11} \\
+		\ganttbar[progress=30]{Stesura documento use case model}{2016-09-03}{2016-09-11} \\
+		\ganttgroup[progress=0]{Definizione architettura sistema}{2016-09-03}{2016-09-12} \\
+		\ganttbar[progress=0]{Definizione system boundary}{2016-09-03}{2016-09-12} \\
+		\ganttbar[progress=0]{Stesura documento architettura sistema}{2016-09-05}{2016-09-12} \\
+		\ganttmilestone[progress=0]{Terza revisione capo progetto}{2016-09-06}
 	\end{ganttchart}
 	\caption{\label{fig:gantt_elaboration}Diagramma di Gantt della fase di Elaboration.}
 \end{figure*}
-

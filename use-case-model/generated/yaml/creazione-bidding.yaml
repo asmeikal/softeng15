@@ -6,21 +6,28 @@ actors:
 origin:
     'Requisiti funzionali (requisito di sistema \idCREABID).'
 description:
-    'description'
+    'Un manager della banca pu\`o creare una regola di bidding.'
 pre:
-    'preconditions'
+    'Nessuna.'
 flow:
-    'use case flow'
+    '\begin{enumerate}
+        \item Il manager seleziona una tipologia di bidding (carte di credito, conto corrente, prestito);
+        \item \label{itm:uc:CREABID:parametro} il manager seleziona un parametro di scelta;
+        \item il manager imposta i range di approvazione automatica, approvazione condizionata, e rifiuto automatico sul parametro scelto;
+        \item opzionalmente, il manager torna al punto \ref{itm:uc:CREABID:parametro};
+        \item il manager inserisce la regola di bidding creata.
+    \end{enumerate}'
 post:
-    'postconditions'
+    'Nessuna.'
 side:
-    'side effects'
+    'La regola di bidding realizzata \`e stata aggiunta al sistema
+    di HBS.'
 
 # the following are optional
 alt-flow:
-    'alternative flow'
+    'In qualsiasi punto del workflow il manager pu\`o annullare l''operazione.'
 alt-post:
-    'alternative post conditions'
+    'Nessuna.'
 alt-side:
-    'alternative side effects'
+    'Nessuno.'
 

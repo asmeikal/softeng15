@@ -54,7 +54,7 @@
 \pline
 \ptitle{Descrizione use case}
 \pcell{1}{
-		description
+		Un manager della banca pu\`o creare una regola di bidding.
 }
 \pline
 \ptitle{Attori}
@@ -69,37 +69,37 @@
 \pline
 \ptitle{Pre-condizioni}
 \pcell{1}{
-		preconditions
+		Nessuna.
 }
 \pline
 \ptitle{Flusso}
 \pcell{1}{
-		use case flow
+		\begin{enumerate} \item Il manager seleziona una tipologia di bidding (carte di credito, conto corrente, prestito); \item \label{itm:uc:CREABID:parametro} il manager seleziona un parametro di scelta; \item il manager imposta i range di approvazione automatica, approvazione condizionata, e rifiuto automatico sul parametro scelto; \item opzionalmente, il manager torna al punto \ref{itm:uc:CREABID:parametro}; \item il manager inserisce la regola di bidding creata. \end{enumerate}
 }
 \pline
 \ptitle{Post-condizioni}
 \pcell{1}{
-		postconditions
+		Nessuna.
 }
 \pline
 \ptitle{Side effects}
 \pcell{1}{
-		side effects
+		La regola di bidding realizzata \`e stata aggiunta al sistema di HBS.
 }
 \pline
 \ptitle{Flusso alternativo}
 \pcell{1}{
-		alternative flow
+		In qualsiasi punto del workflow il manager pu\`o annullare l'operazione.
 }
 \pline
 \ptitle{Post-condizioni alternative}
 \pcell{1}{
-		alternative post conditions
+		Nessuna.
 }
 \pline
 \ptitle{Side effects alternativi}
 \pcell{1}{
-		alternative side effects
+		Nessuno.
 }
 \end{ptable}
 

@@ -137,10 +137,10 @@
       ><path d="M0 0 L0 51 L173 51 L173 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath26"
-      ><path d="M-86 -15 L172 -15 L172 30 L-86 30 L-86 -15 Z"
+      ><path d="M-108 -14 L216 -14 L216 28 L-108 28 L-108 -14 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath27"
-      ><path d="M-108 -14 L216 -14 L216 28 L-108 28 L-108 -14 Z"
+      ><path d="M-86 -15 L172 -15 L172 30 L-86 30 L-86 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath28"
       ><path d="M-93 -15 L186 -15 L186 30 L-93 30 L-93 -15 Z"
@@ -152,10 +152,10 @@
       ><path d="M-146 -14 L292 -14 L292 28 L-146 28 L-146 -14 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath31"
-      ><path d="M-61 -15 L122 -15 L122 30 L-61 30 L-61 -15 Z"
+      ><path d="M-99 -14 L198 -14 L198 28 L-99 28 L-99 -14 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath32"
-      ><path d="M-99 -14 L198 -14 L198 28 L-99 28 L-99 -14 Z"
+      ><path d="M-61 -15 L122 -15 L122 30 L-61 30 L-61 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath33"
       ><path d="M0 0 L427 0 L427 104 L0 104 L0 0 Z"
@@ -425,13 +425,13 @@
       ><text x="18" xml:space="preserve" y="33" clip-path="url(#clipPath17)" stroke="none"
       >pacchetti Home Trading</text
     ></g
-    ><g font-size="11" transform="translate(58,280)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" font-family="sans-serif" stroke="black" stroke-opacity="1"
-    ><text x="4" xml:space="preserve" y="11" clip-path="url(#clipPath26)" stroke="none"
-      >Banca d'italia</text
-    ></g
     ><g font-size="11" transform="translate(151,168)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" font-family="sans-serif" font-style="italic" stroke="black" stroke-opacity="1"
-    ><text x="7" xml:space="preserve" y="11" clip-path="url(#clipPath27)" stroke="none"
+    ><text x="7" xml:space="preserve" y="11" clip-path="url(#clipPath26)" stroke="none"
       >Ente di controllo</text
+    ></g
+    ><g font-size="11" transform="translate(58,280)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="4" xml:space="preserve" y="11" clip-path="url(#clipPath27)" stroke="none"
+      >Banca d'italia</text
     ></g
     ><g font-size="11" transform="translate(55,72)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" font-family="sans-serif" stroke="black" stroke-opacity="1"
     ><text x="6" xml:space="preserve" y="11" clip-path="url(#clipPath28)" stroke="none"
@@ -445,13 +445,13 @@
     ><text x="6" xml:space="preserve" y="11" clip-path="url(#clipPath30)" stroke="none"
       >Dipendente della banca</text
     ></g
-    ><g font-size="11" transform="translate(12,168)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" font-family="sans-serif" stroke="black" stroke-opacity="1"
-    ><text x="6" xml:space="preserve" y="11" clip-path="url(#clipPath31)" stroke="none"
-      >Antitrust</text
-    ></g
     ><g font-size="11" transform="translate(127,640)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" font-family="sans-serif" stroke="black" stroke-opacity="1"
-    ><text x="9" xml:space="preserve" y="11" clip-path="url(#clipPath32)" stroke="none"
+    ><text x="9" xml:space="preserve" y="11" clip-path="url(#clipPath31)" stroke="none"
       >Cliente di HBS</text
+    ></g
+    ><g font-size="11" transform="translate(12,168)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" font-family="sans-serif" stroke="black" stroke-opacity="1"
+    ><text x="6" xml:space="preserve" y="11" clip-path="url(#clipPath32)" stroke="none"
+      >Antitrust</text
     ></g
     ><g font-size="11" stroke-linecap="butt" transform="translate(141,557)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" font-family="sans-serif" stroke-linejoin="round" stroke="black" stroke-opacity="1"
     ><line y2="50" fill="none" x1="50" clip-path="url(#clipPath33)" x2="373" y1="50"
