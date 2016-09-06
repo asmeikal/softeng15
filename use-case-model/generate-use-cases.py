@@ -7,7 +7,7 @@ sources  = 'generated/yaml/'
 output   = 'generated/use_case_table.tex'
 output_macro   = 'generated/use_case_macro.tex'
 
-output_header = "\\input{use-case-model/" + output_macro.replace('.tex','') + "}\n\n"
+output_header = ""
 
 use_cases = {}
 
