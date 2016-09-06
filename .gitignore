@@ -8,8 +8,10 @@ Resources/*
 !*.sty
 !*.sh
 !Images/
-!Images/*.svg
-!Images/*.eps
+!Images/*.sh
+!Images/**
+!Images/**/*.svg
+!Images/**/*.eps
 
 !piano-progetto/
 

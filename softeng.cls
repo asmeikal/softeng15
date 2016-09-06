@@ -300,4 +300,4 @@ justification=raggedright]{caption}
 \RequirePackage{csquotes}
 
 % figures at end of document
-\RequirePackage[nomarkers,figuresonly]{endfloat}
+%\RequirePackage[nomarkers,figuresonly]{endfloat}

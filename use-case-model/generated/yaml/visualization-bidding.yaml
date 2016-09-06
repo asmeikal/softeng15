@@ -1,0 +1,27 @@
+title: 'Visualization Bidding'
+mnemo: 'BIDVIS'
+
+actors:
+    'Manager della banca'
+origin:
+    'Requisiti funzionali e requisiti di usabilit\`a.'
+description:
+    'I manager della banca possono ottenere delle \emph{visualization} 
+    delle regole di bidding realizzate.
+    Una \emph{visualization} fornisce una rappresentaziona grafica intuitiva
+    dell''insieme di bid approvati automaticamente, soggetti ad approvazione
+    da parte di un manager, e respinti automaticamente.'
+pre:
+    'Almeno una regola di bidding \`e stata definita.'
+flow:
+    '\begin{enumerate}
+        \item Il manager seleziona una regola di bidding definita in HBS;
+        \item il sistema di HBS realizza una \emph{visualization} della regola di bidding;
+        \item la \emph{visualization} prodotta viene mostrata al manager nel browser.
+    \end{enumerate}'
+post:
+    'Nessuna'
+side:
+    'Nessuno'
+
+
