@@ -1,5 +1,5 @@
 %----------------------------------------------------------------------------------------
-% Requisiti
+% Analisi del Sistema
 %----------------------------------------------------------------------------------------
 
 \documentclass[10pt]{softeng} % Document font size and equations flushed left
@@ -8,12 +8,16 @@
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
 
+\usepgfplotslibrary{fillbetween}
+
 \include{current-phase}
 
-\DocumentTitle{Use Case Model} % Document title
+\DocumentTitle{Analisi del Sistema} % Document title
 
 \externaldocument[req:]{requirements}
+\externaldocument[uc:]{use-case-model}
 \input{requirements/generated/system_requirements_macro}
+\input{use-case-model/generated/use_case_macro}
 
 %----------------------------------------------------------------------------------------
 
@@ -21,29 +25,21 @@
 
 \startofdocument{}
 
-\input{use-case-model/generated/use_case_macro}
+\input{analisi-sistema/sicurezza}
 
-\input{use-case-model/introduzione}
+\input{analisi-sistema/architettura}
 
-\input{use-case-model/attori}
+\input{analisi-sistema/struttura}
 
-\input{use-case-model/diagramma}
-
-\input{use-case-model/specifica}
-
-% \input{use-case-model/tracking}
+\input{analisi-sistema/interazione}
 
 \section{Registro modifiche}
 
 \subsection{Elaboration}
 
-\subsubsection{I iterazione}
-
-Prima stesura documento.
-
 \subsubsection{II iterazione}
 
-
+Prima stesura documento.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
