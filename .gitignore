@@ -31,3 +31,9 @@ Resources/*
 !use-case-model/generated/templates
 !use-case-model/generated/yaml/*.yaml
 
+!analisi-sistema
+
+!design-sistema
+
+!test-plan
+
