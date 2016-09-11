@@ -1,0 +1,42 @@
+title: 'Disposizione di Pagamento'
+mnemo: 'DISPAG'
+
+actors:
+    'Cliente di HBS.'
+origin:
+    'Requisiti funzionali (requisito di sistema \idDISPAG, sez.~\ref{req:sec:sistema:funzionali:DISPAG} del documento dei requisiti).'
+description:
+    'Un cliente di HBS deve poter effettuare disposizioni di pagamento generiche, quali bonifici e bonifici SEPA.
+
+    Le disposizioni di pagamento necessitano di ulteriore autenticazione tramite OTP.'
+pre:
+    'Il cliente di HBS ha i permessi per effettuare operazioni dal conto corrente selezionato.'
+flow:
+    '\begin{enumerate}
+        \item Il cliente di HBS seleziona il tipo di operazione da effettuare (bonifico, bonifico SEPA, etc);
+
+        \item il cliente compila i campi necessari per effettuare l''operazione (somma di denaro, data di valuta dell''operazione, conto corrente del destinatario, etc);
+
+        \item il cliente invia il form compilato al sistema di HBS;
+
+        \item il sistema di HBS richiede OTP al cliente di HBS;
+
+        \item \label{itm:dispag:last} il cliente inserisce la OTP;
+
+        \item \label{itm:conferma} il sistema conferma la presa in carico dell''operazione da parte del back-end della banca.
+    \end{enumerate}'
+post:
+    'L''operazione indicata dall''utente \`e stata presa in carico con successo dal back-end della banca.'
+side:
+    'Nessuno.'
+
+# the following are optional
+alt-flow:
+    'L''utente pu\`o interrompere l''operazione in qualunque momento prima del punto~\ref{itm:dispag:last} senza che questa abbia conseguenze.
+
+    Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corretta, o nel caso in cui il back-end rifiuti l''operazione, lo use case procede con il flusso alternativo.'
+alt-post:
+    'Nessuna.'
+alt-side:
+    'Nessuno.'
+

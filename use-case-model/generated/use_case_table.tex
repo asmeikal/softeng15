@@ -1,15 +1,82 @@
-\subsection{\code{UC\_1} - Visualization Bidding }
+\subsection{\code{UC\_1} - Disposizione di Pagamento }
+\label{sec:use-case:DISPAG}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Disposizione di Pagamento (\code{UC\_DISPAG\_1})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		Un cliente di HBS deve poter effettuare disposizioni di pagamento generiche, quali bonifici e bonifici SEPA.
+Le disposizioni di pagamento necessitano di ulteriore autenticazione tramite OTP.
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		Cliente di HBS.
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		Requisiti funzionali (requisito di sistema \idDISPAG, sez.~\ref{req:sec:sistema:funzionali:DISPAG} del documento dei requisiti).
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		Il cliente di HBS ha i permessi per effettuare operazioni dal conto corrente selezionato.
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		\begin{enumerate} \item Il cliente di HBS seleziona il tipo di operazione da effettuare (bonifico, bonifico SEPA, etc);
+\item il cliente compila i campi necessari per effettuare l'operazione (somma di denaro, data di valuta dell'operazione, conto corrente del destinatario, etc);
+\item il cliente invia il form compilato al sistema di HBS;
+\item il sistema di HBS richiede OTP al cliente di HBS;
+\item \label{itm:dispag:last} il cliente inserisce la OTP;
+\item \label{itm:conferma} il sistema conferma la presa in carico dell'operazione da parte del back-end della banca. \end{enumerate}
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		L'operazione indicata dall'utente \`e stata presa in carico con successo dal back-end della banca.
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		Nessuno.
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		L'utente pu\`o interrompere l'operazione in qualunque momento prima del punto~\ref{itm:dispag:last} senza che questa abbia conseguenze.
+Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corretta, o nel caso in cui il back-end rifiuti l'operazione, lo use case procede con il flusso alternativo.
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		Nessuno.
+}
+\end{ptable}
+
+\subsection{\code{UC\_2} - Visualizzazione Bidding }
 \label{sec:use-case:BIDVIS}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Visualization Bidding (\code{UC\_BIDVIS\_1})
+	Visualizzazione Bidding (\code{UC\_BIDVIS\_2})
 }
 \pline
 \ptitle{Descrizione use case}
 \pcell{1}{
-		I manager della banca possono ottenere delle \emph{visualization} delle regole di bidding realizzate. Una \emph{visualization} fornisce una rappresentaziona grafica intuitiva dell'insieme di bid approvati automaticamente, soggetti ad approvazione da parte di un manager, e respinti automaticamente.
+		I manager della banca possono ottenere delle visualizzazioni delle regole di bidding realizzate. Una visualizzazione fornisce una rappresentaziona grafica intuitiva dell'insieme di bid approvati automaticamente, soggetti ad approvazione da parte di un manager, e respinti automaticamente.
 }
 \pline
 \ptitle{Attori}
@@ -29,7 +96,7 @@
 \pline
 \ptitle{Flusso}
 \pcell{1}{
-		\begin{enumerate} \item Il manager seleziona una regola di bidding definita in HBS; \item il sistema di HBS realizza una \emph{visualization} della regola di bidding; \item la \emph{visualization} prodotta viene mostrata al manager nel browser. \end{enumerate}
+		\begin{enumerate} \item Il manager seleziona una regola di bidding definita in HBS; \item il sistema di HBS realizza una visualizzazione della regola di bidding; \item la visualizzazione prodotta viene mostrata al manager nel browser. \end{enumerate}
 }
 \pline
 \ptitle{Post-condizioni}
@@ -43,13 +110,13 @@
 }
 \end{ptable}
 
-\subsection{\code{UC\_2} - Bidding Utente }
+\subsection{\code{UC\_3} - Bidding Utente }
 \label{sec:use-case:USRBID}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Bidding Utente (\code{UC\_USRBID\_2})
+	Bidding Utente (\code{UC\_USRBID\_3})
 }
 \pline
 \ptitle{Descrizione use case}
@@ -69,12 +136,13 @@
 \pline
 \ptitle{Pre-condizioni}
 \pcell{1}{
-		Almeno una regola di bidding per l'oggetto richiesto (conto corrente, carta di credito o prestito) \`e stata definita..
+		Il sistema di bidding \`e stato attivato dalla banca.
 }
 \pline
 \ptitle{Flusso}
 \pcell{1}{
-		\begin{enumerate} \item L'utente specifica i parametri del proprio bid;
+		\begin{enumerate} \item l'utente seleziona l'oggetto per cui desidera fare bid fra quelli per cui l'istituto permette operazioni di bid;
+\item l'utente specifica i parametri del proprio bid;
 \item l'utente invia il bid al sistema di HBS;
 \item l'utente riceve un responso dal sistema di HBS riguardo l'approvazione, il rifiuto o la presa in carico del bid da parte del sistema stesso. \end{enumerate}
 }
@@ -105,13 +173,13 @@
 }
 \end{ptable}
 
-\subsection{\code{UC\_3} - Creazione Bidding }
+\subsection{\code{UC\_4} - Creazione Bidding }
 \label{sec:use-case:CREABID}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Creazione Bidding (\code{UC\_CREABID\_3})
+	Creazione Bidding (\code{UC\_CREABID\_4})
 }
 \pline
 \ptitle{Descrizione use case}

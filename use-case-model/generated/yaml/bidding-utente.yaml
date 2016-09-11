@@ -8,10 +8,12 @@ origin:
 description:
     'Un utente di HBS pu\`o effettuare bid per conti correnti, carte di credito o prestiti.'
 pre:
-    'Almeno una regola di bidding per l''oggetto richiesto (conto corrente, carta di credito o prestito) \`e stata definita..'
+    'Il sistema di bidding \`e stato attivato dalla banca.'
 flow:
     '\begin{enumerate}
-        \item L''utente specifica i parametri del proprio bid;
+        \item l''utente seleziona l''oggetto per cui desidera fare bid fra quelli per cui l''istituto permette operazioni di bid;
+       
+        \item l''utente specifica i parametri del proprio bid;
 
         \item l''utente invia il bid al sistema di HBS;
 
