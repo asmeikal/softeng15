@@ -21,7 +21,7 @@ In figura~\ref{fig:sequence:transazione:modello} viene indicato il modello trans
 
 \begin{figure*}[h]
 	\centering
-	\includegraphics[width=\textwidth]{Images/sequence/Transazione.eps}
+	\includegraphics[width=\textheight, angle=90]{Images/sequence/Transazione.eps}
 	\caption{Modello di transazione semplice.}
 	\label{fig:sequence:transazione:modello}
 \end{figure*}
@@ -31,7 +31,24 @@ Use case di questo tipo sono, ad esempio, gli use case riguardanti le operazioni
 
 \begin{figure*}[h]
 	\centering
-	\includegraphics[width=\textwidth]{Images/sequence/Transazione_OTP.eps}
+	\includegraphics[width=\textheight, angle=90]{Images/sequence/Transazione_OTP.eps}
 	\caption{Modello di transazione per la quale è richiesta la conferma tramite OTP.}
 	\label{fig:sequence:transazione-otp:modello}
+\end{figure*}
+
+\subsubsection{Diagrammi di Sequenza}
+
+Effettuare operazioni veloci (use case \iducDISOPVEL) richiede la creazione di un'operazione ordinaria a partire da un'operazione veloce.
+La traduzione da operazione veloce a operazione ordinaria avviene attraverso realizzazioni dell'interfaccia di Traduzione Operazione Veloce.
+Ciascun parametro dell'operazione veloce viene tradotto in un parametro dell'operazione ordinaria.
+In figura~\ref{fig:sequence:operazione-veloce} viene illustrata la traduzione di un'operazione veloce in un'operazione ordinaria.
+Il diagramma di sequenza in figura~\ref{fig:sequence:operazione-veloce} si inserisce nel modello di transazione con conferma tramite OTP illustrato in figura~\ref{fig:sequence:transazione-otp:modello}.
+
+I meccanismi di traduzione possono essere di diverso tipo, il piu
+
+\begin{figure*}[h]
+	\centering
+	\includegraphics[width=\textheight, angle=90]{Images/sequence/Operazione_Veloce.eps}
+	\caption{Traduzione di un'operazione veloce in un'operazione ordinaria.}
+	\label{fig:sequence:operazione-veloce}
 \end{figure*}

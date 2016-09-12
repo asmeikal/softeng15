@@ -1,0 +1,44 @@
+title: 'Disposizione Operazione Veloce'
+mnemo: 'DISOPVEL'
+
+actors:
+    'Cliente di HBS.'
+origin:
+    'Requisiti funzionali (requisito di sistema \idDISOPVEL, sez.~\ref{req:sec:sistema:funzionali:DISOPVEL} del documento dei requisiti).'
+description:
+    'Un cliente di HBS deve poter effettuare le operazioni veloci configurate dalla banca.'
+pre:
+    'Almeno una tipologia di operazione veloce \`e stata configurata dai dipendenti della banca.'
+flow:
+    '\begin{enumerate}
+        \item L''utente seleziona la tipologia di operazione veloce che desidera effettuare;
+
+        \item l''utente inserisce i parametri richiesti dall''operazione veloce;
+
+        \item l''utente invia l''operazione veloce al sistema di HBS;
+
+        \item \label{itm:DISOPVEL:validazione} il sistema di HBS valida e traduce l''operazione veloce in operazione ordinaria;
+
+        \item il sistema di HBS richiede la OTP al cliente di HBS;
+
+        \item \label{itm:DISOPVEL:conferma-cliente} il cliente di HBS invia al sistema la OTP;
+
+        \item \label{itm:DISOPVEL:otp} il sistema di HBS valida la OTP;
+
+        \item \label{itm:DISOPVEL:back-end} il sistema di HBS invia l''operazione ordinaria risultante dalla traduzione dell''operazione veloce al sistema di OBP;
+
+        \item il sistema di HBS restituisce all''utente conferma dell''avenuta presa in carico da parte del back-end della banca dell''operazione ordinaria corrispondente all''operazione veloce richiesta.
+    \end{enumerate}'
+post:
+    'Nessuna.'
+side:
+    'L''operazione ordinaria corrispondente all''operazione veloce richiesta dall''utente \`e stata presa in carico correttamente dal back-end della banca.'
+
+# the following are optional
+alt-flow:
+    'Il cliente di HBS pu\`o interrompere l''operazione in qualunque momento prima del punto~\ref{itm:DISOPVEL:conferma-cliente} senza produrre risultati. Il sistema pu\`o restituire un errore ai punti~\ref{itm:DISOPVEL:validazione}, \ref{itm:DISOPVEL:otp} e \ref{itm:DISOPVEL:back-end}, nel caso in cui, rispettivamente, i parametri dell''operazione veloce non siano validi, la OTP non sia valida, e il back-end rifiuti l''operazione ordinaria risultante. In questo caso non viene prodotto alcun risultato e l''utente visualizza una pagina di errore.'
+alt-post:
+    'Nessuna.'
+alt-side:
+    'Nessuno.'
+

@@ -1,10 +1,55 @@
-\subsection{\code{UC\_1} - Disposizione di Pagamento }
+\subsection{\code{UC\_1} - Visualizzazione Bidding }
+\label{sec:use-case:BIDVIS}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Visualizzazione Bidding (\code{UC\_BIDVIS\_1})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		I manager della banca possono ottenere delle visualizzazioni delle regole di bidding realizzate. Una visualizzazione fornisce una rappresentaziona grafica intuitiva dell'insieme di bid approvati automaticamente, soggetti ad approvazione da parte di un manager, e respinti automaticamente.
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		Manager della banca
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		Requisiti funzionali e requisiti di usabilit\`a.
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		Almeno una regola di bidding \`e stata definita.
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		\begin{enumerate} \item Il manager seleziona una regola di bidding definita in HBS; \item il sistema di HBS realizza una visualizzazione della regola di bidding; \item la visualizzazione prodotta viene mostrata al manager nel browser. \end{enumerate}
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		Nessuna
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		Nessuno
+}
+\end{ptable}
+
+\subsection{\code{UC\_2} - Disposizione di Pagamento }
 \label{sec:use-case:DISPAG}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Disposizione di Pagamento (\code{UC\_DISPAG\_1})
+	Disposizione di Pagamento (\code{UC\_DISPAG\_2})
 }
 \pline
 \ptitle{Descrizione use case}
@@ -65,58 +110,187 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 }
 \end{ptable}
 
-\subsection{\code{UC\_2} - Visualizzazione Bidding }
-\label{sec:use-case:BIDVIS}
+\subsection{\code{UC\_3} - Creazione Bidding }
+\label{sec:use-case:CREABID}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Visualizzazione Bidding (\code{UC\_BIDVIS\_2})
+	Creazione Bidding (\code{UC\_CREABID\_3})
 }
 \pline
 \ptitle{Descrizione use case}
 \pcell{1}{
-		I manager della banca possono ottenere delle visualizzazioni delle regole di bidding realizzate. Una visualizzazione fornisce una rappresentaziona grafica intuitiva dell'insieme di bid approvati automaticamente, soggetti ad approvazione da parte di un manager, e respinti automaticamente.
+		Un manager della banca pu\`o creare una regola di bidding.
 }
 \pline
 \ptitle{Attori}
 \pcell{1}{
-		Manager della banca
+		Manager della banca.
 }
 \pline
 \ptitle{Origine}
 \pcell{1}{
-		Requisiti funzionali e requisiti di usabilit\`a.
+		Requisiti funzionali (requisito di sistema \idCREABID).
 }
 \pline
 \ptitle{Pre-condizioni}
 \pcell{1}{
-		Almeno una regola di bidding \`e stata definita.
+		Nessuna.
 }
 \pline
 \ptitle{Flusso}
 \pcell{1}{
-		\begin{enumerate} \item Il manager seleziona una regola di bidding definita in HBS; \item il sistema di HBS realizza una visualizzazione della regola di bidding; \item la visualizzazione prodotta viene mostrata al manager nel browser. \end{enumerate}
+		\begin{enumerate} \item Il manager seleziona una tipologia di bidding (carte di credito, conto corrente, prestito); \item \label{itm:uc:CREABID:parametro} il manager seleziona un parametro di scelta; \item il manager imposta i range di approvazione automatica, approvazione condizionata, e rifiuto automatico sul parametro scelto; \item opzionalmente, il manager torna al punto \ref{itm:uc:CREABID:parametro}; \item il manager inserisce la regola di bidding creata. \end{enumerate}
 }
 \pline
 \ptitle{Post-condizioni}
 \pcell{1}{
-		Nessuna
+		Nessuna.
 }
 \pline
 \ptitle{Side effects}
 \pcell{1}{
-		Nessuno
+		La regola di bidding realizzata \`e stata aggiunta al sistema di HBS.
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		In qualsiasi punto del workflow il manager pu\`o annullare l'operazione.
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		Nessuno.
 }
 \end{ptable}
 
-\subsection{\code{UC\_3} - Bidding Utente }
+\subsection{\code{UC\_4} - Disposizione Operazione Veloce }
+\label{sec:use-case:DISOPVEL}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Disposizione Operazione Veloce (\code{UC\_DISOPVEL\_4})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		Un cliente di HBS deve poter effettuare le operazioni veloci configurate dalla banca.
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		Cliente di HBS.
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		Requisiti funzionali (requisito di sistema \idDISOPVEL, sez.~\ref{req:sec:sistema:funzionali:DISOPVEL} del documento dei requisiti).
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		Almeno una tipologia di operazione veloce \`e stata configurata dai dipendenti della banca.
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		\begin{enumerate} \item L'utente seleziona la tipologia di operazione veloce che desidera effettuare;
+\item l'utente inserisce i parametri richiesti dall'operazione veloce;
+\item l'utente invia l'operazione veloce al sistema di HBS;
+\item \label{itm:DISOPVEL:validazione} il sistema di HBS valida e traduce l'operazione veloce in operazione ordinaria;
+\item il sistema di HBS richiede la OTP al cliente di HBS;
+\item \label{itm:DISOPVEL:conferma-cliente} il cliente di HBS invia al sistema la OTP;
+\item \label{itm:DISOPVEL:otp} il sistema di HBS valida la OTP;
+\item \label{itm:DISOPVEL:back-end} il sistema di HBS invia l'operazione ordinaria risultante dalla traduzione dell'operazione veloce al sistema di OBP;
+\item il sistema di HBS restituisce all'utente conferma dell'avenuta presa in carico da parte del back-end della banca dell'operazione ordinaria corrispondente all'operazione veloce richiesta. \end{enumerate}
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		L'operazione ordinaria corrispondente all'operazione veloce richiesta dall'utente \`e stata presa in carico correttamente dal back-end della banca.
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		Il cliente di HBS pu\`o interrompere l'operazione in qualunque momento prima del punto~\ref{itm:DISOPVEL:conferma-cliente} senza produrre risultati. Il sistema pu\`o restituire un errore ai punti~\ref{itm:DISOPVEL:validazione}, \ref{itm:DISOPVEL:otp} e \ref{itm:DISOPVEL:back-end}, nel caso in cui, rispettivamente, i parametri dell'operazione veloce non siano validi, la OTP non sia valida, e il back-end rifiuti l'operazione ordinaria risultante. In questo caso non viene prodotto alcun risultato e l'utente visualizza una pagina di errore.
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		Nessuno.
+}
+\end{ptable}
+
+\subsection{\code{UC\_5} - Iscrizione Correntista }
+\label{sec:use-case:ISCRCORR}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Iscrizione Correntista (\code{UC\_ISCRCORR\_5})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		Un cliente della banca non registrato ad HBS deve poter effettuare la pre-registrazione in remoto.
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		Cliente della banca.
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		Requisiti funzionali (requisito di sistema \idISCRCORR, sez.~\ref{req:sec:sistema:funzionali:ISCRCORR} del documento dei requisiti).
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		Il cliente della banca non \`e registrato a HBS, ossia non \`e un cliente di HBS.
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		\begin{enumerate} \item Il cliente della banca inserisce il proprio codice fiscale e il proprio numero di conto corrente nella pagina di iscrizione;
+\item il sistema prende in carico la richiesta di iscrizione. \end{enumerate}
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		La richiesta di iscrizione \`e stata presa in carico dal sistema di HBS.
+}
+\end{ptable}
+
+\subsection{\code{UC\_6} - Bidding Utente }
 \label{sec:use-case:USRBID}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Bidding Utente (\code{UC\_USRBID\_3})
+	Bidding Utente (\code{UC\_USRBID\_6})
 }
 \pline
 \ptitle{Descrizione use case}
@@ -160,66 +334,6 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 \ptitle{Flusso alternativo}
 \pcell{1}{
 		In qualsiasi punto del workflow l'utente pu\`o interrompere l'inserimento della proposta di bid.
-}
-\pline
-\ptitle{Post-condizioni alternative}
-\pcell{1}{
-		Nessuna.
-}
-\pline
-\ptitle{Side effects alternativi}
-\pcell{1}{
-		Nessuno.
-}
-\end{ptable}
-
-\subsection{\code{UC\_4} - Creazione Bidding }
-\label{sec:use-case:CREABID}
-
-\begin{ptable}{2}
-\ptitle{Titolo}
-\pcell{1}{
-	Creazione Bidding (\code{UC\_CREABID\_4})
-}
-\pline
-\ptitle{Descrizione use case}
-\pcell{1}{
-		Un manager della banca pu\`o creare una regola di bidding.
-}
-\pline
-\ptitle{Attori}
-\pcell{1}{
-		Manager della banca.
-}
-\pline
-\ptitle{Origine}
-\pcell{1}{
-		Requisiti funzionali (requisito di sistema \idCREABID).
-}
-\pline
-\ptitle{Pre-condizioni}
-\pcell{1}{
-		Nessuna.
-}
-\pline
-\ptitle{Flusso}
-\pcell{1}{
-		\begin{enumerate} \item Il manager seleziona una tipologia di bidding (carte di credito, conto corrente, prestito); \item \label{itm:uc:CREABID:parametro} il manager seleziona un parametro di scelta; \item il manager imposta i range di approvazione automatica, approvazione condizionata, e rifiuto automatico sul parametro scelto; \item opzionalmente, il manager torna al punto \ref{itm:uc:CREABID:parametro}; \item il manager inserisce la regola di bidding creata. \end{enumerate}
-}
-\pline
-\ptitle{Post-condizioni}
-\pcell{1}{
-		Nessuna.
-}
-\pline
-\ptitle{Side effects}
-\pcell{1}{
-		La regola di bidding realizzata \`e stata aggiunta al sistema di HBS.
-}
-\pline
-\ptitle{Flusso alternativo}
-\pcell{1}{
-		In qualsiasi punto del workflow il manager pu\`o annullare l'operazione.
 }
 \pline
 \ptitle{Post-condizioni alternative}

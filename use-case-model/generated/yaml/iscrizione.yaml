@@ -1,0 +1,21 @@
+title: 'Iscrizione Correntista'
+mnemo: 'ISCRCORR'
+
+actors:
+    'Cliente della banca.'
+origin:
+    'Requisiti funzionali (requisito di sistema \idISCRCORR, sez.~\ref{req:sec:sistema:funzionali:ISCRCORR} del documento dei requisiti).'
+description:
+    'Un cliente della banca non registrato ad HBS deve poter effettuare la pre-registrazione in remoto.'
+pre:
+    'Il cliente della banca non \`e registrato a HBS, ossia non \`e un cliente di HBS.'
+flow:
+    '\begin{enumerate}
+        \item Il cliente della banca inserisce il proprio codice fiscale e il proprio numero di conto corrente nella pagina di iscrizione;
+
+        \item il sistema prende in carico la richiesta di iscrizione.
+    \end{enumerate}'
+post:
+    'Nessuna.'
+side:
+    'La richiesta di iscrizione \`e stata presa in carico dal sistema di HBS.'
