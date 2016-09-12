@@ -1,0 +1,47 @@
+
+\section{Interazione con OBP}
+
+L'interfaccia di OBP è una interfaccia RESTful\footnote{L'interfaccia di OBP, in realtà, è in sola lettura. Estendiamo il suo funzionamento anche alla scrittura (inserimento di informazioni nel back-end), poiché l'estensione delle sue funzionalità in questo senso è, almeno logicamente, immediata.}, in cui i dati vengono trasmessi in formato json, e l'autenticazione è gestita tramite protocollo OAuth.
+
+Inserire un'operazione bancaria nel back-end della banca avviene con il seguente messaggio:
+\begin{lstlisting}[basicstyle=\ttfamily]
+POST /accounts/[ACCOUNT_ID]/transactions HTTP/1.1
+[header]
+
+{
+    "this_account": {
+        "id": [id account],
+        "number": [numero conto],
+        "IBAN": [iban conto],
+        "swift_bic": [codice swift],
+        "bank": {
+            "national_identifier": [identificatore banca],
+            "name": [nome banca]
+        }
+    },
+    "other_account": {
+        "holder": {
+            "name": [nome beneficiario]
+        },
+        "number": [numero conto beneficiario],
+        "IBAN": [iban beneficiario],
+        "swift_bic": [codice swift],
+        "bank": {
+            "national_identifier": [identificatore istituto beneficiario],
+            "name": [nome istituto beneficiario]
+        },
+    },
+    "details": {
+        "posted_by_user_id": [id utente],
+        "posted_by_ip_address": [ip terminale],
+        "type": "cash",
+        "description": [causale],
+        "posted": [data esecuzione],
+        "value": {
+            "currency": [valuta],
+            "amount": [cifra]
+        }
+    }
+}
+\end{lstlisting}
+Il messaggio di risposta contiene informazioni riguardo l'avvenuta presa in carico dell'operazione da parte del back-end della banca.

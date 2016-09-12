@@ -1,0 +1,34 @@
+title: 'Creazione Operazione Veloce'
+mnemo: 'CROPVEL'
+
+actors:
+    'Dipendente della banca.'
+origin:
+    'Requisiti funzionali (requisito di sistema \idCROPVEL, sez.~\ref{req:sec:sistema:funzionali:CROPVEL} del documento dei requisiti).'
+description:
+    'I dipendenti della banca devono poter creare delle operazioni veloci specificando il metodo di traduzione dei parametri delle operazioni veloci nei parametri dell''operazione tradizionale corrispondente.'
+pre:
+    'Le operazioni veloci sono state abilitate dal manager della banca.'
+flow:
+    '\begin{enumerate}
+        \item Il dipendente specifica il nome dell''operazione veloce;
+
+        \item il dipendente seleziona il tipo di operazione tradizionale in cui l''operazione veloce deve essere convertita;
+
+        \item per ciascun parametro dell''operazione tradizionale il dipendente specifica un parametro dell''operazione veloce con relativo dominio e meccanismo (algoritmo) di traduzione, o una costante;
+
+        \item \label{itm:CROPVEL:last} il dipendente salva l''operazione veloce.
+    \end{enumerate}'
+post:
+    'Nessuna.'
+side:
+    'L''operazione veloce creata dal dipendente della banca \`e stata memorizzata nel sistema di HBS.'
+
+# the following are optional
+alt-flow:
+    'Prima del punto~\ref{itm:CROPVEL:last} il dipendente pu\`o annullare l''operazione senza provocare cambiamenti al sistema.'
+alt-post:
+    'Nessuna.'
+alt-side:
+    'Nessuno.'
+
