@@ -1,0 +1,220 @@
+
+\subsection{Gestire Operazioni. privacy utenti}
+\paragraph{Overview} Le operazioni bancarie che possono essere portare. termine "fisicamente", allo sportello interloquendo con un bancario addetto,  sono quelle più sicure: il bancario. garante delle operazioni effettuate per la banca,. difficilmente  ci possono essere intromissioni esterne.
+ Via Web ci sono, numerosi pericoli. insidie. da attacchi all'hardware della banca (DDos, virus,etc.). tentativi di forzatura delle pagine Web (SQL injection, SSI attacks,etc. ), la \emph{safety} delle operazioni può essere minacciata in molteplici modi.
+\emph{HBS} ha come obiettivo fondamentale la privacy dei propri utenti. la sicurezza delle operazioni bancarie: vengono adottate dunque le più sofisticate tecniche di Cyber-Security nella gestione delle informazioni dei correntisti . nell'interazione utente-sito web .
+
+\subsubsection{Problemi per le operazioni}
+
+	\paragraph{Sicurezza generale. comunicazioni via Web}
+Per ottenere un alto standard di sicurezza per ogni operazione, si deve innanzitutto mettere in sicurezza il proprio sistema di comunicazione tra. propri server. la rete Internet.Senza ottenere un solido. affidabile \emph{encrypting} delle informazioni inviate sulla rete, ci si espone ad attacchi di tipo \emph{Man in the middle}, non potendo più stabilire la reale identità dell'interlocutore (sia esso un generico cliente HBS. il sistema informativo della banca). Inoltre si concede la pericolosa possibilità. chiunque analizzi il traffico in entrata. in uscita dalla banca di leggere facilmente informazioni riservate,. potenzialmente critiche come le password degli utenti. dei dipendenti.
+rimedio. HTTPS
+
+
+	\paragraph{Sicurezza account correntisti}
+Le informazioni più sensibili. di maggior valore del sistema, le informazioni. il contenuto di un qualsiasi conto corrente, possono essere raggiunte appena viene effettuato il \emph{log-in} su un qualsiasi profilo utente. Mentre dunque. molto importante la sicurezza. l'affidabilità dei processi di crittografia, non. richiesta particolare velocità di risposta al correntista. Per questa ragione si progetta il sistema tenendo conto dell'efficienza degli algoritmi più che del tempo di calcolo impiegato.
+In tal modo si garantisce all'utente semplicità nell'accedere ai propri beni. la certezza che questi siano ben custoditi.
+
+
+	\paragraph{Sicurezza account dipendenti}
+L'accesso all'account di un qualsiasi dipendente permette :
+\begin{enumerate}
+\item accesso al backend del sitema HBS;
+\item accesso ai log del sistema;
+\item possibilità di confermare. disdire alcune operazioni "non standard" degli utenti;
+\end{enumerate}
+L'accesso. questo tipo di account dev'essere
+\begin{enumerate}
+\item sicuro, per evitare che attaccanti possano accedere alle funzionalità elencate sopra;
+\item NON necessariamente semplice per il dipendente .
+\end{enumerate}
+Anche in questo caso il \emph{tradeoff} tra sicurezza. \emph{usability} può pendere in favore della prima perchè un dipendente ha accesso. molti punti critici del sistema. Inoltre, per via dell'importanza delle operazioni permesse ad un dipendente. per praticità nello svolgere attività di lavoro aziendale, si richiede un accesso stratificato. questi tipi di account ,con. \emph{layer} più esterni che registrino informazioni dipendenti dalla filiale specifica di appartenenza fino. quelli più interni, in cui si richiedono direttamente le informazioni per il login.
+
+
+	\paragraph{Sistema dei permessi}
+La differenza tra. vari ruoli dell'architettura software deve essere netta. ben definita, per evitare che si possa entrare in possesso di permessi che non competono al proprio ruolo.
+
+
+
+	\paragraph{Log oscurati}
+Per fornire maggiore privacy agli utenti della banca che adotti il sistema \emph{HBS}, ogni log di ogni account registrato su un server passa attraverso più livelli di \emph{encrypting}: in questo modo solo. dipendenti. gli addetti ai lavori potranno accedere alle informazioni riservate attraverso opportune chiavi,. anche nel caso in cui una macchina del sistema sia \emph{targeted and conquered}, sarebbe comunque molto difficile per l'entità attaccante risalire ai dati originali.
+\linebreak
+Tuttavia, altro punto delicato dell'architettura HBS. la ridondanza dei dati sensibili: HBS si avvale di un sistema di back-up all'avanguardia, in cui sono salvate "copie" dei file più importanti in modo ridondante, per assicurare affidabilità nella gestione delle transazioni. massima collaborazione con le forzedell'ordine .
+
+
+
+	\paragraph{Principi di programmazione sicura}
+
+La società \emph{HBS} mira. mantenere alta la qualità del codice scritto. operativo nei server web della banca ospite. Alta qualità, chiarezza. riusabilità rendono il codice facilmente scalabile su sistemi ed architetture in continua crescita ed evoluzione (come possono essere quelli delle banche). inattaccabile da soggetti esterni interessati ad ottenere e/o danneggiare server. backend, con relative preziose informazioni contenute all'interno.
+ Il codice software HBS. scritto con sintassi adatta ad evitare potenziali attacchi esterni rivolti sia ai server web (jquery,SSI attack, etc.) sia alle informazioni contenute nel backend della banca (SQL injection,BufferOverflow ,etc.).
+
+	\paragraph{WebApp security}
+Per assicurarsi che non ci siano falle nei sistemi informativi interfaccianti la rete web, nella \emph{fase di manutenzione} periodica fornita dalla società \emph{HBS}  sono comprese attività di \emph{penetration testing} su tutte le macchine installate presso la banca, onde evitare che aggiornamenti di software e/o di librerie di sistema generino pericolose incompatibilità. "buchi" nel sistema stesso. Le attività di test hanno principalmente luogo. seguito di un "ciclo" di \emph{patches}. aggiornamenti di sistema.
+
+
+
+
+
+\subsubsection{Problemi di sistema }
+(si supone che il backend sia già sicuro, ma noi consideriamo il backend sicuro un prerequisito, quindi DA SCRIVERE)
+\paragraph{Overview}	HBS si occupa di rendere sicure tutte le dinamiche di comunicazione che coinvolgono l'utente finale, il correntista, il front-end. il back-end della banca. tuttavia il prerequisito fondamentale di ogni tipo di comunicazione. che. dati lato backend siano custoditi secondo criteri di sicurezza. affidabilità. Per attivare il sistema HBS presso una banca, questo prerequisito deve essere rispettato.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Stabilire Policy di sicurezza}
+
+
+\subsubsection{Policy operazioni}
+
+
+
+\subsubsection{policy sistema}
+	\paragraph{Sicurezza generale. comunicazioni via Web}
+Le comunicazioni via Internet sono tutte cifrate con il protocollo \emph{SSL/TLS} v1.2 (ultima versione alla scrittura di questo documento). ogni pagina web del front-end. visualizzata mediante protocollo \emph{HTTPS}, supportato da TLS .
+\linebreak
+Periodicamente vengono effettuati aggiornamenti dei protocolli. server web, per aumentarne al massimo la \emph{reliability}.
+
+
+
+
+	\paragraph{Sicurezza account correntisti}
+La sicurezza di un account utente va protetta in tre situazioni:
+\begin{enumerate}
+\item all'accesso, tramite Web client, al proprio profilo HBS;
+\item all'esecuzione, tramite Web client, di pagamenti. altre operazioni che abbiano come fine ultimo una transazione economica;
+\item ad ogni operazione effettuata presso un distributore automatico.
+\end{enumerate}
+
+\paragraph{Accesso profilo}
+
+ Le credenziali con cui un utente può accedere al suo \emph{home banking profile} dal proprio browser sono :
+\begin{enumerate}
+\item Nome (di battesimo), di lunghezza compresa tra tra. e 100 caratteri
+\item Cognome, di lunghezza compresa tra tra. e 100 caratteri
+\item Passphrase, di lunghezza compresa tra tra 40. 90 caratteri.
+\end{enumerate}
+Nome. Cognome vengono inseriti come parametri dell'algoritmo di hashing \emph{SHA-256},. il \emph{message digest 1} risultante
+, unito al passphrase, viene di nuovo inserito nella funzione \emph{SHA-256}, da cui si ottiene \emph{message digest 2}. Il \emph{message digest 2} viene inviato al server HBS attraverso form HTTPS,. il server  si occuperà di confrontare il messaggio ricevuto con l'originale contenuto nel database della banca.Se. due digest corripondono, l'utente viene autenticato, ha accesso al proprio  profilo. viene creata una sessione dedicata.Al Logout. alla chiusura della finestra del browser, la sessione viene interrotta.
+
+
+\paragraph{Transazione via Web}
+
+Al momento di un pagamento. altra operazione speciale, l'utente loggato deve inviare, all'interno della sessione dedicata, al server HBS :
+\begin{enumerate}
+\item un passphrase, di lunghezza compresa tra 80. 160 caratteri;
+\item una \emph{One-Time Password} generata dalla chiavetta TOTP, precedentemente fornita dalla banca (mediante servizio postale).
+\end{enumerate}
+
+Viene di nuovo generato un message digest di queste due stringhe ottenuto mediante l'algoritmo di hashing SHA-256, che viene inviato. confrontato col record dell'utente conservato nel backend della banca.Se corrisponde,. possibile avviare la transazione.
+
+
+
+\paragraph{Operazioni allo sportello}
+Per autenticarsi ad uno sportello automatico, un utente della banca deve inserire una \emph{smartcard}.
+Le operazioni che un correntista può effettuare allo sportello sono:
+\begin{enumerate}
+\item visionare e/o stampare il proprio rendiconto;
+\item ritirare denaro contante.
+\end{enumerate}
+
+Mentre per la prima non vi sono particolari requisiti, per effettuare la seconda azione bisogna inserire la \emph{One-Time Password} fornita in quel momento dalla chiavetta TOTP .
+
+
+
+	\paragraph{Sicurezza account dipendenti}
+I dipendenti, al contrario dei normali correntisti, possono accedere al proprio account virtuale solo attraverso un terminale  della banca, assegnatogli univocamente. Sul terminale risiede una applicazione \emph{client}, attraverso la quale. dipendenti possono svolgere tutte le loro mansioni. L'unico modo che un attaccante ha di sfruttare questi tipi di account. accedervi. operare fingendosi un dipendente.Dunque bisogna evitare che :
+\begin{enumerate}
+\item un attaccante esterno si impadronisca, via web, dei permessi necessari per operare sul terminale del dipendente da remoto
+\item un attaccante interno, un altro dipendente, si impadronisca dei requisiti di accesso del dipendente. del suo terminale.
+\end{enumerate}
+
+Mentre per scongiurare attacchi via web. necessaria l'efficienza. la sinergia di tutti gli altri concetti applicati in questa sezione, bloccare un attaccante interno richiede una prassi più attenta.
+Ad ogni dipendente di una determinata filiale viene assegnato:
+\begin{enumerate}
+\item un terminale unico;
+\item un unico nome utente. password per quel terminale .
+\end{enumerate}
+Più in generale, poi, la banca assegna ad ogni dipendente, non tenendo conto del luogo specifico di lavoro un passphrase. scelta del dipendente, di lunghezza compresa tra. 40. gli 80 caratteri.
+
+
+Per svolgere qualsiasi mansione, un dipendente deve quindi:
+\begin{enumerate}
+\item loggarsi presso il suo terminale, inserendo il proprio nome utente. la password assegnatagli
+\item accedere all'applicazione \emph{HBS client} rilasciata da HBS per. dipendenti;
+\item loggarsi in quell'applicazione inserendo il passphrase. nuovamente la password del suo terminale .
+\end{enumerate}
+L'applicazione \emph{HBS client} passa passphrase, password. nome utente ad una funzione hash (SHA-256). controlla che il digest contenga un determinato numero di bit iniziali settato. 0. Superato questo controllo, il dipendente viene loggato nel sistema.
+
+			\paragraph{Ll'algoritmo di Log-in per. dipendenti}
+			Questo algoritmo prende spunto dal calcolo di un N-once necessario per validare un \href{https://en.bitcoin.it/wiki/Block}{blocco di transazioni Bitcoin }.
+			In generale, dati due numeri con un certo numero di cifre,. computazionalmente difficile trovare un terzo numero che, passato insieme agli altri due come input di una funzione di hash, produca un message digest con un determinato numero prefisso di zeri.
+			Al contrario, per verificare che la terna produca un digest con tale proprietà, basta eseguire la funzione di hash con. tre valori.
+			Il numero difficile da trovare, in questo caso,. la password del terminale. mentre il dipendente ha un nome utente simile al proprio. un passphrase. scelta, alcuni server appositi della banca sono deputati. cercare (nel gergo, \emph{mining}) un numero opportuno, la password del terminale appunto,che conferisca al digest della funzione hash la proprietà voluta.
+Il numero deve essere "cercato" la prima volta all'assunzione del dipendente,. cercato ogni volta che viene indetto dalla banca il cambio di passphrase.
+			 In teoria, maggiore. il numero di zeri prefissi che deve avere il digest, maggiore. la difficoltà,. quindi il \emph{CPU usage}, nel trovare il numero desiderato: per questa ragione, la banca ospite può scegliere il livello di sicurezza  che vuole fornire ai propri dipendenti semplicemente scegliendo un più alto. più basso numero di zeri dei propri digest, che corrispondono ad un relativo elevato. lieve \emph{computational effort} da parte delle proprie macchine.
+
+
+
+
+
+
+
+	\paragraph{Log oscurati}
+Ogni operazione effettuata online sul sistema viene salvata nel file di log del server che rileva l'operazione.Periodicamente, questi files vengono copiati su memoria fissa di \emph{backup} presente nel backend della banca.
+Gli unici che devono poter accedere ai files di log del sistema sono :
+\begin{enumerate}
+\item. dipendenti della banca;
+\item l'autorità di vigilanza nazionale.
+\end{enumerate}
+Mentre per la sicurezza del backend si fa riferimento alla policy interna della banca, bisogna rendere sicuri tutti. files di log non ancora salvati in backup. presenti sui server web del sistema, oscurandoli agli occhi di ogni utente esterno. rendendoli accessibili solo. dipendenti. autorità.
+Ogni server web del \emph{sistema HBS} salva ogni nuovo log generato localmente in un file criptato con una chiave di cifratura conservata localmente in una cartella con password.
+La password corrisponde alla chiave di cifratura.
+\linebreak
+ Ogni volta che un richiedente, dipendente. autorità, voglia accedere. questi file, deve generare una richiesta HTTPS al server;. quel punto :
+ \begin{enumerate}
+ \item dopo la risposta del server. la creazione di un canale di comunicazione persistente, server. richiedente generano una coppia per uno di chiavi pubblica-privata
+ \item server. richiedente comunicano all'altro la propria chiave pubblica,. mantengono segreta la privata
+ \item il server cifra la chiave di crittografia dei log prima con la propria chiave privata, poi con la chiave pubblica del richiedente. gli spedisce il messaggio
+ \item il richiedente ottiene la password/chiave applicando sul messaggio inviatogli prima la propria chiave privata, poi quella pubblica del server
+ \item ora il richiedente può aprire la cartella. decifrare il file di log.
+ \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+	\paragraph{Principi di programmazione sicura}
+Il codice di ogni pagina web. delle applicazioni interne ai server viene scritto seguendo. principi elencati dall'OWASP(Open Web Application Security Project), per offrire il massimo grado di sicurezza Web.
+	\paragraph{WebApp security}
+La \emph{HBS-Society} ha al proprio interno un reparto dedicato interamente al Penetration Testing. al Web application Testing, che si occupa periodicamente di aggiornare il sistema. di testarne la solidità delle applicazioni in rete.
+A questo scopo vengono usate, nei test, le tecniche più sofisticate. i tool più all'avanguardia nel settore della sicurezza (Metasploit, Nessus, Burp, etc.), per offrire un maggior grado di affidabilità.
+
+
+
+
+
+\subsection{Bug Bounty Program}
+\`E universalmente riconosciuta, ormai, l'importanza del teaming nell'ambito dei test della Cyber-Security per le applicazioni web,. non esiste team più grande. completo di Internet. Inoltre rendere un'applicazione sicura  serve non solo.  garantire l' ottima qualità del servizio bancario offerto, ma anche. tenere al sicuro dati personali. beni monetari di migliaia di persone; in altr parole, il Web Application Testing non. solo un lavoro, ma una missione.
+
+Sebbene sia sicura dell'alto servizio offerto di sicurezza. protezione dei dati personali, \emph{HBS-society}. consapevole che il processo di messa in sicurezza di una WebApp. in continua evoluzione. non di facile gestione,. che potrebbero esistere nuove buone idee, alcune delle quali ancora non valutate.
+
+Questa. la ragione del Bug Bounty Program. dare la possibilità. chiunque, \emph{LEGALMENTE}, di comunicarci la sua nuova buona idea che noi non abbiamo preso in considerazione. Questo programma. esteso SOLO alle pagine. ai server Web che implementino il sistema HBS (non viene esteso al backend della banca). Riceveranno una ricompensa tutti coloro che, in modo regolare. non dannoso per alcun software. hardware, ci inviino il report di una falla nella sicurezza dei nostri sistemi. un eventuale \emph{Bug fix suggest}.
