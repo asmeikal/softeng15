@@ -1,10 +1,10 @@
 
 \section{Sicurezza del Sistema}
 
-Le problematiche legate alla sicurezza del sistema sono in primo piano nel sistema HBS.
+Le possibili problematiche legate alla sicurezza del sistema sono in primo piano nel sistema HBS.
 Nel documento dei requisiti un'intera sezione dei requisiti non funzionali (sez.~\ref{req:sec:utente:non-funzionali:sicurezza}) è incentrata sui requisiti di sicurezza.
 
-Riprendiamo il diagramma in tabella \ref{tab:security-guidelines} da \cite[p.~381]{sommerville}.
+Riprendiamo il diagramma in tabella \ref{tab:security-guidelines} da \cite[p.~381]{sommerville}, su cui vengono basate le considerazioni a seguire.
 
 \begin{table}[h]
 \resizebox{1\textwidth}{!}{\begin{minipage}{\textwidth}
@@ -37,39 +37,3 @@ Riprendiamo il diagramma in tabella \ref{tab:security-guidelines} da \cite[p.~38
 \end{table}
 
 \input{analisi-sistema/sicurezza-luigi.tex}
-
-Le seguenti considerazioni si applicano alle linee guida nel caso di HBS:
-\begin{enumerate}
-	% policy
-	\item ok;
-
-	% single point of failure
-	\item ok;
-
-	% fail secure
-	\item ok;
-
-	% usability
-	\item i requisiti di sicurezza del sistema sono ampiamente più importanti dei requisiti di usabilità.
-	I requisiti di usabilità restano comunque presenti nel sistema in questione;
-
-	% logging
-	\item la funzionalità di logging è prevista dal requisito non funzionale~\ref{req:itm:utente:non-funzionali:logging}, sez.~\ref{req:sec:utente:non-funzionali} del documento dei requisiti;
-
-	% ridondanza
-	\item ok;
-
-	% input validation
-	\item ok;
-
-	% assert compartmentalization
-	\item ok;
-
-	% design for deployment
-	\item ok;
-
-	% design for recoverability
-	\item ok.
-\end{enumerate}
-
-\subsection{Policy di Sicurezza per HBS}
