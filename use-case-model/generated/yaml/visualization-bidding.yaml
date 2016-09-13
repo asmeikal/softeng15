@@ -15,9 +15,13 @@ pre:
     'Almeno una regola di bidding \`e stata definita.'
 flow:
     '\begin{enumerate}
-        \item Il manager seleziona una regola di bidding definita in HBS;
+        \item Il manager seleziona la sezione di visualizzazione delle regole di bidding definite;
+
+        \item il manager seleziona una regola di bidding;
+
         \item il sistema di HBS realizza una visualizzazione della regola di bidding;
-        \item la visualizzazione prodotta viene mostrata al manager nel browser.
+
+        \item la visualizzazione prodotta viene mostrata al manager nel client.
     \end{enumerate}'
 post:
     'Nessuna'

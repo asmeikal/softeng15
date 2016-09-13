@@ -11,10 +11,18 @@ pre:
     'Nessuna.'
 flow:
     '\begin{enumerate}
-        \item Il manager seleziona una tipologia di bidding (carte di credito, conto corrente, prestito);
+        \item Il manager seleziona la pagina di creazione dei bid;
+
+        \item il manager seleziona una tipologia di bidding (carte di credito, conto corrente, prestito) per cui desidera impostare i parametri di scelta;
+
+        \item il sistema presenta la schermata di scelta dei parametri di bid;
+
         \item \label{itm:uc:CREABID:parametro} il manager seleziona un parametro di scelta;
+
         \item il manager imposta i range di approvazione automatica, approvazione condizionata, e rifiuto automatico sul parametro scelto;
+
         \item opzionalmente, il manager torna al punto \ref{itm:uc:CREABID:parametro};
+
         \item il manager inserisce la regola di bidding creata.
     \end{enumerate}'
 post:

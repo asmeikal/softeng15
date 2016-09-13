@@ -11,7 +11,9 @@ pre:
     'Le operazioni veloci sono state abilitate dal manager della banca.'
 flow:
     '\begin{enumerate}
-        \item Il dipendente specifica il nome dell''operazione veloce;
+        \item Il dipendente seleziona la pagina di creazione delle operazioni veloce;
+
+        \item il dipendente specifica il nome dell''operazione veloce;
 
         \item il dipendente seleziona il tipo di operazione tradizionale in cui l''operazione veloce deve essere convertita;
 

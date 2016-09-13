@@ -11,7 +11,11 @@ pre:
     'Il cliente della banca non \`e registrato a HBS, ossia non \`e un cliente di HBS.'
 flow:
     '\begin{enumerate}
-        \item Il cliente della banca inserisce il proprio codice fiscale e il proprio numero di conto corrente nella pagina di iscrizione;
+        \item Il cliente della banca visita la pagina per l''iscrizione;
+
+        \item il cliente della banca inserisce il proprio codice fiscale e il proprio numero di conto corrente nella pagina di iscrizione;
+
+        \item il cliente invia le informazioni al sistema di HBS;
 
         \item il sistema prende in carico la richiesta di iscrizione.
     \end{enumerate}'

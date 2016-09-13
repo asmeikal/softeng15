@@ -13,15 +13,19 @@ pre:
     'Il cliente di HBS ha i permessi per effettuare operazioni dal conto corrente selezionato.'
 flow:
     '\begin{enumerate}
-        \item Il cliente di HBS seleziona il tipo di operazione da effettuare (bonifico, bonifico SEPA, etc);
+        \item Il cliente seleziona la pagina relativa all''invio di operazioni;
+
+        \item il cliente di HBS seleziona il tipo di operazione da effettuare (bonifico, bonifico SEPA, etc);
+
+        \item il sistema presenta al cliente il form da compilare per effettuare le operazioni;
 
         \item il cliente compila i campi necessari per effettuare l''operazione (somma di denaro, data di valuta dell''operazione, conto corrente del destinatario, etc);
 
         \item il cliente invia il form compilato al sistema di HBS;
 
-        \item il sistema di HBS richiede OTP al cliente di HBS;
+        \item il sistema di HBS richiede OTP al cliente di HBS tramite apposito form;
 
-        \item \label{itm:dispag:last} il cliente inserisce la OTP;
+        \item \label{itm:dispag:last} il cliente inserisce e invia la OTP al sistema;
 
         \item \label{itm:conferma} il sistema conferma la presa in carico dell''operazione da parte del back-end della banca.
     \end{enumerate}'

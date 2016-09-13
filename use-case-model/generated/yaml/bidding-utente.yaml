@@ -11,7 +11,11 @@ pre:
     'Il sistema di bidding \`e stato attivato dalla banca.'
 flow:
     '\begin{enumerate}
+        \item L''utente seleziona la pagina di bidding;
+
         \item l''utente seleziona l''oggetto per cui desidera fare bid fra quelli per cui l''istituto permette operazioni di bid;
+
+        \item il sistema presenta la pagina per l''inserimento dei parametri di bid;
        
         \item l''utente specifica i parametri del proprio bid;
 

@@ -11,7 +11,11 @@ pre:
     'Almeno una tipologia di operazione veloce \`e stata configurata dai dipendenti della banca.'
 flow:
     '\begin{enumerate}
-        \item L''utente seleziona la tipologia di operazione veloce che desidera effettuare;
+        \item L''utente visita la pagina per la disposizione di operazioni veloci;
+
+        \item l''utente seleziona la tipologia di operazione veloce che desidera effettuare fra quelle disponibili;
+
+        \item il sistema presenta all''utente la pagina per l''inserimento dei parametri dell''operazione veloce;
 
         \item l''utente inserisce i parametri richiesti dall''operazione veloce;
 
@@ -19,7 +23,7 @@ flow:
 
         \item \label{itm:DISOPVEL:validazione} il sistema di HBS valida e traduce l''operazione veloce in operazione ordinaria;
 
-        \item il sistema di HBS richiede la OTP al cliente di HBS;
+        \item il sistema di HBS richiede la OTP al cliente di HBS tramite l''apposita pagina;
 
         \item \label{itm:DISOPVEL:conferma-cliente} il cliente di HBS invia al sistema la OTP;
 
