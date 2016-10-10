@@ -68,7 +68,15 @@ Per visualizzare gli insiemi di bid approvati automaticamente e di bid soggetti 
 
 \begin{figure}
 \centering
-	\begin{tikzpicture}
+	\begin{tikzpicture}[
+		dot/.style = {
+			draw,
+			fill = white,
+			circle,
+			inner sep = 0pt,
+			minimum size = 4pt
+		}
+	]
 		\begin{axis}[
 			ticks=none,
 			domain=0:11,
@@ -93,6 +101,7 @@ Per visualizzare gli insiemi di bid approvati automaticamente e di bid soggetti 
 		    \addplot[name = a4, green, dashed] {3 * x - 18};
 		    \addplot [green, thick, fill=green!20] coordinates
 		    	{(2.5,7) (8.3,7) (6.4,1.2) (4,0) (0,0) (0,2) (2.5, 7)};
+		   	\node [dot, label = {below:6 EUR/mese, 3000 EUR/mese}] at (axis cs:5,7) {};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Un esempio di visualizzazione di bidding: confronto fra spesa massima mensile di una carta di credito e costo di mantenimento della stessa.}
