@@ -36,4 +36,10 @@ Resources/*
 !design-sistema
 
 !test-plan
+!test-plan/*.py
+!test-plan/README.md
+!test-plan/generated
+!test-plan/generated/yaml
+!test-plan/generated/templates
+!test-plan/generated/yaml/*.yaml
 

@@ -1,0 +1,9 @@
+title: 'Titolo'
+mnemo: 'MNEMO'
+
+preconditions:
+    'preconditions'
+description:
+    'description'
+action:
+    'action'
