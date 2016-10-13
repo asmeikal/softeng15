@@ -1,0 +1,24 @@
+
+title: 'Accesso Clienti'
+mnemo: 'CLIACC'
+type: 'Funzionale'
+priority: 'Alta'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'I clienti della banca che abbia adottato HBS devono poter accedere al sistema tramite web browser, utilizzando le credenziali fornite al momento dell''iscrizione.'
+origin:
+    'Requisiti funzionali impliciti.'
+input:
+    'Credenziali di accesso dell''utente.'
+output:
+    'Indicatore di successo della procedura di accesso al sistema.'
+action:
+    'Il sistema di HBS verifica le credenziali fornite dall''utente, e permette o rifiuta l''accesso all''utente.'
+pre:
+    'Nessuna.'
+post:
+    'Nessuna.'
+side:
+    'Nessuno.'
+

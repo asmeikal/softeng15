@@ -12,6 +12,7 @@ Resources/*
 !Images/**
 !Images/**/*.svg
 !Images/**/*.eps
+Images/**/*.pdf
 
 !piano-progetto/
 

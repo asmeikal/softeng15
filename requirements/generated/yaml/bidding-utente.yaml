@@ -15,7 +15,7 @@ input:
 output:
     'Descrizione del successo del bid, ossia indicatore di approvazione, presa in carico dal management, o rifiuto della proposta.'
 action:
-    'Per ogni regola di bidding relativa all''oggetto in questione (conto corrente, carta di credito o prestito), il.sistema controlla che questa non rifiuti il bid ricevuto dall''utente.
+    'Per ogni regola di bidding relativa all''oggetto in questione (conto corrente, carta di credito o prestito), il sistema controlla che questa non rifiuti il bid ricevuto dall''utente.
     Se almeno una regola rifiuta il bid, questo viene rifiutato.
     Se tutte le regole approvano il bid, questo viene approvato.
     Se nessuna regola rifiuta il bid e non tutte le regole approvano il bid,

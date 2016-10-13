@@ -1,0 +1,24 @@
+
+title: 'Approvazione cliente pre-registrato'
+mnemo: 'APPRCORR'
+type: 'Funzionale'
+priority: 'Alta'
+
+# un apostrofo singolo (') viene inserito con due apostrofi: ('')
+description:
+    'I dipendenti della banca devono poter approvare o rifiutare la pre-registrazione effettuata da un cliente della banca dopo aver verificato i dati forniti nella procedura di pre-registrazione.'
+origin:
+    'Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:iscrizione}).'
+input:
+    'Un cliente di HBS pre-registrato ma non ancora approvato, e un''azione fra ``approva'''' e ``rifiuta''''.'
+output:
+    'Indicatore di successo dell''operazione.'
+action:
+    'In caso l''azione sia ``approva'''', il cliente pre-registrato viene promosso a cliente registrato. In caso l''azione sia ``rifiuta'''', il cliente pre-registrato viene rimosso dal sistema.'
+pre:
+    'Precondizioni.'
+post:
+    'Postcondizioni.'
+side:
+    'Side effects.'
+
