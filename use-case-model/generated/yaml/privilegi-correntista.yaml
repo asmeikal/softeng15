@@ -1,0 +1,26 @@
+title: 'Gestione Privilegi Correntista'
+mnemo: 'PRIVCORR'
+
+actors:
+    'Dipendente della banca, cliente della banca.'
+origin:
+    'Requisiti funzionali (reqisito di sistema \idPRIVCORR).'
+description:
+    'description'
+pre:
+    'preconditions'
+flow:
+    'use case flow'
+post:
+    'postconditions'
+side:
+    'side effects'
+
+# the following are optional
+alt-flow:
+    'alternative flow'
+alt-post:
+    'alternative post conditions'
+alt-side:
+    'alternative side effects'
+

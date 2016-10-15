@@ -1,10 +1,70 @@
-\subsection{\code{UC\_1} - Visualizzazione Bidding }
+\subsection{\code{UC\_1} - Titolo }
+\label{sec:use-case:MNEMO}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Titolo (\code{UC\_MNEMO\_1})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		description
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		actors
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		origin
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		preconditions
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		use case flow
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		postconditions
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		side effects
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		alternative flow
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		alternative post conditions
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		alternative side effects
+}
+\end{ptable}
+
+\subsection{\code{UC\_2} - Visualizzazione Bidding }
 \label{sec:use-case:BIDVIS}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Visualizzazione Bidding (\code{UC\_BIDVIS\_1})
+	Visualizzazione Bidding (\code{UC\_BIDVIS\_2})
 }
 \pline
 \ptitle{Descrizione use case}
@@ -46,13 +106,13 @@
 }
 \end{ptable}
 
-\subsection{\code{UC\_2} - Disposizione di Pagamento }
+\subsection{\code{UC\_3} - Disposizione di Pagamento }
 \label{sec:use-case:DISPAG}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Disposizione di Pagamento (\code{UC\_DISPAG\_2})
+	Disposizione di Pagamento (\code{UC\_DISPAG\_3})
 }
 \pline
 \ptitle{Descrizione use case}
@@ -115,44 +175,42 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 }
 \end{ptable}
 
-\subsection{\code{UC\_3} - Creazione Bidding }
-\label{sec:use-case:CREABID}
+\subsection{\code{UC\_4} - Creazione Operazione Veloce }
+\label{sec:use-case:CROPVEL}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Creazione Bidding (\code{UC\_CREABID\_3})
+	Creazione Operazione Veloce (\code{UC\_CROPVEL\_4})
 }
 \pline
 \ptitle{Descrizione use case}
 \pcell{1}{
-		Un manager della banca pu\`o creare una regola di bidding.
+		I dipendenti della banca devono poter creare delle operazioni veloci specificando il metodo di traduzione dei parametri delle operazioni veloci nei parametri dell'operazione tradizionale corrispondente.
 }
 \pline
 \ptitle{Attori}
 \pcell{1}{
-		Manager della banca.
+		Dipendente della banca.
 }
 \pline
 \ptitle{Origine}
 \pcell{1}{
-		Requisiti funzionali (requisito di sistema \idCREABID).
+		Requisiti funzionali (requisito di sistema \idCROPVEL, sez.~\ref{req:sec:sistema:funzionali:CROPVEL} del documento dei requisiti).
 }
 \pline
 \ptitle{Pre-condizioni}
 \pcell{1}{
-		Nessuna.
+		Le operazioni veloci sono state abilitate dal manager della banca.
 }
 \pline
 \ptitle{Flusso}
 \pcell{1}{
-		\begin{enumerate} \item Il manager seleziona la pagina di creazione dei bid;
-\item il manager seleziona una tipologia di bidding (carte di credito, conto corrente, prestito) per cui desidera impostare i parametri di scelta;
-\item il sistema presenta la schermata di scelta dei parametri di bid;
-\item \label{itm:uc:CREABID:parametro} il manager seleziona un parametro di scelta;
-\item il manager imposta i range di approvazione automatica, approvazione condizionata, e rifiuto automatico sul parametro scelto;
-\item opzionalmente, il manager torna al punto \ref{itm:uc:CREABID:parametro};
-\item il manager inserisce la regola di bidding creata. \end{enumerate}
+		\begin{enumerate} \item Il dipendente seleziona la pagina di creazione delle operazioni veloce;
+\item il dipendente specifica il nome dell'operazione veloce;
+\item il dipendente seleziona il tipo di operazione tradizionale in cui l'operazione veloce deve essere convertita;
+\item per ciascun parametro dell'operazione tradizionale il dipendente specifica un parametro dell'operazione veloce con relativo dominio e meccanismo (algoritmo) di traduzione, o una costante;
+\item \label{itm:CROPVEL:last} il dipendente salva l'operazione veloce. \end{enumerate}
 }
 \pline
 \ptitle{Post-condizioni}
@@ -162,12 +220,12 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 \pline
 \ptitle{Side effects}
 \pcell{1}{
-		La regola di bidding realizzata \`e stata aggiunta al sistema di HBS.
+		L'operazione veloce creata dal dipendente della banca \`e stata memorizzata nel sistema di HBS.
 }
 \pline
 \ptitle{Flusso alternativo}
 \pcell{1}{
-		In qualsiasi punto del workflow il manager pu\`o annullare l'operazione.
+		Prima del punto~\ref{itm:CROPVEL:last} il dipendente pu\`o annullare l'operazione senza provocare cambiamenti al sistema.
 }
 \pline
 \ptitle{Post-condizioni alternative}
@@ -181,18 +239,18 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 }
 \end{ptable}
 
-\subsection{\code{UC\_4} - Disposizione Operazione Veloce }
-\label{sec:use-case:DISOPVEL}
+\subsection{\code{UC\_5} - Accesso Clienti }
+\label{sec:use-case:CLIACC}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Disposizione Operazione Veloce (\code{UC\_DISOPVEL\_4})
+	Accesso Clienti (\code{UC\_CLIACC\_5})
 }
 \pline
 \ptitle{Descrizione use case}
 \pcell{1}{
-		Un cliente di HBS deve poter effettuare le operazioni veloci configurate dalla banca.
+		Un cliente di HBS che sia stato approvato dai dipendenti della banca deve poter accedere al sistema tramite web browser.
 }
 \pline
 \ptitle{Attori}
@@ -202,27 +260,17 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 \pline
 \ptitle{Origine}
 \pcell{1}{
-		Requisiti funzionali (requisito di sistema \idDISOPVEL, sez.~\ref{req:sec:sistema:funzionali:DISOPVEL} del documento dei requisiti).
+		Requisiti funzionali (requisito di sistema \idCLIACC).
 }
 \pline
 \ptitle{Pre-condizioni}
 \pcell{1}{
-		Almeno una tipologia di operazione veloce \`e stata configurata dai dipendenti della banca.
+		Il cliente di HBS \`e stato approvato dai dipendenti della banca.
 }
 \pline
 \ptitle{Flusso}
 \pcell{1}{
-		\begin{enumerate} \item L'utente visita la pagina per la disposizione di operazioni veloci;
-\item l'utente seleziona la tipologia di operazione veloce che desidera effettuare fra quelle disponibili;
-\item il sistema presenta all'utente la pagina per l'inserimento dei parametri dell'operazione veloce;
-\item l'utente inserisce i parametri richiesti dall'operazione veloce;
-\item l'utente invia l'operazione veloce al sistema di HBS;
-\item \label{itm:DISOPVEL:validazione} il sistema di HBS valida e traduce l'operazione veloce in operazione ordinaria;
-\item il sistema di HBS richiede la OTP al cliente di HBS tramite l'apposita pagina;
-\item \label{itm:DISOPVEL:conferma-cliente} il cliente di HBS invia al sistema la OTP;
-\item \label{itm:DISOPVEL:otp} il sistema di HBS valida la OTP;
-\item \label{itm:DISOPVEL:back-end} il sistema di HBS invia l'operazione ordinaria risultante dalla traduzione dell'operazione veloce al sistema di OBP;
-\item il sistema di HBS restituisce all'utente conferma dell'avenuta presa in carico da parte del back-end della banca dell'operazione ordinaria corrispondente all'operazione veloce richiesta. \end{enumerate}
+		\begin{enumerate} \item L'utente naviga fino alla pagina di accesso a HBS della sua banca utilizzando un web browser; \item la pagina di accesso richiede identificativo utente e password di accesso; \item \label{itm:CLIACC:invio-credenziali} l'utente inserisce identificativo e password e preme il pulsante di invio; \item identificativo e password sono inviati al sistema di HBS tramite connessione sicura; \item \label{itm:CLIACC:controllo-credenziali} identificativo e password vengono confrontati con i valori memorizzati nel database di HBS; \item il sistema di HBS redireziona il browser del cliente alla pagina principale di HBS. \end{enumerate}
 }
 \pline
 \ptitle{Post-condizioni}
@@ -232,12 +280,12 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 \pline
 \ptitle{Side effects}
 \pcell{1}{
-		L'operazione ordinaria corrispondente all'operazione veloce richiesta dall'utente \`e stata presa in carico correttamente dal back-end della banca.
+		Nessuno.
 }
 \pline
 \ptitle{Flusso alternativo}
 \pcell{1}{
-		Il cliente di HBS pu\`o interrompere l'operazione in qualunque momento prima del punto~\ref{itm:DISOPVEL:conferma-cliente} senza produrre risultati. Il sistema pu\`o restituire un errore ai punti~\ref{itm:DISOPVEL:validazione}, \ref{itm:DISOPVEL:otp} e \ref{itm:DISOPVEL:back-end}, nel caso in cui, rispettivamente, i parametri dell'operazione veloce non siano validi, la OTP non sia valida, e il back-end rifiuti l'operazione ordinaria risultante. In questo caso non viene prodotto alcun risultato e l'utente visualizza una pagina di errore.
+		In qualsiasi momento prima del punto \ref{itm:CLIACC:invio-credenziali} l'utente pu\`o interrompere l'operazione senza inviare alcuna informazione alla banca. Qualora le informazioni ricevute da HBS al punto \ref{itm:CLIACC:controllo-credenziali} non corrispondano con le informazioni memorizzate nel database di HBS, il sistema redireziona l'utente ad una pagina di errore.
 }
 \pline
 \ptitle{Post-condizioni alternative}
@@ -247,55 +295,7 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 \pline
 \ptitle{Side effects alternativi}
 \pcell{1}{
-		Nessuno.
-}
-\end{ptable}
-
-\subsection{\code{UC\_5} - Iscrizione Correntista }
-\label{sec:use-case:ISCRCORR}
-
-\begin{ptable}{2}
-\ptitle{Titolo}
-\pcell{1}{
-	Iscrizione Correntista (\code{UC\_ISCRCORR\_5})
-}
-\pline
-\ptitle{Descrizione use case}
-\pcell{1}{
-		Un cliente della banca non registrato ad HBS deve poter effettuare la pre-registrazione in remoto.
-}
-\pline
-\ptitle{Attori}
-\pcell{1}{
-		Cliente della banca.
-}
-\pline
-\ptitle{Origine}
-\pcell{1}{
-		Requisiti funzionali (requisito di sistema \idISCRCORR, sez.~\ref{req:sec:sistema:funzionali:ISCRCORR} del documento dei requisiti).
-}
-\pline
-\ptitle{Pre-condizioni}
-\pcell{1}{
-		Il cliente della banca non \`e registrato a HBS, ossia non \`e un cliente di HBS.
-}
-\pline
-\ptitle{Flusso}
-\pcell{1}{
-		\begin{enumerate} \item Il cliente della banca visita la pagina per l'iscrizione;
-\item il cliente della banca inserisce il proprio codice fiscale e il proprio numero di conto corrente nella pagina di iscrizione;
-\item il cliente invia le informazioni al sistema di HBS;
-\item il sistema prende in carico la richiesta di iscrizione. \end{enumerate}
-}
-\pline
-\ptitle{Post-condizioni}
-\pcell{1}{
-		Nessuna.
-}
-\pline
-\ptitle{Side effects}
-\pcell{1}{
-		La richiesta di iscrizione \`e stata presa in carico dal sistema di HBS.
+		Nel caso in cui il testo al punto \ref{itm:CLIACC:controllo-credenziali} fallisca, il tentativo di accesso fallito viene memorizzato nei log di sicurezza.
 }
 \end{ptable}
 
@@ -364,42 +364,44 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 }
 \end{ptable}
 
-\subsection{\code{UC\_7} - Creazione Operazione Veloce }
-\label{sec:use-case:CROPVEL}
+\subsection{\code{UC\_7} - Creazione Bidding }
+\label{sec:use-case:CREABID}
 
 \begin{ptable}{2}
 \ptitle{Titolo}
 \pcell{1}{
-	Creazione Operazione Veloce (\code{UC\_CROPVEL\_7})
+	Creazione Bidding (\code{UC\_CREABID\_7})
 }
 \pline
 \ptitle{Descrizione use case}
 \pcell{1}{
-		I dipendenti della banca devono poter creare delle operazioni veloci specificando il metodo di traduzione dei parametri delle operazioni veloci nei parametri dell'operazione tradizionale corrispondente.
+		Un manager della banca pu\`o creare una regola di bidding.
 }
 \pline
 \ptitle{Attori}
 \pcell{1}{
-		Dipendente della banca.
+		Manager della banca.
 }
 \pline
 \ptitle{Origine}
 \pcell{1}{
-		Requisiti funzionali (requisito di sistema \idCROPVEL, sez.~\ref{req:sec:sistema:funzionali:CROPVEL} del documento dei requisiti).
+		Requisiti funzionali (requisito di sistema \idCREABID).
 }
 \pline
 \ptitle{Pre-condizioni}
 \pcell{1}{
-		Le operazioni veloci sono state abilitate dal manager della banca.
+		Nessuna.
 }
 \pline
 \ptitle{Flusso}
 \pcell{1}{
-		\begin{enumerate} \item Il dipendente seleziona la pagina di creazione delle operazioni veloce;
-\item il dipendente specifica il nome dell'operazione veloce;
-\item il dipendente seleziona il tipo di operazione tradizionale in cui l'operazione veloce deve essere convertita;
-\item per ciascun parametro dell'operazione tradizionale il dipendente specifica un parametro dell'operazione veloce con relativo dominio e meccanismo (algoritmo) di traduzione, o una costante;
-\item \label{itm:CROPVEL:last} il dipendente salva l'operazione veloce. \end{enumerate}
+		\begin{enumerate} \item Il manager seleziona la pagina di creazione dei bid;
+\item il manager seleziona una tipologia di bidding (carte di credito, conto corrente, prestito) per cui desidera impostare i parametri di scelta;
+\item il sistema presenta la schermata di scelta dei parametri di bid;
+\item \label{itm:uc:CREABID:parametro} il manager seleziona un parametro di scelta;
+\item il manager imposta i range di approvazione automatica, approvazione condizionata, e rifiuto automatico sul parametro scelto;
+\item opzionalmente, il manager torna al punto \ref{itm:uc:CREABID:parametro};
+\item il manager inserisce la regola di bidding creata. \end{enumerate}
 }
 \pline
 \ptitle{Post-condizioni}
@@ -409,12 +411,12 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 \pline
 \ptitle{Side effects}
 \pcell{1}{
-		L'operazione veloce creata dal dipendente della banca \`e stata memorizzata nel sistema di HBS.
+		La regola di bidding realizzata \`e stata aggiunta al sistema di HBS.
 }
 \pline
 \ptitle{Flusso alternativo}
 \pcell{1}{
-		Prima del punto~\ref{itm:CROPVEL:last} il dipendente pu\`o annullare l'operazione senza provocare cambiamenti al sistema.
+		In qualsiasi punto del workflow il manager pu\`o annullare l'operazione.
 }
 \pline
 \ptitle{Post-condizioni alternative}
@@ -425,6 +427,304 @@ Nel caso la OTP ricevuta dal sistema al punto~\ref{itm:conferma} non sia corrett
 \ptitle{Side effects alternativi}
 \pcell{1}{
 		Nessuno.
+}
+\end{ptable}
+
+\subsection{\code{UC\_8} - Titolo }
+\label{sec:use-case:MNEMO}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Titolo (\code{UC\_MNEMO\_8})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		description
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		actors
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		origin
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		preconditions
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		use case flow
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		postconditions
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		side effects
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		alternative flow
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		alternative post conditions
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		alternative side effects
+}
+\end{ptable}
+
+\subsection{\code{UC\_9} - Iscrizione Correntista }
+\label{sec:use-case:ISCRCORR}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Iscrizione Correntista (\code{UC\_ISCRCORR\_9})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		Un cliente della banca non registrato ad HBS deve poter effettuare la pre-registrazione in remoto.
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		Cliente della banca.
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		Requisiti funzionali (requisito di sistema \idISCRCORR, sez.~\ref{req:sec:sistema:funzionali:ISCRCORR} del documento dei requisiti).
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		Il cliente della banca non \`e registrato a HBS, ossia non \`e un cliente di HBS.
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		\begin{enumerate} \item Il cliente della banca visita la pagina per l'iscrizione;
+\item il cliente della banca inserisce il proprio codice fiscale e il proprio numero di conto corrente nella pagina di iscrizione;
+\item il cliente invia le informazioni al sistema di HBS;
+\item il sistema prende in carico la richiesta di iscrizione. \end{enumerate}
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		La richiesta di iscrizione \`e stata presa in carico dal sistema di HBS.
+}
+\end{ptable}
+
+\subsection{\code{UC\_10} - Approvazione cliente pre-registrato }
+\label{sec:use-case:APPRCORR}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Approvazione cliente pre-registrato (\code{UC\_APPRCORR\_10})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		Un cliente di HBS che abbia effettuato la pre-registrazione online e che non sia stato ancora confermato da un dipendente della banca pu\`o richiedere l'approvazione del proprio account presso una filiale della sua banca.
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		Dipendente della banca, cliente di HBS.
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		Requisiti funzionali (requisito di sistema \idAPPRCORR).
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		Il cliente di HBS si \`e pre-registrato ma non ha ancora ultimato l'iscrizione.
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		\begin{enumerate} \item Il cliente di HBS si reca presso una filiale della sua banca per ultimare la registrazione; \item il cliente di HBS fornisce ad un dipendente della banca le informazioni richieste dalla testa per verificarne l'identit\`a; \item il dipendente della banca coinvolto nell'interazione raggiunge la pagina di approvazione dei clienti tramite il software di HBS; \item \label{itm:APPROCORR:approvazione} il dipendente della banca approva l'iscrizione del cliente di HBS; \item il sistema genera un identificativo e una password per il cliente di HBS; \item identificativo e password vengono fornite in busta chiusa al cliente di HBS. \end{enumerate}
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		Il cliente di HBS risulta regolarmente iscritto.
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		Il cliente di HBS non appartiene pi\`u all'insieme dei clienti non ancora registrati.
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		Al punto \ref{itm:APPROCORR:approvazione} il dipendente della banca pu\`o non approvare l'iscrizione del cliente qualora le politiche di approvazione della banca non siano verificate.
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		Nessuno.
+}
+\end{ptable}
+
+\subsection{\code{UC\_11} - Disposizione Operazione Veloce }
+\label{sec:use-case:DISOPVEL}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Disposizione Operazione Veloce (\code{UC\_DISOPVEL\_11})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		Un cliente di HBS deve poter effettuare le operazioni veloci configurate dalla banca.
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		Cliente di HBS.
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		Requisiti funzionali (requisito di sistema \idDISOPVEL, sez.~\ref{req:sec:sistema:funzionali:DISOPVEL} del documento dei requisiti).
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		Almeno una tipologia di operazione veloce \`e stata configurata dai dipendenti della banca.
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		\begin{enumerate} \item L'utente visita la pagina per la disposizione di operazioni veloci;
+\item l'utente seleziona la tipologia di operazione veloce che desidera effettuare fra quelle disponibili;
+\item il sistema presenta all'utente la pagina per l'inserimento dei parametri dell'operazione veloce;
+\item l'utente inserisce i parametri richiesti dall'operazione veloce;
+\item l'utente invia l'operazione veloce al sistema di HBS;
+\item \label{itm:DISOPVEL:validazione} il sistema di HBS valida e traduce l'operazione veloce in operazione ordinaria;
+\item il sistema di HBS richiede la OTP al cliente di HBS tramite l'apposita pagina;
+\item \label{itm:DISOPVEL:conferma-cliente} il cliente di HBS invia al sistema la OTP;
+\item \label{itm:DISOPVEL:otp} il sistema di HBS valida la OTP;
+\item \label{itm:DISOPVEL:back-end} il sistema di HBS invia l'operazione ordinaria risultante dalla traduzione dell'operazione veloce al sistema di OBP;
+\item il sistema di HBS restituisce all'utente conferma dell'avenuta presa in carico da parte del back-end della banca dell'operazione ordinaria corrispondente all'operazione veloce richiesta. \end{enumerate}
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		L'operazione ordinaria corrispondente all'operazione veloce richiesta dall'utente \`e stata presa in carico correttamente dal back-end della banca.
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		Il cliente di HBS pu\`o interrompere l'operazione in qualunque momento prima del punto~\ref{itm:DISOPVEL:conferma-cliente} senza produrre risultati. Il sistema pu\`o restituire un errore ai punti~\ref{itm:DISOPVEL:validazione}, \ref{itm:DISOPVEL:otp} e \ref{itm:DISOPVEL:back-end}, nel caso in cui, rispettivamente, i parametri dell'operazione veloce non siano validi, la OTP non sia valida, e il back-end rifiuti l'operazione ordinaria risultante. In questo caso non viene prodotto alcun risultato e l'utente visualizza una pagina di errore.
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		Nessuna.
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		Nessuno.
+}
+\end{ptable}
+
+\subsection{\code{UC\_12} - Titolo }
+\label{sec:use-case:MNEMO}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Titolo (\code{UC\_MNEMO\_12})
+}
+\pline
+\ptitle{Descrizione use case}
+\pcell{1}{
+		description
+}
+\pline
+\ptitle{Attori}
+\pcell{1}{
+		actors
+}
+\pline
+\ptitle{Origine}
+\pcell{1}{
+		origin
+}
+\pline
+\ptitle{Pre-condizioni}
+\pcell{1}{
+		preconditions
+}
+\pline
+\ptitle{Flusso}
+\pcell{1}{
+		use case flow
+}
+\pline
+\ptitle{Post-condizioni}
+\pcell{1}{
+		postconditions
+}
+\pline
+\ptitle{Side effects}
+\pcell{1}{
+		side effects
+}
+\pline
+\ptitle{Flusso alternativo}
+\pcell{1}{
+		alternative flow
+}
+\pline
+\ptitle{Post-condizioni alternative}
+\pcell{1}{
+		alternative post conditions
+}
+\pline
+\ptitle{Side effects alternativi}
+\pcell{1}{
+		alternative side effects
 }
 \end{ptable}
 

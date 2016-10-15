@@ -1,0 +1,33 @@
+title: 'Approvazione cliente pre-registrato'
+mnemo: 'APPRCORR'
+
+actors:
+    'Dipendente della banca, cliente di HBS.'
+origin:
+    'Requisiti funzionali (requisito di sistema \idAPPRCORR).'
+description:
+    'Un cliente di HBS che abbia effettuato la pre-registrazione online e che non sia stato ancora confermato da un dipendente della banca pu\`o richiedere l''approvazione del proprio account presso una filiale della sua banca.'
+pre:
+    'Il cliente di HBS si \`e pre-registrato ma non ha ancora ultimato l''iscrizione.'
+flow:
+    '\begin{enumerate}
+        \item Il cliente di HBS si reca presso una filiale della sua banca per ultimare la registrazione;
+        \item il cliente di HBS fornisce ad un dipendente della banca le informazioni richieste dalla testa per verificarne l''identit\`a;
+        \item il dipendente della banca coinvolto nell''interazione raggiunge la pagina di approvazione dei clienti tramite il software di HBS;
+        \item \label{itm:APPROCORR:approvazione} il dipendente della banca approva l''iscrizione del cliente di HBS;
+        \item il sistema genera un identificativo e una password per il cliente di HBS;
+        \item identificativo e password vengono fornite in busta chiusa al cliente di HBS.
+    \end{enumerate}'
+post:
+    'Il cliente di HBS risulta regolarmente iscritto.'
+side:
+    'Il cliente di HBS non appartiene pi\`u all''insieme dei clienti non ancora registrati.'
+
+# the following are optional
+alt-flow:
+    'Al punto \ref{itm:APPROCORR:approvazione} il dipendente della banca pu\`o non approvare l''iscrizione del cliente qualora le politiche di approvazione della banca non siano verificate.'
+alt-post:
+    'Nessuna.'
+alt-side:
+    'Nessuno.'
+

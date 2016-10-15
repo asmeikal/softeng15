@@ -1,0 +1,34 @@
+title: 'Accesso Clienti'
+mnemo: 'CLIACC'
+
+actors:
+    'Cliente di HBS.'
+origin:
+    'Requisiti funzionali (requisito di sistema \idCLIACC).'
+description:
+    'Un cliente di HBS che sia stato approvato dai dipendenti della banca deve poter accedere al sistema tramite web browser.'
+pre:
+    'Il cliente di HBS \`e stato approvato dai dipendenti della banca.'
+flow:
+    '\begin{enumerate}
+        \item L''utente naviga fino alla pagina di accesso a HBS della sua banca utilizzando un web browser;
+        \item la pagina di accesso richiede identificativo utente e password di accesso;
+        \item \label{itm:CLIACC:invio-credenziali} l''utente inserisce identificativo e password e preme il pulsante di invio;
+        \item identificativo e password sono inviati al sistema di HBS tramite connessione sicura;
+        \item \label{itm:CLIACC:controllo-credenziali} identificativo e password vengono confrontati con i valori memorizzati nel database di HBS;
+        \item il sistema di HBS redireziona il browser del cliente alla pagina principale di HBS.
+    \end{enumerate}'
+post:
+    'Nessuna.'
+side:
+    'Nessuno.'
+
+# the following are optional
+alt-flow:
+    'In qualsiasi momento prima del punto \ref{itm:CLIACC:invio-credenziali} l''utente pu\`o interrompere l''operazione senza inviare alcuna informazione alla banca.
+    Qualora le informazioni ricevute da HBS al punto \ref{itm:CLIACC:controllo-credenziali} non corrispondano con le informazioni memorizzate nel database di HBS, il sistema redireziona l''utente ad una pagina di errore.'
+alt-post:
+    'Nessuna.'
+alt-side:
+    'Nel caso in cui il testo al punto \ref{itm:CLIACC:controllo-credenziali} fallisca, il tentativo di accesso fallito viene memorizzato nei log di sicurezza.'
+
