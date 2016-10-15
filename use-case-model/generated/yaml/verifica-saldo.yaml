@@ -1,26 +1,34 @@
-title: 'Titolo'
-mnemo: 'MNEMO'
+title: 'Verifica Saldo'
+mnemo: 'VERSAL'
 
 actors:
-    'actors'
+    'Cliente di HBS.'
 origin:
-    'origin'
+    'Requisiti funzionali (requisito di sistema \idVERSAL).'
 description:
-    'description'
+    'Un cliente di HBS deve poter verificare il saldo contabile, attuale e liquido dei suoi conti correnti.'
 pre:
-    'preconditions'
+    'Nessuna.'
 flow:
-    'use case flow'
+    '\begin{enumerate}
+        \item Il cliente di HBS naviga fino alla pagina di gestione dei conti correnti, dopo aver effettuato il login;
+
+        \item il cliente di HBS seleziona un conto corrente fra quelli che possiede presso la banca;
+
+        \item il sistema calcola saldo contabile, attuale e liquido per il conto corrente selezionato;
+
+        \item l''informazione calcolata viene mostrata al cliente di HBS.
+    \end{enumerate}'
 post:
-    'postconditions'
+    'Nessuno.'
 side:
-    'side effects'
+    'Nessuno.'
 
 # the following are optional
-alt-flow:
-    'alternative flow'
-alt-post:
-    'alternative post conditions'
-alt-side:
-    'alternative side effects'
+#alt-flow:
+#    'alternative flow'
+#alt-post:
+#    'alternative post conditions'
+#alt-side:
+#    'alternative side effects'
 

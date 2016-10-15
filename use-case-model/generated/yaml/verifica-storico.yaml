@@ -1,26 +1,31 @@
-title: 'Titolo'
-mnemo: 'MNEMO'
+title: 'Verifica Storico'
+mnemo: 'VERSTOR'
 
 actors:
-    'actors'
+    'Cliente di HBS.'
 origin:
-    'origin'
+    'Requisiti funzionali (requisito di sistema \idVERSTOR).'
 description:
-    'description'
+    'Un cliente di HBS deve poter visualizzare lo storico delle operazioni effettuate dal suo conto corrente in una finestra temporale da lui specificata.'
 pre:
-    'preconditions'
+    'Nessua.'
 flow:
-    'use case flow'
+    '\begin{enumerate}
+        \item Il cliente di HBS naviga alla pagina di gestione dello storico dopo aver effettuato il login al sistema;
+        \item il cliente di HBS seleziona un conto corrente fra quelli che possiede presso l''istituto, e specifica un periodo di riferimento per cui desidera ottenere l''elenco delle operazioni effettuate;
+        \item il cliente di HBS invia i parametri specificati al sistema;
+        \item il sistema recupera le informazioni richieste e le mostra al cliente.
+    \end{enumerate}'
 post:
-    'postconditions'
+    'Nessuna.'
 side:
-    'side effects'
+    'Nessuno.'
 
 # the following are optional
-alt-flow:
-    'alternative flow'
-alt-post:
-    'alternative post conditions'
-alt-side:
-    'alternative side effects'
+#alt-flow:
+#    'alternative flow'
+#alt-post:
+#    'alternative post conditions'
+#alt-side:
+#    'alternative side effects'
 
