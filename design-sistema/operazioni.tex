@@ -1,7 +1,19 @@
 
 \section{Interazione con OBP}
 
-L'interfaccia di OBP è una interfaccia RESTful\footnote{L'interfaccia di OBP, in realtà, è in sola lettura. Estendiamo il suo funzionamento anche alla scrittura (inserimento di informazioni nel back-end), poiché l'estensione delle sue funzionalità in questo senso è, almeno logicamente, immediata.}, in cui i dati vengono trasmessi in formato json, e l'autenticazione è gestita tramite protocollo OAuth.
+L'interfaccia di OBP è una interfaccia RESTful\footnote{L'interfaccia di OBP, in realtà, è in sola lettura. Estendiamo il suo funzionamento anche alla scrittura (inserimento di informazioni nel back-end), poiché l'estensione delle sue funzionalità in questo senso è, almeno logicamente, immediata.}, in cui i dati vengono trasmessi in formato json, e l'autenticazione è gestita tramite protocollo OAuth\cite{oauthrfc} (versione 1.0, prima revisione).
+
+Il protocollo OAuth si basa sul modello client/server, e permette al client di accedere ad una risorsa protetta situata sul server e di propriet\`a di una terza entit\`a senza che questa (detta ``proprietario della risorsa'') debba condividere le proprie credenziali di accesso al server con il client.
+
+In OBP i ruoli sono ripartiti nel seguente modo:
+\begin{description}
+	\item[Client] un'applicazione di terze parti che desideri accedere in lettura o in scrittura ai conti correnti presso la filiale (come il sistema HBS);
+	\item[Server] l'API di OBP (e il back-end della banca soggiacente);
+	\item[Resource owner] un correntista presso la banca iscritto a HBS;
+	\item[Protected resource] un conto corrente di un correntista presso la banca;
+	\item[Credentials] le credenziali di accesso alla banca del correntista;
+	\item[Token] identificativo univoco fornito dal server al client.
+\end{description}
 
 Inserire un'operazione bancaria nel back-end della banca avviene con il seguente messaggio:
 \begin{lstlisting}[basicstyle=\ttfamily]
