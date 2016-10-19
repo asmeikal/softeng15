@@ -15,6 +15,16 @@ In OBP i ruoli sono ripartiti nel seguente modo:
 	\item[Token] identificativo univoco fornito dal server al client.
 \end{description}
 
+In HBS il token per l'accesso ad un account del back-end della banca viene creato alla registrazione dell'utente, e associato all'account HBS del cliente.
+La procedura per l'ottenimento del token \`e illustrata in figura \ref{fig:oauth:token}.
+
+\begin{figure*}[h]
+    \centering
+	\includegraphics[width=\textwidth]{Images/Ottenimento_Token.eps}
+    \caption{Diagramma di comunicazione illustrante la procedura per l'ottenimento del token.}
+    \label{fig:oauth:token}
+\end{figure*}
+
 Inserire un'operazione bancaria nel back-end della banca avviene con il seguente messaggio:
 \begin{lstlisting}[basicstyle=\ttfamily]
 POST /accounts/[ACCOUNT_ID]/transactions HTTP/1.1

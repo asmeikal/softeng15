@@ -1,7 +1,9 @@
 
-\section{Struttura Fisica del Sistema di HBS}
+\section{Architettura di HBS}
 
-In figura~\ref{fig:physical-view} viene illustrata la struttura fisica del sistema di HBS.
+Il sistema HBS si appoggia su un servizio esterno di virtualizzazione per eseguire istanze multiple delle sue componenti sulle macchine messe a disposizione dalla banca acquirente.
+
+In figura~\ref{fig:physical-view} viene illustrata la struttura del sistema di HBS.
 In nodi in figura rappresentano \emph{macchine fisiche} su cui il software di HBS viene eseguito.
 
 \begin{figure*}[h]
@@ -24,3 +26,9 @@ Ciascuna macchina pu\`o ricoprire diversi ruoli.
 Una macchina nel sistema ricopre il ruolo di \emph{master}.
 Su questa macchina sono in esecuzione i processi di gestione delle istanze del database, dell'applicazione principale, e dei sistemi di logging.
 I processi di gestione dei sotto-sistemi si occupano di avviare istanze virtuali dei propri sotto-sistemi sulle macchine messe a disposizione dal \emph{virtualization master}.
+
+Le connessioni effettuate dai clienti della banca vengono distribuite dall'\emph{application master} alle istanze di \emph{application virtual server} con una politica di \emph{load balancing}.
+
+Il sistema di Logging mantiene un log distribuito e non ordinato delle azioni effettuate dagli utenti in un database non relazionale.
+
+
