@@ -25,7 +25,7 @@ La procedura per l'ottenimento del token \`e illustrata in figura \ref{fig:oauth
     \label{fig:oauth:token}
 \end{figure*}
 
-Inserire un'operazione bancaria nel back-end della banca avviene con il seguente messaggio:
+Il messaggio per l'esecuzione di un generico bonifico internazionale \`e il seguente:
 \begin{lstlisting}[basicstyle=\ttfamily]
 POST /accounts/[ACCOUNT_ID]/transactions HTTP/1.1
 [header]
@@ -67,3 +67,6 @@ POST /accounts/[ACCOUNT_ID]/transactions HTTP/1.1
 }
 \end{lstlisting}
 Il messaggio di risposta contiene informazioni riguardo l'avvenuta presa in carico dell'operazione da parte del back-end della banca.
+La struttura del messaggio \`e simile alla struttura dei messaggi per l'esecuzione di bonifici SEPA, bonifici SEPA italia, etc.
+La differenza principale consiste nell'assenza di alcuni campi.
+
