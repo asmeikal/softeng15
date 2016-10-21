@@ -13,6 +13,7 @@ header = "\\input{test-plan/" + output_macro.replace('.tex','') + "}\n\n\\subsec
 fields = [
     'title',
     'mnemo',
+    'shortid',
     'id',
     'prerequisites',
     'description',
@@ -29,15 +30,14 @@ class Requirement(object):
         self.index = index
         self.build_id()
         assert set(self.data.keys()) == set(fields)
-        self.type = self.data['type']
 
     def set_index(self, index):
         self.index = index;
         self.build_id()
 
     def build_id(self):
-        info = ['REQ']
-        short_info = ['REQ']
+        info = ['TP']
+        short_info = ['TP']
         info += [self.data['mnemo']]
         info += [str(self.index)]
         short_info += [str(self.index)]

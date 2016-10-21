@@ -1,9 +1,9 @@
 title: 'Verifica Login'
 mnemo: 'LOGIN'
 
-preconditions:
-    'L''utente con identificativo \code{user1} è presente nel sistema e la sua password è \code{password}.
-    L''utente con identificativo \code{user2} non è presente nel sistema.'
+prerequisites:
+    'L''utente con identificativo \code{user1} \`e presente nel sistema e la sua password \`e \code{password}.
+    L''utente con identificativo \code{user2} non \`e presente nel sistema.'
 description:
     'Il .'
 action:

@@ -1,6 +1,13 @@
 
 \section{Architettura di HBS}
 
+L'architettura fisica di HBS si integra nell'architettura fisica dell'istituto bancario che abbia adottato la soluzione offerta dalla nostra azienda.
+A seconda delle prestazioni richieste dall'istituto, espresse come mole (massima) di richieste previste per intervallo di tempo, il software verr\`a installato su un certo numero di macchine, come gi\`a specificato nella proposta di progetto.
+Il numero di macchine su cui il software verr\`a distribuito sar\`a approssimato in base ai risultati dei test realizzati a seguito della \emph{construction} del sistema.
+
+Le macchine destinate all'esecuzione del sistema HBS potranno essere macchine gi\`a disponibili presso la sede dell'istituto, qualora soddisfino i requisiti richiesti, o macchine acquistate appositamente e configurate dal team di installazione di HBS, o una combinazione delle due, a seconda delle necessit\`a dell'istituto.
+
+Il software di HBS \`e progettato per eseguire su una o pi\`u istanze di macchine virtuali, per favorire l'incapsulamento e la sicurezza del sistema, e per ridurre le differenze fra le macchine messe a disposizione.
 Il sistema HBS si appoggia su un servizio esterno di virtualizzazione per eseguire istanze multiple delle sue componenti sulle macchine messe a disposizione dalla banca acquirente.
 
 In figura~\ref{fig:physical-view} viene illustrata la struttura del sistema di HBS.
