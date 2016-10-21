@@ -1,9 +1,11 @@
 
 \section{Diagrammi di Sequenza}
 
-Nei diagrammi di sequenza viene mostrata l'interazione fra le classi di design e i componenti del sistema per la realizzazione di un use case.
+Nei diagrammi di sequenza viene mostrata l'interazione fra le classi di design e i componenti del sistema per la realizzazione degli use case del sistema.
 
-In figura~\ref{fig:sequenza:bonifico-sepa} viene illustrata la procedura per l'esecuzione di un bonifico SEPA da parte di un cliente di HBS.
+In figura~\ref{fig:sequenza:bonifico-sepa} viene illustrata la procedura per l'esecuzione di un bonifico SEPA da parte di un cliente di HBS, parte dell'use case \iducDISPAG.
+La query OBP \`e costruita come descritto nella sezione~\ref{sec:OBP}, in particolare dalla figura~\ref{fig:operazioni:bonifico-internazionale:json}.
+Il diagramma di sequenza per l'esecuzione di altre tipologie di pagamento differisce dal diagramma in figura~\ref{fig:sequenza:bonifico-sepa} unicamente nella procedura di creazione della query OBP.
 
 \begin{figure*}[h]
     \centering
@@ -11,5 +13,24 @@ In figura~\ref{fig:sequenza:bonifico-sepa} viene illustrata la procedura per l'e
     \caption{Diagramma di sequenza relativo all'invio di un bonifico SEPA.}
     \label{fig:sequenza:bonifico-sepa}
 \end{figure*}
+
+In figura~\ref{fig:sequenza:saldo} viene illustrata la proceura per ottenere il saldo attuale di un conto corrente.
+
+\begin{figure*}[h]
+    \centering
+	\includegraphics[width=\textheight, angle=90]{Images/Verifica_Saldo_-_Design.eps}
+    \caption{Diagramma di sequenza relativo alla verifica del saldo di un conto corrente.}
+    \label{fig:sequenza:saldo}
+\end{figure*}
+
+In figura~\ref{fig:sequenza:storico} viene illustrata la proceura per ottenere una lista delle transazioni effettuate da un certo conto corrente in un periodo di riferimento.
+
+\begin{figure*}[h]
+    \centering
+	\includegraphics[width=\textheight, angle=90]{Images/Storico_Transazioni_-_Design.eps}
+    \caption{Diagramma di sequenza relativo alla visualizzazione dello storico delle transazioni da un conto corrente.}
+    \label{fig:sequenza:storico}
+\end{figure*}
+
 
 
