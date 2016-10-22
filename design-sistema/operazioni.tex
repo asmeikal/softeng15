@@ -107,17 +107,18 @@ La struttura della richiesta \`e la seguente:
 GET /accounts/[ACCOUNT_ID]/[VIEW_ID]/transactions HTTP/1.1
 Host: [indirizzo istituto bancario]
 Authorization: OAuth
+obp_limit="[numero elementi risposta]"
+obp_offset="[offset primo elemento]"
+obp_from_date="[data minima]"
+obp_to_date="[data massima]"
 oauth_token="[token cliente]",
 oauth_consumer_key="[chiave istituto bancario]",
 oauth_nonce="[nonce]",
 oauth_signature="[signature]",
 oauth_signature_method="HMAC-SHA256",
 oauth_timestamp="[timestamp]",
-oauth_version="1.0",
-obp_limit="[numero elementi risposta]",
-obp_offset="[offset primo elemento]",
-obp_from_date="[data minima]",
-obp_to_date="[data massima]"
+oauth_version="1.0"
 \end{lstlisting}
 La richiesta presenta parametri extra nell'header rispetto alle altre richieste, il cui scopo \`e permettere di restringere il periodo di riferimento delle operazioni.
+
 
