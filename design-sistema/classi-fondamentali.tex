@@ -19,7 +19,17 @@ In figura~\ref{fig:classi-principali:operazioni} sono illustrate nel dettaglio l
     \label{fig:classi-principali:operazioni}
 \end{figure*}
 
+In figura~\ref{fig:classi-principali:log} sono illustrate le classi del package relativo al sistema di logging.
+Il sotto-sistema di logging utilizza il sistema di \emph{Class Interceptors} presente in Java EE 7.
+Le annotazioni dei metodi sono riportate in figura come stereotipi.
+Lo stereotipo \code{<<AroundInvoke>>} identifica l'annotazione \code{@AroundInvoke}.
 
+I metodi delle classi soggette a logging sono decorati dallo stereotipo \code{Interceptors}, a cui corrisponde l'annotazione \code{@Interceptors(GestoreLog.class)}.
 
-
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=\textwidth]{Images/dia/Logging.eps}
+    \caption{Diagramma delle classi relative al sotto-sistema di Logging.}
+    \label{fig:classi-principali:log}
+\end{figure*}
 

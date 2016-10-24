@@ -4,7 +4,11 @@
 
 L'interfaccia di OBP è una interfaccia RESTful\footnote{L'interfaccia di OBP, in realtà, è in sola lettura. Estendiamo il suo funzionamento anche alla scrittura (inserimento di informazioni nel back-end), poiché l'estensione delle sue funzionalità in questo senso è, almeno logicamente, immediata.}, in cui i dati vengono trasmessi in formato json, e l'autenticazione è gestita tramite protocollo OAuth (versione 1.0, prima revisione) \cite{oauthrfc}.
 
+\subsection{OAuth}
+
 Il protocollo OAuth si basa sul modello client/server, e permette al client di accedere ad una risorsa protetta situata sul server e di propriet\`a di una terza entit\`a senza che questa (detta ``proprietario della risorsa'') debba condividere le proprie credenziali di accesso al server con il client.
+
+\subsubsection{Ruoli}
 
 In OBP i ruoli sono ripartiti nel seguente modo:
 \begin{description}
@@ -15,6 +19,9 @@ In OBP i ruoli sono ripartiti nel seguente modo:
 	\item[Credentials] le credenziali di accesso alla banca del correntista;
 	\item[Token] identificativo univoco fornito dal server al client.
 \end{description}
+L'applicazione (Client nel gergo di OAuth) possiede a sua volta un token univoco, previsto dallo standard, utilizzato per identificare il Client fra le richieste.
+
+\subsubsection{Token}
 
 In HBS il token per l'accesso ad un account del back-end della banca viene creato alla registrazione dell'utente, e associato all'account HBS del cliente.
 La procedura per l'ottenimento del token \`e illustrata in figura \ref{fig:oauth:token}.
@@ -25,6 +32,14 @@ La procedura per l'ottenimento del token \`e illustrata in figura \ref{fig:oauth
     \caption{Diagramma di comunicazione illustrante la procedura per l'ottenimento del token.}
     \label{fig:oauth:token}
 \end{figure*}
+
+HBS ottiene, al momento dell'installazione presso l'istituto, un suo token, utilizzato durante lo scambio di informazioni per l'ottenimento del token di un cliente.
+
+\subsection{Comunicazione}
+
+La procedura per effettuare operazioni (ovvero per inserire una transazione nel back-end della banca, ad esempio) o per effettuare query consiste nell'invio di una richiesta \code{POST} o \code{GET} al server OBP della banca.
+Le richieste a OBP condividono tipicamente la stessa struttura dell'header, con qualche differenza nei casi di query pi\`u complesse.
+Comune a tutte le richieste sono il token cliente di cui sopra e le chiavi di HBS relative all'istituto.
 
 \begin{figure*}[h]
 \begin{lstlisting}[basicstyle=\ttfamily]
@@ -78,10 +93,14 @@ oauth_version="1.0"
 	\caption{\label{fig:operazioni:bonifico-internazionale:json}Inserimento di un bonifico internazionale nel back-end della banca tramite OBP}
 \end{figure*}
 
+\subsubsection{Bonifici}
+
 Il messaggio per l'esecuzione di un generico bonifico internazionale \`e mostrato in figura \ref{fig:operazioni:bonifico-internazionale:json}.
 Il messaggio viene inviato al server OBP della banca con una richiesta \code{POST}.
 Il messaggio di risposta contiene informazioni riguardo l'avvenuta presa in carico dell'operazione da parte del back-end della banca, codificate a loro volta in Json.
 La struttura del messaggio \`e simile alla struttura dei messaggi per l'esecuzione di bonifici SEPA, bonifici SEPA italia, etc.: la differenza principale consiste nell'assenza di alcuni campi.
+
+\subsubsection{Query: Saldo e Storico Operazioni}
 
 Raccogliere informazioni riguardo lo stato del conto corrente di un cliente, come ad es.\ il saldo attuale, o le operazioni effettuate in un certo intervallo di tempo, avviene con una richiesta \code{GET}.
 

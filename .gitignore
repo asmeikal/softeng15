@@ -44,3 +44,6 @@ Images/**/*.pdf
 !test-plan/generated/templates
 !test-plan/generated/yaml/*.yaml
 
+!Dia
+!Dia/*.dia
+
