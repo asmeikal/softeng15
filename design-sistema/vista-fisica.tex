@@ -39,6 +39,8 @@ I processi di gestione dei sotto-sistemi si occupano di avviare istanze virtuali
 Le connessioni effettuate dai clienti della banca vengono distribuite dall'\emph{application master} alle istanze di \emph{application virtual server} con una politica di \emph{load balancing}.
 
 Il sistema di Logging mantiene un log distribuito e non ordinato delle azioni effettuate dagli utenti in un database non relazionale.
+Nel caso in cui un'istanza di un Logging Virtual Server fallisca, il Logging Master si occupa di recuperare il database associato all'istanza.
+I dati contenuti nel database possono essere distribuiti fra le altre istanze o assegnati a una nuova istanza.
 
 \subsection{Tecnologie}
 

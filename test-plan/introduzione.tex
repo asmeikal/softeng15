@@ -12,4 +12,32 @@ Le procedure di test sono distinte in:
 I test di prestazioni del sistema sono previsti in supporto alla fase di transizione, in cui il software verr\`a venduto agli istituti bancari che ne faranno richiesta, assieme ad un servizio pre-vendita di supporto alla configurazione delle macchine su cui il software dovr\`a girare.
 I test di prestazioni del sistema serviranno come indicatori per individuare la corretta configurazione delle macchine, rispondendo alle richieste del cliente.
 
+\subsection{Struttura Test Funzionali per HBS}
+
+Il sistema di HBS si basa sull'interfaccia OBP per la comunicazione con il back-end della banca.
+I test funzionali vedono coinvolti tre elementi:
+\begin{itemize}
+	\item il sistema HBS;
+	\item l'interfaccia OBP;
+	\item il back-end della banca.
+\end{itemize}
+Per verificare il funzionamento degli use-case principali (che coinvolgono quindi la comunicazione con il back-end tramite OBP), HBS verr\`a testato su un sistema bancario d'esempio, ossia un back-end che permetta di testare gli eventi rilevanti collegato tramite OBP al sistema HBS.
+
+Il back-end su cui HBS verr\`a testato non ha requisiti di consistenza.
+Il requisito fondamentale \`e che faciliti la copertura di tutti gli eventi che possono avvenire durante la comunicazione (mediata da OBP) fra HBS e back-end.
+Gli eventi rilevanti identificati sono:
+\begin{enumerate}
+	\item inserimento di un'operazione (use case \iducDISPAG), distinguendo fra i possibili esiti:
+		\begin{enumerate}
+			\item operazione accettata;
+			\item operazione rifiutata (ad es.\ causa mancanza fondi).
+		\end{enumerate}
+	\item richiesta storico operazioni (use case \iducVERSTOR);
+	\item richiesta saldo conto (use case \iducVERSAL).
+\end{enumerate}
+
+\subsection{Struttura Test di Prestazioni}
+
+I test di prestazioni del sistema sono volti ad ottenere una misura indicativa del tempo impiegato da HBS a rispondere alle richieste dei clienti.
+A differenza dei test funzionali, i test di prestazioni richiedono un back-end dalla struttura pi\`u elaborata, che permetta di osservare il comportamento del sistema in scenari simili agli scenari che HBS dovr\`a realmente affrontare.
 
