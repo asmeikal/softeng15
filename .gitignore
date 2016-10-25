@@ -47,3 +47,5 @@ Images/**/*.pdf
 !Dia
 !Dia/*.dia
 
+!VisualParadigm
+!VisualParadigm/*.vpp
