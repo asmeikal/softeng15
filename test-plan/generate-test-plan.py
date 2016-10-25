@@ -29,7 +29,7 @@ class Requirement(object):
                 self.data[str(k)] = str(v)
         self.index = index
         self.build_id()
-        assert set(self.data.keys()) == set(fields)
+        assert set(self.data.keys()) == set(fields), str(self.data.keys()) + "!=" + str(fields)
 
     def set_index(self, index):
         self.index = index;
@@ -71,8 +71,8 @@ if __name__ == '__main__':
             if f == "example.yaml": continue
             if f[0] == '.': continue
             r = Requirement(sources + f, index)
-            index += 1
             r.set_index(index)
+            index += 1
             res += r.output()
             res_macro += r.output_macro()
         out.write(header)

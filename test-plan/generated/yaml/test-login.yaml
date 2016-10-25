@@ -2,9 +2,28 @@ title: 'Verifica Login'
 mnemo: 'LOGIN'
 
 prerequisites:
-    'L''utente con identificativo \code{user1} \`e presente nel sistema e la sua password \`e \code{password}.
-    L''utente con identificativo \code{user2} non \`e presente nel sistema.'
+    'Il test server di HBS contiene un utente $user_1$ la cui password \`e $pass$.'
 description:
-    'Il .'
+    'Il test \`e volto a verificare che \`e possibile effettuare il login al sistema con delle credenziali valide, e che l''accesso \`e impedito in ogni altro caso.'
 action:
-    'action'
+    '\begin{enumerate}
+    \item Verificare il corretto funzionamento con credenziali corrette:
+        \begin{enumerate}
+            \item Navigare alla pagina di login di HBS;
+            \item inserire $user_1$ come nome utente e $pass$ come password;
+            \item inviare il form al server;
+            \item verificare che il login \`e avvenuto con successo (risposta http con header \code{200 OK}) e che la pagina risultante \`e la pagina di benvenuto di HBS.
+        \end{enumerate}
+    \item Verificare il corretto funzionamento con credenziali errate:
+        \begin{enumerate}
+            \item Navigare alla pagina di login di HBS;
+            \item inserire nome utente e password, scelte fra:
+                \begin{enumerate}
+                    \item $user_1$ come nome utente e una stringa differente da $pass$ come password;
+                    \item $user_1$ come nome utente e la stringa vuota come password;
+                    \item nome utente e password differenti da $user_1$ e $pass$.
+                \end{enumerate}
+            \item inviare il form al server;
+            \item verificare che il login non \`e avvenuto (risposta http con header \code{404 UNHAUTORIZED}) e che la pagina risultante \`e una pagina di errore.
+        \end{enumerate}
+    \end{enumerate}'

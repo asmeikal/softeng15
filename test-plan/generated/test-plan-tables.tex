@@ -1,6 +1,31 @@
 \input{test-plan/generated/test-plan-macros}
 
-\subsection{Specifica dei Test Funzionali}\subsection{\code{TP\_2} - Verifica Login }
+\subsection{Specifica dei Test Funzionali}\subsection{\code{TP\_1} - Disposizione Pagamento }
+\label{sec:use-case:DISPAG}
+
+\begin{ptable}{2}
+\ptitle{Titolo}
+\pcell{1}{
+	Disposizione Pagamento (\code{TP\_DISPAG\_1})
+}
+\pline
+\ptitle{Descrizione test}
+\pcell{1}{
+		Il test \`e volto a verificare che il sistema di gestione delle operazioni funzioni correttamente. Il test deve verificare la corretta esecuzione di un'operazione che deve aver successo e il corretto fallimento di operazioni che devono fallire. Un'operazione ha successo quando i parametri dell'operazione sono corretti, il back-end autorizza l'operazione, e la One-Time Password fornita \`e corretta. Un'operazione fallisce quando una (o pi\`u) delle precedenti condizioni non \`e verificata, ovvero quando: \begin{itemize} \item i parametri dell'operazione non sono corretti; \item il back-end non autorizza l'operazione; \item la One-Time Password \`e errata. \end{itemize} Gli esempi contenuti negli insiemi $S$ e $F$ definiti nelle precondizioni devono coprire questi casi.
+}
+\pline
+\ptitle{Prerequisiti}
+\pcell{1}{
+		Sono definiti due insiemi $S$, $F$ di triple ($user$, $operazione$, $otp$) dove $user$ \`e un cliente di HBS, $operazione$ \`e un'operazione completa di parametri, e $otp$ \`e una One-Time Password (valida o invalida) per la coppia $user$, $operazione$. Le operazioni contenute in $S$ devono avere successo quando effettuate dal rispettivo $user$. Le operazioni contenute in $F$ devono fallire quando effettuate dal rispettivo $user$.
+}
+\pline
+\ptitle{Azione}
+\pcell{1}{
+		Per ogni tripla ($user$, $operazione$, $otp$) contenuta negli insiemi $S$ e $F$ eseguire i seguenti passi: \begin{enumerate} \item Effettuare il login come $user$ (v.\ test \idtpLOGIN); \item Navigare alla pagina per effettuare $operazione$; \item Inserire i parametri di $operazione$ nel form; \item Inviare il form per l'esecuzione di $operazione$; \item Alla richiesta della One-Time Password, inserire $otp$ nel campo preposto e inviare il form; \item Se i dati sono stati prelevati da $S$, verificare la corretta presa in carico dell'operazione; se i dati sono stati prelevati da $F$, verificare che l'operazione \`e correttamente fallita. \end{enumerate}
+}
+\end{ptable}
+
+\subsection{\code{TP\_2} - Verifica Login }
 \label{sec:use-case:LOGIN}
 
 \begin{ptable}{2}
@@ -11,17 +36,17 @@
 \pline
 \ptitle{Descrizione test}
 \pcell{1}{
-		Il .
+		Il test \`e volto a verificare che \`e possibile effettuare il login al sistema con delle credenziali valide, e che l'accesso \`e impedito in ogni altro caso.
 }
 \pline
 \ptitle{Prerequisiti}
 \pcell{1}{
-		L'utente con identificativo \code{user1} \`e presente nel sistema e la sua password \`e \code{password}. L'utente con identificativo \code{user2} non \`e presente nel sistema.
+		Il test server di HBS contiene un utente $user_1$ la cui password \`e $pass$.
 }
 \pline
 \ptitle{Azione}
 \pcell{1}{
-		action
+		\begin{enumerate} \item Verificare il corretto funzionamento con credenziali corrette: \begin{enumerate} \item Navigare alla pagina di login di HBS; \item inserire $user_1$ come nome utente e $pass$ come password; \item inviare il form al server; \item verificare che il login \`e avvenuto con successo (risposta http con header \code{200 OK}) e che la pagina risultante \`e la pagina di benvenuto di HBS. \end{enumerate} \item Verificare il corretto funzionamento con credenziali errate: \begin{enumerate} \item Navigare alla pagina di login di HBS; \item inserire nome utente e password, scelte fra: \begin{enumerate} \item $user_1$ come nome utente e una stringa differente da $pass$ come password; \item $user_1$ come nome utente e la stringa vuota come password; \item nome utente e password differenti da $user_1$ e $pass$. \end{enumerate} \item inviare il form al server; \item verificare che il login non \`e avvenuto (risposta http con header \code{404 UNHAUTORIZED}) e che la pagina risultante \`e una pagina di errore. \end{enumerate} \end{enumerate}
 }
 \end{ptable}
 
