@@ -1,0 +1,13 @@
+title: 'Verifica Saldo Attuale'
+mnemo: 'VERSAL'
+
+prerequisites:
+    'L''utente $user$ possiede un account HBS registrato, e il suo saldo \`e $N$ (un valore numerico).'
+description:
+    'Scopo del test \`e controllare il funzionamento dell''operazione di verifica del saldo attuale, come descritta dallo use case \iducVERSAL.'
+action:
+    '\begin{enumerate}
+        \item Effettuare il login come utente $user$;
+        \item Navigare fino alla pagina di visualizzazione del saldo;
+        \item Verificare che la pagina venga visualizzata correttamente e che la cifra visualizzata corrisponda a $N$ (ossia il valore presente nel back-end).
+    \end{enumerate}'
