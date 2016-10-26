@@ -100,41 +100,44 @@ Il diagramma di Gantt relativo alla fase di inception \`e rappresentato in figur
 		bar label font = \scriptsize,
 		group label font = \scriptsize,
 		milestone label font = \scriptsize,
+		x unit=2.8mm,
 %		x unit=8mm,
 		milestone height = 0.2,
-		today=2016-09-07,
+		today=2016-10-28,
 		today label = {},
 		today rule/.style = {draw={color1!60}},
 		progress label text = {\pgfmathprintnumber[precision=0, verbatim]{#1}\%},
 		inline,
 		milestone inline label node/.append style={left=1mm},
 		time slot format={isodate},
-		]{2016-08-30}{2016-09-18}
-		\gantttitlecalendar{year, month, day} \\
-		\ganttgroup[progress=75]{Specifica requisiti}{2016-09-01}{2016-09-10} \\
-		\ganttbar[progress=75]{Specifica requisiti sistema}{2016-09-01}{2016-09-10} \\
-		\ganttbar[progress=75]{Stesura documento requisiti}{2016-09-02}{2016-09-10} \\
-		\ganttgroup[progress=30]{Definizione use case model}{2016-09-02}{2016-09-11} \\
-		\ganttbar[progress=70]{Costruzione diagrammi use case}{2016-09-03}{2016-09-11} \\
-		\ganttbar[progress=35]{Specifica use case}{2016-09-03}{2016-09-11} \\
-		\ganttbar[progress=30]{Stesura documento use case model}{2016-09-03}{2016-09-11} \\
-		\ganttgroup[progress=0]{Analisi del Sistema}{2016-09-03}{2016-09-12} \\
-		\ganttbar[progress=0]{Definizione architettura sistema}{2016-09-03}{2016-09-12} \\
-		\ganttbar[progress=0]{Definizione system boundary}{2016-09-03}{2016-09-12} \\
-		\ganttbar[progress=0]{Studio sicurezza sistema}{2016-09-06}{2016-09-12} \\
-		\ganttbar[progress=0]{Definizione classi di analisi}{2016-09-07}{2016-09-12} \\
-		\ganttbar[progress=0]{Studio interazione componenti}{2016-09-07}{2016-09-12} \\
-		\ganttbar[progress=0]{Stesura documento analisi sistema}{2016-09-05}{2016-09-12} \\
-		\ganttgroup[progress=0]{Design del sistema}{2016-09-09}{2016-09-16} \\
-		\ganttbar[progress=0]{Definizione classi di design}{2016-09-09}{2016-09-16} \\
-		\ganttbar[progress=0]{Studio interazione componenti}{2016-09-09}{2016-09-16} \\
-		\ganttbar[progress=0]{Stesura documento design sistema}{2016-09-10}{2016-09-16} \\
-		\ganttgroup[progress=0]{Definizione piano dei test}{2016-09-09}{2016-09-16} \\
-		\ganttbar[progress=0]{Definizione piano dei test}{2016-09-09}{2016-09-16} \\
-		\ganttbar[progress=0]{Stesura documento piano dei test}{2016-09-10}{2016-09-16} \\
-		\ganttmilestone[progress=100]{Terza revisione capo progetto}{2016-09-06}
-		\ganttmilestone[progress=0]{Quarta revisione capo progetto}{2016-09-13}
-		\ganttmilestone[progress=0]{Quinta revisione capo progetto}{2016-09-15}
+		]{2016-09-01}{2016-10-31}
+		\gantttitlecalendar{year, month} \\
+		\ganttgroup[progress=100]{Specifica requisiti}{2016-09-01}{2016-09-10} \\
+		\ganttbar[progress=100]{Specifica requisiti sistema}{2016-09-01}{2016-09-10} \\
+		\ganttbar[progress=100]{Stesura requisiti}{2016-09-02}{2016-09-10} \\
+		\ganttgroup[progress=100]{Definizione use case model}{2016-09-02}{2016-09-11} \\
+		\ganttbar[progress=100]{Costruzione diagrammi}{2016-09-03}{2016-09-11} \\
+		\ganttbar[progress=100]{Specifica use case}{2016-09-03}{2016-09-11} \\
+		\ganttbar[progress=100]{Stesura use case model}{2016-09-03}{2016-09-11} \\
+		\ganttgroup[progress=100]{Analisi del Sistema}{2016-09-03}{2016-09-21} \\
+		\ganttbar[progress=100]{Definizione architettura}{2016-09-03}{2016-09-13} \\
+		\ganttbar[progress=100]{Studio sicurezza}{2016-09-06}{2016-09-13} \\
+		\ganttbar[progress=100]{Definizione classi}{2016-09-07}{2016-09-13} \\
+		\ganttbar[progress=100]{Interazione componenti}{2016-09-07}{2016-09-16} \\
+		\ganttbar[progress=100]{Stesura documento analisi sistema}{2016-09-05}{2016-09-21} \\
+		\ganttgroup[progress=100]{Design del sistema}{2016-09-26}{2016-10-27} \\
+		\ganttbar[progress=100]{Definizione classi di design}{2016-09-28}{2016-10-08} \\
+		\ganttbar[progress=100]{Studio interazione componenti}{2016-09-30}{2016-10-16} \\
+		\ganttbar[progress=100]{Stesura documento design sistema}{2016-10-2}{2016-10-27} \\
+		\ganttgroup[progress=100]{Piano dei test}{2016-10-20}{2016-10-27} \\
+		\ganttbar[progress=100]{Definizione}{2016-10-20}{2016-10-24} \\
+		\ganttbar[progress=100]{Stesura}{2016-10-21}{2016-10-27} \\
+		\ganttmilestone[progress=100]{$3^a$ rev.}{2016-09-06}
+		\ganttmilestone[progress=100]{$4^a$ rev.}{2016-09-13}
+		\ganttmilestone[progress=100]{$5^a$ rev.}{2016-10-21}
+		\ganttmilestone[progress=100]{Consegna}{2016-10-28}
+		\\
+		\ganttmilestone[progress=100]{$6^a$ rev.}{2016-10-25}
 	\end{ganttchart}
 	\caption{\label{fig:gantt_elaboration}Diagramma di Gantt delle fasi di Elaboration e Construction.}
 \end{figure*}
