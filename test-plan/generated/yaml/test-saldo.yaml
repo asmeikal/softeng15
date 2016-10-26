@@ -8,6 +8,6 @@ description:
 action:
     '\begin{enumerate}
         \item Effettuare il login come utente $user$;
-        \item Navigare fino alla pagina di visualizzazione del saldo;
+        \item Dalla pagina principale, navigare fino alla pagina di visualizzazione del saldo, scegliendo l''operazione ``verifica saldo'';
         \item Verificare che la pagina venga visualizzata correttamente e che la cifra visualizzata corrisponda a $N$ (ossia il valore presente nel back-end).
     \end{enumerate}'

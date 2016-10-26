@@ -256,7 +256,7 @@ justification=raggedright]{caption}
 %\begin{figure*}[!hb]%
 %\begin{minipage}{\textwidth}%
 	\phantomsection%
-	\printbibliography%
+	\printbibliography[title={Riferimenti},heading=bibintoc]%
 %\end{minipage}%
 %\end{figure*}%
 }

@@ -1,6 +1,5 @@
 title: 'Disposizione Pagamento'
 mnemo: 'DISPAG'
-
 prerequisites:
     'Sono definiti due insiemi $S$, $F$ di triple ($user$, $operazione$, $otp$) dove $user$ \`e un cliente di HBS, $operazione$ \`e un''operazione completa di parametri, e $otp$ \`e una One-Time Password (valida o invalida) per la coppia $user$, $operazione$.
     Le operazioni contenute in $S$ devono avere successo quando effettuate dal rispettivo $user$.
@@ -20,7 +19,7 @@ action:
     'Per ogni tripla ($user$, $operazione$, $otp$) contenuta negli insiemi $S$ e $F$ eseguire i seguenti passi:
     \begin{enumerate}
         \item Effettuare il login come $user$ (v.\ test \idtpLOGIN);
-        \item Navigare alla pagina per effettuare $operazione$;
+        \item Dalla pagina principale, navigare alla pagina per effettuare $operazione$, scegliendo l''azione ``invio operazione'';
         \item Inserire i parametri di $operazione$ nel form;
         \item Inviare il form per l''esecuzione di $operazione$;
         \item Alla richiesta della One-Time Password, inserire $otp$ nel campo preposto e inviare il form;

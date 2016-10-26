@@ -2,6 +2,7 @@
 \subsection{Classi Principali}
 
 In figura~\ref{fig:classi-principali} sono illustrati i package e le classi principali del sistema di HBS, come definite sopra.
+Lo stereotipo \code{<<Intercepted>>} identifica classi i cui metodi sono intercettati dal sistema di logging (v.\ sotto).
 
 \begin{figure*}[h]
     \centering
@@ -24,7 +25,7 @@ Il sotto-sistema di logging utilizza il sistema di \emph{Class Interceptors} pre
 Le annotazioni dei metodi sono riportate in figura come stereotipi.
 Lo stereotipo \code{<<AroundInvoke>>} identifica l'annotazione \code{@AroundInvoke}.
 
-I metodi delle classi soggette a logging sono decorati dallo stereotipo \code{Interceptors}, a cui corrisponde l'annotazione \code{@Interceptors(GestoreLog.class)}.
+I metodi delle classi soggette a logging sono decorati dallo stereotipo \code{Intercepted}, a cui corrisponde l'annotazione \code{@Interceptors(GestoreLog.class)}.
 Le classi soggette a logging sono:
 \begin{itemize}
 	\item Gestore Operazioni;
@@ -35,7 +36,7 @@ Le classi soggette a logging sono:
 
 \begin{figure*}[h]
     \centering
-    \includegraphics[width=\textwidth]{Images/dia/Logging.eps}
+    \includegraphics[width=\textwidth]{Images/Logging.eps}
     \caption{Diagramma delle classi relative al sotto-sistema di Logging.}
     \label{fig:classi-principali:log}
 \end{figure*}
