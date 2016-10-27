@@ -21,22 +21,79 @@ Il valore ottenuto dalla somma di \code{UUCW} e \code{UAW} viene moltiplicato pe
 \subsection{Unadjusted Use Case Weight}
 
 Il \code{UUCW} assegna un punteggio a ciascun use case del sistema secondo la complessit\`a dello use case.
+Uno use case viene classificato secondo uno di tre valori, a seconda del numero di transazioni necessarie a portarlo a termine:
+\begin{description}
+	\item[Semplice] da 1 a 3 transazioni;
+	\item[Medio] da 4 a 7 transazioni;
+	\item[Complesso] da 8 transazioni in su.
+\end{description}
+Alle tre categorie viene assegnato, rispettivamente, un peso di 5, 10, e 15.
+Il \code{UUCW} viene calcolato sommando il peso di tutti gli use case del sistema.
 
-Il \code{UUCW} sar\`a determinato a individuazione degli use case ultimata.
+Nella tabella seguente sono illustrati gli use case del sistema di HBS e i relativi pesi.
+
+\begin{center}
+\begin{tabularx}{\columnwidth}{X l l}
+\toprule
+\cellcolor{color2!10} Use case & \cellcolor{color2!10} Classificazione & \cellcolor{color2!10} Peso \\
+\midrule
+\iducVERSTOR & Medio & 10 \\
+\iducBIDVIS & Complesso & 15 \\
+\iducDISPAG & Complesso & 15 \\
+\iducCROPVEL & Complesso & 15 \\
+\iducCLIACC & Medio & 10 \\
+\iducUSRBID & Complesso & 15 \\
+\iducCREABID & Complesso & 15 \\
+\iducISCRCORR & Complesso & 15 \\
+\iducAPPRCORR & Medio & 10 \\
+\iducDISOPVEL & Complesso & 15 \\
+\iducVERSAL & Medio & 10 \\
+\midrule
+\multicolumn{2}{r}{Totale \code{UUCW}} & 145 \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
 \subsection{Unadjusted Actor Weight}
 
-Il \code{UAW} sar\`a determinato a individuazione degli use case ultimata.
+Il \code{UAW} viene calcolato in base al numero e alla complessit\`a degli attori del sistema.
+Un attore viene classificato secondo uno di tre valori, a seconda della sua complessit\`a:
+\begin{description}
+	\item[Semplice] un attore esterno che interagisce con il sistema utilizzando una API ben definita;
+	\item[Medio] un attore esterno che interagisce con il sistema utilizzando un protocollo di comunicazione standardizzato;
+	\item[Complesso] un attore umano che interagisce con il sistema utilizzando un'interfaccia grafica.
+\end{description}
+Alle tre categorie viene assegnato, rispettivamente, un peso di 1, 2, e 3.
+Il \code{UAW} viene calcoalto sommando il peso di tutti gli attori del sistema.
+
+Gli attori di HBS e relative categorizzazioni sono illustrati nella tabella seguente.
+Oltre agli attori definiti nel modello degli use case sono indicati anche i sistemi esterni che dovranno interagire con il sistema.
+
+\begin{center}
+\begin{tabularx}{\columnwidth}{X l l}
+\toprule
+\cellcolor{color2!10} Attore & \cellcolor{color2!10} Classificazione & \cellcolor{color2!10} Peso \\
+\midrule
+Cliente di HBS & Complesso & 3 \\
+Dipendente della banca & Complesso & 3 \\
+Manager della banca & Complesso & 3 \\
+Ente di controllo & Complesso & 3 \\
+OBP & Medio & 2 \\
+OTP & Medio & 2 \\
+\midrule
+\multicolumn{2}{r}{Totale \code{UAW}} & 16 \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
 \subsection{Technical Complexity Factor}
 
 Il \code{TCF} \`e un fattore moltiplicativo che tiene conto della complessit\`a tecnica del sistema in sviluppo.
 Ciascun fattore tecnico ha un peso compreso fra $0.5$ e $2.0$.
 A ciascun fattore tecnico viene assegnato un valore fra $0$ (fattore ininfluente) e $5$ (fattore essenziale)
-Il \code{TCF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore tecnico.
+Il \code{TCF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore tecnico, dividendo per 100 e aggiungendo $0.6$.
 
 I valori assegnati sono indicati nella tabella seguente.
-%I valori assegnati sono indicati nella tabella \ref{tab:tcf}.
 
 \begin{center}
 \begin{tabularx}{\columnwidth}{c X c c}
@@ -57,11 +114,16 @@ I valori assegnati sono indicati nella tabella seguente.
 \code{T12} & Accesso terze parti & $1.0$ & 5 \\
 \code{T13} & Addestramento utente & $1.0$ & 1 \\
 \midrule
-\multicolumn{3}{r}{Totale \code{TCF}} & 50 \\
+\multicolumn{3}{r}{Totale \code{TF}} & 50 \\
 \bottomrule
 \end{tabularx}
 %\caption{\label{tab:tcf} Fattori di complessit\`a tecnica.}
 \end{center}
+
+Il \code{TCF} \`e quindi
+\[
+	0.6 + \frac{50}{100} = 0.6 + 0.5 = 1.1
+\]
 
 L'assegnamento dei valori \`e basato sulle seguenti considerazioni:
 \begin{itemize}
@@ -92,7 +154,7 @@ L'assegnamento dei valori \`e basato sulle seguenti considerazioni:
 Il \code{ECF} \`e un fattore moltiplicativo che tiene conto della complessit\`a dell'ambiente in cui il software viene sviluppato.
 Ciascun fattore ambientale ha un peso compreso fra $0.5$ e $2.0$.
 A ciascun fattore ambientale viene assegnato un valore fra $0$ (fattore ininfluente) e $5$ (fattore essenziale)
-Il \code{ECF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore ambientale.
+Il \code{ECF} viene calcolato sommando il prodotto di peso e valore per ciascun fattore ambientale, moltiplicandolo per $-0.03$ e sommandovi $1.4$.
 
 I valori assegnati sono indicati nella tabella seguente.
 %I valori assegnati sono indicati nella tabella \ref{tab:ecf}.
@@ -102,20 +164,25 @@ I valori assegnati sono indicati nella tabella seguente.
 \toprule
 \cellcolor{color2!10} Fatt. & \cellcolor{color2!10} Descrizione & \cellcolor{color2!10} Peso & \cellcolor{color2!10} Val. \\
 \midrule
-\code{E1} & Familiarit\`a con processo software adottato & $1.5$ & 4 \\
-\code{E2} & Esperienza nel dominio dell'applicazione & $0.5$ & 4 \\
-\code{E3} & Esperienza del team con orientazione a oggetti & $1.0$ & 5 \\
-\code{E4} & Capacit\`a primo analista & $0.5$ & 4 \\
-\code{E5} & Motivazione del team & $1.0$ & 4 \\
+\code{E1} & Familiarit\`a con processo software adottato & $1.5$ & 3 \\
+\code{E2} & Esperienza nel dominio dell'applicazione & $0.5$ & 2 \\
+\code{E3} & Esperienza del team con orientazione a oggetti & $1.0$ & 4 \\
+\code{E4} & Capacit\`a primo analista & $0.5$ & 3 \\
+\code{E5} & Motivazione del team & $1.0$ & 3 \\
 \code{E6} & Stabilit\`a dei requisiti & $2.0$ & 4 \\
 \code{E7} & Staff part-time & $-1.0$ & 0 \\
 \code{E8} & Linguaggio di programmazione ostico & $-1.0$ & 3 \\
 \midrule
-\multicolumn{3}{r}{Totale \code{ECF}} & 28 \\
+\multicolumn{3}{r}{Totale \code{EF}} & 20 \\
 \bottomrule
 \end{tabularx}
 %\caption{\label{tab:ecf} Fattori di complessit\`a ambientale.}
 \end{center}
+
+Il \code{ECF} \`e quindi
+\[
+	1.4 - 0.03 \cdot 20 = 1.4 - 0.6 = 0.8
+\]
 
 L'assegnamento dei valori \`e basato sul fatto che il software in sviluppo \`e \emph{sensibile}, in quanto concerne transazioni economiche di privati e presenta quindi problematiche importanti legate a sicurezza, aspetti legali, e privacy degli utenti.
 Il progetto richiede quindi un team competente ed esperto tanto nel dominio quanto in aspetti legati al processo adottato e in generale alle pratiche di sviluppo \emph{object oriented}.
@@ -123,4 +190,20 @@ Per queste stesse considerazioni, e per i tempi di sviluppo condizionati dall'ev
 
 \subsection{Use Case Points e previsione di costo}
 
-Gli Use Case Points saranno determinati a individuazione degli use case ultimata.
+Gli \code{UCP} sono calcolati sommando \code{UUCW} e \code{UAW}, e moltiplicando il valore ottenuto per i due fattori di complessit\`a, \code{TCF} e \code{ECF}.
+Gli \code{UCP} di HBS sono quindi
+\[
+	(145 + 16) \cdot 0.8 \cdot 1.1 = 106.26
+\]
+
+Gli \code{UCP} possono essere convertiti in una misura di sforzo espressa in ore/uomo o in mesi/uomo assegnando una stima di ore/uomo necessarie per Use Case Point.
+Supponendo di dover impiegare 30 ore/uomo per \code{UCP}, otteniamo
+\[
+	106.26 \cdot 30 = 3187.80 \text{ ore/uomo}
+\]
+che equivalgono, in mesi/uomo (assumendo 8 ore lavorative giornaliere per una media di 22 giorni lavorativi mensili), a
+\[
+	\frac{3187.80}{8 \cdot 22} = 18.11 \text{ mesi/uomo}
+\]
+La stima del costo del progetto di HBS, ipotizzando un costo medio di 5,000 \EUR/mese, \`e di circa 90,000 \EUR.
+

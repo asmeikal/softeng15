@@ -45,6 +45,7 @@
 \RequirePackage[italian]{babel}
 \RequirePackage{amsmath,amsfonts,amssymb}
 \RequirePackage{graphicx}
+\RequirePackage{marvosym}
 \RequirePackage[table]{xcolor}
 \RequirePackage{booktabs}
 \RequirePackage{pgfgantt}
