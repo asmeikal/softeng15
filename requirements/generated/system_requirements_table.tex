@@ -2,62 +2,117 @@
 
 \subsection{Specifica dei Requisiti Funzionali}
 
-\subsubsection{\code{REQ\_F\_1} - Verifica Storico}
-\label{sec:sistema:funzionali:VERSTOR}
+\subsubsection{\code{REQ\_F\_1} - Disposizioni di Pagamento}
+\label{sec:sistema:funzionali:DISPAG}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
 \prow{
-		Verifica Storico
+		Disposizioni di Pagamento
 }
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_VERSTOR\_F\_A\_1}$ & Funzionale & Alta
+	$\code{REQ\_DISPAG\_F\_A\_1}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
 \prow{
-		Un utente deve poter verificare lo storico delle transazioni eseguite dal suo conto in un determinato periodo, complete di informazioni su: \begin{itemize} \item data dell'operazione; \item destinatario dell'operazione; \item causale dell'operazione; \item importo dell'operazione. \end{itemize}
+		Un utente registrato al sistema di Home Banking deve poter effettuare generiche disposizioni di pagamento. In particolare l'utente deve poter effettuare bonifici (p.~\pageref{glossario:bonifico}) e bonifici SEPA (p.~\pageref{glossario:bonifico-sepa}).
 }
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:storico}).
+		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni}).
 }
 \pline
 \ptitle{Input}
 \pcell{1}{
-		Numero del conto corrente, periodo di riferimento.
+		Numero di conto corrente, tipologia dell'operazione, somma di denaro da trasferire, conto corrente di destinazione nel formato opportuno.
 }
 \pline
 \ptitle{Output}
 \pcell{1}{
-		Elenco delle operazioni effettuate nel periodo di riferimento fornito.
+		Indicatore di successo dell'operazione.
 }
 \pline
 \ptitlerow{Descrizione azione}
 \prow{
-		Il sistema recupera dal back-end della banca le informazioni richieste dall'utente.
+		L'operazione specificata viene inoltrata da HBS al back-end della banca. HBS attende dal back-end informazioni riguardo il successo o meno dell'operazione.
 }
 %\pline
 %\ptitlerow{Pre-condizioni}
 %\prow{
-%		Precondizioni.
+%		L'utente ha accesso al conto corrente indicato. Il saldo contabile sul conto corrente indicato \`e maggiore o uguale alla somma di denaro da trasferire pi\`u eventuali spese di commissione.
 %}
 %\pline
 %\ptitlerow{Post-condizioni}
 %\prow{
-%		Postcondizioni.
+%		Se il back-end della banca ha preso in carico l'operazione con successo, la gestione della stessa \`e stata passata al back-end. Altrimenti nessuna.
 %}
 %\pline
 %\ptitlerow{Side-effects}
 %\prow{
-%		Side effects.
+%		Il tentativo di operazione viene registrato nel log di HBS, insieme ad informazioni riguardo lo stato di presa in carico da parte del back-end della banca.
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_2} - Accesso Clienti}
+\subsubsection{\code{REQ\_F\_2} - Iscrizione Nuovo Correntista}
+\label{sec:sistema:funzionali:ISCRCORR}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Iscrizione Nuovo Correntista
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_ISCRCORR\_F\_A\_2}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Il sistema deve permettere l'iscrizione a correntisti (p.~\pageref{glossario:correntista}) che non possiedano gi\`a un account HBS tramite un form compilabile e inviabile via web-browser.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:iscrizione}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Numero di conto corrente e codice fiscale del correntista.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Indicatore di avvenuta presa in carico della richiesta di iscrizione da parte del sistema di HBS.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		La richiesta di iscrizione viene presa in carico dal sistema e inserita nel database di HBS.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Il numero di conto corrente corrisponde a un conto corrente registrato presso l'istituto in questione. Il codice fiscale corrisponde alla persona fisica o giuridica cui il conto corrente \`e intestato. Non esiste un utente HBS associato al codice fiscale del correntista.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Viene creato un utente HBS associato al codice fiscale del correntista. Il nuovo utente non \`e abilitato all'accesso a HBS (v.\ requisiti \ref{itm:utente:funzionali:approvazione}). Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		La richiesta di iscrizione viene inserita nel database di HBS.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_3} - Accesso Clienti}
 \label{sec:sistema:funzionali:CLIACC}
 
 \begin{ptable}{3}
@@ -68,7 +123,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_CLIACC\_F\_A\_2}$ & Funzionale & Alta
+	$\code{REQ\_CLIACC\_F\_A\_3}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -112,117 +167,7 @@
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_3} - Approvazione cliente pre-registrato}
-\label{sec:sistema:funzionali:APPRCORR}
-
-\begin{ptable}{3}
-\ptitlerow{Titolo}
-\prow{
-		Approvazione cliente pre-registrato
-}
-\pline
-\pcells{ID & Tipologia & Priorit\`a}
-\pcells{
-	$\code{REQ\_APPRCORR\_F\_A\_3}$ & Funzionale & Alta
-}
-\pline
-\ptitlerow{Descrizione requisito}
-\prow{
-		I dipendenti della banca devono poter approvare o rifiutare la pre-registrazione effettuata da un cliente della banca dopo aver verificato i dati forniti nella procedura di pre-registrazione.
-}
-\pline
-\ptitlerow{Origine requisito}
-\prow{
-		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:iscrizione}).
-}
-\pline
-\ptitle{Input}
-\pcell{1}{
-		Un cliente di HBS pre-registrato ma non ancora approvato, e un'azione fra ``approva'' e ``rifiuta''.
-}
-\pline
-\ptitle{Output}
-\pcell{1}{
-		Indicatore di successo dell'operazione.
-}
-\pline
-\ptitlerow{Descrizione azione}
-\prow{
-		In caso l'azione sia ``approva'', il cliente pre-registrato viene promosso a cliente registrato. In caso l'azione sia ``rifiuta'', il cliente pre-registrato viene rimosso dal sistema.
-}
-%\pline
-%\ptitlerow{Pre-condizioni}
-%\prow{
-%		Precondizioni.
-%}
-%\pline
-%\ptitlerow{Post-condizioni}
-%\prow{
-%		Postcondizioni.
-%}
-%\pline
-%\ptitlerow{Side-effects}
-%\prow{
-%		Side effects.
-%}
-\end{ptable}
-
-\subsubsection{\code{REQ\_F\_4} - Bidding Utente}
-\label{sec:sistema:funzionali:USRBID}
-
-\begin{ptable}{3}
-\ptitlerow{Titolo}
-\prow{
-		Bidding Utente
-}
-\pline
-\pcells{ID & Tipologia & Priorit\`a}
-\pcells{
-	$\code{REQ\_USRBID\_F\_A\_4}$ & Funzionale & Alta
-}
-\pline
-\ptitlerow{Descrizione requisito}
-\prow{
-		Un utente di HBS deve poter effettuare bidding per conti correnti, carte di credito e prestiti, in caso siano state configurate delle regole di bidding da parte dei manager della banca.
-}
-\pline
-\ptitlerow{Origine requisito}
-\prow{
-		Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:bidding:utente}).
-}
-\pline
-\ptitle{Input}
-\pcell{1}{
-		Una proposta di bidding per un conto corrente, una carta di credito o un prestito.
-}
-\pline
-\ptitle{Output}
-\pcell{1}{
-		Descrizione del successo del bid, ossia indicatore di approvazione, presa in carico dal management, o rifiuto della proposta.
-}
-\pline
-\ptitlerow{Descrizione azione}
-\prow{
-		Per ogni regola di bidding relativa all'oggetto in questione (conto corrente, carta di credito o prestito), il sistema controlla che questa non rifiuti il bid ricevuto dall'utente. Se almeno una regola rifiuta il bid, questo viene rifiutato. Se tutte le regole approvano il bid, questo viene approvato. Se nessuna regola rifiuta il bid e non tutte le regole approvano il bid, questo viene memorizzato nel sistema di Home Banking come ``bid in attesa di approvazione da parte del management''.
-}
-%\pline
-%\ptitlerow{Pre-condizioni}
-%\prow{
-%		Precondizioni.
-%}
-%\pline
-%\ptitlerow{Post-condizioni}
-%\prow{
-%		Postcondizioni.
-%}
-%\pline
-%\ptitlerow{Side-effects}
-%\prow{
-%		Side effects.
-%}
-\end{ptable}
-
-\subsubsection{\code{REQ\_F\_5} - Creazione Operazioni Veloci}
+\subsubsection{\code{REQ\_F\_4} - Creazione Operazioni Veloci}
 \label{sec:sistema:funzionali:CROPVEL}
 
 \begin{ptable}{3}
@@ -233,7 +178,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_CROPVEL\_F\_M\_5}$ & Funzionale & Media
+	$\code{REQ\_CROPVEL\_F\_M\_4}$ & Funzionale & Media
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -277,78 +222,78 @@
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_6} - Verifica Andamento Titoli Azionari}
-\label{sec:sistema:funzionali:VERTIT}
+\subsubsection{\code{REQ\_F\_5} - Disposizione Operazioni Veloci}
+\label{sec:sistema:funzionali:DISOPVEL}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
 \prow{
-		Verifica Andamento Titoli Azionari
+		Disposizione Operazioni Veloci
 }
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_VERTIT\_F\_M\_6}$ & Funzionale & Media
+	$\code{REQ\_DISOPVEL\_F\_M\_5}$ & Funzionale & Media
 }
 \pline
 \ptitlerow{Descrizione requisito}
 \prow{
-		Un utente registrato al sistema di Home Banking e che abbia effettuato l'accesso deve poter visualizzare in tempo reale l'andamento dei propri titoli azionari.
+		Un utente registrato deve poter effettuare le operazioni veloci configurate dai dipendenti della banca.
 }
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-andamento}).
+		Requisiti funzionali (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni-veloci} e \ref{itm:utente:funzionali:dipendenti:operazioni-veloci}). Dipende da requisito sistema \shortidCROPVEL, sez.\ \ref{sec:sistema:funzionali:CROPVEL}.
 }
 \pline
 \ptitle{Input}
 \pcell{1}{
-		Numero del conto corrente.
+		Numero di conto corrente, tipologia di operazione veloce, argomenti dell'operazione veloce.
 }
 \pline
 \ptitle{Output}
 \pcell{1}{
-		Andamento storico delle azioni.
+		Indicatore di successo dell'operazione veloce.
 }
 \pline
 \ptitlerow{Descrizione azione}
 \prow{
-		Il sistema di HBS raccoglie gli identificativi dei titoli azionari di cui il correntista dispone e recupera l'andamento delle azioni dal back-end della banca.
+		Il sistema traduce gli argomenti dell'operazione veloce negli argomenti necessari ad effettuare l'operazione tradizionale corrispondente, dopodich\'e effettua l'operazione tradizionale.
 }
 %\pline
 %\ptitlerow{Pre-condizioni}
 %\prow{
-%		L'utente ha accesso al conto corrente indicato.
+%		Precondizioni.
 %}
 %\pline
 %\ptitlerow{Post-condizioni}
 %\prow{
-%		Nessuna.
+%		Postcondizioni.
 %}
 %\pline
 %\ptitlerow{Side-effects}
 %\prow{
-%		Nessuno.
+%		Side effects.
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_7} - Iscrizione Nuovo Correntista}
-\label{sec:sistema:funzionali:ISCRCORR}
+\subsubsection{\code{REQ\_F\_6} - Approvazione cliente pre-registrato}
+\label{sec:sistema:funzionali:APPRCORR}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
 \prow{
-		Iscrizione Nuovo Correntista
+		Approvazione cliente pre-registrato
 }
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_ISCRCORR\_F\_A\_7}$ & Funzionale & Alta
+	$\code{REQ\_APPRCORR\_F\_A\_6}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
 \prow{
-		Il sistema deve permettere l'iscrizione a correntisti (p.~\pageref{glossario:correntista}) che non possiedano gi\`a un account HBS tramite un form compilabile e inviabile via web-browser.
+		I dipendenti della banca devono poter approvare o rifiutare la pre-registrazione effettuata da un cliente della banca dopo aver verificato i dati forniti nella procedura di pre-registrazione.
 }
 \pline
 \ptitlerow{Origine requisito}
@@ -358,32 +303,87 @@
 \pline
 \ptitle{Input}
 \pcell{1}{
-		Numero di conto corrente e codice fiscale del correntista.
+		Un cliente di HBS pre-registrato ma non ancora approvato, e un'azione fra ``approva'' e ``rifiuta''.
 }
 \pline
 \ptitle{Output}
 \pcell{1}{
-		Indicatore di avvenuta presa in carico della richiesta di iscrizione da parte del sistema di HBS.
+		Indicatore di successo dell'operazione.
 }
 \pline
 \ptitlerow{Descrizione azione}
 \prow{
-		La richiesta di iscrizione viene presa in carico dal sistema e inserita nel database di HBS.
+		In caso l'azione sia ``approva'', il cliente pre-registrato viene promosso a cliente registrato. In caso l'azione sia ``rifiuta'', il cliente pre-registrato viene rimosso dal sistema.
 }
 %\pline
 %\ptitlerow{Pre-condizioni}
 %\prow{
-%		Il numero di conto corrente corrisponde a un conto corrente registrato presso l'istituto in questione. Il codice fiscale corrisponde alla persona fisica o giuridica cui il conto corrente \`e intestato. Non esiste un utente HBS associato al codice fiscale del correntista.
+%		Precondizioni.
 %}
 %\pline
 %\ptitlerow{Post-condizioni}
 %\prow{
-%		Viene creato un utente HBS associato al codice fiscale del correntista. Il nuovo utente non \`e abilitato all'accesso a HBS (v.\ requisiti \ref{itm:utente:funzionali:approvazione}). Il conto corrente associato al numero di conto corrente inserito viene abilitato all'uso di HBS.
+%		Postcondizioni.
 %}
 %\pline
 %\ptitlerow{Side-effects}
 %\prow{
-%		La richiesta di iscrizione viene inserita nel database di HBS.
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_7} - Creazione Bidding}
+\label{sec:sistema:funzionali:CREABID}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Creazione Bidding
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_CREABID\_F\_A\_7}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un manager della banca deve poter creare una regola di bidding, impostando i parametri di scelta in maniera opportuna per accettare o rifiutare automaticamente un bid, e per inviarlo al manager per approvazione altrimenti.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:management:bidding:creazione}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Una regola di bidding.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Descrizione del successo dell'azione.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		La regola di bidding proposta viene aggiunta al sistema di HBS.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
 %}
 \end{ptable}
 
@@ -442,227 +442,7 @@
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_9} - Accesso Account Dipendenti}
-\label{sec:sistema:funzionali:DIPACC}
-
-\begin{ptable}{3}
-\ptitlerow{Titolo}
-\prow{
-		Accesso Account Dipendenti
-}
-\pline
-\pcells{ID & Tipologia & Priorit\`a}
-\pcells{
-	$\code{REQ\_DIPACC\_F\_A\_9}$ & Funzionale & Alta
-}
-\pline
-\ptitlerow{Descrizione requisito}
-\prow{
-		I dipendenti della banca (manager e impiegati) possono accedere alle pagine di amministrazione del sistema di Home Banking.
-}
-\pline
-\ptitlerow{Origine requisito}
-\prow{
-		Requisiti funzionali (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:dipendenti:accesso}).
-}
-\pline
-\ptitle{Input}
-\pcell{1}{
-		Input del requisito.
-}
-\pline
-\ptitle{Output}
-\pcell{1}{
-		Output del requisito.
-}
-\pline
-\ptitlerow{Descrizione azione}
-\prow{
-		Descrizione dell'algoritmo.
-}
-%\pline
-%\ptitlerow{Pre-condizioni}
-%\prow{
-%		Precondizioni.
-%}
-%\pline
-%\ptitlerow{Post-condizioni}
-%\prow{
-%		Postcondizioni.
-%}
-%\pline
-%\ptitlerow{Side-effects}
-%\prow{
-%		Side effects.
-%}
-\end{ptable}
-
-\subsubsection{\code{REQ\_F\_10} - Creazione Bidding}
-\label{sec:sistema:funzionali:CREABID}
-
-\begin{ptable}{3}
-\ptitlerow{Titolo}
-\prow{
-		Creazione Bidding
-}
-\pline
-\pcells{ID & Tipologia & Priorit\`a}
-\pcells{
-	$\code{REQ\_CREABID\_F\_A\_10}$ & Funzionale & Alta
-}
-\pline
-\ptitlerow{Descrizione requisito}
-\prow{
-		Un manager della banca deve poter creare una regola di bidding, impostando i parametri di scelta in maniera opportuna per accettare o rifiutare automaticamente un bid, e per inviarlo al manager per approvazione altrimenti.
-}
-\pline
-\ptitlerow{Origine requisito}
-\prow{
-		Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:management:bidding:creazione}).
-}
-\pline
-\ptitle{Input}
-\pcell{1}{
-		Una regola di bidding.
-}
-\pline
-\ptitle{Output}
-\pcell{1}{
-		Descrizione del successo dell'azione.
-}
-\pline
-\ptitlerow{Descrizione azione}
-\prow{
-		La regola di bidding proposta viene aggiunta al sistema di HBS.
-}
-%\pline
-%\ptitlerow{Pre-condizioni}
-%\prow{
-%		Precondizioni.
-%}
-%\pline
-%\ptitlerow{Post-condizioni}
-%\prow{
-%		Postcondizioni.
-%}
-%\pline
-%\ptitlerow{Side-effects}
-%\prow{
-%		Side effects.
-%}
-\end{ptable}
-
-\subsubsection{\code{REQ\_F\_11} - Disposizione Operazioni Veloci}
-\label{sec:sistema:funzionali:DISOPVEL}
-
-\begin{ptable}{3}
-\ptitlerow{Titolo}
-\prow{
-		Disposizione Operazioni Veloci
-}
-\pline
-\pcells{ID & Tipologia & Priorit\`a}
-\pcells{
-	$\code{REQ\_DISOPVEL\_F\_M\_11}$ & Funzionale & Media
-}
-\pline
-\ptitlerow{Descrizione requisito}
-\prow{
-		Un utente registrato deve poter effettuare le operazioni veloci configurate dai dipendenti della banca.
-}
-\pline
-\ptitlerow{Origine requisito}
-\prow{
-		Requisiti funzionali (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni-veloci} e \ref{itm:utente:funzionali:dipendenti:operazioni-veloci}). Dipende da requisito sistema \shortidCROPVEL, sez.\ \ref{sec:sistema:funzionali:CROPVEL}.
-}
-\pline
-\ptitle{Input}
-\pcell{1}{
-		Numero di conto corrente, tipologia di operazione veloce, argomenti dell'operazione veloce.
-}
-\pline
-\ptitle{Output}
-\pcell{1}{
-		Indicatore di successo dell'operazione veloce.
-}
-\pline
-\ptitlerow{Descrizione azione}
-\prow{
-		Il sistema traduce gli argomenti dell'operazione veloce negli argomenti necessari ad effettuare l'operazione tradizionale corrispondente, dopodich\'e effettua l'operazione tradizionale.
-}
-%\pline
-%\ptitlerow{Pre-condizioni}
-%\prow{
-%		Precondizioni.
-%}
-%\pline
-%\ptitlerow{Post-condizioni}
-%\prow{
-%		Postcondizioni.
-%}
-%\pline
-%\ptitlerow{Side-effects}
-%\prow{
-%		Side effects.
-%}
-\end{ptable}
-
-\subsubsection{\code{REQ\_F\_12} - Disposizioni di Pagamento}
-\label{sec:sistema:funzionali:DISPAG}
-
-\begin{ptable}{3}
-\ptitlerow{Titolo}
-\prow{
-		Disposizioni di Pagamento
-}
-\pline
-\pcells{ID & Tipologia & Priorit\`a}
-\pcells{
-	$\code{REQ\_DISPAG\_F\_A\_12}$ & Funzionale & Alta
-}
-\pline
-\ptitlerow{Descrizione requisito}
-\prow{
-		Un utente registrato al sistema di Home Banking deve poter effettuare generiche disposizioni di pagamento. In particolare l'utente deve poter effettuare bonifici (p.~\pageref{glossario:bonifico}) e bonifici SEPA (p.~\pageref{glossario:bonifico-sepa}).
-}
-\pline
-\ptitlerow{Origine requisito}
-\prow{
-		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:operazioni}).
-}
-\pline
-\ptitle{Input}
-\pcell{1}{
-		Numero di conto corrente, tipologia dell'operazione, somma di denaro da trasferire, conto corrente di destinazione nel formato opportuno.
-}
-\pline
-\ptitle{Output}
-\pcell{1}{
-		Indicatore di successo dell'operazione.
-}
-\pline
-\ptitlerow{Descrizione azione}
-\prow{
-		L'operazione specificata viene inoltrata da HBS al back-end della banca. HBS attende dal back-end informazioni riguardo il successo o meno dell'operazione.
-}
-%\pline
-%\ptitlerow{Pre-condizioni}
-%\prow{
-%		L'utente ha accesso al conto corrente indicato. Il saldo contabile sul conto corrente indicato \`e maggiore o uguale alla somma di denaro da trasferire pi\`u eventuali spese di commissione.
-%}
-%\pline
-%\ptitlerow{Post-condizioni}
-%\prow{
-%		Se il back-end della banca ha preso in carico l'operazione con successo, la gestione della stessa \`e stata passata al back-end. Altrimenti nessuna.
-%}
-%\pline
-%\ptitlerow{Side-effects}
-%\prow{
-%		Il tentativo di operazione viene registrato nel log di HBS, insieme ad informazioni riguardo lo stato di presa in carico da parte del back-end della banca.
-%}
-\end{ptable}
-
-\subsubsection{\code{REQ\_F\_13} - Verifica Saldo}
+\subsubsection{\code{REQ\_F\_9} - Verifica Saldo}
 \label{sec:sistema:funzionali:VERSAL}
 
 \begin{ptable}{3}
@@ -673,7 +453,7 @@
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_VERSAL\_F\_A\_13}$ & Funzionale & Alta
+	$\code{REQ\_VERSAL\_F\_A\_9}$ & Funzionale & Alta
 }
 \pline
 \ptitlerow{Descrizione requisito}
@@ -717,43 +497,208 @@
 %}
 \end{ptable}
 
-\subsubsection{\code{REQ\_F\_14} - Gestione Privilegi Correntista}
-\label{sec:sistema:funzionali:PRIVCORR}
+\subsubsection{\code{REQ\_F\_10} - Verifica Andamento Titoli Azionari}
+\label{sec:sistema:funzionali:VERTIT}
 
 \begin{ptable}{3}
 \ptitlerow{Titolo}
 \prow{
-		Gestione Privilegi Correntista
+		Verifica Andamento Titoli Azionari
 }
 \pline
 \pcells{ID & Tipologia & Priorit\`a}
 \pcells{
-	$\code{REQ\_PRIVCORR\_F\_A\_14}$ & Funzionale & Alta
+	$\code{REQ\_VERTIT\_F\_M\_10}$ & Funzionale & Media
 }
 \pline
 \ptitlerow{Descrizione requisito}
 \prow{
-		I dipendenti della banca devono poter gestire i privilegi di lettura e scrittura dei clienti di HBS verso i conti correnti da loro posseduti presso l'istituto.
+		Un utente registrato al sistema di Home Banking e che abbia effettuato l'accesso deve poter visualizzare in tempo reale l'andamento dei propri titoli azionari.
 }
 \pline
 \ptitlerow{Origine requisito}
 \prow{
-		Requisiti funzionali impliciti.
+		Requisiti utente (sez.\ \ref{sec:utente:funzionali}, req.\ \ref{itm:utente:funzionali:gestione-conto:verifica-andamento}).
 }
 \pline
 \ptitle{Input}
 \pcell{1}{
-		Un cliente di HBS, un conto corrente presso l'istituto, e un'azione fra ``rimuovi associazione'', ``fornisci permesso lettura'', ``formisci permesso scrittura''.
+		Numero del conto corrente.
 }
 \pline
 \ptitle{Output}
 \pcell{1}{
-		Risultato dell'operazione.
+		Andamento storico delle azioni.
 }
 \pline
 \ptitlerow{Descrizione azione}
 \prow{
-		Se l'azione \`e ``rimuovi associazione'', ogni permesso (di lettura e di scrittura) del cliente fornito sul conto selezionato viene rimosso. Se l'azione \`e ``fornisci permesso lettura'' o ``fornisci permesso scrittura'', il permesso specificato viene fornito al cliente sul conto selezionato.
+		Il sistema di HBS raccoglie gli identificativi dei titoli azionari di cui il correntista dispone e recupera l'andamento delle azioni dal back-end della banca.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		L'utente ha accesso al conto corrente indicato.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Nessuna.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Nessuno.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_11} - Bidding Utente}
+\label{sec:sistema:funzionali:USRBID}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Bidding Utente
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_USRBID\_F\_A\_11}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un utente di HBS deve poter effettuare bidding per conti correnti, carte di credito e prestiti, in caso siano state configurate delle regole di bidding da parte dei manager della banca.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:bidding:utente}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Una proposta di bidding per un conto corrente, una carta di credito o un prestito.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Descrizione del successo del bid, ossia indicatore di approvazione, presa in carico dal management, o rifiuto della proposta.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Per ogni regola di bidding relativa all'oggetto in questione (conto corrente, carta di credito o prestito), il sistema controlla che questa non rifiuti il bid ricevuto dall'utente. Se almeno una regola rifiuta il bid, questo viene rifiutato. Se tutte le regole approvano il bid, questo viene approvato. Se nessuna regola rifiuta il bid e non tutte le regole approvano il bid, questo viene memorizzato nel sistema di Home Banking come ``bid in attesa di approvazione da parte del management''.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_12} - Accesso Account Dipendenti}
+\label{sec:sistema:funzionali:DIPACC}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Accesso Account Dipendenti
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_DIPACC\_F\_A\_12}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		I dipendenti della banca (manager e impiegati) possono accedere alle pagine di amministrazione del sistema di Home Banking.
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti funzionali (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:dipendenti:accesso}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Input del requisito.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Output del requisito.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Descrizione dell'algoritmo.
+}
+%\pline
+%\ptitlerow{Pre-condizioni}
+%\prow{
+%		Precondizioni.
+%}
+%\pline
+%\ptitlerow{Post-condizioni}
+%\prow{
+%		Postcondizioni.
+%}
+%\pline
+%\ptitlerow{Side-effects}
+%\prow{
+%		Side effects.
+%}
+\end{ptable}
+
+\subsubsection{\code{REQ\_F\_13} - Verifica Storico}
+\label{sec:sistema:funzionali:VERSTOR}
+
+\begin{ptable}{3}
+\ptitlerow{Titolo}
+\prow{
+		Verifica Storico
+}
+\pline
+\pcells{ID & Tipologia & Priorit\`a}
+\pcells{
+	$\code{REQ\_VERSTOR\_F\_A\_13}$ & Funzionale & Alta
+}
+\pline
+\ptitlerow{Descrizione requisito}
+\prow{
+		Un utente deve poter verificare lo storico delle transazioni eseguite dal suo conto in un determinato periodo, complete di informazioni su: \begin{itemize} \item data dell'operazione; \item destinatario dell'operazione; \item causale dell'operazione; \item importo dell'operazione. \end{itemize}
+}
+\pline
+\ptitlerow{Origine requisito}
+\prow{
+		Requisiti utente (sez.~\ref{sec:utente:funzionali}, req.~\ref{itm:utente:funzionali:storico}).
+}
+\pline
+\ptitle{Input}
+\pcell{1}{
+		Numero del conto corrente, periodo di riferimento.
+}
+\pline
+\ptitle{Output}
+\pcell{1}{
+		Elenco delle operazioni effettuate nel periodo di riferimento fornito.
+}
+\pline
+\ptitlerow{Descrizione azione}
+\prow{
+		Il sistema recupera dal back-end della banca le informazioni richieste dall'utente.
 }
 %\pline
 %\ptitlerow{Pre-condizioni}
@@ -886,6 +831,3 @@
 %}
 \end{ptable}
 
-\clearpage
-
-\subsection{Specifica dei Requisiti di Dominio}

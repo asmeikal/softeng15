@@ -111,8 +111,8 @@ if __name__ == '__main__':
         out.write(res_func)
         out.write(n_func_header)
         out.write(res_n_func)
-        out.write(domain_header)
-        out.write(res_domain)
+        #out.write(domain_header)
+        #out.write(res_domain)
         with open(output_macro, 'w') as out_macro:
             out_macro.write(res_macro)
 
