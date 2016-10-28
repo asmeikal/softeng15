@@ -241,7 +241,7 @@ justification=raggedright]{caption}
 \usepgfplotslibrary{fillbetween}
 
 \ProjectInfo{Progetto di Ingegneria del Software: Home Banking}
-\Authors{Artem Ageev, Luigi Iandolo, Michele Laurenti} % Authors
+\Authors{---} % Authors
 
 \newcommand{\startofdocument}{%
 \flushbottom % Makes all text pages the same height
